@@ -8,29 +8,42 @@ namespace StudentHousingCompany
 {
     class Tenant : User
     {
-        private int id;
         private string phoneNr;
         private string postcode;
         private string address;
-        private static int idSeeder = 0;
+        private int balance;
+
+        public string PhoneNr
+        {
+            get { return phoneNr; }
+            set { phoneNr = value; }
+        }
+
+        public string Postcode
+        {
+            get { return postcode; }
+            set { postcode = value; }
+        }
+
+        public string Address
+        {
+            get { return address; }
+            set { address = value; }
+        }
+
+        public int Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
 
         public Tenant(string name, DateTime dateOfBirth, string email, string password, string phoneNr, string postcode, string address)
             : base(name, dateOfBirth, email, password)
         {
-            SetId();
             this.phoneNr = phoneNr;
             this.postcode = postcode;
             this.address = address;
+            this.balance = 0;
         }
-        public int GetId()
-        {
-            return id;
-        }
-        public void SetId()
-        {
-            id = idSeeder;
-            idSeeder++;
-        }
-
     }
 }

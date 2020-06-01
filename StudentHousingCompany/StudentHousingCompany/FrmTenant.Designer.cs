@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup19 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup20 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup21 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -192,6 +192,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox1
             // 
@@ -327,16 +328,16 @@
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-            listViewGroup19.Header = "ListViewGroup";
-            listViewGroup19.Name = "Product";
-            listViewGroup20.Header = "ListViewGroup";
-            listViewGroup20.Name = "Shared with";
-            listViewGroup21.Header = "ListViewGroup";
-            listViewGroup21.Name = "PricePP";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "Product";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "Shared with";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "PricePP";
             this.listView4.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup19,
-            listViewGroup20,
-            listViewGroup21});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3});
             this.listView4.HideSelection = false;
             this.listView4.Location = new System.Drawing.Point(302, 95);
             this.listView4.Name = "listView4";
