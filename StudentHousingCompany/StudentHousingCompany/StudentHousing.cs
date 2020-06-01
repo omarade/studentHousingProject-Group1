@@ -10,15 +10,11 @@ namespace StudentHousingCompany
     {
         private static StudentHousing instance = new StudentHousing();
 
-        List<User> users = new List<User>();
-
-        List<Tenant> tenants = new List<Tenant>();
         
-
 
         public static StudentHousing Instance
         {
-            get;
+            get { return instance; }
         }
 
         public List<User> Users
@@ -31,22 +27,82 @@ namespace StudentHousingCompany
             get;
         }
 
+        public User CurrentUser
+        {
+            get;
+            set;
+        }
 
-        private StudentHousing(){}
+
+        private StudentHousing()
+        {
+            Users = new List<User>();
+            Tenants = new List<Tenant>();
+        }
+
+        public User ValidateCredentials(string email, string password, List<User> users)
+        {
+            foreach (var user in users)
+            {
+                if (email == user.Email && password == user.Password)
+                {
+                    CurrentUser = user;
+                    return user;
+                }
+            }
+
+            return null;
+        }
 
         public void AddUser(string name, DateTime dob, string email, string password)
         {
             User admin = new Admin(name, dob, email, password);
-            users.Add(admin);
+            Users.Add(admin);
         }
 
         public void AddUser(string name, DateTime dob, string email, string password, string phoneNr, string postcode, string address)
         {
             User tenant = new Tenant(name, dob, email, password, phoneNr, postcode, address);
-            users.Add(tenant);
+            Users.Add(tenant);
 
             Tenant newTenant = (Tenant) tenant;
-            tenants.Add(newTenant);
+            Tenants.Add(newTenant);
+        }
+
+        public void RemoveUser(int id)
+        {
+            foreach (var user in Users)
+            {
+                if (id == user.Id)
+                {
+                    Users.Remove(user);
+                    return;
+                }
+            }
+        }
+
+        public void AddDummyData()
+        {
+            DateTime dob = new DateTime(1990, 03, 05);
+            AddUser("Omar Dehn", dob, "omar@live.com", "1234");
+
+            dob = new DateTime(1985, 03, 05);
+            AddUser("Bill burr", dob, "bill@live.com", "1234");
+
+            dob = new DateTime(1999, 03, 15);
+            AddUser("Rob bill", dob, "rob@live.com", "1234", "0031683443453", "3456LA", "Aakstraat 140");
+
+            dob = new DateTime(1994, 03, 15);
+            AddUser("Kevin Hart", dob, "kev@live.com", "1234", "0031638746587", "3456LA", "Aakstraat 141");
+
+            dob = new DateTime(1993, 03, 15);
+            AddUser("George Carlin", dob, "George@live.com", "1234", "0031683746583", "3456LA", "Aakstraat 142");
+
+            dob = new DateTime(1992, 03, 15);
+            AddUser("Jerry Seinfeld", dob, "Jerry@live.com", "1234", "0031614780292", "3456LA", "Aakstraat 143");
+
+            dob = new DateTime(2001, 03, 15);
+            AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
         }
     }
 }

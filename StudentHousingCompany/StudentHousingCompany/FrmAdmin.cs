@@ -19,6 +19,7 @@ namespace StudentHousingCompany
             studentHousing = StudentHousing.Instance;
             ShowUsers();
             rbtnTenant.Checked = true;
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -96,6 +97,8 @@ namespace StudentHousingCompany
             TimeSpan ageSpan = DateTime.Now.Subtract(dob);
             int age = ageSpan.Days / 365;
 
+            var users = studentHousing.Users;
+
             if (name == "")
             {
                 MessageBox.Show("Name cannot be empty");
@@ -112,6 +115,15 @@ namespace StudentHousingCompany
             {
                 MessageBox.Show("Please enter an email");
                 return false;
+            }
+
+            foreach (var user in users)
+            {
+                if (email == user.Email)
+                {
+                    MessageBox.Show("There is already an acount created with this email");
+                    return false;
+                }
             }
 
             if (password.Length < 4)
@@ -163,6 +175,17 @@ namespace StudentHousingCompany
             this.Hide();
             var frmTenant = new FrmTenant();
             frmTenant.Show();
+        }
+
+        private void btnRemoveUser_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(dgdUsers.SelectedRows.Count);
+            
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

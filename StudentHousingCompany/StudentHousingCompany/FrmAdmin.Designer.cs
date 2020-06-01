@@ -40,6 +40,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
             this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,7 @@
             this.rbtnAdmin = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPostcode = new System.Windows.Forms.TextBox();
@@ -72,6 +73,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -90,11 +94,8 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -215,6 +216,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.btnRemoveUser);
             this.tabPage4.Controls.Add(this.dgdUsers);
             this.tabPage4.Controls.Add(this.dtbDoB);
             this.tabPage4.Controls.Add(this.label20);
@@ -224,7 +226,7 @@
             this.tabPage4.Controls.Add(this.rbtnAdmin);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.txtAddress);
-            this.tabPage4.Controls.Add(this.button5);
+            this.tabPage4.Controls.Add(this.btnUpdateUser);
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.txtPostcode);
@@ -246,6 +248,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manage Users";
             // 
+            // btnRemoveUser
+            // 
+            this.btnRemoveUser.Location = new System.Drawing.Point(780, 415);
+            this.btnRemoveUser.Name = "btnRemoveUser";
+            this.btnRemoveUser.Size = new System.Drawing.Size(180, 41);
+            this.btnRemoveUser.TabIndex = 26;
+            this.btnRemoveUser.Text = "Remove Selected User";
+            this.btnRemoveUser.UseVisualStyleBackColor = true;
+            this.btnRemoveUser.Click += new System.EventHandler(this.btnRemoveUser_Click);
+            // 
             // dgdUsers
             // 
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -260,17 +272,20 @@
             this.Column7});
             this.dgdUsers.Location = new System.Drawing.Point(407, 112);
             this.dgdUsers.Name = "dgdUsers";
+            this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
             this.dgdUsers.RowTemplate.Height = 24;
-            this.dgdUsers.Size = new System.Drawing.Size(553, 354);
+            this.dgdUsers.RowTemplate.ReadOnly = true;
+            this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgdUsers.Size = new System.Drawing.Size(553, 283);
             this.dgdUsers.TabIndex = 25;
             // 
             // hxtId
             // 
             this.hxtId.HeaderText = "ID";
-            this.hxtId.MinimumWidth = 6;
+            this.hxtId.MinimumWidth = 30;
             this.hxtId.Name = "hxtId";
-            this.hxtId.Width = 125;
+            this.hxtId.Width = 50;
             // 
             // Column1
             // 
@@ -391,14 +406,15 @@
             this.txtAddress.Size = new System.Drawing.Size(235, 22);
             this.txtAddress.TabIndex = 17;
             // 
-            // button5
+            // btnUpdateUser
             // 
-            this.button5.Location = new System.Drawing.Point(200, 415);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 41);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Update Selected User";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Location = new System.Drawing.Point(200, 415);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(170, 41);
+            this.btnUpdateUser.TabIndex = 16;
+            this.btnUpdateUser.Text = "Update Selected User";
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
             // label11
             // 
@@ -537,6 +553,32 @@
             this.tabPage2.Size = new System.Drawing.Size(990, 500);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tasks";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(43, 358);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "Confirm";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(43, 306);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(40, 17);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Days";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(43, 327);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(169, 24);
+            this.comboBox2.TabIndex = 10;
             // 
             // button7
             // 
@@ -690,14 +732,13 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "Admin Name";
             // 
-            // label17
+            // lblCurrentUserName
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(161, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(54, 17);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "label17";
+            this.lblCurrentUserName.AutoSize = true;
+            this.lblCurrentUserName.Location = new System.Drawing.Point(161, 13);
+            this.lblCurrentUserName.Name = "lblCurrentUserName";
+            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 17);
+            this.lblCurrentUserName.TabIndex = 2;
             // 
             // button4
             // 
@@ -709,43 +750,17 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(43, 327);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(169, 24);
-            this.comboBox2.TabIndex = 10;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(43, 306);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 17);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Days";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(43, 358);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "Confirm";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 587);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmAdmin";
-            this.Text = "FrmAdmin";
+            this.Text = "Student Housing";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -787,7 +802,7 @@
         private System.Windows.Forms.TextBox txtPhoneNr;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnUpdateUser;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPostcode;
@@ -809,7 +824,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblCurrentUserName;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label19;
@@ -819,6 +834,11 @@
         private System.Windows.Forms.ComboBox cboUserType;
         private System.Windows.Forms.DateTimePicker dtbDoB;
         private System.Windows.Forms.DataGridView dgdUsers;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnRemoveUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -826,9 +846,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
