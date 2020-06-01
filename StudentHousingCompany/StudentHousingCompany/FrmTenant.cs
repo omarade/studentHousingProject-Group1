@@ -18,6 +18,8 @@ namespace StudentHousingCompany
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
+
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -30,6 +32,15 @@ namespace StudentHousingCompany
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(studentHousing.Users.Count.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var users = studentHousing.Tenants;
+            foreach (var user in users)
+            {
+                int id = user.Id;
+            }
         }
     }
 }
