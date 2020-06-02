@@ -20,6 +20,7 @@ namespace StudentHousingCompany
             studentHousing = StudentHousing.Instance;
             ShowUsers();
             rbtnTenant.Checked = true;
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -97,6 +98,8 @@ namespace StudentHousingCompany
             TimeSpan ageSpan = DateTime.Now.Subtract(dob);
             int age = ageSpan.Days / 365;
 
+            var users = studentHousing.Users;
+
             if (name == "")
             {
                 MessageBox.Show("Name cannot be empty");
@@ -113,6 +116,15 @@ namespace StudentHousingCompany
             {
                 MessageBox.Show("Please enter an email");
                 return false;
+            }
+
+            foreach (var user in users)
+            {
+                if (email == user.Email)
+                {
+                    MessageBox.Show("There is already an acount created with this email");
+                    return false;
+                }
             }
 
             if (password.Length < 4)
@@ -166,15 +178,64 @@ namespace StudentHousingCompany
             frmTenant.Show();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnRemoveUser_Click(object sender, EventArgs e)
         {
             
-            studentHousing.ChangeDueWeekday(day);
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+                studentHousing.RemoveUser(id);
+                ShowUsers();
+            }
+
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+                
+                ShowUsers();
+            }
+
+        }
+
+        private void dgdUsers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+
+                if (id != 0)
+                {
+
+                }
+
+               
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            studentHousing.AddTask(textBox9.Text,day);
+            studentHousing.AddTask(textBox9.Text, day);
+            ShowTasks();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            studentHousing.ChangeDueWeekday(day);
+        }
+
+        private void btnNextWeek_Click(object sender, EventArgs e)
+        {
+            studentHousing.SetNextTenant();
             ShowTasks();
         }
 
@@ -191,7 +252,6 @@ namespace StudentHousingCompany
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
@@ -226,17 +286,6 @@ namespace StudentHousingCompany
                     day = DayOfWeek.Monday;
                     break;
             }
-        }
-
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-            ShowTasks();
-        }
-
-        private void btnNextWeek_Click(object sender, EventArgs e)
-        {
-            studentHousing.SetNextTenant();
-            ShowTasks();
         }
     }
 }

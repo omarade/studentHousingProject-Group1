@@ -71,7 +71,7 @@ namespace StudentHousingCompany
         /// </summary>
         /// <param name="students">List of students</param>
         public void SetNextStudent(List<Tenant> students)
-        {                    
+        {
             int index = 0;
             bool FoundTenant = false;
             do
@@ -115,7 +115,7 @@ namespace StudentHousingCompany
         /// <returns></returns>
         public ListViewItem GetInfo()
         {
-            
+
 
             string[] arr = new string[4];
             ListViewItem itm;
@@ -129,12 +129,12 @@ namespace StudentHousingCompany
             return itm;
         }
 
-       
+
         public string GetTask()
         {
             return this.Taskname;
         }
-       
+
         public string GetStudent()
         {
             return this.Student;
@@ -149,6 +149,6 @@ namespace StudentHousingCompany
         {
             return this.DueDate;
         }
-    
+
     }
 }
