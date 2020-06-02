@@ -666,7 +666,7 @@
             this.button6.TabIndex = 3;
             this.button6.Text = "Add";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // label12
             // 
