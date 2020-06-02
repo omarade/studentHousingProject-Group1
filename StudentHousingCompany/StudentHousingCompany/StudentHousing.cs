@@ -5,42 +5,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace StudentHousingCompany
 {
     class StudentHousing
     {
-        
+        //Omarvvvvvv
+        private static StudentHousing instance = new StudentHousing();
         List<User> users = new List<User>();
+        List<Tenant> tenants = new List<Tenant>();
+        //Omar^^^^
+
         List<Schedule> schedule = new List<Schedule>();
         List<string> tasks = new List<string>();
 
-        //Test users
-        List<string> testusers = new List<string>();
-
-        public void AddTestData()
+        //Omarvvvvvv
+        public static StudentHousing Instance
         {
-            testusers.Add("a");
-            testusers.Add("b");
-            testusers.Add("c");
-            testusers.Add("d");
-            testusers.Add("e");
-            testusers.Add("f");
-            testusers.Add("g");
-            testusers.Add("h");
-            testusers.Add("i");
-
+            get { return instance; }
         }
-        
-
-        public void AddTenant()
+        public List<User> Users
         {
-            //User tenant = new Tenant("Omar", );
-            //users.Add(tenant);
+            get { return users; }
+        }
+        public List<Tenant> Tenants
+        {
+            get { return tenants; }
+        }
+        private StudentHousing(){}
+        public void AddUser(string name, DateTime dob, string email, string password)
+        {
+            User admin = new Admin(name, dob, email, password);
+            users.Add(admin);
         }
 
+        public void AddUser(string name, DateTime dob, string email, string password, string phoneNr, string postcode, string address)
+        {
+            User tenant = new Tenant(name, dob, email, password, phoneNr, postcode, address);
+            users.Add(tenant);
 
-
+            Tenant newTenant = (Tenant) tenant;
+            tenants.Add(newTenant);
+        }
+        //Omar^^^^
 
 
         public void AddTask(string taskName)
@@ -56,9 +62,9 @@ namespace StudentHousingCompany
             int counter = 0;
             foreach (Schedule task in schedule)
             {
-                task.SetStudent(testusers[counter]);
+                task.SetStudent(tenants[counter].Name);
                 counter++;
-                if (counter >= testusers.Count)
+                if (counter >= tenants.Count)
                 {
                     counter = 0;
                 }
@@ -82,12 +88,15 @@ namespace StudentHousingCompany
             string[] arr = new string[4];
             ListViewItem itm;
             //add items to ListView
-            arr[0] = schedule[tasks.Count-1].GetStudent();
-            arr[1] = schedule[tasks.Count-1].GetTask();
-            arr[2] = schedule[tasks.Count-1].GetStatus().ToString();
+            arr[0] = schedule[tasks.Count - 1].GetStudent();
+            arr[1] = schedule[tasks.Count - 1].GetTask();
+            arr[2] = schedule[tasks.Count - 1].GetStatus().ToString();
             itm = new ListViewItem(arr);
 
             return itm;
         }
+
+
+
     }
 }
