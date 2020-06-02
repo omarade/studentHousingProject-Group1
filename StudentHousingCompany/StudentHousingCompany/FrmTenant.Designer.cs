@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -52,21 +52,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.lblFullPrice = new System.Windows.Forms.Label();
+            this.lblProductname = new System.Windows.Forms.Label();
+            this.lvwProductSharingInfo = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.lvwBlancesOverView = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.clbTenantsToshare = new System.Windows.Forms.CheckedListBox();
+            this.tbxProductname = new System.Windows.Forms.TextBox();
+            this.lblTenantsToShareWith = new System.Windows.Forms.Label();
+            this.btnAddToShoppingList = new System.Windows.Forms.Button();
+            this.tbxFullPrice = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -130,7 +130,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(291, 407);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 17);
+            this.label12.Size = new System.Drawing.Size(22, 16);
             this.label12.TabIndex = 8;
             this.label12.Text = "23";
             // 
@@ -139,7 +139,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(71, 407);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(190, 17);
+            this.label11.Size = new System.Drawing.Size(183, 16);
             this.label11.TabIndex = 7;
             this.label11.Text = "Common Room Temperature";
             // 
@@ -148,7 +148,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(74, 26);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 17);
+            this.label8.Size = new System.Drawing.Size(86, 16);
             this.label8.TabIndex = 6;
             this.label8.Text = "House Rules";
             // 
@@ -157,7 +157,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(565, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 17);
+            this.label2.Size = new System.Drawing.Size(140, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Admin Announcments:";
             // 
@@ -214,7 +214,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(950, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
@@ -224,7 +224,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(72, 73);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 17);
+            this.label10.Size = new System.Drawing.Size(96, 16);
             this.label10.TabIndex = 6;
             this.label10.Text = "Personal Task";
             // 
@@ -233,7 +233,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(522, 73);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 17);
+            this.label9.Size = new System.Drawing.Size(137, 16);
             this.label9.TabIndex = 5;
             this.label9.Text = "This Week Tasks List";
             // 
@@ -281,75 +281,76 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label4.Location = new System.Drawing.Point(54, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(202, 29);
+            this.label4.Size = new System.Drawing.Size(158, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Task: BathRoom";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.listView4);
-            this.tabPage2.Controls.Add(this.listView3);
-            this.tabPage2.Controls.Add(this.checkedListBox1);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.lblFullPrice);
+            this.tabPage2.Controls.Add(this.lblProductname);
+            this.tabPage2.Controls.Add(this.lvwProductSharingInfo);
+            this.tabPage2.Controls.Add(this.lvwBlancesOverView);
+            this.tabPage2.Controls.Add(this.clbTenantsToshare);
+            this.tabPage2.Controls.Add(this.tbxProductname);
+            this.tabPage2.Controls.Add(this.lblTenantsToShareWith);
+            this.tabPage2.Controls.Add(this.btnAddToShoppingList);
+            this.tabPage2.Controls.Add(this.tbxFullPrice);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(950, 455);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
-            // label14
+            // lblFullPrice
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(166, 17);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 17);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "label14";
+            this.lblFullPrice.AutoSize = true;
+            this.lblFullPrice.Location = new System.Drawing.Point(6, 75);
+            this.lblFullPrice.Name = "lblFullPrice";
+            this.lblFullPrice.Size = new System.Drawing.Size(63, 16);
+            this.lblFullPrice.TabIndex = 32;
+            this.lblFullPrice.Text = "Full Price";
             // 
-            // label13
+            // lblProductname
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(40, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 17);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "label13";
+            this.lblProductname.AutoSize = true;
+            this.lblProductname.Location = new System.Drawing.Point(3, 39);
+            this.lblProductname.Name = "lblProductname";
+            this.lblProductname.Size = new System.Drawing.Size(94, 16);
+            this.lblProductname.TabIndex = 31;
+            this.lblProductname.Text = "Product Name";
             // 
-            // listView4
+            // lvwProductSharingInfo
             // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvwProductSharingInfo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "Product";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "Shared with";
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "PricePP";
-            this.listView4.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(302, 95);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(282, 225);
-            this.listView4.TabIndex = 30;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            listViewGroup4.Header = "ListViewGroup";
+            listViewGroup4.Name = "Product";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "Shared with";
+            listViewGroup6.Header = "ListViewGroup";
+            listViewGroup6.Name = "PricePP";
+            this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup4,
+            listViewGroup5,
+            listViewGroup6});
+            this.lvwProductSharingInfo.HideSelection = false;
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(315, 75);
+            this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(282, 295);
+            this.lvwProductSharingInfo.TabIndex = 30;
+            this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
+            this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
+            this.lvwProductSharingInfo.SelectedIndexChanged += new System.EventHandler(this.listView4_SelectedIndexChanged);
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Product";
-            this.columnHeader3.Width = 74;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader9
             // 
@@ -359,25 +360,25 @@
             // columnHeader10
             // 
             this.columnHeader10.Text = "Shared with";
-            this.columnHeader10.Width = 96;
+            this.columnHeader10.Width = 115;
             // 
-            // listView3
+            // lvwBlancesOverView
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvwBlancesOverView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader8,
             this.columnHeader6,
             this.columnHeader7});
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(617, 95);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(287, 225);
-            this.listView3.TabIndex = 29;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.lvwBlancesOverView.HideSelection = false;
+            this.lvwBlancesOverView.Location = new System.Drawing.Point(617, 75);
+            this.lvwBlancesOverView.Name = "lvwBlancesOverView";
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(287, 295);
+            this.lvwBlancesOverView.TabIndex = 29;
+            this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
+            this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "StNr";
+            this.columnHeader8.Text = "Id";
             // 
             // columnHeader6
             // 
@@ -387,57 +388,51 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Balance";
-            this.columnHeader7.Width = 84;
+            this.columnHeader7.Width = 95;
             // 
-            // checkedListBox1
+            // clbTenantsToshare
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "sa",
-            "s",
-            "fd",
-            "f",
-            "gf",
-            "g",
-            "h",
-            "h"});
-            this.checkedListBox1.Location = new System.Drawing.Point(40, 95);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(229, 225);
-            this.checkedListBox1.TabIndex = 28;
+            this.clbTenantsToshare.CheckOnClick = true;
+            this.clbTenantsToshare.FormattingEnabled = true;
+            this.clbTenantsToshare.Location = new System.Drawing.Point(43, 145);
+            this.clbTenantsToshare.Name = "clbTenantsToshare";
+            this.clbTenantsToshare.Size = new System.Drawing.Size(229, 225);
+            this.clbTenantsToshare.TabIndex = 28;
+            this.clbTenantsToshare.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-            // textBox4
+            // tbxProductname
             // 
-            this.textBox4.Location = new System.Drawing.Point(169, 37);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 23;
+            this.tbxProductname.Location = new System.Drawing.Point(105, 39);
+            this.tbxProductname.Name = "tbxProductname";
+            this.tbxProductname.Size = new System.Drawing.Size(187, 22);
+            this.tbxProductname.TabIndex = 23;
+            this.tbxProductname.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label5
+            // lblTenantsToShareWith
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "label5";
+            this.lblTenantsToShareWith.AutoSize = true;
+            this.lblTenantsToShareWith.Location = new System.Drawing.Point(37, 115);
+            this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
+            this.lblTenantsToShareWith.Size = new System.Drawing.Size(60, 16);
+            this.lblTenantsToShareWith.TabIndex = 18;
+            this.lblTenantsToShareWith.Text = "Tenants ";
             // 
-            // button3
+            // btnAddToShoppingList
             // 
-            this.button3.Location = new System.Drawing.Point(40, 347);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(229, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "adding to shopping list ";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnAddToShoppingList.Location = new System.Drawing.Point(40, 394);
+            this.btnAddToShoppingList.Name = "btnAddToShoppingList";
+            this.btnAddToShoppingList.Size = new System.Drawing.Size(229, 38);
+            this.btnAddToShoppingList.TabIndex = 17;
+            this.btnAddToShoppingList.Text = "add to shopping list ";
+            this.btnAddToShoppingList.UseVisualStyleBackColor = true;
+            this.btnAddToShoppingList.Click += new System.EventHandler(this.btnAddToShoppingList_Click);
             // 
-            // textBox3
+            // tbxFullPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(40, 37);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 16;
+            this.tbxFullPrice.Location = new System.Drawing.Point(105, 75);
+            this.tbxFullPrice.Name = "tbxFullPrice";
+            this.tbxFullPrice.Size = new System.Drawing.Size(187, 22);
+            this.tbxFullPrice.TabIndex = 16;
             // 
             // tabPage3
             // 
@@ -458,7 +453,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(75, 360);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(151, 21);
+            this.checkBox1.Size = new System.Drawing.Size(143, 20);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Send Anonymously";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -486,7 +481,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(77, 33);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 17);
+            this.label6.Size = new System.Drawing.Size(116, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Make a Complaint";
             // 
@@ -570,7 +565,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(41, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 1;
             this.label7.Text = "label7";
             // 
@@ -584,16 +579,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(537, 23);
+            this.label1.Location = new System.Drawing.Point(604, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tenant ID";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(656, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(738, 26);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 22);
@@ -603,9 +597,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 23);
+            this.label3.Location = new System.Drawing.Point(15, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.Size = new System.Drawing.Size(93, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Tenant Name:";
             // 
@@ -622,9 +616,9 @@
             // lblCurrentUserName
             // 
             this.lblCurrentUserName.AutoSize = true;
-            this.lblCurrentUserName.Location = new System.Drawing.Point(107, 23);
+            this.lblCurrentUserName.Location = new System.Drawing.Point(120, 29);
             this.lblCurrentUserName.Name = "lblCurrentUserName";
-            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 17);
+            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 16);
             this.lblCurrentUserName.TabIndex = 9;
             // 
             // FrmTenant
@@ -675,14 +669,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.CheckedListBox clbTenantsToshare;
+        private System.Windows.Forms.TextBox tbxProductname;
+        private System.Windows.Forms.Label lblTenantsToShareWith;
+        private System.Windows.Forms.Button btnAddToShoppingList;
+        private System.Windows.Forms.TextBox tbxFullPrice;
+        private System.Windows.Forms.ListView lvwProductSharingInfo;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView lvwBlancesOverView;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -711,8 +705,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblFullPrice;
+        private System.Windows.Forms.Label lblProductname;
         private System.Windows.Forms.Label lblCurrentUserName;
     }
 }

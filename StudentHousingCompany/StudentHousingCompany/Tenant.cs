@@ -27,7 +27,7 @@ namespace StudentHousingCompany
             set;
         }
 
-        public int Balance
+        public double Balance
         {
             get;
             set;

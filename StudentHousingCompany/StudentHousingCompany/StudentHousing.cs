@@ -34,11 +34,19 @@ namespace StudentHousingCompany
             set;
         }
 
+        // list of all the products 
+        public List<Product> Products
+        {
+            get;
+            set;
+        }
 
         private StudentHousing()
         {
+
             Users = new List<User>();
             Tenants = new List<Tenant>();
+            Products = new List<Product>();
         }
 
         public User ValidateCredentials(string email, string password, List<User> users)
@@ -118,7 +126,7 @@ namespace StudentHousingCompany
             AddUser("Bill burr", dob, "bill@live.com", "1234");
 
             dob = new DateTime(1999, 03, 15);
-            AddUser("Rob bill", dob, "rob@live.com", "1234", "0031683443453", "3456LA", "Aakstraat 140");
+            AddUser("Rob bill", dob, " ", "1234", "0031683443453", "3456LA", "Aakstraat 140");
 
             dob = new DateTime(1994, 03, 15);
             AddUser("Kevin Hart", dob, "kev@live.com", "1234", "0031638746587", "3456LA", "Aakstraat 141");
@@ -132,5 +140,10 @@ namespace StudentHousingCompany
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
         }
+
+        // list of all the products that will be shared
+        
+
+
     }
 }
