@@ -279,6 +279,7 @@
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgdUsers.Size = new System.Drawing.Size(553, 283);
             this.dgdUsers.TabIndex = 25;
+            this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
             // 
             // hxtId
             // 

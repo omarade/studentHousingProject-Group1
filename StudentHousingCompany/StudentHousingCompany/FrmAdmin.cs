@@ -179,13 +179,46 @@ namespace StudentHousingCompany
 
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(dgdUsers.SelectedRows.Count);
             
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+                studentHousing.RemoveUser(id);
+                ShowUsers();
+            }
+
         }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+                
+                ShowUsers();
+            }
 
+        }
+
+        private void dgdUsers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+
+                if (id != 0)
+                {
+
+                }
+
+               
+            }
         }
     }
 }
