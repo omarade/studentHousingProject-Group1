@@ -10,6 +10,11 @@ namespace StudentHousingCompany
 {
     class User
     {
+        
+        private string name;
+        private DateTime dateOfBirth;
+        private string email;
+        private string password;
         private static int idSeeder = 0;
 
         public int Id
@@ -19,35 +24,35 @@ namespace StudentHousingCompany
 
         public string Name
         {
-            get;
-            set;
+            get { return name; }
+            set { name = value; }
         }
 
         public DateTime DateOfBirth
         {
-            get;
-            set;
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
         }
 
         public string Email
         {
-            get;
-            set;
+            get { return email; }
+            set { email = value; }
         }
 
         public string Password
         {
-            get;
-            set;
+            get { return password; }
+            set { password = value; }
         }
 
         public User(string name, DateTime dateOfBirth, string email, string password)
         {
             Id = idSeeder;
-            Name = name;
-            DateOfBirth = dateOfBirth;
-            Email = email;
-            Password = password;
+            this.name = name;
+            this.dateOfBirth = dateOfBirth;
+            this.email = email;
+            this.password = password;
             idSeeder++;
         }
 

@@ -8,38 +8,42 @@ namespace StudentHousingCompany
 {
     class Tenant : User
     {
+        private string phoneNr;
+        private string postcode;
+        private string address;
+        private int balance;
 
         public string PhoneNr
         {
-            get;
-            set;
+            get { return phoneNr; }
+            set { phoneNr = value; }
         }
 
         public string Postcode
         {
-            get;
-            set;
+            get { return postcode; }
+            set { postcode = value; }
         }
 
         public string Address
         {
-            get;
-            set;
+            get { return address; }
+            set { address = value; }
         }
 
         public int Balance
         {
-            get;
-            set;
+            get { return balance; }
+            set { balance = value; }
         }
 
         public Tenant(string name, DateTime dateOfBirth, string email, string password, string phoneNr, string postcode, string address)
             : base(name, dateOfBirth, email, password)
         {
-            PhoneNr = phoneNr;
-            Postcode = postcode;
-            Address = address;
-            Balance = 0;
+            this.phoneNr = phoneNr;
+            this.postcode = postcode;
+            this.address = address;
+            this.balance = 0;
         }
     }
 }

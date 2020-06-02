@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentHousingCompany
 {
@@ -21,11 +22,11 @@ namespace StudentHousingCompany
         /// <param name="taskName">The name of the task</param>
         /// <param name="firstStudent">The First student doing the Task</param>
         /// <param name="day">name of weekday due date</param>
-        public Schedule(string taskName)
+        public Schedule(string taskName, DayOfWeek day)
         {
             SetTaskName(taskName);
             SetStatus(false);
-            SetDueDate(DayOfWeek.Friday);
+            SetDueDate(day);
         }
 
 
@@ -69,18 +70,30 @@ namespace StudentHousingCompany
         /// finds and Sets next Student for the next week
         /// </summary>
         /// <param name="students">List of students</param>
-        public void SetNextStudent(List<string> students)
+        public void SetNextStudent(List<Tenant> students)
         {                    
-            int index;
+            int index = 0;
+            bool FoundTenant = false;
+            do
+            {
+                if (this.Student == students[index].Name)
+                {
+                    FoundTenant = true;
+                }
 
-            index = students.FindIndex(a => a.Contains(Student));
+                if (this.Student != students[index].Name)
+                {
+                    index += 1;
+                }
+            } while (FoundTenant == false);
+
             index += 1;
             if (students.Count <= index)
             {
                 index = 0;
             }
 
-            this.Student = students[index];
+            this.Student = students[index].Name;
         }
 
 
@@ -94,23 +107,26 @@ namespace StudentHousingCompany
         }
 
 
-
-
         //Getters
 
         /// <summary>
         /// Gets all the infomation from the Schedule
         /// </summary>
         /// <returns></returns>
-        public string GetInfo()
+        public ListViewItem GetInfo()
         {
-            string row = this.Student+","+this.Taskname+","+this.Status;
-            return row;
+            
 
+            string[] arr = new string[4];
+            ListViewItem itm;
+            //add items to ListView
+            arr[0] = GetStudent();
+            arr[1] = GetTask();
+            arr[2] = GetStatus().ToString();
+            arr[3] = GetDueDate().ToString();
+            itm = new ListViewItem(arr);
 
-
-            //var listViewItem = new ListViewItem(row);
-            //listView6.Items.Add(listViewItem);
+            return itm;
         }
 
        

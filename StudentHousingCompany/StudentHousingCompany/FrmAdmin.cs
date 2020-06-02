@@ -13,13 +13,13 @@ namespace StudentHousingCompany
     public partial class FrmAdmin : Form
     {
         private StudentHousing studentHousing;
+        DayOfWeek day = DayOfWeek.Monday;
         public FrmAdmin()
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
             ShowUsers();
             rbtnTenant.Checked = true;
-            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -97,8 +97,6 @@ namespace StudentHousingCompany
             TimeSpan ageSpan = DateTime.Now.Subtract(dob);
             int age = ageSpan.Days / 365;
 
-            var users = studentHousing.Users;
-
             if (name == "")
             {
                 MessageBox.Show("Name cannot be empty");
@@ -115,15 +113,6 @@ namespace StudentHousingCompany
             {
                 MessageBox.Show("Please enter an email");
                 return false;
-            }
-
-            foreach (var user in users)
-            {
-                if (email == user.Email)
-                {
-                    MessageBox.Show("There is already an acount created with this email");
-                    return false;
-                }
             }
 
             if (password.Length < 4)
@@ -177,48 +166,77 @@ namespace StudentHousingCompany
             frmTenant.Show();
         }
 
-        private void btnRemoveUser_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             
-            if (dgdUsers.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
-                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
-                studentHousing.RemoveUser(id);
-                ShowUsers();
-            }
-
+            studentHousing.ChangeDueWeekday(day);
         }
 
-        private void btnUpdateUser_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            if (dgdUsers.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
-                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
-                
-                ShowUsers();
-            }
-
+            studentHousing.AddTask(textBox9.Text,day);
+            ShowTasks();
         }
 
-        private void dgdUsers_SelectionChanged(object sender, EventArgs e)
+        public void ShowTasks()
         {
-            if (dgdUsers.SelectedCells.Count > 0)
+            listView6.Items.Clear();
+            var schedule = studentHousing.Schedules;
+
+            foreach (var task in schedule)
             {
-                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
-                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
-
-                if (id != 0)
-                {
-
-                }
-
-               
+                listView6.Items.Add(task.GetInfo());
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    day = DayOfWeek.Monday;
+                    break;
+
+                case 1:
+                    day = DayOfWeek.Tuesday;
+                    break;
+
+                case 2:
+                    day = DayOfWeek.Wednesday;
+                    break;
+
+                case 3:
+                    day = DayOfWeek.Thursday;
+                    break;
+
+                case 4:
+                    day = DayOfWeek.Friday;
+                    break;
+
+                case 5:
+                    day = DayOfWeek.Saturday;
+                    break;
+
+                case 6:
+                    day = DayOfWeek.Sunday;
+                    break;
+
+                default:
+                    day = DayOfWeek.Monday;
+                    break;
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            ShowTasks();
+        }
+
+        private void btnNextWeek_Click(object sender, EventArgs e)
+        {
+            studentHousing.SetNextTenant();
+            ShowTasks();
         }
     }
 }
