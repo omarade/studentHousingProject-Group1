@@ -25,7 +25,7 @@ namespace StudentHousingCompany
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
-            
+            studentHousing.ProductId = 0;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -56,30 +56,37 @@ namespace StudentHousingCompany
         }
         //string phrase = "The quick brown fox jumps over the lazy dog.";
         //string[] words = phrase.Split(' ');
+
+        
+
         private void btnAddToShoppingList_Click(object sender, EventArgs e)
         {
-            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text), 1);
+            
+            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text), studentHousing.ProductId);
+            studentHousing.ProductId += 1;
 
 
-            var Tenants = studentHousing.Tenants;
 
-            foreach(string info in clbTenantsToshare.CheckedItems)
+
+            foreach (string tenantName in clbTenantsToshare.CheckedItems)
             {
-
-              foreach(Tenant ten in Tenants)
+              foreach(Tenant ten in studentHousing.Tenants)
               {
-                    if (ten.Name == info)
-                    {
-
-                    }
+                 if (ten.Name == tenantName)
+                 {
+                    newProduct.TenantesIDShredWith.Add(ten.Id);
+                 }
               }
-
             }
 
-            int NumberOfParticpants = newProduct.TenantesShredWith.Count;
+
+
+
+            int NumberOfParticpants = newProduct.TenantesIDShredWith.Count;
             newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
 
             int currentuserID = studentHousing.CurrentUser.Id;
+
 
             foreach(Tenant t in newProduct.TenantesShredWith)
             {
@@ -93,6 +100,9 @@ namespace StudentHousingCompany
                 }
             }
 
+
+
+
             this.studentHousing.Products.Add(newProduct);
 
             string sharedwithh = "";
@@ -100,7 +110,7 @@ namespace StudentHousingCompany
             {
                 sharedwithh += Convert.ToString(t.Id)+", ";
             }
-
+            //MessageBox.Show(sharedwithh);
 
 
             foreach(Product p in studentHousing.Products)

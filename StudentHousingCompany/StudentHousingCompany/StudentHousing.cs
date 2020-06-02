@@ -142,7 +142,11 @@ namespace StudentHousingCompany
         }
 
         // list of all the products that will be shared
-        
+        public int ProductId
+        {
+            get;
+            set;
+        }
 
 
     }

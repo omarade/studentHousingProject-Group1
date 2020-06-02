@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(291, 407);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 16);
+            this.label12.Size = new System.Drawing.Size(24, 17);
             this.label12.TabIndex = 8;
             this.label12.Text = "23";
             // 
@@ -139,7 +139,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(71, 407);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 16);
+            this.label11.Size = new System.Drawing.Size(190, 17);
             this.label11.TabIndex = 7;
             this.label11.Text = "Common Room Temperature";
             // 
@@ -148,7 +148,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(74, 26);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 16);
+            this.label8.Size = new System.Drawing.Size(89, 17);
             this.label8.TabIndex = 6;
             this.label8.Text = "House Rules";
             // 
@@ -157,7 +157,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(565, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 16);
+            this.label2.Size = new System.Drawing.Size(149, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Admin Announcments:";
             // 
@@ -224,7 +224,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(72, 73);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 16);
+            this.label10.Size = new System.Drawing.Size(99, 17);
             this.label10.TabIndex = 6;
             this.label10.Text = "Personal Task";
             // 
@@ -233,7 +233,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(522, 73);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 16);
+            this.label9.Size = new System.Drawing.Size(143, 17);
             this.label9.TabIndex = 5;
             this.label9.Text = "This Week Tasks List";
             // 
@@ -281,7 +281,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label4.Location = new System.Drawing.Point(54, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 25);
+            this.label4.Size = new System.Drawing.Size(202, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "Task: BathRoom";
             // 
@@ -309,7 +309,7 @@
             this.lblFullPrice.AutoSize = true;
             this.lblFullPrice.Location = new System.Drawing.Point(6, 75);
             this.lblFullPrice.Name = "lblFullPrice";
-            this.lblFullPrice.Size = new System.Drawing.Size(63, 16);
+            this.lblFullPrice.Size = new System.Drawing.Size(66, 17);
             this.lblFullPrice.TabIndex = 32;
             this.lblFullPrice.Text = "Full Price";
             // 
@@ -318,7 +318,7 @@
             this.lblProductname.AutoSize = true;
             this.lblProductname.Location = new System.Drawing.Point(3, 39);
             this.lblProductname.Name = "lblProductname";
-            this.lblProductname.Size = new System.Drawing.Size(94, 16);
+            this.lblProductname.Size = new System.Drawing.Size(98, 17);
             this.lblProductname.TabIndex = 31;
             this.lblProductname.Text = "Product Name";
             // 
@@ -328,20 +328,20 @@
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-            listViewGroup4.Header = "ListViewGroup";
-            listViewGroup4.Name = "Product";
-            listViewGroup5.Header = "ListViewGroup";
-            listViewGroup5.Name = "Shared with";
-            listViewGroup6.Header = "ListViewGroup";
-            listViewGroup6.Name = "PricePP";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "Product";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "Shared with";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "PricePP";
             this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3});
             this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(315, 75);
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(298, 75);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(282, 295);
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(296, 306);
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -371,7 +371,7 @@
             this.lvwBlancesOverView.HideSelection = false;
             this.lvwBlancesOverView.Location = new System.Drawing.Point(617, 75);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(287, 295);
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(313, 306);
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -413,7 +413,7 @@
             this.lblTenantsToShareWith.AutoSize = true;
             this.lblTenantsToShareWith.Location = new System.Drawing.Point(37, 115);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
-            this.lblTenantsToShareWith.Size = new System.Drawing.Size(60, 16);
+            this.lblTenantsToShareWith.Size = new System.Drawing.Size(64, 17);
             this.lblTenantsToShareWith.TabIndex = 18;
             this.lblTenantsToShareWith.Text = "Tenants ";
             // 
@@ -453,7 +453,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(75, 360);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(143, 20);
+            this.checkBox1.Size = new System.Drawing.Size(151, 21);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Send Anonymously";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -481,7 +481,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(77, 33);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 16);
+            this.label6.Size = new System.Drawing.Size(120, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Make a Complaint";
             // 
@@ -565,7 +565,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(41, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.Size = new System.Drawing.Size(46, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "label7";
             // 
@@ -581,7 +581,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(604, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tenant ID";
             // 
@@ -599,7 +599,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 16);
+            this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Tenant Name:";
             // 
@@ -618,7 +618,7 @@
             this.lblCurrentUserName.AutoSize = true;
             this.lblCurrentUserName.Location = new System.Drawing.Point(120, 29);
             this.lblCurrentUserName.Name = "lblCurrentUserName";
-            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 16);
+            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 17);
             this.lblCurrentUserName.TabIndex = 9;
             // 
             // FrmTenant

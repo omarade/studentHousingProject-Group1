@@ -38,7 +38,7 @@ namespace StudentHousingCompany
             set;
         }
 
-        public List<int> TenantesIDShredWith
+    public List<int> TenantesIDShredWith
         {
             get;
             set;
