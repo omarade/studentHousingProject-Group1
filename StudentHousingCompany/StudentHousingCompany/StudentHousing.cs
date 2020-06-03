@@ -49,6 +49,19 @@ namespace StudentHousingCompany
             Products = new List<Product>();
         }
 
+        public User GetUserById(int id)
+        {
+            foreach (var user in Users)
+            {
+                if (id == user.Id)
+                {
+                    return user;
+                }
+            }
+
+            return null;
+        }
+
         public User ValidateCredentials(string email, string password, List<User> users)
         {
             foreach (var user in users)
@@ -78,19 +91,31 @@ namespace StudentHousingCompany
             Tenants.Add(newTenant);
         }
 
-        public void UpdateUser(int id)
+        public void UpdateUser(int id, string name, DateTime dob, string email, string phoneNr, string postcode, string address)
         {
             foreach (var user in Users)
             {
 
                 if (id == user.Id)
                 {
-                    if (user.Id == 0 || user.Id == CurrentUser.Id)
+                    if (user.Id == 0)
                     {
-                        MessageBox.Show("Selected user cannot be deleted");
+                        MessageBox.Show("You cannot update this user");
                         return;
                     }
-                    Users.Remove(user);
+
+                    user.Name = name;
+                    user.DateOfBirth = dob;
+                    user.Email = email;
+
+                    if (user is Tenant)
+                    {
+                        Tenant tenant = (Tenant) user;
+                        tenant.PhoneNr = phoneNr;
+                        tenant.Postcode = postcode;
+                        tenant.Address = address;
+                    }
+
                     return;
                 }
             }
@@ -114,6 +139,8 @@ namespace StudentHousingCompany
             }
         }
 
+        
+
         public void AddDummyData()
         {
             DateTime dob = new DateTime(1987, 03, 06);
@@ -126,7 +153,7 @@ namespace StudentHousingCompany
             AddUser("Bill burr", dob, "bill@live.com", "1234");
 
             dob = new DateTime(1999, 03, 15);
-            AddUser("Rob bill", dob, " ", "1234", "0031683443453", "3456LA", "Aakstraat 140");
+            AddUser("Rob bill", dob, "rob@live.com", "1234", "0031683443453", "3456LA", "Aakstraat 140");
 
             dob = new DateTime(1994, 03, 15);
             AddUser("Kevin Hart", dob, "kev@live.com", "1234", "0031638746587", "3456LA", "Aakstraat 141");

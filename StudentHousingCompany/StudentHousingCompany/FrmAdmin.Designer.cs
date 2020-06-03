@@ -39,16 +39,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
-            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtbDoB = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.cboUserType = new System.Windows.Forms.ComboBox();
@@ -96,9 +89,16 @@
             this.label16 = new System.Windows.Forms.Label();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -107,7 +107,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tpMngUsrs);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 46);
@@ -213,40 +213,41 @@
             this.textBox1.Size = new System.Drawing.Size(224, 22);
             this.textBox1.TabIndex = 0;
             // 
-            // tabPage4
+            // tpMngUsrs
             // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.btnRemoveUser);
-            this.tabPage4.Controls.Add(this.dgdUsers);
-            this.tabPage4.Controls.Add(this.dtbDoB);
-            this.tabPage4.Controls.Add(this.label20);
-            this.tabPage4.Controls.Add(this.cboUserType);
-            this.tabPage4.Controls.Add(this.label19);
-            this.tabPage4.Controls.Add(this.rbtnTenant);
-            this.tabPage4.Controls.Add(this.rbtnAdmin);
-            this.tabPage4.Controls.Add(this.label18);
-            this.tabPage4.Controls.Add(this.txtAddress);
-            this.tabPage4.Controls.Add(this.btnUpdateUser);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.txtPostcode);
-            this.tabPage4.Controls.Add(this.btnAddUser);
-            this.tabPage4.Controls.Add(this.label9);
-            this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Controls.Add(this.txtPassword);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.label5);
-            this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Controls.Add(this.txtPhoneNr);
-            this.tabPage4.Controls.Add(this.txtEmail);
-            this.tabPage4.Controls.Add(this.txtName);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(990, 500);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Manage Users";
+            this.tpMngUsrs.BackColor = System.Drawing.SystemColors.Control;
+            this.tpMngUsrs.Controls.Add(this.btnRemoveUser);
+            this.tpMngUsrs.Controls.Add(this.dgdUsers);
+            this.tpMngUsrs.Controls.Add(this.dtbDoB);
+            this.tpMngUsrs.Controls.Add(this.label20);
+            this.tpMngUsrs.Controls.Add(this.cboUserType);
+            this.tpMngUsrs.Controls.Add(this.label19);
+            this.tpMngUsrs.Controls.Add(this.rbtnTenant);
+            this.tpMngUsrs.Controls.Add(this.rbtnAdmin);
+            this.tpMngUsrs.Controls.Add(this.label18);
+            this.tpMngUsrs.Controls.Add(this.txtAddress);
+            this.tpMngUsrs.Controls.Add(this.btnUpdateUser);
+            this.tpMngUsrs.Controls.Add(this.label11);
+            this.tpMngUsrs.Controls.Add(this.label10);
+            this.tpMngUsrs.Controls.Add(this.txtPostcode);
+            this.tpMngUsrs.Controls.Add(this.btnAddUser);
+            this.tpMngUsrs.Controls.Add(this.label9);
+            this.tpMngUsrs.Controls.Add(this.label8);
+            this.tpMngUsrs.Controls.Add(this.txtPassword);
+            this.tpMngUsrs.Controls.Add(this.label7);
+            this.tpMngUsrs.Controls.Add(this.label6);
+            this.tpMngUsrs.Controls.Add(this.label5);
+            this.tpMngUsrs.Controls.Add(this.label4);
+            this.tpMngUsrs.Controls.Add(this.txtPhoneNr);
+            this.tpMngUsrs.Controls.Add(this.txtEmail);
+            this.tpMngUsrs.Controls.Add(this.txtName);
+            this.tpMngUsrs.Location = new System.Drawing.Point(4, 25);
+            this.tpMngUsrs.Name = "tpMngUsrs";
+            this.tpMngUsrs.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMngUsrs.Size = new System.Drawing.Size(990, 500);
+            this.tpMngUsrs.TabIndex = 3;
+            this.tpMngUsrs.Text = "Manage Users";
+            this.tpMngUsrs.Click += new System.EventHandler(this.tpMngUsrs_Click);
             // 
             // btnRemoveUser
             // 
@@ -264,12 +265,12 @@
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hxtId,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column6,
-            this.Column7});
+            this.hxtName,
+            this.hxtDob,
+            this.hxtEmail,
+            this.hxtPhoneNr,
+            this.hxtPostcode,
+            this.hxtAddress});
             this.dgdUsers.Location = new System.Drawing.Point(407, 112);
             this.dgdUsers.Name = "dgdUsers";
             this.dgdUsers.RowHeadersVisible = false;
@@ -280,55 +281,6 @@
             this.dgdUsers.Size = new System.Drawing.Size(553, 283);
             this.dgdUsers.TabIndex = 25;
             this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
-            // 
-            // hxtId
-            // 
-            this.hxtId.HeaderText = "ID";
-            this.hxtId.MinimumWidth = 30;
-            this.hxtId.Name = "hxtId";
-            this.hxtId.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DoB";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Email";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Phone Nr";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Postcode";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Address";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
             // 
             // dtbDoB
             // 
@@ -751,6 +703,55 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // hxtId
+            // 
+            this.hxtId.HeaderText = "ID";
+            this.hxtId.MinimumWidth = 30;
+            this.hxtId.Name = "hxtId";
+            this.hxtId.Width = 50;
+            // 
+            // hxtName
+            // 
+            this.hxtName.HeaderText = "Name";
+            this.hxtName.MinimumWidth = 6;
+            this.hxtName.Name = "hxtName";
+            this.hxtName.Width = 125;
+            // 
+            // hxtDob
+            // 
+            this.hxtDob.HeaderText = "DoB";
+            this.hxtDob.MinimumWidth = 6;
+            this.hxtDob.Name = "hxtDob";
+            this.hxtDob.Width = 125;
+            // 
+            // hxtEmail
+            // 
+            this.hxtEmail.HeaderText = "Email";
+            this.hxtEmail.MinimumWidth = 6;
+            this.hxtEmail.Name = "hxtEmail";
+            this.hxtEmail.Width = 125;
+            // 
+            // hxtPhoneNr
+            // 
+            this.hxtPhoneNr.HeaderText = "Phone Nr";
+            this.hxtPhoneNr.MinimumWidth = 6;
+            this.hxtPhoneNr.Name = "hxtPhoneNr";
+            this.hxtPhoneNr.Width = 125;
+            // 
+            // hxtPostcode
+            // 
+            this.hxtPostcode.HeaderText = "Postcode";
+            this.hxtPostcode.MinimumWidth = 6;
+            this.hxtPostcode.Name = "hxtPostcode";
+            this.hxtPostcode.Width = 125;
+            // 
+            // hxtAddress
+            // 
+            this.hxtAddress.HeaderText = "Address";
+            this.hxtAddress.MinimumWidth = 6;
+            this.hxtAddress.Name = "hxtAddress";
+            this.hxtAddress.Width = 125;
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -765,8 +766,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tpMngUsrs.ResumeLayout(false);
+            this.tpMngUsrs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -783,7 +784,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tpMngUsrs;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
@@ -841,11 +842,11 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btnRemoveUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtDob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtPhoneNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtPostcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
     }
 }
