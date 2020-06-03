@@ -88,14 +88,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnComplaintResolve = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lvwComplaintes = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label16 = new System.Windows.Forms.Label();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnComplainteRply = new System.Windows.Forms.Button();
+            this.tbxReplyToComplaint = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -673,9 +675,11 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.tbxReplyToComplaint);
+            this.tabPage3.Controls.Add(this.btnComplainteRply);
+            this.tabPage3.Controls.Add(this.btnComplaintResolve);
             this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.listView2);
+            this.tabPage3.Controls.Add(this.lvwComplaintes);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -683,36 +687,38 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
             // 
-            // button8
+            // btnComplaintResolve
             // 
-            this.button8.Location = new System.Drawing.Point(50, 317);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(112, 28);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Resolve";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnComplaintResolve.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnComplaintResolve.Location = new System.Drawing.Point(50, 397);
+            this.btnComplaintResolve.Name = "btnComplaintResolve";
+            this.btnComplaintResolve.Size = new System.Drawing.Size(112, 81);
+            this.btnComplaintResolve.TabIndex = 2;
+            this.btnComplaintResolve.Text = "Resolve";
+            this.btnComplaintResolve.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(50, 19);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(45, 27);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 17);
+            this.label15.Size = new System.Drawing.Size(148, 29);
             this.label15.TabIndex = 1;
-            this.label15.Text = "label15";
+            this.label15.Text = "Complaintes";
             // 
-            // listView2
+            // lvwComplaintes
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvwComplaintes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader8,
             this.columnHeader9});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(50, 55);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(648, 255);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.lvwComplaintes.HideSelection = false;
+            this.lvwComplaintes.Location = new System.Drawing.Point(50, 82);
+            this.lvwComplaintes.Name = "lvwComplaintes";
+            this.lvwComplaintes.Size = new System.Drawing.Size(582, 256);
+            this.lvwComplaintes.TabIndex = 0;
+            this.lvwComplaintes.UseCompatibleStateImageBehavior = false;
+            this.lvwComplaintes.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader8
             // 
@@ -750,6 +756,23 @@
             this.button4.Text = "Go to Tenant";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnComplainteRply
+            // 
+            this.btnComplainteRply.Location = new System.Drawing.Point(520, 397);
+            this.btnComplainteRply.Name = "btnComplainteRply";
+            this.btnComplainteRply.Size = new System.Drawing.Size(112, 81);
+            this.btnComplainteRply.TabIndex = 3;
+            this.btnComplainteRply.Text = "Reply";
+            this.btnComplainteRply.UseVisualStyleBackColor = true;
+            // 
+            // tbxReplyToComplaint
+            // 
+            this.tbxReplyToComplaint.Location = new System.Drawing.Point(661, 82);
+            this.tbxReplyToComplaint.Multiline = true;
+            this.tbxReplyToComplaint.Name = "tbxReplyToComplaint";
+            this.tbxReplyToComplaint.Size = new System.Drawing.Size(306, 256);
+            this.tbxReplyToComplaint.TabIndex = 4;
             // 
             // FrmAdmin
             // 
@@ -820,10 +843,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lvwComplaintes;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnComplaintResolve;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblCurrentUserName;
         private System.Windows.Forms.Label label18;
@@ -847,5 +870,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button btnComplainteRply;
+        private System.Windows.Forms.TextBox tbxReplyToComplaint;
     }
 }

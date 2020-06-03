@@ -11,8 +11,6 @@ namespace StudentHousingCompany
     {
         private static StudentHousing instance = new StudentHousing();
 
-        
-
         public static StudentHousing Instance
         {
             get { return instance; }
@@ -147,7 +145,6 @@ namespace StudentHousingCompany
             get;
             set;
         }
-
-
+        
     }
 }

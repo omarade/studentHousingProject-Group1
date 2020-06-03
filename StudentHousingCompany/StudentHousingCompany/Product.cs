@@ -8,6 +8,17 @@ namespace StudentHousingCompany
 {
     class Product
     {
+
+
+        public Product(string name, double fullPrice, int ID)
+        {
+            this.FullPrice = fullPrice;
+            this.Name = name;
+            this.ProductId = ID;
+            TenantesIDShredWith = new List<int>();
+            TenantesShredWith   = new List<Tenant>();
+        }
+
         public string Name
         {
             get;
@@ -38,18 +49,12 @@ namespace StudentHousingCompany
             set;
         }
 
-    public List<int> TenantesIDShredWith
+        public List<int> TenantesIDShredWith
         {
             get;
             set;
         }
-        public Product(string name, double fullPrice, int ID)
-        {
-            this.FullPrice = fullPrice;
-            this.Name = name;
-            this.ProductId = ID;
-        }
-
+        
 
     }
 }
