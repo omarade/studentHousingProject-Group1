@@ -94,6 +94,7 @@ namespace StudentHousingCompany
             }
 
             this.Student = students[index].Name;
+            SetStatus(false);
         }
 
 

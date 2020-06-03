@@ -151,9 +151,6 @@ namespace StudentHousingCompany
 
 
 
-
-
-
         public void AddTask(string taskName, DayOfWeek day)
         {//TODO Find the right student name to add to the task
             tasks.Add(taskName);
@@ -176,11 +173,44 @@ namespace StudentHousingCompany
             }
         }
 
+        public string GetTenantTask()
+        {
+            string taskname = "No Task";
+
+            foreach (var task in schedule)
+            {
+                if (task.GetStudent() == CurrentUser.Name)
+                {
+                    taskname = task.GetTask();
+                }
+            }
+            return taskname;
+        }
+
+        public void CompleteTask()
+        {
+            foreach (var task in schedule)
+            {
+                if (task.GetStudent() == CurrentUser.Name)
+                {
+                    task.SetStatus(true);
+                }
+            }
+        }
+
         public void SetNextTenant()
         {
             foreach (var task in schedule)
             {
                 task.SetNextStudent(Tenants);
+            }
+        }
+
+        public void SetNextDueDay()
+        {
+            foreach (var task in schedule)
+            {
+                task.NextDueDate();
             }
         }
 

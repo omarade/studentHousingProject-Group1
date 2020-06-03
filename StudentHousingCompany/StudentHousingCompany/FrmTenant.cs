@@ -20,12 +20,29 @@ namespace StudentHousingCompany
             studentHousing = StudentHousing.Instance;
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            
-            foreach(Tenant tenant in studentHousing.Tenants)
+            label4.Text = studentHousing.GetTenantTask();
+
+            ShowTasks();
+
+            foreach (Tenant tenant in studentHousing.Tenants)
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
             
+        }
+
+        public void ShowTasks()
+        {
+            listView6.Items.Clear();
+            var schedule = studentHousing.Schedules;
+
+            foreach (var task in schedule)
+            {
+                listView6.Items.Add(task.GetInfo());
+            }
+
+            if (studentHousing.GetTenantTask() == "No Task")
+            { button2.Enabled = false; }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -109,6 +126,17 @@ namespace StudentHousingCompany
 
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ShowTasks();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            studentHousing.CompleteTask();
+            ShowTasks();
         }
     }
 }

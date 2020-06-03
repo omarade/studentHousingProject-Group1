@@ -19,6 +19,7 @@ namespace StudentHousingCompany
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
             ShowUsers();
+            ShowTasks();
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
         }
@@ -236,6 +237,7 @@ namespace StudentHousingCompany
         private void btnNextWeek_Click(object sender, EventArgs e)
         {
             studentHousing.SetNextTenant();
+            studentHousing.SetNextDueDay();
             ShowTasks();
         }
 
