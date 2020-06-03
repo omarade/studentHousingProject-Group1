@@ -437,16 +437,6 @@
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "Product";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "Shared with";
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "PricePP";
-            this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
             this.lvwProductSharingInfo.HideSelection = false;
             this.lvwProductSharingInfo.Location = new System.Drawing.Point(224, 32);
             this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
