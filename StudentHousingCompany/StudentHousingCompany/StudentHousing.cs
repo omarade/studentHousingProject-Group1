@@ -11,22 +11,39 @@ namespace StudentHousingCompany
     {
         private static StudentHousing instance = new StudentHousing();
 
+        
+
         public static StudentHousing Instance
         {
             get { return instance; }
         }
 
-        public List<User> Users { get; }
+        public List<User> Users
+        {
+            get;
+        }
 
-        public List<Tenant> Tenants { get; }
+        public List<Tenant> Tenants
+        {
+            get;
+        }
 
-        public User CurrentUser { get; set; }
+        public User CurrentUser
+        {
+            get;
+            set;
+        }
 
         // list of all the products 
-        public List<Product> Products { get; set; }
+        public List<Product> Products
+        {
+            get;
+            set;
+        }
 
         private StudentHousing()
         {
+
             Users = new List<User>();
             Tenants = new List<Tenant>();
             Products = new List<Product>();
@@ -65,8 +82,7 @@ namespace StudentHousingCompany
             Users.Add(admin);
         }
 
-        public void AddUser(string name, DateTime dob, string email, string password, string phoneNr, string postcode,
-            string address)
+        public void AddUser(string name, DateTime dob, string email, string password, string phoneNr, string postcode, string address)
         {
             User tenant = new Tenant(name, dob, email, password, phoneNr, postcode, address);
             Users.Add(tenant);
@@ -75,8 +91,7 @@ namespace StudentHousingCompany
             Tenants.Add(newTenant);
         }
 
-        public void UpdateUser(int id, string name, DateTime dob, string email, string phoneNr, string postcode,
-            string address)
+        public void UpdateUser(int id, string name, DateTime dob, string email, string phoneNr, string postcode, string address)
         {
             foreach (var user in Users)
             {
@@ -110,7 +125,7 @@ namespace StudentHousingCompany
         {
             foreach (var user in Users)
             {
-
+                
                 if (id == user.Id)
                 {
                     if (user.Id == 0 || user.Id == CurrentUser.Id)
@@ -118,14 +133,13 @@ namespace StudentHousingCompany
                         MessageBox.Show("Selected user cannot be deleted");
                         return;
                     }
-
                     Users.Remove(user);
                     return;
                 }
             }
         }
 
-
+        
 
         public void AddDummyData()
         {
@@ -139,7 +153,7 @@ namespace StudentHousingCompany
             AddUser("Bill burr", dob, "bill@live.com", "1234");
 
             dob = new DateTime(1999, 03, 15);
-            AddUser("Rob bill", dob, " ", "1234", "0031683443453", "3456LA", "Aakstraat 140");
+            AddUser("Rob bill", dob, "rob@live.com", "1234", "0031683443453", "3456LA", "Aakstraat 140");
 
             dob = new DateTime(1994, 03, 15);
             AddUser("Kevin Hart", dob, "kev@live.com", "1234", "0031638746587", "3456LA", "Aakstraat 141");
@@ -153,5 +167,10 @@ namespace StudentHousingCompany
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
         }
+
+        // list of all the products that will be shared
+        
+
+
     }
 }
