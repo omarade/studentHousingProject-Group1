@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup13 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup14 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup15 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -49,9 +49,17 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTaskComplete = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgdBlancesOverView = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgdProductSharingInfo = new System.Windows.Forms.DataGridView();
+            this.Productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PricePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SharedWith = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFullPrice = new System.Windows.Forms.Label();
             this.lblProductname = new System.Windows.Forms.Label();
             this.lvwProductSharingInfo = new System.Windows.Forms.ListView();
@@ -68,11 +76,12 @@
             this.btnAddToShoppingList = new System.Windows.Forms.Button();
             this.tbxFullPrice = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.lblSubject = new System.Windows.Forms.Label();
+            this.cbxSendAnonymously = new System.Windows.Forms.CheckBox();
+            this.btnSendComplaint = new System.Windows.Forms.Button();
+            this.tbxWriteComplaint = new System.Windows.Forms.TextBox();
+            this.lblMakeComplaint = new System.Windows.Forms.Label();
+            this.tbxComplaintSubject = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -92,6 +101,8 @@
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdBlancesOverView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdProductSharingInfo)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
@@ -220,7 +231,7 @@
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.listView6);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btnTaskComplete);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -233,7 +244,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 83);
+            this.label10.Location = new System.Drawing.Point(44, 83);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
@@ -243,7 +254,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(322, 59);
+            this.label9.Location = new System.Drawing.Point(296, 59);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 13);
@@ -258,10 +269,10 @@
             this.columnHeader12,
             this.columnHeader4});
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(325, 83);
+            this.listView6.Location = new System.Drawing.Point(299, 83);
             this.listView6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(347, 244);
+            this.listView6.Size = new System.Drawing.Size(373, 244);
             this.listView6.TabIndex = 4;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -279,24 +290,24 @@
             // columnHeader12
             // 
             this.columnHeader12.Text = "Status";
-            this.columnHeader12.Width = 78;
+            this.columnHeader12.Width = 140;
             // 
-            // button2
+            // btnTaskComplete
             // 
-            this.button2.Location = new System.Drawing.Point(45, 162);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Completed?";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnTaskComplete.Location = new System.Drawing.Point(47, 178);
+            this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaskComplete.Name = "btnTaskComplete";
+            this.btnTaskComplete.Size = new System.Drawing.Size(82, 34);
+            this.btnTaskComplete.TabIndex = 1;
+            this.btnTaskComplete.Text = "Completed?";
+            this.btnTaskComplete.UseVisualStyleBackColor = true;
+            this.btnTaskComplete.Click += new System.EventHandler(this.btnTaskComplete_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label4.Location = new System.Drawing.Point(40, 117);
+            this.label4.Location = new System.Drawing.Point(40, 132);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 25);
@@ -306,6 +317,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.dgdBlancesOverView);
+            this.tabPage2.Controls.Add(this.dgdProductSharingInfo);
             this.tabPage2.Controls.Add(this.lblFullPrice);
             this.tabPage2.Controls.Add(this.lblProductname);
             this.tabPage2.Controls.Add(this.lvwProductSharingInfo);
@@ -322,6 +335,78 @@
             this.tabPage2.Size = new System.Drawing.Size(710, 367);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
+            // 
+            // dgdBlancesOverView
+            // 
+            this.dgdBlancesOverView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdBlancesOverView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenantName,
+            this.Balance});
+            this.dgdBlancesOverView.Location = new System.Drawing.Point(463, 24);
+            this.dgdBlancesOverView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgdBlancesOverView.Name = "dgdBlancesOverView";
+            this.dgdBlancesOverView.RowHeadersWidth = 51;
+            this.dgdBlancesOverView.RowTemplate.Height = 24;
+            this.dgdBlancesOverView.Size = new System.Drawing.Size(235, 349);
+            this.dgdBlancesOverView.TabIndex = 35;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Tenants ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
+            // 
+            // TenantName
+            // 
+            this.TenantName.HeaderText = "Name of Tenant";
+            this.TenantName.MinimumWidth = 6;
+            this.TenantName.Name = "TenantName";
+            this.TenantName.Width = 125;
+            // 
+            // Balance
+            // 
+            this.Balance.HeaderText = "Balance";
+            this.Balance.MinimumWidth = 6;
+            this.Balance.Name = "Balance";
+            this.Balance.Width = 125;
+            // 
+            // dgdProductSharingInfo
+            // 
+            this.dgdProductSharingInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdProductSharingInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Productname,
+            this.PricePP,
+            this.SharedWith});
+            this.dgdProductSharingInfo.Location = new System.Drawing.Point(224, 24);
+            this.dgdProductSharingInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgdProductSharingInfo.Name = "dgdProductSharingInfo";
+            this.dgdProductSharingInfo.RowHeadersWidth = 51;
+            this.dgdProductSharingInfo.RowTemplate.Height = 24;
+            this.dgdProductSharingInfo.Size = new System.Drawing.Size(222, 341);
+            this.dgdProductSharingInfo.TabIndex = 34;
+            // 
+            // Productname
+            // 
+            this.Productname.HeaderText = "Product";
+            this.Productname.MinimumWidth = 6;
+            this.Productname.Name = "Productname";
+            this.Productname.Width = 125;
+            // 
+            // PricePP
+            // 
+            this.PricePP.HeaderText = "pricePP";
+            this.PricePP.MinimumWidth = 6;
+            this.PricePP.Name = "PricePP";
+            this.PricePP.Width = 125;
+            // 
+            // SharedWith
+            // 
+            this.SharedWith.HeaderText = "SharedWith";
+            this.SharedWith.MinimumWidth = 6;
+            this.SharedWith.Name = "SharedWith";
+            this.SharedWith.Width = 125;
             // 
             // lblFullPrice
             // 
@@ -345,25 +430,26 @@
             // 
             // lvwProductSharingInfo
             // 
+            this.lvwProductSharingInfo.AllowColumnReorder = true;
             this.lvwProductSharingInfo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-            listViewGroup13.Header = "ListViewGroup";
-            listViewGroup13.Name = "Product";
-            listViewGroup14.Header = "ListViewGroup";
-            listViewGroup14.Name = "Shared with";
-            listViewGroup15.Header = "ListViewGroup";
-            listViewGroup15.Name = "PricePP";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "Product";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "Shared with";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "PricePP";
             this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup13,
-            listViewGroup14,
-            listViewGroup15});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3});
             this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(236, 61);
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(224, 32);
             this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(212, 240);
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(223, 279);
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -391,10 +477,10 @@
             this.columnHeader6,
             this.columnHeader7});
             this.lvwBlancesOverView.HideSelection = false;
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(463, 61);
+            this.lvwBlancesOverView.Location = new System.Drawing.Point(463, 32);
             this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(216, 240);
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(236, 279);
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -465,11 +551,12 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.checkBox1);
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.lblSubject);
+            this.tabPage3.Controls.Add(this.cbxSendAnonymously);
+            this.tabPage3.Controls.Add(this.btnSendComplaint);
+            this.tabPage3.Controls.Add(this.tbxWriteComplaint);
+            this.tabPage3.Controls.Add(this.lblMakeComplaint);
+            this.tabPage3.Controls.Add(this.tbxComplaintSubject);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
@@ -477,54 +564,67 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compaints";
             // 
-            // checkBox1
+            // lblSubject
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(56, 292);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Send Anonymously";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubject.Location = new System.Drawing.Point(12, 55);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(48, 15);
+            this.lblSubject.TabIndex = 5;
+            this.lblSubject.Text = "Subject";
             // 
-            // button4
+            // cbxSendAnonymously
             // 
-            this.button4.Location = new System.Drawing.Point(56, 323);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 19);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.cbxSendAnonymously.AutoSize = true;
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(355, 296);
+            this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxSendAnonymously.Name = "cbxSendAnonymously";
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(116, 17);
+            this.cbxSendAnonymously.TabIndex = 4;
+            this.cbxSendAnonymously.Text = "Send Anonymously";
+            this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbxSendAnonymously.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // btnSendComplaint
             // 
-            this.textBox6.Location = new System.Drawing.Point(56, 89);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(210, 192);
-            this.textBox6.TabIndex = 2;
+            this.btnSendComplaint.Location = new System.Drawing.Point(79, 296);
+            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSendComplaint.Name = "btnSendComplaint";
+            this.btnSendComplaint.Size = new System.Drawing.Size(209, 45);
+            this.btnSendComplaint.TabIndex = 3;
+            this.btnSendComplaint.Text = "Send Complaint";
+            this.btnSendComplaint.UseVisualStyleBackColor = true;
+            this.btnSendComplaint.Click += new System.EventHandler(this.btnSendComplaint_Click);
             // 
-            // label6
+            // tbxWriteComplaint
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 27);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Make a Complaint";
+            this.tbxWriteComplaint.Location = new System.Drawing.Point(79, 81);
+            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxWriteComplaint.Multiline = true;
+            this.tbxWriteComplaint.Name = "tbxWriteComplaint";
+            this.tbxWriteComplaint.Size = new System.Drawing.Size(277, 192);
+            this.tbxWriteComplaint.TabIndex = 2;
             // 
-            // textBox5
+            // lblMakeComplaint
             // 
-            this.textBox5.Location = new System.Drawing.Point(56, 57);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(210, 20);
-            this.textBox5.TabIndex = 0;
+            this.lblMakeComplaint.AutoSize = true;
+            this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMakeComplaint.Location = new System.Drawing.Point(75, 16);
+            this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMakeComplaint.Name = "lblMakeComplaint";
+            this.lblMakeComplaint.Size = new System.Drawing.Size(160, 24);
+            this.lblMakeComplaint.TabIndex = 1;
+            this.lblMakeComplaint.Text = "Make a Complaint";
+            // 
+            // tbxComplaintSubject
+            // 
+            this.tbxComplaintSubject.Location = new System.Drawing.Point(79, 53);
+            this.tbxComplaintSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxComplaintSubject.Name = "tbxComplaintSubject";
+            this.tbxComplaintSubject.Size = new System.Drawing.Size(277, 20);
+            this.tbxComplaintSubject.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -694,6 +794,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdBlancesOverView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdProductSharingInfo)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -721,7 +823,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTaskComplete;
         private System.Windows.Forms.CheckedListBox clbTenantsToshare;
         private System.Windows.Forms.TextBox tbxProductname;
         private System.Windows.Forms.Label lblTenantsToShareWith;
@@ -735,11 +837,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.CheckBox cbxSendAnonymously;
+        private System.Windows.Forms.Button btnSendComplaint;
+        private System.Windows.Forms.TextBox tbxWriteComplaint;
+        private System.Windows.Forms.Label lblMakeComplaint;
+        private System.Windows.Forms.TextBox tbxComplaintSubject;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListView listView5;
@@ -761,6 +863,15 @@
         private System.Windows.Forms.Label lblFullPrice;
         private System.Windows.Forms.Label lblProductname;
         private System.Windows.Forms.Label lblCurrentUserName;
+        private System.Windows.Forms.DataGridView dgdProductSharingInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Productname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PricePP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SharedWith;
+        private System.Windows.Forms.DataGridView dgdBlancesOverView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenantName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
+        private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
