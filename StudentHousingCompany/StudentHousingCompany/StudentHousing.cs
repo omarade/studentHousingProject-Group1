@@ -36,6 +36,7 @@ namespace StudentHousingCompany
             Products = new List<Product>();
             Schedules = new List<Schedule>();
             Tasks = new List<string>();
+
         }
 
         public User GetUserById(int id)

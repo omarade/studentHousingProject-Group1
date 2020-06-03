@@ -73,7 +73,10 @@
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
+<<<<<<< HEAD
     <Compile Include="Schedule.cs" />
+=======
+>>>>>>> master
     <Compile Include="StudentHousing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

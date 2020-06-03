@@ -27,7 +27,6 @@ namespace StudentHousingCompany
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
-            
 
             //studentHousing.ProductId = 0;
 
@@ -37,6 +36,7 @@ namespace StudentHousingCompany
             }
 
             ShowTasks();
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -69,6 +69,7 @@ namespace StudentHousingCompany
 
         private void btnAddToShoppingList_Click(object sender, EventArgs e)
         {
+
             if(tbxFullPrice.Text == null)
             {
                 if(tbxProductname.Text == null)
@@ -160,6 +161,7 @@ namespace StudentHousingCompany
 
             if (studentHousing.GetTenantTask() == "No Task")
             { btnTaskComplete.Enabled = false; }
+
         }
     }
 }

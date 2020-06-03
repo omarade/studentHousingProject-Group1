@@ -296,6 +296,7 @@ namespace StudentHousingCompany
                 dtbDoB.Value = user.DateOfBirth;
                 txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
 
+
                 if (user is Tenant)
                 {
                     rbtnTenant.Checked = true;
@@ -427,6 +428,7 @@ namespace StudentHousingCompany
             ShowTasks();
             FillRemoveTask();
             cbRemoveTasks.Text = "";
+
         }
     }
 }
