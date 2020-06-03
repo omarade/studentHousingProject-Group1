@@ -8,5 +8,40 @@ namespace StudentHousingCompany
 {
     class Complaint
     {
+<<<<<<< HEAD
+=======
+
+        public int complaintId
+        {
+            get;
+            set;
+        }
+
+        public string Subject 
+        {
+            get;
+            set;
+        }
+
+        public string complaintTopic
+        {
+            get;
+            set;
+        }
+
+        public int senderID
+        {
+            get;
+            set;
+        }
+        
+        public int recieverID
+        {
+            get;
+            set;
+        }
+
+
+>>>>>>> origin
     }
 }
