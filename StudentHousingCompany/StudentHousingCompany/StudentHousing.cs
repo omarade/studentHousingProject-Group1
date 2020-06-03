@@ -16,6 +16,10 @@ namespace StudentHousingCompany
             get { return instance; }
         }
 
+        public List<Schedule> Schedules { get; }
+
+        public List<string> Tasks { get; }
+
         public List<User> Users { get; }
 
         public List<Tenant> Tenants { get; }
@@ -30,6 +34,9 @@ namespace StudentHousingCompany
             Users = new List<User>();
             Tenants = new List<Tenant>();
             Products = new List<Product>();
+            Schedules = new List<Schedule>();
+            Tasks = new List<string>();
+
         }
 
         public User GetUserById(int id)
@@ -152,6 +159,93 @@ namespace StudentHousingCompany
 
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
+        }
+
+        public void AddTask(string taskName, DayOfWeek day)
+        {//TODO Find the right student name to add to the task
+            Tasks.Add(taskName);
+            Schedule newTask = new Schedule(taskName, day);
+            Schedules.Add(newTask);
+            ResetSchedule();
+        }
+
+        public void ResetSchedule()
+        {
+            int counter = 0;
+            foreach (Schedule task in Schedules)
+            {
+                task.SetStudent(Tenants[counter].Name);
+                counter++;
+                if (counter >= Tenants.Count)
+                {
+                    counter = 0;
+                }
+            }
+        }
+
+        public string GetTenantTask()
+        {
+            string taskname = "No Task";
+
+            foreach (var task in Schedules)
+            {
+                if (task.GetStudent() == CurrentUser.Name)
+                {
+                    taskname = task.GetTask();
+                }
+            }
+            return taskname;
+        }
+
+        public void CompleteTask()
+        {
+            foreach (var task in Schedules)
+            {
+                if (task.GetStudent() == CurrentUser.Name)
+                {
+                    task.SetStatus(true);
+                }
+            }
+        }
+
+        public void SetNextTenant()
+        {
+            foreach (var task in Schedules)
+            {
+                task.SetNextStudent(Tenants);
+            }
+        }
+
+        public void SetNextDueDay()
+        {
+            foreach (var task in Schedules)
+            {
+                task.NextDueDate();
+            }
+        }
+
+        /// <summary>
+        /// Sets Weekdaydue day
+        /// </summary>
+        /// <param name="day">Name Of weekday</param>
+        public void ChangeDueWeekday(DayOfWeek day)
+        {
+            foreach (Schedule task in Schedules)
+            {
+                task.SetDueDate(day);
+            }
+        }
+
+        public void RemoveTask(string taskName)
+        {
+            for (int i = 0; i < Schedules.Count; i++)
+            {
+                if (Schedules[i].GetTask() == taskName)
+                {
+                    Schedules.RemoveAt(i);
+                    Tasks.RemoveAt(i);
+                }
+            }
         }
     }
 }

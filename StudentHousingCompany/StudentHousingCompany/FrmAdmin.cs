@@ -13,13 +13,17 @@ namespace StudentHousingCompany
     public partial class FrmAdmin : Form
     {
         private StudentHousing studentHousing;
+        DayOfWeek day = DayOfWeek.Monday;
         public FrmAdmin()
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
             ShowUsers();
+            ShowTasks();
+            FillRemoveTask();
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
+            cbWeekDays.SelectedIndex = 0;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -292,6 +296,7 @@ namespace StudentHousingCompany
                 dtbDoB.Value = user.DateOfBirth;
                 txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
 
+
                 if (user is Tenant)
                 {
                     rbtnTenant.Checked = true;
@@ -318,6 +323,112 @@ namespace StudentHousingCompany
             txtPhoneNr.Text = "";
             txtPostcode.Text = "";
             txtAddress.Text = "";
+        }
+
+        private void BtnNextWeek_Click(object sender, EventArgs e)
+        {
+            studentHousing.SetNextTenant();
+            studentHousing.SetNextDueDay();
+            ShowTasks();
+        }
+
+        private void btnAddTask_Click(object sender, EventArgs e)
+        {
+            bool NameExsists = false;
+            string TaskName = tbTaskName.Text;
+            var schedule = studentHousing.Schedules;
+
+            foreach (var task in schedule)
+            {
+                if (TaskName == task.GetTask())
+                {
+                    NameExsists = true;
+                }
+            }
+            
+            if (NameExsists == false)
+            {
+                studentHousing.AddTask(TaskName, day);
+            } else
+            {
+                MessageBox.Show("Task '"+TaskName+"' already exsists");
+            }
+            
+            ShowTasks();
+            FillRemoveTask();
+        }
+
+        private void btnConfirmDay_Click(object sender, EventArgs e)
+        {
+            studentHousing.ChangeDueWeekday(day);
+        }
+        public void ShowTasks()
+        {
+            listView6.Items.Clear();
+            var schedule = studentHousing.Schedules;
+
+            foreach (var task in schedule)
+            {
+                listView6.Items.Add(task.GetInfo());
+            }
+        }
+
+        private void cbWeekDays_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbWeekDays.SelectedIndex)
+            {
+                case 0:
+                    day = DayOfWeek.Monday;
+                    break;
+
+                case 1:
+                    day = DayOfWeek.Tuesday;
+                    break;
+
+                case 2:
+                    day = DayOfWeek.Wednesday;
+                    break;
+
+                case 3:
+                    day = DayOfWeek.Thursday;
+                    break;
+
+                case 4:
+                    day = DayOfWeek.Friday;
+                    break;
+
+                case 5:
+                    day = DayOfWeek.Saturday;
+                    break;
+
+                case 6:
+                    day = DayOfWeek.Sunday;
+                    break;
+
+                default:
+                    day = DayOfWeek.Monday;
+                    break;
+            }
+        }
+
+        public void FillRemoveTask()
+        {
+            cbRemoveTasks.Items.Clear();
+            var schedule = studentHousing.Schedules;
+
+            foreach (var task in schedule)
+            {
+                cbRemoveTasks.Items.Add(task.GetTask());
+            }
+        }
+
+        private void btnRemoveTask_Click(object sender, EventArgs e)
+        {
+            studentHousing.RemoveTask(cbRemoveTasks.Text);
+            ShowTasks();
+            FillRemoveTask();
+            cbRemoveTasks.Text = "";
+
         }
     }
 }

@@ -27,17 +27,16 @@ namespace StudentHousingCompany
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
-<<<<<<< HEAD
-            
-=======
 
-            studentHousing.ProductId = 0;
+            //studentHousing.ProductId = 0;
 
             foreach (Tenant t in studentHousing.Tenants)
             {
                 dgdBlancesOverView.Rows.Add(t.Id, t.Name, t.Balance);
             }
->>>>>>> origin
+
+            ShowTasks();
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -53,79 +52,11 @@ namespace StudentHousingCompany
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-<<<<<<< HEAD
         {
 
         }
 
-        private void listView4_SelectedIndexChanged(object sender, EventArgs e)
-=======
->>>>>>> origin
-        {
 
-        }
-
-<<<<<<< HEAD
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        //string phrase = "The quick brown fox jumps over the lazy dog.";
-        //string[] words = phrase.Split(' ');
-        private void btnAddToShoppingList_Click(object sender, EventArgs e)
-        {
-            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text), 1);
-
-
-            var Tenants = studentHousing.Tenants;
-
-            foreach(string info in clbTenantsToshare.CheckedItems)
-            {
-
-              foreach(Tenant ten in Tenants)
-              {
-                    if (ten.Name == info)
-                    {
-
-                    }
-              }
-
-            }
-
-            int NumberOfParticpants = newProduct.TenantesShredWith.Count;
-            newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
-
-            int currentuserID = studentHousing.CurrentUser.Id;
-
-            foreach(Tenant t in newProduct.TenantesShredWith)
-            {
-                if(t.Id == currentuserID)
-                {
-                    t.Balance += newProduct.DevidedPrice;
-                }
-                else
-                {
-                    t.Balance -= newProduct.DevidedPrice;
-                }
-            }
-
-            this.studentHousing.Products.Add(newProduct);
-
-            string sharedwithh = "";
-            foreach(Tenant t in newProduct.TenantesShredWith)
-            {
-                sharedwithh += Convert.ToString(t.Id)+", ";
-            }
-
-
-
-            foreach(Product p in studentHousing.Products)
-            {
-                lvwProductSharingInfo.Items.Add(p.Name, Convert.ToString(p.DevidedPrice), sharedwithh);
-
-            }
-
-=======
         private void listView4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -138,6 +69,7 @@ namespace StudentHousingCompany
 
         private void btnAddToShoppingList_Click(object sender, EventArgs e)
         {
+
             if(tbxFullPrice.Text == null)
             {
                 if(tbxProductname.Text == null)
@@ -147,9 +79,10 @@ namespace StudentHousingCompany
                 tbxFullPrice.Text = "0";
             }
 
-            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text), studentHousing.ProductId);
+            //TODO NOUR
+            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text), 1/*studentHousing.ProductId*/);
 
-            studentHousing.ProductId += 1;
+            //studentHousing.ProductId += 1;
 
             foreach (string tenantName in clbTenantsToshare.CheckedItems)
             {
@@ -208,7 +141,27 @@ namespace StudentHousingCompany
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
 
->>>>>>> origin
+        }
+
+        private void btnTaskComplete_Click(object sender, EventArgs e)
+        {
+            studentHousing.CompleteTask();
+            ShowTasks();
+        }
+
+        public void ShowTasks()
+        {
+            listView6.Items.Clear();
+            var schedule = studentHousing.Schedules;
+
+            foreach (var task in schedule)
+            {
+                listView6.Items.Add(task.GetInfo());
+            }
+
+            if (studentHousing.GetTenantTask() == "No Task")
+            { btnTaskComplete.Enabled = false; }
+
         }
     }
 }

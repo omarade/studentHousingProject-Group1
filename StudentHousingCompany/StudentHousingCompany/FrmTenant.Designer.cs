@@ -28,15 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-=======
-            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
->>>>>>> origin
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,11 +46,10 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnTaskComplete = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
-=======
             this.dgdBlancesOverView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +58,6 @@
             this.Productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PricePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SharedWith = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> origin
             this.lblFullPrice = new System.Windows.Forms.Label();
             this.lblProductname = new System.Windows.Forms.Label();
             this.lvwProductSharingInfo = new System.Windows.Forms.ListView();
@@ -85,6 +74,7 @@
             this.btnAddToShoppingList = new System.Windows.Forms.Button();
             this.tbxFullPrice = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblSubject = new System.Windows.Forms.Label();
             this.cbxSendAnonymously = new System.Windows.Forms.CheckBox();
             this.btnSendComplaint = new System.Windows.Forms.Button();
             this.tbxWriteComplaint = new System.Windows.Forms.TextBox();
@@ -104,7 +94,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
-            this.lblSubject = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -122,10 +111,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(14, 66);
+            this.tabControl1.Location = new System.Drawing.Point(10, 54);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(958, 484);
+            this.tabControl1.Size = new System.Drawing.Size(718, 393);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage5
@@ -139,45 +129,50 @@
             this.tabPage5.Controls.Add(this.listView1);
             this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.richTextBox1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(950, 455);
+            this.tabPage5.Size = new System.Drawing.Size(710, 367);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "General";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(291, 407);
+            this.label12.Location = new System.Drawing.Point(218, 331);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 16);
+            this.label12.Size = new System.Drawing.Size(19, 13);
             this.label12.TabIndex = 8;
             this.label12.Text = "23";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(71, 407);
+            this.label11.Location = new System.Drawing.Point(53, 331);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 16);
+            this.label11.Size = new System.Drawing.Size(142, 13);
             this.label11.TabIndex = 7;
             this.label11.Text = "Common Room Temperature";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(74, 26);
+            this.label8.Location = new System.Drawing.Point(56, 21);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 16);
+            this.label8.Size = new System.Drawing.Size(68, 13);
             this.label8.TabIndex = 6;
             this.label8.Text = "House Rules";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(565, 27);
+            this.label2.Location = new System.Drawing.Point(424, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 16);
+            this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Admin Announcments:";
             // 
@@ -187,9 +182,10 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(568, 58);
+            this.listView1.Location = new System.Drawing.Point(426, 47);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(321, 348);
+            this.listView1.Size = new System.Drawing.Size(242, 284);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -206,9 +202,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(814, 425);
+            this.button1.Location = new System.Drawing.Point(610, 345);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 3;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = true;
@@ -217,10 +214,11 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.richTextBox1.Location = new System.Drawing.Point(74, 58);
+            this.richTextBox1.Location = new System.Drawing.Point(56, 47);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(300, 302);
+            this.richTextBox1.Size = new System.Drawing.Size(226, 246);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "1.rule\n1.rule\n1.rule\n1.rule\n1.rule\n1.rule\n1.rule\n1.rule\n1.rule\n1.rule\n1.rule";
             // 
@@ -230,30 +228,33 @@
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.listView6);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btnTaskComplete);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(950, 455);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(710, 367);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(72, 73);
+            this.label10.Location = new System.Drawing.Point(44, 83);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 16);
+            this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 6;
             this.label10.Text = "Personal Task";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(522, 73);
+            this.label9.Location = new System.Drawing.Point(296, 59);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 16);
+            this.label9.Size = new System.Drawing.Size(110, 13);
             this.label9.TabIndex = 5;
             this.label9.Text = "This Week Tasks List";
             // 
@@ -262,11 +263,13 @@
             this.listView6.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader11,
-            this.columnHeader12});
+            this.columnHeader12,
+            this.columnHeader4});
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(525, 102);
+            this.listView6.Location = new System.Drawing.Point(299, 83);
+            this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(369, 300);
+            this.listView6.Size = new System.Drawing.Size(373, 244);
             this.listView6.TabIndex = 4;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -286,20 +289,27 @@
             this.columnHeader12.Text = "Status";
             this.columnHeader12.Width = 140;
             // 
-            // button2
+            // columnHeader4
             // 
-            this.button2.Location = new System.Drawing.Point(319, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Completed?";
-            this.button2.UseVisualStyleBackColor = true;
+            this.columnHeader4.Text = "Due Day";
+            // 
+            // btnTaskComplete
+            // 
+            this.btnTaskComplete.Location = new System.Drawing.Point(47, 178);
+            this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTaskComplete.Name = "btnTaskComplete";
+            this.btnTaskComplete.Size = new System.Drawing.Size(82, 34);
+            this.btnTaskComplete.TabIndex = 1;
+            this.btnTaskComplete.Text = "Completed?";
+            this.btnTaskComplete.UseVisualStyleBackColor = true;
+            this.btnTaskComplete.Click += new System.EventHandler(this.btnTaskComplete_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label4.Location = new System.Drawing.Point(54, 162);
+            this.label4.Location = new System.Drawing.Point(40, 132);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 25);
             this.label4.TabIndex = 0;
@@ -308,11 +318,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-<<<<<<< HEAD
-=======
             this.tabPage2.Controls.Add(this.dgdBlancesOverView);
             this.tabPage2.Controls.Add(this.dgdProductSharingInfo);
->>>>>>> origin
             this.tabPage2.Controls.Add(this.lblFullPrice);
             this.tabPage2.Controls.Add(this.lblProductname);
             this.tabPage2.Controls.Add(this.lvwProductSharingInfo);
@@ -322,15 +329,14 @@
             this.tabPage2.Controls.Add(this.lblTenantsToShareWith);
             this.tabPage2.Controls.Add(this.btnAddToShoppingList);
             this.tabPage2.Controls.Add(this.tbxFullPrice);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(950, 455);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(710, 367);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
-<<<<<<< HEAD
-=======
             // dgdBlancesOverView
             // 
             this.dgdBlancesOverView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -338,11 +344,12 @@
             this.ID,
             this.TenantName,
             this.Balance});
-            this.dgdBlancesOverView.Location = new System.Drawing.Point(617, 29);
+            this.dgdBlancesOverView.Location = new System.Drawing.Point(463, 24);
+            this.dgdBlancesOverView.Margin = new System.Windows.Forms.Padding(2);
             this.dgdBlancesOverView.Name = "dgdBlancesOverView";
             this.dgdBlancesOverView.RowHeadersWidth = 51;
             this.dgdBlancesOverView.RowTemplate.Height = 24;
-            this.dgdBlancesOverView.Size = new System.Drawing.Size(313, 430);
+            this.dgdBlancesOverView.Size = new System.Drawing.Size(235, 349);
             this.dgdBlancesOverView.TabIndex = 35;
             // 
             // ID
@@ -373,11 +380,12 @@
             this.Productname,
             this.PricePP,
             this.SharedWith});
-            this.dgdProductSharingInfo.Location = new System.Drawing.Point(298, 29);
+            this.dgdProductSharingInfo.Location = new System.Drawing.Point(224, 24);
+            this.dgdProductSharingInfo.Margin = new System.Windows.Forms.Padding(2);
             this.dgdProductSharingInfo.Name = "dgdProductSharingInfo";
             this.dgdProductSharingInfo.RowHeadersWidth = 51;
             this.dgdProductSharingInfo.RowTemplate.Height = 24;
-            this.dgdProductSharingInfo.Size = new System.Drawing.Size(296, 420);
+            this.dgdProductSharingInfo.Size = new System.Drawing.Size(222, 341);
             this.dgdProductSharingInfo.TabIndex = 34;
             // 
             // Productname
@@ -401,74 +409,38 @@
             this.SharedWith.Name = "SharedWith";
             this.SharedWith.Width = 125;
             // 
->>>>>>> origin
             // lblFullPrice
             // 
             this.lblFullPrice.AutoSize = true;
-            this.lblFullPrice.Location = new System.Drawing.Point(6, 75);
+            this.lblFullPrice.Location = new System.Drawing.Point(4, 61);
+            this.lblFullPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFullPrice.Name = "lblFullPrice";
-<<<<<<< HEAD
-            this.lblFullPrice.Size = new System.Drawing.Size(63, 16);
-=======
-            this.lblFullPrice.Size = new System.Drawing.Size(66, 17);
->>>>>>> origin
+            this.lblFullPrice.Size = new System.Drawing.Size(50, 13);
             this.lblFullPrice.TabIndex = 32;
             this.lblFullPrice.Text = "Full Price";
             // 
             // lblProductname
             // 
             this.lblProductname.AutoSize = true;
-            this.lblProductname.Location = new System.Drawing.Point(3, 39);
+            this.lblProductname.Location = new System.Drawing.Point(2, 32);
+            this.lblProductname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductname.Name = "lblProductname";
-<<<<<<< HEAD
-            this.lblProductname.Size = new System.Drawing.Size(94, 16);
-=======
-            this.lblProductname.Size = new System.Drawing.Size(98, 17);
->>>>>>> origin
+            this.lblProductname.Size = new System.Drawing.Size(75, 13);
             this.lblProductname.TabIndex = 31;
             this.lblProductname.Text = "Product Name";
             // 
             // lvwProductSharingInfo
             // 
-<<<<<<< HEAD
-=======
             this.lvwProductSharingInfo.AllowColumnReorder = true;
->>>>>>> origin
             this.lvwProductSharingInfo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-<<<<<<< HEAD
-            listViewGroup4.Header = "ListViewGroup";
-            listViewGroup4.Name = "Product";
-            listViewGroup5.Header = "ListViewGroup";
-            listViewGroup5.Name = "Shared with";
-            listViewGroup6.Header = "ListViewGroup";
-            listViewGroup6.Name = "PricePP";
-            this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6});
             this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(315, 75);
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(224, 32);
+            this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(2);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(282, 295);
-=======
-            listViewGroup7.Header = "ListViewGroup";
-            listViewGroup7.Name = "Product";
-            listViewGroup8.Header = "ListViewGroup";
-            listViewGroup8.Name = "Shared with";
-            listViewGroup9.Header = "ListViewGroup";
-            listViewGroup9.Name = "PricePP";
-            this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup7,
-            listViewGroup8,
-            listViewGroup9});
-            this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(298, 39);
-            this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(296, 342);
->>>>>>> origin
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(223, 279);
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -496,15 +468,10 @@
             this.columnHeader6,
             this.columnHeader7});
             this.lvwBlancesOverView.HideSelection = false;
-<<<<<<< HEAD
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(617, 75);
+            this.lvwBlancesOverView.Location = new System.Drawing.Point(463, 32);
+            this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(2);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(287, 295);
-=======
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(617, 39);
-            this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(313, 342);
->>>>>>> origin
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(236, 279);
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -527,38 +494,38 @@
             // 
             this.clbTenantsToshare.CheckOnClick = true;
             this.clbTenantsToshare.FormattingEnabled = true;
-            this.clbTenantsToshare.Location = new System.Drawing.Point(43, 145);
+            this.clbTenantsToshare.Location = new System.Drawing.Point(32, 118);
+            this.clbTenantsToshare.Margin = new System.Windows.Forms.Padding(2);
             this.clbTenantsToshare.Name = "clbTenantsToshare";
-            this.clbTenantsToshare.Size = new System.Drawing.Size(229, 225);
+            this.clbTenantsToshare.Size = new System.Drawing.Size(173, 184);
             this.clbTenantsToshare.TabIndex = 28;
             this.clbTenantsToshare.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // tbxProductname
             // 
-            this.tbxProductname.Location = new System.Drawing.Point(105, 39);
+            this.tbxProductname.Location = new System.Drawing.Point(79, 32);
+            this.tbxProductname.Margin = new System.Windows.Forms.Padding(2);
             this.tbxProductname.Name = "tbxProductname";
-            this.tbxProductname.Size = new System.Drawing.Size(187, 22);
+            this.tbxProductname.Size = new System.Drawing.Size(141, 20);
             this.tbxProductname.TabIndex = 23;
             this.tbxProductname.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // lblTenantsToShareWith
             // 
             this.lblTenantsToShareWith.AutoSize = true;
-            this.lblTenantsToShareWith.Location = new System.Drawing.Point(37, 115);
+            this.lblTenantsToShareWith.Location = new System.Drawing.Point(28, 93);
+            this.lblTenantsToShareWith.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
-<<<<<<< HEAD
-            this.lblTenantsToShareWith.Size = new System.Drawing.Size(60, 16);
-=======
-            this.lblTenantsToShareWith.Size = new System.Drawing.Size(64, 17);
->>>>>>> origin
+            this.lblTenantsToShareWith.Size = new System.Drawing.Size(49, 13);
             this.lblTenantsToShareWith.TabIndex = 18;
             this.lblTenantsToShareWith.Text = "Tenants ";
             // 
             // btnAddToShoppingList
             // 
-            this.btnAddToShoppingList.Location = new System.Drawing.Point(40, 394);
+            this.btnAddToShoppingList.Location = new System.Drawing.Point(30, 320);
+            this.btnAddToShoppingList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToShoppingList.Name = "btnAddToShoppingList";
-            this.btnAddToShoppingList.Size = new System.Drawing.Size(229, 38);
+            this.btnAddToShoppingList.Size = new System.Drawing.Size(172, 31);
             this.btnAddToShoppingList.TabIndex = 17;
             this.btnAddToShoppingList.Text = "add to shopping list ";
             this.btnAddToShoppingList.UseVisualStyleBackColor = true;
@@ -566,9 +533,10 @@
             // 
             // tbxFullPrice
             // 
-            this.tbxFullPrice.Location = new System.Drawing.Point(105, 75);
+            this.tbxFullPrice.Location = new System.Drawing.Point(79, 61);
+            this.tbxFullPrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbxFullPrice.Name = "tbxFullPrice";
-            this.tbxFullPrice.Size = new System.Drawing.Size(187, 22);
+            this.tbxFullPrice.Size = new System.Drawing.Size(141, 20);
             this.tbxFullPrice.TabIndex = 16;
             // 
             // tabPage3
@@ -580,39 +548,42 @@
             this.tabPage3.Controls.Add(this.tbxWriteComplaint);
             this.tabPage3.Controls.Add(this.lblMakeComplaint);
             this.tabPage3.Controls.Add(this.tbxComplaintSubject);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(950, 455);
+            this.tabPage3.Size = new System.Drawing.Size(710, 367);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compaints";
             // 
+            // lblSubject
+            // 
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubject.Location = new System.Drawing.Point(12, 55);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(48, 15);
+            this.lblSubject.TabIndex = 5;
+            this.lblSubject.Text = "Subject";
+            // 
             // cbxSendAnonymously
             // 
-<<<<<<< HEAD
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(75, 360);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(143, 20);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Send Anonymously";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
-=======
             this.cbxSendAnonymously.AutoSize = true;
-            this.cbxSendAnonymously.Location = new System.Drawing.Point(473, 364);
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(355, 296);
+            this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
-            this.cbxSendAnonymously.Size = new System.Drawing.Size(151, 21);
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(116, 17);
             this.cbxSendAnonymously.TabIndex = 4;
             this.cbxSendAnonymously.Text = "Send Anonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbxSendAnonymously.UseVisualStyleBackColor = true;
->>>>>>> origin
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(105, 364);
+            this.btnSendComplaint.Location = new System.Drawing.Point(79, 296);
+            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(279, 55);
+            this.btnSendComplaint.Size = new System.Drawing.Size(209, 45);
             this.btnSendComplaint.TabIndex = 3;
             this.btnSendComplaint.Text = "Send Complaint";
             this.btnSendComplaint.UseVisualStyleBackColor = true;
@@ -620,36 +591,30 @@
             // 
             // tbxWriteComplaint
             // 
-            this.tbxWriteComplaint.Location = new System.Drawing.Point(105, 100);
+            this.tbxWriteComplaint.Location = new System.Drawing.Point(79, 81);
+            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.tbxWriteComplaint.Multiline = true;
             this.tbxWriteComplaint.Name = "tbxWriteComplaint";
-            this.tbxWriteComplaint.Size = new System.Drawing.Size(368, 235);
+            this.tbxWriteComplaint.Size = new System.Drawing.Size(277, 192);
             this.tbxWriteComplaint.TabIndex = 2;
             // 
             // lblMakeComplaint
             // 
-<<<<<<< HEAD
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(77, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Make a Complaint";
-=======
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMakeComplaint.Location = new System.Drawing.Point(100, 20);
+            this.lblMakeComplaint.Location = new System.Drawing.Point(75, 16);
+            this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
-            this.lblMakeComplaint.Size = new System.Drawing.Size(206, 29);
+            this.lblMakeComplaint.Size = new System.Drawing.Size(160, 24);
             this.lblMakeComplaint.TabIndex = 1;
             this.lblMakeComplaint.Text = "Make a Complaint";
->>>>>>> origin
             // 
             // tbxComplaintSubject
             // 
-            this.tbxComplaintSubject.Location = new System.Drawing.Point(105, 65);
+            this.tbxComplaintSubject.Location = new System.Drawing.Point(79, 53);
+            this.tbxComplaintSubject.Margin = new System.Windows.Forms.Padding(2);
             this.tbxComplaintSubject.Name = "tbxComplaintSubject";
-            this.tbxComplaintSubject.Size = new System.Drawing.Size(368, 22);
+            this.tbxComplaintSubject.Size = new System.Drawing.Size(277, 20);
             this.tbxComplaintSubject.TabIndex = 0;
             // 
             // tabPage4
@@ -663,26 +628,29 @@
             this.tabPage4.Controls.Add(this.dateTimePicker1);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.textBox7);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(950, 455);
+            this.tabPage4.Size = new System.Drawing.Size(710, 367);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Events";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(726, 346);
+            this.button7.Location = new System.Drawing.Point(544, 281);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(56, 19);
             this.button7.TabIndex = 7;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(527, 347);
+            this.button6.Location = new System.Drawing.Point(395, 282);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(56, 19);
             this.button6.TabIndex = 6;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
@@ -690,84 +658,94 @@
             // listView5
             // 
             this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(527, 41);
+            this.listView5.Location = new System.Drawing.Point(395, 33);
+            this.listView5.Margin = new System.Windows.Forms.Padding(2);
             this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(328, 258);
+            this.listView5.Size = new System.Drawing.Size(247, 210);
             this.listView5.TabIndex = 5;
             this.listView5.UseCompatibleStateImageBehavior = false;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(119, 300);
+            this.button5.Location = new System.Drawing.Point(89, 244);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(56, 19);
             this.button5.TabIndex = 4;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(119, 112);
+            this.textBox8.Location = new System.Drawing.Point(89, 91);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(241, 92);
+            this.textBox8.Size = new System.Drawing.Size(182, 76);
             this.textBox8.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(119, 225);
+            this.dateTimePicker1.Location = new System.Drawing.Point(89, 183);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 20);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 65);
+            this.label7.Location = new System.Drawing.Point(31, 53);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "label7";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(119, 65);
+            this.textBox7.Location = new System.Drawing.Point(89, 53);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
+            this.textBox7.Size = new System.Drawing.Size(76, 20);
             this.textBox7.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(604, 29);
+            this.label1.Location = new System.Drawing.Point(453, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tenant ID";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(738, 26);
+            this.textBox1.Location = new System.Drawing.Point(554, 21);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 29);
+            this.label3.Location = new System.Drawing.Point(11, 24);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 16);
+            this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Tenant Name:";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(857, 26);
+            this.button8.Location = new System.Drawing.Point(643, 21);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(111, 34);
+            this.button8.Size = new System.Drawing.Size(83, 28);
             this.button8.TabIndex = 8;
             this.button8.Text = "Go to Admin";
             this.button8.UseVisualStyleBackColor = true;
@@ -776,32 +754,24 @@
             // lblCurrentUserName
             // 
             this.lblCurrentUserName.AutoSize = true;
-            this.lblCurrentUserName.Location = new System.Drawing.Point(120, 29);
+            this.lblCurrentUserName.Location = new System.Drawing.Point(90, 24);
+            this.lblCurrentUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentUserName.Name = "lblCurrentUserName";
-            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 16);
+            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
-            // 
-            // lblSubject
-            // 
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(16, 68);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(71, 23);
-            this.lblSubject.TabIndex = 5;
-            this.lblSubject.Text = "Subject";
             // 
             // FrmTenant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.ClientSize = new System.Drawing.Size(738, 457);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
             this.tabControl1.ResumeLayout(false);
@@ -840,7 +810,9 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+
+        private System.Windows.Forms.Button btnTaskComplete;
+
         private System.Windows.Forms.CheckedListBox clbTenantsToshare;
         private System.Windows.Forms.TextBox tbxProductname;
         private System.Windows.Forms.Label lblTenantsToShareWith;
@@ -889,6 +861,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenantName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
         private System.Windows.Forms.Label lblSubject;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+
     }
 }
 
