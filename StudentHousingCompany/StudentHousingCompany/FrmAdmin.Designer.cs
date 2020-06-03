@@ -787,7 +787,7 @@
             this.columnHeader8,
             this.columnHeader9});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(38, 45);
+            this.listView2.Location = new System.Drawing.Point(38, 46);
             this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(487, 208);
