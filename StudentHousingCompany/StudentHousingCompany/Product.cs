@@ -19,6 +19,7 @@ namespace StudentHousingCompany
             TenantesShredWith   = new List<Tenant>();
         }
 
+
         public string Name
         {
             get;
@@ -54,7 +55,5 @@ namespace StudentHousingCompany
             get;
             set;
         }
-        
-
     }
 }
