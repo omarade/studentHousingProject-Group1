@@ -89,7 +89,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,10 +96,7 @@
             this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
-            this.btnComplainteRply = new System.Windows.Forms.Button();
-            this.tbxReplyToComplaint = new System.Windows.Forms.TextBox();
->>>>>>> origin
+
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
@@ -630,8 +626,6 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.tbxReplyToComplaint);
-            this.tabPage3.Controls.Add(this.btnComplainteRply);
             this.tabPage3.Controls.Add(this.btnComplaintResolve);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.lvwComplaintes);
@@ -712,7 +706,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-<<<<<<< HEAD
             // hxtId
             // 
             this.hxtId.HeaderText = "ID";
@@ -761,24 +754,7 @@
             this.hxtAddress.MinimumWidth = 6;
             this.hxtAddress.Name = "hxtAddress";
             this.hxtAddress.Width = 125;
-=======
-            // btnComplainteRply
-            // 
-            this.btnComplainteRply.Location = new System.Drawing.Point(520, 397);
-            this.btnComplainteRply.Name = "btnComplainteRply";
-            this.btnComplainteRply.Size = new System.Drawing.Size(112, 81);
-            this.btnComplainteRply.TabIndex = 3;
-            this.btnComplainteRply.Text = "Reply";
-            this.btnComplainteRply.UseVisualStyleBackColor = true;
-            // 
-            // tbxReplyToComplaint
-            // 
-            this.tbxReplyToComplaint.Location = new System.Drawing.Point(661, 82);
-            this.tbxReplyToComplaint.Multiline = true;
-            this.tbxReplyToComplaint.Name = "tbxReplyToComplaint";
-            this.tbxReplyToComplaint.Size = new System.Drawing.Size(306, 256);
-            this.tbxReplyToComplaint.TabIndex = 4;
->>>>>>> origin
+
             // 
             // FrmAdmin
             // 
@@ -870,22 +846,12 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btnRemoveUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtId;
-<<<<<<< HEAD
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtDob;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtPhoneNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtPostcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
-=======
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button btnComplainteRply;
-        private System.Windows.Forms.TextBox tbxReplyToComplaint;
->>>>>>> origin
+
     }
 }

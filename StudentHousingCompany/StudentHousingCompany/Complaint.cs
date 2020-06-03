@@ -8,8 +8,6 @@ namespace StudentHousingCompany
 {
     class Complaint
     {
-<<<<<<< HEAD
-=======
 
         public int complaintId
         {
@@ -42,6 +40,5 @@ namespace StudentHousingCompany
         }
 
 
->>>>>>> origin
     }
 }

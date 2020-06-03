@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-=======
+
             System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
->>>>>>> origin
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,8 +53,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
-=======
             this.dgdBlancesOverView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +61,6 @@
             this.Productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PricePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SharedWith = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> origin
             this.lblFullPrice = new System.Windows.Forms.Label();
             this.lblProductname = new System.Windows.Forms.Label();
             this.lvwProductSharingInfo = new System.Windows.Forms.ListView();
@@ -308,11 +300,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-<<<<<<< HEAD
-=======
             this.tabPage2.Controls.Add(this.dgdBlancesOverView);
             this.tabPage2.Controls.Add(this.dgdProductSharingInfo);
->>>>>>> origin
             this.tabPage2.Controls.Add(this.lblFullPrice);
             this.tabPage2.Controls.Add(this.lblProductname);
             this.tabPage2.Controls.Add(this.lvwProductSharingInfo);
@@ -329,8 +318,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
-<<<<<<< HEAD
-=======
+
             // dgdBlancesOverView
             // 
             this.dgdBlancesOverView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -401,17 +389,12 @@
             this.SharedWith.Name = "SharedWith";
             this.SharedWith.Width = 125;
             // 
->>>>>>> origin
             // lblFullPrice
             // 
             this.lblFullPrice.AutoSize = true;
             this.lblFullPrice.Location = new System.Drawing.Point(6, 75);
             this.lblFullPrice.Name = "lblFullPrice";
-<<<<<<< HEAD
-            this.lblFullPrice.Size = new System.Drawing.Size(63, 16);
-=======
             this.lblFullPrice.Size = new System.Drawing.Size(66, 17);
->>>>>>> origin
             this.lblFullPrice.TabIndex = 32;
             this.lblFullPrice.Text = "Full Price";
             // 
@@ -420,40 +403,20 @@
             this.lblProductname.AutoSize = true;
             this.lblProductname.Location = new System.Drawing.Point(3, 39);
             this.lblProductname.Name = "lblProductname";
-<<<<<<< HEAD
-            this.lblProductname.Size = new System.Drawing.Size(94, 16);
-=======
             this.lblProductname.Size = new System.Drawing.Size(98, 17);
->>>>>>> origin
             this.lblProductname.TabIndex = 31;
             this.lblProductname.Text = "Product Name";
             // 
             // lvwProductSharingInfo
             // 
-<<<<<<< HEAD
-=======
+
             this.lvwProductSharingInfo.AllowColumnReorder = true;
->>>>>>> origin
+
             this.lvwProductSharingInfo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader9,
             this.columnHeader10});
-<<<<<<< HEAD
-            listViewGroup4.Header = "ListViewGroup";
-            listViewGroup4.Name = "Product";
-            listViewGroup5.Header = "ListViewGroup";
-            listViewGroup5.Name = "Shared with";
-            listViewGroup6.Header = "ListViewGroup";
-            listViewGroup6.Name = "PricePP";
-            this.lvwProductSharingInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6});
-            this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(315, 75);
-            this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(282, 295);
-=======
+
             listViewGroup7.Header = "ListViewGroup";
             listViewGroup7.Name = "Product";
             listViewGroup8.Header = "ListViewGroup";
@@ -468,7 +431,6 @@
             this.lvwProductSharingInfo.Location = new System.Drawing.Point(298, 39);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
             this.lvwProductSharingInfo.Size = new System.Drawing.Size(296, 342);
->>>>>>> origin
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -496,15 +458,10 @@
             this.columnHeader6,
             this.columnHeader7});
             this.lvwBlancesOverView.HideSelection = false;
-<<<<<<< HEAD
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(617, 75);
-            this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(287, 295);
-=======
+
             this.lvwBlancesOverView.Location = new System.Drawing.Point(617, 39);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
             this.lvwBlancesOverView.Size = new System.Drawing.Size(313, 342);
->>>>>>> origin
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -546,11 +503,7 @@
             this.lblTenantsToShareWith.AutoSize = true;
             this.lblTenantsToShareWith.Location = new System.Drawing.Point(37, 115);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
-<<<<<<< HEAD
-            this.lblTenantsToShareWith.Size = new System.Drawing.Size(60, 16);
-=======
             this.lblTenantsToShareWith.Size = new System.Drawing.Size(64, 17);
->>>>>>> origin
             this.lblTenantsToShareWith.TabIndex = 18;
             this.lblTenantsToShareWith.Text = "Tenants ";
             // 
@@ -588,16 +541,7 @@
             // 
             // cbxSendAnonymously
             // 
-<<<<<<< HEAD
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(75, 360);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(143, 20);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Send Anonymously";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
-=======
+
             this.cbxSendAnonymously.AutoSize = true;
             this.cbxSendAnonymously.Location = new System.Drawing.Point(473, 364);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
@@ -606,7 +550,6 @@
             this.cbxSendAnonymously.Text = "Send Anonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbxSendAnonymously.UseVisualStyleBackColor = true;
->>>>>>> origin
             // 
             // btnSendComplaint
             // 
@@ -628,14 +571,6 @@
             // 
             // lblMakeComplaint
             // 
-<<<<<<< HEAD
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(77, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Make a Complaint";
-=======
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMakeComplaint.Location = new System.Drawing.Point(100, 20);
@@ -643,7 +578,6 @@
             this.lblMakeComplaint.Size = new System.Drawing.Size(206, 29);
             this.lblMakeComplaint.TabIndex = 1;
             this.lblMakeComplaint.Text = "Make a Complaint";
->>>>>>> origin
             // 
             // tbxComplaintSubject
             // 
