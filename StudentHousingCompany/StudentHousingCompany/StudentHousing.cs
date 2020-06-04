@@ -20,6 +20,8 @@ namespace StudentHousingCompany
 
         public List<Schedule> Schedules { get; }
 
+        public List<Event> Events { get; }
+
         public List<User> Users { get; }
 
         public List<Tenant> Tenants { get; }
@@ -40,6 +42,7 @@ namespace StudentHousingCompany
             Tenants = new List<Tenant>();
             Products = new List<Product>();
             Schedules = new List<Schedule>();
+            Events = new List<Event>();
 
         }
 
@@ -161,14 +164,14 @@ namespace StudentHousingCompany
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
 
-            AddTask("Bathroom", DayOfWeek.Friday);
-            AddTask("LivingRoom", DayOfWeek.Friday);
-            AddTask("Kitchen", DayOfWeek.Friday);
-            AddTask("General House Items", DayOfWeek.Friday);
-            AddTask("Task1", DayOfWeek.Friday);
-            AddTask("Task2", DayOfWeek.Friday);
-            AddTask("Task3", DayOfWeek.Friday);
-            AddTask("Task4", DayOfWeek.Friday);
+            AddTask("Bathroom", DayOfWeek.Thursday);
+            AddTask("LivingRoom", DayOfWeek.Thursday);
+            AddTask("Kitchen", DayOfWeek.Thursday);
+            AddTask("General House Items", DayOfWeek.Thursday);
+            AddTask("Task1", DayOfWeek.Thursday);
+            AddTask("Task2", DayOfWeek.Thursday);
+            AddTask("Task3", DayOfWeek.Thursday);
+            AddTask("Task4", DayOfWeek.Thursday);
             AddTask("Task5", DayOfWeek.Thursday);
 
         }
@@ -299,6 +302,12 @@ namespace StudentHousingCompany
             }
             else { return false; }
 
+        }
+
+        public void AddEvent(string eventName, DateTime dateOfEvent, string eventDesc,string eventOwner)
+        {
+            Event newEvent = new Event(eventName, dateOfEvent, eventDesc, eventOwner);
+            Events.Add(newEvent);
         }
     }
 }

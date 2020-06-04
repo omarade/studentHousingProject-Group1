@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.listView6 = new System.Windows.Forms.ListView();
@@ -83,17 +84,18 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.listView5 = new System.Windows.Forms.ListView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnAddEvent = new System.Windows.Forms.Button();
+            this.tbEventDesc = new System.Windows.Forms.TextBox();
+            this.dtEvent = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbEventName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
-            this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -237,6 +239,14 @@
             this.tabPage1.Size = new System.Drawing.Size(710, 367);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
+            // 
+            // clbTenantTask
+            // 
+            this.clbTenantTask.FormattingEnabled = true;
+            this.clbTenantTask.Location = new System.Drawing.Point(8, 59);
+            this.clbTenantTask.Name = "clbTenantTask";
+            this.clbTenantTask.Size = new System.Drawing.Size(132, 199);
+            this.clbTenantTask.TabIndex = 7;
             // 
             // label10
             // 
@@ -572,7 +582,7 @@
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbxSendAnonymously.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSendComplaint
             // 
             this.btnSendComplaint.Location = new System.Drawing.Point(79, 296);
             this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(2);
@@ -583,7 +593,7 @@
             this.btnSendComplaint.UseVisualStyleBackColor = true;
             this.btnSendComplaint.Click += new System.EventHandler(this.btnSendComplaint_Click);
             // 
-            // textBox6
+            // tbxWriteComplaint
             // 
             this.tbxWriteComplaint.Location = new System.Drawing.Point(79, 81);
             this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(2);
@@ -592,7 +602,7 @@
             this.tbxWriteComplaint.Size = new System.Drawing.Size(277, 192);
             this.tbxWriteComplaint.TabIndex = 2;
             // 
-            // label6
+            // lblMakeComplaint
             // 
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -603,7 +613,7 @@
             this.lblMakeComplaint.TabIndex = 1;
             this.lblMakeComplaint.Text = "Make a Complaint";
             // 
-            // textBox5
+            // tbxComplaintSubject
             // 
             this.tbxComplaintSubject.Location = new System.Drawing.Point(79, 53);
             this.tbxComplaintSubject.Margin = new System.Windows.Forms.Padding(2);
@@ -614,14 +624,16 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.label5);
+            this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Controls.Add(this.button6);
             this.tabPage4.Controls.Add(this.listView5);
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.textBox8);
-            this.tabPage4.Controls.Add(this.dateTimePicker1);
+            this.tabPage4.Controls.Add(this.btnAddEvent);
+            this.tabPage4.Controls.Add(this.tbEventDesc);
+            this.tabPage4.Controls.Add(this.dtEvent);
             this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.textBox7);
+            this.tabPage4.Controls.Add(this.tbEventName);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
@@ -659,32 +671,33 @@
             this.listView5.TabIndex = 5;
             this.listView5.UseCompatibleStateImageBehavior = false;
             // 
-            // button5
+            // btnAddEvent
             // 
-            this.button5.Location = new System.Drawing.Point(89, 244);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(56, 19);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Location = new System.Drawing.Point(138, 233);
+            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(76, 31);
+            this.btnAddEvent.TabIndex = 4;
+            this.btnAddEvent.Text = "Add Event";
+            this.btnAddEvent.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
             // 
-            // textBox8
+            // tbEventDesc
             // 
-            this.textBox8.Location = new System.Drawing.Point(89, 91);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(182, 76);
-            this.textBox8.TabIndex = 3;
+            this.tbEventDesc.Location = new System.Drawing.Point(138, 88);
+            this.tbEventDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEventDesc.Multiline = true;
+            this.tbEventDesc.Name = "tbEventDesc";
+            this.tbEventDesc.Size = new System.Drawing.Size(182, 76);
+            this.tbEventDesc.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtEvent
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(89, 183);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtEvent.Location = new System.Drawing.Point(138, 181);
+            this.dtEvent.Margin = new System.Windows.Forms.Padding(2);
+            this.dtEvent.Name = "dtEvent";
+            this.dtEvent.Size = new System.Drawing.Size(182, 20);
+            this.dtEvent.TabIndex = 2;
             // 
             // label7
             // 
@@ -692,17 +705,17 @@
             this.label7.Location = new System.Drawing.Point(31, 53);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 1;
-            this.label7.Text = "label7";
+            this.label7.Text = "Name of event";
             // 
-            // textBox7
+            // tbEventName
             // 
-            this.textBox7.Location = new System.Drawing.Point(89, 53);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(76, 20);
-            this.textBox7.TabIndex = 0;
+            this.tbEventName.Location = new System.Drawing.Point(138, 50);
+            this.tbEventName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEventName.Name = "tbEventName";
+            this.tbEventName.Size = new System.Drawing.Size(76, 20);
+            this.tbEventName.TabIndex = 0;
             // 
             // label1
             // 
@@ -754,13 +767,25 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
-            // clbTenantTask
+            // label4
             // 
-            this.clbTenantTask.FormattingEnabled = true;
-            this.clbTenantTask.Location = new System.Drawing.Point(8, 59);
-            this.clbTenantTask.Name = "clbTenantTask";
-            this.clbTenantTask.Size = new System.Drawing.Size(132, 199);
-            this.clbTenantTask.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 91);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Description of the event";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 181);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Date of the event";
             // 
             // FrmTenant
             // 
@@ -783,6 +808,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdBlancesOverView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdProductSharingInfo)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -833,11 +860,11 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListView listView5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnAddEvent;
+        private System.Windows.Forms.TextBox tbEventDesc;
+        private System.Windows.Forms.DateTimePicker dtEvent;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbEventName;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
@@ -862,6 +889,8 @@
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.CheckedListBox clbTenantTask;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 

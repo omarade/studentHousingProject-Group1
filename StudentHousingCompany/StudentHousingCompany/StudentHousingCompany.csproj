@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Complaint.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +75,6 @@
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Schedule.cs" />
-
     <Compile Include="StudentHousing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
