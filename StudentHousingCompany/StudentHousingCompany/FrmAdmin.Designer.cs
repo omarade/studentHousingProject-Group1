@@ -41,32 +41,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.BtnNextWeek = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cbWeekDays = new System.Windows.Forms.ComboBox();
-            this.btnRemoveTask = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cbRemoveTasks = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.listView6 = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAddTask = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tbTaskName = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnComplaintResolve = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lvwComplaintes = new System.Windows.Forms.ListView();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblCurrentUserName = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
             this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,12 +73,38 @@
             this.txtPhoneNr = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BtnNextWeek = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cbWeekDays = new System.Windows.Forms.ComboBox();
+            this.btnRemoveTask = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbRemoveTasks = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listView6 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAddTask = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbTaskName = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnComplaintResolve = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lvwComplaintes = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblCurrentUserName = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -260,6 +260,299 @@
             this.tpMngUsrs.TabIndex = 3;
             this.tpMngUsrs.Text = "Manage Users";
             this.tpMngUsrs.Click += new System.EventHandler(this.tpMngUsrs_Click);
+            // 
+            // btnRemoveUser
+            // 
+            this.btnRemoveUser.Location = new System.Drawing.Point(1056, 424);
+            this.btnRemoveUser.Name = "btnRemoveUser";
+            this.btnRemoveUser.Size = new System.Drawing.Size(180, 41);
+            this.btnRemoveUser.TabIndex = 51;
+            this.btnRemoveUser.Text = "Remove Selected User";
+            this.btnRemoveUser.UseVisualStyleBackColor = true;
+            this.btnRemoveUser.Click += new System.EventHandler(this.btnRemoveUser_Click);
+            // 
+            // dgdUsers
+            // 
+            this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hxtId,
+            this.hxtName,
+            this.hxtDob,
+            this.hxtEmail,
+            this.hxtPhoneNr,
+            this.hxtPostcode,
+            this.hxtAddress});
+            this.dgdUsers.Location = new System.Drawing.Point(430, 121);
+            this.dgdUsers.MultiSelect = false;
+            this.dgdUsers.Name = "dgdUsers";
+            this.dgdUsers.ReadOnly = true;
+            this.dgdUsers.RowHeadersVisible = false;
+            this.dgdUsers.RowHeadersWidth = 51;
+            this.dgdUsers.RowTemplate.Height = 24;
+            this.dgdUsers.RowTemplate.ReadOnly = true;
+            this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgdUsers.Size = new System.Drawing.Size(806, 283);
+            this.dgdUsers.TabIndex = 50;
+            this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
+            // 
+            // hxtId
+            // 
+            this.hxtId.HeaderText = "ID";
+            this.hxtId.MinimumWidth = 30;
+            this.hxtId.Name = "hxtId";
+            this.hxtId.ReadOnly = true;
+            this.hxtId.Width = 50;
+            // 
+            // hxtName
+            // 
+            this.hxtName.HeaderText = "Name";
+            this.hxtName.MinimumWidth = 6;
+            this.hxtName.Name = "hxtName";
+            this.hxtName.ReadOnly = true;
+            this.hxtName.Width = 125;
+            // 
+            // hxtDob
+            // 
+            this.hxtDob.HeaderText = "DoB";
+            this.hxtDob.MinimumWidth = 6;
+            this.hxtDob.Name = "hxtDob";
+            this.hxtDob.ReadOnly = true;
+            this.hxtDob.Width = 125;
+            // 
+            // hxtEmail
+            // 
+            this.hxtEmail.HeaderText = "Email";
+            this.hxtEmail.MinimumWidth = 6;
+            this.hxtEmail.Name = "hxtEmail";
+            this.hxtEmail.ReadOnly = true;
+            this.hxtEmail.Width = 125;
+            // 
+            // hxtPhoneNr
+            // 
+            this.hxtPhoneNr.HeaderText = "Phone Nr";
+            this.hxtPhoneNr.MinimumWidth = 6;
+            this.hxtPhoneNr.Name = "hxtPhoneNr";
+            this.hxtPhoneNr.ReadOnly = true;
+            this.hxtPhoneNr.Width = 125;
+            // 
+            // hxtPostcode
+            // 
+            this.hxtPostcode.HeaderText = "Postcode";
+            this.hxtPostcode.MinimumWidth = 6;
+            this.hxtPostcode.Name = "hxtPostcode";
+            this.hxtPostcode.ReadOnly = true;
+            this.hxtPostcode.Width = 125;
+            // 
+            // hxtAddress
+            // 
+            this.hxtAddress.HeaderText = "Address";
+            this.hxtAddress.MinimumWidth = 6;
+            this.hxtAddress.Name = "hxtAddress";
+            this.hxtAddress.ReadOnly = true;
+            this.hxtAddress.Width = 125;
+            // 
+            // dtbDoB
+            // 
+            this.dtbDoB.Location = new System.Drawing.Point(158, 172);
+            this.dtbDoB.Name = "dtbDoB";
+            this.dtbDoB.Size = new System.Drawing.Size(235, 22);
+            this.dtbDoB.TabIndex = 49;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(430, 76);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 17);
+            this.label20.TabIndex = 48;
+            this.label20.Text = "Filter By";
+            // 
+            // cboUserType
+            // 
+            this.cboUserType.Items.AddRange(new object[] {
+            "All",
+            "Admins",
+            "Tenants"});
+            this.cboUserType.Location = new System.Drawing.Point(523, 73);
+            this.cboUserType.Name = "cboUserType";
+            this.cboUserType.Size = new System.Drawing.Size(213, 24);
+            this.cboUserType.TabIndex = 47;
+            this.cboUserType.Text = "All";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(65, 96);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 17);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "User Type";
+            // 
+            // rbtnTenant
+            // 
+            this.rbtnTenant.AutoSize = true;
+            this.rbtnTenant.Location = new System.Drawing.Point(232, 95);
+            this.rbtnTenant.Name = "rbtnTenant";
+            this.rbtnTenant.Size = new System.Drawing.Size(74, 21);
+            this.rbtnTenant.TabIndex = 45;
+            this.rbtnTenant.TabStop = true;
+            this.rbtnTenant.Text = "Tenant";
+            this.rbtnTenant.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAdmin
+            // 
+            this.rbtnAdmin.AutoSize = true;
+            this.rbtnAdmin.Location = new System.Drawing.Point(158, 95);
+            this.rbtnAdmin.Name = "rbtnAdmin";
+            this.rbtnAdmin.Size = new System.Drawing.Size(68, 21);
+            this.rbtnAdmin.TabIndex = 44;
+            this.rbtnAdmin.TabStop = true;
+            this.rbtnAdmin.Text = "Admin";
+            this.rbtnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(65, 372);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 17);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(158, 367);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(235, 22);
+            this.txtAddress.TabIndex = 42;
+            // 
+            // btnUpdateUser
+            // 
+            this.btnUpdateUser.Location = new System.Drawing.Point(223, 424);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(170, 41);
+            this.btnUpdateUser.TabIndex = 41;
+            this.btnUpdateUser.Text = "Update Selected User";
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(428, 39);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 17);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Users Overview";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(65, 332);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 17);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Postcode";
+            // 
+            // txtPostcode
+            // 
+            this.txtPostcode.Location = new System.Drawing.Point(158, 327);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(235, 22);
+            this.txtPostcode.TabIndex = 38;
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Location = new System.Drawing.Point(68, 424);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(129, 41);
+            this.btnAddUser.TabIndex = 37;
+            this.btnAddUser.Text = "Create User";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(48, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 17);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "New User Info";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(65, 252);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 17);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(158, 249);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(235, 22);
+            this.txtPassword.TabIndex = 34;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(65, 290);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 17);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Phone Nr";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(65, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Email";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(65, 172);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 17);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "DoB";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Name";
+            // 
+            // txtPhoneNr
+            // 
+            this.txtPhoneNr.Location = new System.Drawing.Point(158, 287);
+            this.txtPhoneNr.Name = "txtPhoneNr";
+            this.txtPhoneNr.Size = new System.Drawing.Size(235, 22);
+            this.txtPhoneNr.TabIndex = 29;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(158, 211);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(235, 22);
+            this.txtEmail.TabIndex = 28;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(158, 133);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(235, 22);
+            this.txtName.TabIndex = 27;
             // 
             // tabPage2
             // 
@@ -526,286 +819,6 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnRemoveUser
-            // 
-            this.btnRemoveUser.Location = new System.Drawing.Point(1056, 424);
-            this.btnRemoveUser.Name = "btnRemoveUser";
-            this.btnRemoveUser.Size = new System.Drawing.Size(180, 41);
-            this.btnRemoveUser.TabIndex = 51;
-            this.btnRemoveUser.Text = "Remove Selected User";
-            this.btnRemoveUser.UseVisualStyleBackColor = true;
-            // 
-            // dgdUsers
-            // 
-            this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hxtId,
-            this.hxtName,
-            this.hxtDob,
-            this.hxtEmail,
-            this.hxtPhoneNr,
-            this.hxtPostcode,
-            this.hxtAddress});
-            this.dgdUsers.Location = new System.Drawing.Point(430, 121);
-            this.dgdUsers.Name = "dgdUsers";
-            this.dgdUsers.RowHeadersVisible = false;
-            this.dgdUsers.RowHeadersWidth = 51;
-            this.dgdUsers.RowTemplate.Height = 24;
-            this.dgdUsers.RowTemplate.ReadOnly = true;
-            this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgdUsers.Size = new System.Drawing.Size(806, 283);
-            this.dgdUsers.TabIndex = 50;
-            // 
-            // hxtId
-            // 
-            this.hxtId.HeaderText = "ID";
-            this.hxtId.MinimumWidth = 30;
-            this.hxtId.Name = "hxtId";
-            this.hxtId.Width = 50;
-            // 
-            // hxtName
-            // 
-            this.hxtName.HeaderText = "Name";
-            this.hxtName.MinimumWidth = 6;
-            this.hxtName.Name = "hxtName";
-            this.hxtName.Width = 125;
-            // 
-            // hxtDob
-            // 
-            this.hxtDob.HeaderText = "DoB";
-            this.hxtDob.MinimumWidth = 6;
-            this.hxtDob.Name = "hxtDob";
-            this.hxtDob.Width = 125;
-            // 
-            // hxtEmail
-            // 
-            this.hxtEmail.HeaderText = "Email";
-            this.hxtEmail.MinimumWidth = 6;
-            this.hxtEmail.Name = "hxtEmail";
-            this.hxtEmail.Width = 125;
-            // 
-            // hxtPhoneNr
-            // 
-            this.hxtPhoneNr.HeaderText = "Phone Nr";
-            this.hxtPhoneNr.MinimumWidth = 6;
-            this.hxtPhoneNr.Name = "hxtPhoneNr";
-            this.hxtPhoneNr.Width = 125;
-            // 
-            // hxtPostcode
-            // 
-            this.hxtPostcode.HeaderText = "Postcode";
-            this.hxtPostcode.MinimumWidth = 6;
-            this.hxtPostcode.Name = "hxtPostcode";
-            this.hxtPostcode.Width = 125;
-            // 
-            // hxtAddress
-            // 
-            this.hxtAddress.HeaderText = "Address";
-            this.hxtAddress.MinimumWidth = 6;
-            this.hxtAddress.Name = "hxtAddress";
-            this.hxtAddress.Width = 125;
-            // 
-            // dtbDoB
-            // 
-            this.dtbDoB.Location = new System.Drawing.Point(158, 172);
-            this.dtbDoB.Name = "dtbDoB";
-            this.dtbDoB.Size = new System.Drawing.Size(235, 22);
-            this.dtbDoB.TabIndex = 49;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(430, 76);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 17);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "Filter By";
-            // 
-            // cboUserType
-            // 
-            this.cboUserType.Items.AddRange(new object[] {
-            "All",
-            "Admins",
-            "Tenants"});
-            this.cboUserType.Location = new System.Drawing.Point(523, 73);
-            this.cboUserType.Name = "cboUserType";
-            this.cboUserType.Size = new System.Drawing.Size(213, 24);
-            this.cboUserType.TabIndex = 47;
-            this.cboUserType.Text = "All";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(65, 96);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 17);
-            this.label19.TabIndex = 46;
-            this.label19.Text = "User Type";
-            // 
-            // rbtnTenant
-            // 
-            this.rbtnTenant.AutoSize = true;
-            this.rbtnTenant.Location = new System.Drawing.Point(232, 95);
-            this.rbtnTenant.Name = "rbtnTenant";
-            this.rbtnTenant.Size = new System.Drawing.Size(74, 21);
-            this.rbtnTenant.TabIndex = 45;
-            this.rbtnTenant.TabStop = true;
-            this.rbtnTenant.Text = "Tenant";
-            this.rbtnTenant.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAdmin
-            // 
-            this.rbtnAdmin.AutoSize = true;
-            this.rbtnAdmin.Location = new System.Drawing.Point(158, 95);
-            this.rbtnAdmin.Name = "rbtnAdmin";
-            this.rbtnAdmin.Size = new System.Drawing.Size(68, 21);
-            this.rbtnAdmin.TabIndex = 44;
-            this.rbtnAdmin.TabStop = true;
-            this.rbtnAdmin.Text = "Admin";
-            this.rbtnAdmin.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(65, 372);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 17);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "Address";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(158, 367);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(235, 22);
-            this.txtAddress.TabIndex = 42;
-            // 
-            // btnUpdateUser
-            // 
-            this.btnUpdateUser.Location = new System.Drawing.Point(223, 424);
-            this.btnUpdateUser.Name = "btnUpdateUser";
-            this.btnUpdateUser.Size = new System.Drawing.Size(170, 41);
-            this.btnUpdateUser.TabIndex = 41;
-            this.btnUpdateUser.Text = "Update Selected User";
-            this.btnUpdateUser.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(428, 39);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 17);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "Users Overview";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(65, 332);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 17);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Postcode";
-            // 
-            // txtPostcode
-            // 
-            this.txtPostcode.Location = new System.Drawing.Point(158, 327);
-            this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(235, 22);
-            this.txtPostcode.TabIndex = 38;
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.Location = new System.Drawing.Point(68, 424);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(129, 41);
-            this.btnAddUser.TabIndex = 37;
-            this.btnAddUser.Text = "Create User";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 17);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "New User Info";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(65, 252);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 17);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(158, 249);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(235, 22);
-            this.txtPassword.TabIndex = 34;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(65, 290);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 17);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Phone Nr";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 211);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 17);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Email";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 17);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "DoB";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Name";
-            // 
-            // txtPhoneNr
-            // 
-            this.txtPhoneNr.Location = new System.Drawing.Point(158, 287);
-            this.txtPhoneNr.Name = "txtPhoneNr";
-            this.txtPhoneNr.Size = new System.Drawing.Size(235, 22);
-            this.txtPhoneNr.TabIndex = 29;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(158, 211);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(235, 22);
-            this.txtEmail.TabIndex = 28;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(158, 133);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(235, 22);
-            this.txtName.TabIndex = 27;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -823,11 +836,11 @@
             this.tabPage1.PerformLayout();
             this.tpMngUsrs.ResumeLayout(false);
             this.tpMngUsrs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
