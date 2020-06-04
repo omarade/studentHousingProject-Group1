@@ -18,8 +18,6 @@ namespace StudentHousingCompany
 
         public List<Schedule> Schedules { get; }
 
-        public List<string> Tasks { get; }
-
         public List<User> Users { get; }
 
         public List<Tenant> Tenants { get; }
@@ -35,7 +33,6 @@ namespace StudentHousingCompany
             Tenants = new List<Tenant>();
             Products = new List<Product>();
             Schedules = new List<Schedule>();
-            Tasks = new List<string>();
 
         }
 
@@ -159,16 +156,34 @@ namespace StudentHousingCompany
 
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
+
+            AddTask("Bathroom", DayOfWeek.Friday);
+            AddTask("LivingRoom", DayOfWeek.Friday);
+            AddTask("Kitchen", DayOfWeek.Friday);
+            AddTask("General House Items", DayOfWeek.Friday);
+            AddTask("Task1", DayOfWeek.Friday);
+            AddTask("Task2", DayOfWeek.Friday);
+            AddTask("Task3", DayOfWeek.Friday);
+            AddTask("Task4", DayOfWeek.Friday);
+            AddTask("Task5", DayOfWeek.Thursday);
+
         }
 
+        /// <summary>
+        /// Creates a new task
+        /// </summary>
+        /// <param name="taskName">Name of the task</param>
+        /// <param name="day">Weekday name</param>
         public void AddTask(string taskName, DayOfWeek day)
-        {//TODO Find the right student name to add to the task
-            Tasks.Add(taskName);
+        {
             Schedule newTask = new Schedule(taskName, day);
             Schedules.Add(newTask);
             ResetSchedule();
         }
 
+        /// <summary>
+        /// ReOrders the tasks between tenants
+        /// </summary>
         public void ResetSchedule()
         {
             int counter = 0;
@@ -183,6 +198,10 @@ namespace StudentHousingCompany
             }
         }
 
+        /// <summary>
+        /// Finds if the loged in user has a task
+        /// </summary>
+        /// <returns></returns>
         public string GetTenantTask()
         {
             string taskname = "No Task";
@@ -197,25 +216,36 @@ namespace StudentHousingCompany
             return taskname;
         }
 
-        public void CompleteTask()
+        /// <summary>
+        /// Marks a task as completed
+        /// </summary>
+        /// <param name="taskName">Name of task that need to be completed</param>
+        public void CompleteTask(string taskName)
         {
             foreach (var task in Schedules)
             {
-                if (task.GetStudent() == CurrentUser.Name)
+                if (task.GetTask() == taskName)
                 {
                     task.SetStatus(true);
                 }
             }
         }
 
+        /// <summary>
+        /// Sets the next tenant to do the task
+        /// </summary>
         public void SetNextTenant()
         {
             foreach (var task in Schedules)
             {
                 task.SetNextStudent(Tenants);
             }
+            SetNextDueDay();
         }
 
+        /// <summary>
+        /// Changes a due date to the next week
+        /// </summary>
         public void SetNextDueDay()
         {
             foreach (var task in Schedules)
@@ -236,6 +266,10 @@ namespace StudentHousingCompany
             }
         }
 
+        /// <summary>
+        /// Removes selected task from the list
+        /// </summary>
+        /// <param name="taskName">Name of task</param>
         public void RemoveTask(string taskName)
         {
             for (int i = 0; i < Schedules.Count; i++)
@@ -243,9 +277,24 @@ namespace StudentHousingCompany
                 if (Schedules[i].GetTask() == taskName)
                 {
                     Schedules.RemoveAt(i);
-                    Tasks.RemoveAt(i);
                 }
             }
+        }
+
+        /// <summary>
+        /// Finds if the end of the week has been reached
+        /// </summary>
+        /// <returns></returns>
+        public bool IsEndOfWeek()
+        {
+            DayOfWeek day = DayOfWeek.Sunday;
+            DayOfWeek today = DateTime.Now.DayOfWeek;
+            if (day == today)
+            {
+                return true;
+            }
+            else { return false; }
+
         }
     }
 }

@@ -94,6 +94,7 @@ namespace StudentHousingCompany
             }
 
             this.Student = students[index].Name;
+            this.Student = students[index].Name;
             SetStatus(false);
         }
 
@@ -124,7 +125,7 @@ namespace StudentHousingCompany
             arr[0] = GetStudent();
             arr[1] = GetTask();
             arr[2] = GetStatus().ToString();
-            arr[3] = GetDueDate().ToString();
+            arr[3] = GetDueDate().ToString("dd/MM/yyyy");
             itm = new ListViewItem(arr);
 
             return itm;

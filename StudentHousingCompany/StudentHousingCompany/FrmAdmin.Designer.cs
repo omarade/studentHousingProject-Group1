@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
@@ -134,7 +136,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(673, 412);
+            this.tabPage1.Size = new System.Drawing.Size(1102, 412);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             // 
@@ -596,10 +598,11 @@
             // 
             // BtnNextWeek
             // 
-            this.BtnNextWeek.Location = new System.Drawing.Point(1027, 378);
-            this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNextWeek.Location = new System.Drawing.Point(841, 364);
+            this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(2);
             this.BtnNextWeek.Name = "BtnNextWeek";
-            this.BtnNextWeek.Size = new System.Drawing.Size(71, 30);
+            this.BtnNextWeek.Size = new System.Drawing.Size(123, 30);
             this.BtnNextWeek.TabIndex = 13;
             this.BtnNextWeek.Text = "Next Week";
             this.BtnNextWeek.UseVisualStyleBackColor = true;
@@ -608,15 +611,17 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(24, 70);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(20, 101);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(49, 13);
+            this.label21.Size = new System.Drawing.Size(109, 20);
             this.label21.TabIndex = 11;
-            this.label21.Text = "Due Day";
+            this.label21.Text = "Task Due Day";
             // 
             // cbWeekDays
             // 
+            this.cbWeekDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbWeekDays.FormattingEnabled = true;
             this.cbWeekDays.Items.AddRange(new object[] {
             "Monday",
@@ -626,19 +631,20 @@
             "Friday",
             "Saterday",
             "Sunday"});
-            this.cbWeekDays.Location = new System.Drawing.Point(24, 84);
+            this.cbWeekDays.Location = new System.Drawing.Point(24, 123);
             this.cbWeekDays.Margin = new System.Windows.Forms.Padding(2);
             this.cbWeekDays.Name = "cbWeekDays";
-            this.cbWeekDays.Size = new System.Drawing.Size(97, 21);
+            this.cbWeekDays.Size = new System.Drawing.Size(124, 28);
             this.cbWeekDays.TabIndex = 10;
             this.cbWeekDays.SelectedIndexChanged += new System.EventHandler(this.cbWeekDays_SelectedIndexChanged);
             // 
             // btnRemoveTask
             // 
-            this.btnRemoveTask.Location = new System.Drawing.Point(24, 367);
+            this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveTask.Location = new System.Drawing.Point(24, 364);
             this.btnRemoveTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveTask.Name = "btnRemoveTask";
-            this.btnRemoveTask.Size = new System.Drawing.Size(74, 30);
+            this.btnRemoveTask.Size = new System.Drawing.Size(99, 30);
             this.btnRemoveTask.TabIndex = 9;
             this.btnRemoveTask.Text = "Remove";
             this.btnRemoveTask.UseVisualStyleBackColor = true;
@@ -647,29 +653,32 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(22, 333);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(20, 310);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 13);
+            this.label14.Size = new System.Drawing.Size(51, 20);
             this.label14.TabIndex = 8;
             this.label14.Text = "Tasks";
             // 
             // cbRemoveTasks
             // 
+            this.cbRemoveTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRemoveTasks.FormattingEnabled = true;
-            this.cbRemoveTasks.Location = new System.Drawing.Point(24, 347);
+            this.cbRemoveTasks.Location = new System.Drawing.Point(24, 332);
             this.cbRemoveTasks.Margin = new System.Windows.Forms.Padding(2);
             this.cbRemoveTasks.Name = "cbRemoveTasks";
-            this.cbRemoveTasks.Size = new System.Drawing.Size(129, 21);
+            this.cbRemoveTasks.Size = new System.Drawing.Size(129, 28);
             this.cbRemoveTasks.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(200, 22);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(436, 38);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 13);
+            this.label13.Size = new System.Drawing.Size(129, 20);
             this.label13.TabIndex = 6;
             this.label13.Text = "This Week Tasks";
             // 
@@ -680,11 +689,12 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader1});
+            this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(201, 41);
+            this.listView6.Location = new System.Drawing.Point(440, 72);
             this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(401, 235);
+            this.listView6.Size = new System.Drawing.Size(524, 288);
             this.listView6.TabIndex = 5;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -692,12 +702,12 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Name";
-            this.columnHeader7.Width = 81;
+            this.columnHeader7.Width = 150;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Task";
-            this.columnHeader11.Width = 87;
+            this.columnHeader11.Width = 150;
             // 
             // columnHeader12
             // 
@@ -707,13 +717,15 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Due Day";
+            this.columnHeader1.Width = 100;
             // 
             // btnAddTask
             // 
-            this.btnAddTask.Location = new System.Drawing.Point(24, 111);
+            this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTask.Location = new System.Drawing.Point(24, 179);
             this.btnAddTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTask.Name = "btnAddTask";
-            this.btnAddTask.Size = new System.Drawing.Size(42, 22);
+            this.btnAddTask.Size = new System.Drawing.Size(66, 36);
             this.btnAddTask.TabIndex = 3;
             this.btnAddTask.Text = "Add";
             this.btnAddTask.UseVisualStyleBackColor = true;
@@ -722,19 +734,21 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 29);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(20, 26);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.Size = new System.Drawing.Size(76, 20);
             this.label12.TabIndex = 2;
             this.label12.Text = "Task Title";
             // 
             // tbTaskName
             // 
-            this.tbTaskName.Location = new System.Drawing.Point(24, 48);
+            this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTaskName.Location = new System.Drawing.Point(24, 59);
             this.tbTaskName.Margin = new System.Windows.Forms.Padding(2);
             this.tbTaskName.Name = "tbTaskName";
-            this.tbTaskName.Size = new System.Drawing.Size(78, 20);
+            this.tbTaskName.Size = new System.Drawing.Size(133, 26);
             this.tbTaskName.TabIndex = 0;
             // 
             // tabPage3
@@ -826,6 +840,11 @@
             this.button4.Text = "Go to Tenant";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 30000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmAdmin
             // 
@@ -925,6 +944,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
         private System.Windows.Forms.Button BtnNextWeek;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-
+        private System.Windows.Forms.Timer timer1;
     }
 }

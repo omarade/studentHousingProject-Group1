@@ -18,7 +18,6 @@ namespace StudentHousingCompany
         public FrmTenant()
         {
             InitializeComponent();
-
             studentHousing = StudentHousing.Instance;
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
@@ -143,24 +142,63 @@ namespace StudentHousingCompany
 
         }
 
+
+
         private void btnTaskComplete_Click(object sender, EventArgs e)
-        {
-            studentHousing.CompleteTask();
+        {//Mark checked Tasks as completed 
+            foreach (string taskName in clbTenantTask.CheckedItems)
+            {
+                foreach (var task in studentHousing.Schedules)
+                {
+                    studentHousing.CompleteTask(taskName);
+                }
+            }
+
             ShowTasks();
         }
 
+        /// <summary>
+        /// This Function finds the competed taks and highlights them
+        /// </summary>
+        public void CheckTaskStatus()
+        {
+            int counter = 0;
+
+            foreach (var task in studentHousing.Schedules)
+            {
+                if (task.GetStatus() == true)
+                {
+                    listView6.Items[counter].BackColor = Color.Green;
+                }
+                counter++;
+            }
+        }
+
+
+        /// <summary>
+        /// This function finds the tasks for the logedin User.
+        /// </summary>
         public void ShowTasks()
         {
+            clbTenantTask.Items.Clear();
             listView6.Items.Clear();
             var schedule = studentHousing.Schedules;
 
             foreach (var task in schedule)
             {
                 listView6.Items.Add(task.GetInfo());
+                if (task.GetStudent() == studentHousing.CurrentUser.Name)
+                {
+                    clbTenantTask.Items.Add(task.GetTask());
+                }
             }
 
             if (studentHousing.GetTenantTask() == "No Task")
-            { btnTaskComplete.Enabled = false; }
+            { 
+                btnTaskComplete.Enabled = false; 
+            }
+
+            CheckTaskStatus();
 
         }
     }

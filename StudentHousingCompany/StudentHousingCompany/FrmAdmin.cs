@@ -20,7 +20,7 @@ namespace StudentHousingCompany
             studentHousing = StudentHousing.Instance;
             ShowUsers();
             ShowTasks();
-            FillRemoveTask();
+            timer1.Enabled = true;
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
@@ -333,7 +333,7 @@ namespace StudentHousingCompany
         }
 
         private void btnAddTask_Click(object sender, EventArgs e)
-        {
+        {//Adds a task with a unique name
             bool NameExsists = false;
             string TaskName = tbTaskName.Text;
             var schedule = studentHousing.Schedules;
@@ -355,13 +355,14 @@ namespace StudentHousingCompany
             }
             
             ShowTasks();
-            FillRemoveTask();
         }
 
-        private void btnConfirmDay_Click(object sender, EventArgs e)
-        {
-            studentHousing.ChangeDueWeekday(day);
-        }
+        
+
+        /// <summary>
+        /// Fills the Listview with the info of every task
+        ///
+        /// </summary>
         public void ShowTasks()
         {
             listView6.Items.Clear();
@@ -371,10 +372,13 @@ namespace StudentHousingCompany
             {
                 listView6.Items.Add(task.GetInfo());
             }
+            FillRemoveTask();
+            CheckTaskStatus();
         }
 
+
         private void cbWeekDays_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {//Sets the weekday due day for the new task
             switch (cbWeekDays.SelectedIndex)
             {
                 case 0:
@@ -411,6 +415,10 @@ namespace StudentHousingCompany
             }
         }
 
+
+        /// <summary>
+        /// Fills the combobax with every task to remove the task
+        /// </summary>
         public void FillRemoveTask()
         {
             cbRemoveTasks.Items.Clear();
@@ -422,12 +430,59 @@ namespace StudentHousingCompany
             }
         }
 
-        private void btnRemoveTask_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Checks every task and highlights it in the listview to mark competion
+        /// </summary>
+        public void CheckTaskStatus()
         {
+            int counter = 0;
+
+            foreach (var task in studentHousing.Schedules)
+            {          
+                if (task.GetStatus() == true)
+                {
+                    listView6.Items[counter].BackColor = Color.Green;
+                }
+                counter++;
+            }
+        }
+
+
+        private void btnRemoveTask_Click(object sender, EventArgs e)
+        {//Removes task selected in the remove task combobox
             studentHousing.RemoveTask(cbRemoveTasks.Text);
             ShowTasks();
-            FillRemoveTask();
             cbRemoveTasks.Text = "";
+
+        }
+
+
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {//Timer to check if when a task should've been completed or when the week has passed
+
+            //Checks if the next week startes to show new weekly tasks
+            if (studentHousing.IsEndOfWeek() == true)
+            {
+                studentHousing.SetNextTenant();
+                ShowTasks();
+            }
+
+
+            //Checks task that havent been competed by there due day
+            int counter = 0;
+
+            foreach (var task in studentHousing.Schedules)
+            {              
+                if (task.GetDueDate().Date < DateTime.Now.Date)
+                {                    
+                    if (task.GetStatus() == false)
+                    {
+                        listView6.Items[counter].BackColor = Color.Red;
+                    }
+                    counter++;
+                }
+            }
 
         }
     }

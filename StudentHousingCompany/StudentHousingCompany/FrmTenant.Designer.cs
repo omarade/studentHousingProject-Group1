@@ -48,7 +48,6 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTaskComplete = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgdBlancesOverView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +93,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
+            this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -225,11 +225,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.clbTenantTask);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.listView6);
             this.tabPage1.Controls.Add(this.btnTaskComplete);
-            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
@@ -241,20 +241,22 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 83);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(4, 25);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.Size = new System.Drawing.Size(109, 20);
             this.label10.TabIndex = 6;
             this.label10.Text = "Personal Task";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(296, 59);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(168, 25);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 13);
+            this.label9.Size = new System.Drawing.Size(158, 20);
             this.label9.TabIndex = 5;
             this.label9.Text = "This Week Tasks List";
             // 
@@ -265,11 +267,12 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader4});
+            this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(299, 83);
+            this.listView6.Location = new System.Drawing.Point(172, 59);
             this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(373, 244);
+            this.listView6.Size = new System.Drawing.Size(500, 290);
             this.listView6.TabIndex = 4;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -277,43 +280,34 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Name";
-            this.columnHeader5.Width = 81;
+            this.columnHeader5.Width = 150;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Task";
-            this.columnHeader11.Width = 87;
+            this.columnHeader11.Width = 150;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Status";
-            this.columnHeader12.Width = 140;
+            this.columnHeader12.Width = 80;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Due Day";
+            this.columnHeader4.Width = 100;
             // 
             // btnTaskComplete
             // 
-            this.btnTaskComplete.Location = new System.Drawing.Point(47, 178);
+            this.btnTaskComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaskComplete.Location = new System.Drawing.Point(8, 302);
             this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaskComplete.Name = "btnTaskComplete";
-            this.btnTaskComplete.Size = new System.Drawing.Size(82, 34);
+            this.btnTaskComplete.Size = new System.Drawing.Size(109, 47);
             this.btnTaskComplete.TabIndex = 1;
             this.btnTaskComplete.Text = "Completed?";
             this.btnTaskComplete.UseVisualStyleBackColor = true;
             this.btnTaskComplete.Click += new System.EventHandler(this.btnTaskComplete_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label4.Location = new System.Drawing.Point(40, 132);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Task: BathRoom";
             // 
             // tabPage2
             // 
@@ -760,6 +754,14 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
+            // clbTenantTask
+            // 
+            this.clbTenantTask.FormattingEnabled = true;
+            this.clbTenantTask.Location = new System.Drawing.Point(8, 59);
+            this.clbTenantTask.Name = "clbTenantTask";
+            this.clbTenantTask.Size = new System.Drawing.Size(132, 199);
+            this.clbTenantTask.TabIndex = 7;
+            // 
             // FrmTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -808,7 +810,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
 
         private System.Windows.Forms.Button btnTaskComplete;
@@ -862,7 +863,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-
+        private System.Windows.Forms.CheckedListBox clbTenantTask;
     }
 }
 
