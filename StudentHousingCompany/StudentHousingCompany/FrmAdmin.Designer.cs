@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,13 +43,6 @@
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
-            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtbDoB = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.cboUserType = new System.Windows.Forms.ComboBox();
@@ -99,7 +92,14 @@
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1.SuspendLayout();
+            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
@@ -107,18 +107,19 @@
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tpMngUsrs);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(9, 37);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1480, 539);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tpMngUsrs);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Location = new System.Drawing.Point(9, 37);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1480, 539);
+            this.tabControl.TabIndex = 0;
+            this.tabControl.Click += new System.EventHandler(this.tabControl_Click);
             // 
             // tabPage1
             // 
@@ -273,6 +274,11 @@
             // 
             // dgdUsers
             // 
+            this.dgdUsers.AllowUserToAddRows = false;
+            this.dgdUsers.AllowUserToDeleteRows = false;
+            this.dgdUsers.AllowUserToOrderColumns = true;
+            this.dgdUsers.AllowUserToResizeRows = false;
+            this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -295,62 +301,6 @@
             this.dgdUsers.Size = new System.Drawing.Size(806, 283);
             this.dgdUsers.TabIndex = 50;
             this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
-            // 
-            // hxtId
-            // 
-            this.hxtId.HeaderText = "ID";
-            this.hxtId.MinimumWidth = 30;
-            this.hxtId.Name = "hxtId";
-            this.hxtId.ReadOnly = true;
-            this.hxtId.Width = 50;
-            // 
-            // hxtName
-            // 
-            this.hxtName.HeaderText = "Name";
-            this.hxtName.MinimumWidth = 6;
-            this.hxtName.Name = "hxtName";
-            this.hxtName.ReadOnly = true;
-            this.hxtName.Width = 125;
-            // 
-            // hxtDob
-            // 
-            this.hxtDob.HeaderText = "DoB";
-            this.hxtDob.MinimumWidth = 6;
-            this.hxtDob.Name = "hxtDob";
-            this.hxtDob.ReadOnly = true;
-            this.hxtDob.Width = 125;
-            // 
-            // hxtEmail
-            // 
-            this.hxtEmail.HeaderText = "Email";
-            this.hxtEmail.MinimumWidth = 6;
-            this.hxtEmail.Name = "hxtEmail";
-            this.hxtEmail.ReadOnly = true;
-            this.hxtEmail.Width = 125;
-            // 
-            // hxtPhoneNr
-            // 
-            this.hxtPhoneNr.HeaderText = "Phone Nr";
-            this.hxtPhoneNr.MinimumWidth = 6;
-            this.hxtPhoneNr.Name = "hxtPhoneNr";
-            this.hxtPhoneNr.ReadOnly = true;
-            this.hxtPhoneNr.Width = 125;
-            // 
-            // hxtPostcode
-            // 
-            this.hxtPostcode.HeaderText = "Postcode";
-            this.hxtPostcode.MinimumWidth = 6;
-            this.hxtPostcode.Name = "hxtPostcode";
-            this.hxtPostcode.ReadOnly = true;
-            this.hxtPostcode.Width = 125;
-            // 
-            // hxtAddress
-            // 
-            this.hxtAddress.HeaderText = "Address";
-            this.hxtAddress.MinimumWidth = 6;
-            this.hxtAddress.Name = "hxtAddress";
-            this.hxtAddress.ReadOnly = true;
-            this.hxtAddress.Width = 125;
             // 
             // dtbDoB
             // 
@@ -410,6 +360,7 @@
             this.rbtnAdmin.TabStop = true;
             this.rbtnAdmin.Text = "Admin";
             this.rbtnAdmin.UseVisualStyleBackColor = true;
+            this.rbtnAdmin.CheckedChanged += new System.EventHandler(this.rbtnAdmin_CheckedChanged);
             // 
             // label18
             // 
@@ -819,6 +770,62 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // hxtId
+            // 
+            this.hxtId.HeaderText = "ID";
+            this.hxtId.MinimumWidth = 30;
+            this.hxtId.Name = "hxtId";
+            this.hxtId.ReadOnly = true;
+            this.hxtId.Width = 50;
+            // 
+            // hxtName
+            // 
+            this.hxtName.HeaderText = "Name";
+            this.hxtName.MinimumWidth = 6;
+            this.hxtName.Name = "hxtName";
+            this.hxtName.ReadOnly = true;
+            this.hxtName.Width = 74;
+            // 
+            // hxtDob
+            // 
+            this.hxtDob.HeaderText = "DoB";
+            this.hxtDob.MinimumWidth = 6;
+            this.hxtDob.Name = "hxtDob";
+            this.hxtDob.ReadOnly = true;
+            this.hxtDob.Width = 64;
+            // 
+            // hxtEmail
+            // 
+            this.hxtEmail.HeaderText = "Email";
+            this.hxtEmail.MinimumWidth = 6;
+            this.hxtEmail.Name = "hxtEmail";
+            this.hxtEmail.ReadOnly = true;
+            this.hxtEmail.Width = 71;
+            // 
+            // hxtPhoneNr
+            // 
+            this.hxtPhoneNr.HeaderText = "Phone Nr";
+            this.hxtPhoneNr.MinimumWidth = 6;
+            this.hxtPhoneNr.Name = "hxtPhoneNr";
+            this.hxtPhoneNr.ReadOnly = true;
+            this.hxtPhoneNr.Width = 97;
+            // 
+            // hxtPostcode
+            // 
+            this.hxtPostcode.HeaderText = "Postcode";
+            this.hxtPostcode.MinimumWidth = 6;
+            this.hxtPostcode.Name = "hxtPostcode";
+            this.hxtPostcode.ReadOnly = true;
+            this.hxtPostcode.Width = 96;
+            // 
+            // hxtAddress
+            // 
+            this.hxtAddress.HeaderText = "Address";
+            this.hxtAddress.MinimumWidth = 6;
+            this.hxtAddress.Name = "hxtAddress";
+            this.hxtAddress.ReadOnly = true;
+            this.hxtAddress.Width = 89;
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -827,11 +834,11 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAdmin";
             this.Text = "Student Housing";
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tpMngUsrs.ResumeLayout(false);
@@ -848,7 +855,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -888,13 +895,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnRemoveUser;
         private System.Windows.Forms.DataGridView dgdUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtDob;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtPhoneNr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtPostcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
         private System.Windows.Forms.DateTimePicker dtbDoB;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboUserType;
@@ -918,5 +918,12 @@
         private System.Windows.Forms.TextBox txtPhoneNr;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtDob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtPhoneNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtPostcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
     }
 }

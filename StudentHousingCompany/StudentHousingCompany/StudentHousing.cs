@@ -140,9 +140,6 @@ namespace StudentHousingCompany
             DateTime dob = new DateTime(1987, 03, 06);
             AddUser("Admin", dob, "admin", "1234");
 
-            dob = new DateTime(1990, 03, 05);
-            AddUser("Omar Dehn", dob, "omar@live.com", "1234");
-
             dob = new DateTime(1985, 03, 05);
             AddUser("Bill burr", dob, "bill@live.com", "1234");
 

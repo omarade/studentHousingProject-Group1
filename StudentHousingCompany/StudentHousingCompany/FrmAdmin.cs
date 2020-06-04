@@ -232,7 +232,6 @@ namespace StudentHousingCompany
 
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
-            
             if (dgdUsers.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
@@ -246,8 +245,6 @@ namespace StudentHousingCompany
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
-            
-
             if (dgdUsers.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
@@ -255,8 +252,7 @@ namespace StudentHousingCompany
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
 
                 User user = studentHousing.GetUserById(id);
-                
-            
+
                 string name = txtName.Text;
                 DateTime dateOfBirth = dtbDoB.Value;
                 string email = txtEmail.Text;
@@ -272,8 +268,6 @@ namespace StudentHousingCompany
                 {
                     studentHousing.UpdateUser(id, name, dateOfBirth, email, phoneNr, postcode, address);
                 }
-                
-            
 
                 ShowUsers();
             }
@@ -290,12 +284,10 @@ namespace StudentHousingCompany
 
                 User user = studentHousing.GetUserById(id);
                 
-                
                 txtPassword.Enabled = false;
                 txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
                 dtbDoB.Value = user.DateOfBirth;
                 txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
-
 
                 if (user is Tenant)
                 {
@@ -308,12 +300,15 @@ namespace StudentHousingCompany
                 {
                     rbtnAdmin.Checked = true;
                 }
-                
-                
             }
         }
 
         private void tpMngUsrs_Click(object sender, EventArgs e)
+        {
+            ClearSelectedUser();
+        }
+
+        private void ClearSelectedUser()
         {
             dgdUsers.ClearSelection();
             txtPassword.Enabled = true;
@@ -486,5 +481,9 @@ namespace StudentHousingCompany
 
         }
 
+        private void tabControl_Click(object sender, EventArgs e)
+        {
+            ClearSelectedUser();
+        }
     }
 }
