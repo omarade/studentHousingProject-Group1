@@ -16,19 +16,20 @@ namespace StudentHousingCompany
         
         public FrmTenant()
         {
+
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            
-            foreach(Tenant tenant in studentHousing.Tenants)
+
+            foreach(Tenant tenant in studentHousing.GetTenants())
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
 
             //studentHousing.ProductId = 0;
 
-            foreach (Tenant t in studentHousing.Tenants)
+            foreach (Tenant t in studentHousing.GetTenants())
             {
                 dgdBlancesOverView.Rows.Add(t.Id, t.Name, t.Balance);
             }
@@ -67,6 +68,7 @@ namespace StudentHousingCompany
 
         private void btnAddToShoppingList_Click(object sender, EventArgs e)
         {
+            List<Tenant> tenants = studentHousing.GetTenants();
 
             if(tbxFullPrice.Text == null)
             {
@@ -84,7 +86,7 @@ namespace StudentHousingCompany
 
             foreach (string tenantName in clbTenantsToshare.CheckedItems)
             {
-              foreach(Tenant ten in studentHousing.Tenants)
+              foreach(Tenant ten in tenants)
               {
                  if (ten.Name == tenantName)
                  {
@@ -100,7 +102,7 @@ namespace StudentHousingCompany
 
             foreach(Tenant tenant1 in newProduct.TenantesShredWith)
             {
-                foreach(Tenant tenant in studentHousing.Tenants)
+                foreach(Tenant tenant in tenants)
                 {
                     if(tenant.Id == tenant1.Id)
                     {
@@ -129,7 +131,7 @@ namespace StudentHousingCompany
 
             dgdBlancesOverView.Rows.Clear();
 
-            foreach(Tenant t in studentHousing.Tenants)
+            foreach(Tenant t in tenants)
             {
                 dgdBlancesOverView.Rows.Add(Convert.ToString(t.Id), t.Name,Convert.ToString(t.Balance));
             }
