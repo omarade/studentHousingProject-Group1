@@ -13,15 +13,15 @@ namespace StudentHousingCompany
     public partial class FrmTenant : Form
     {
         private StudentHousing studentHousing;
-        
+
         public FrmTenant()
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            
-            foreach(Tenant tenant in studentHousing.Tenants)
+
+            foreach (Tenant tenant in studentHousing.Tenants)
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
@@ -34,6 +34,7 @@ namespace StudentHousingCompany
             }
 
             ShowTasks();
+            FillEventsList();
 
         }
 
@@ -68,9 +69,9 @@ namespace StudentHousingCompany
         private void btnAddToShoppingList_Click(object sender, EventArgs e)
         {
 
-            if(tbxFullPrice.Text == null)
+            if (tbxFullPrice.Text == null)
             {
-                if(tbxProductname.Text == null)
+                if (tbxProductname.Text == null)
                 {
                     tbxProductname.Text = "";
                 }
@@ -84,13 +85,13 @@ namespace StudentHousingCompany
 
             foreach (string tenantName in clbTenantsToshare.CheckedItems)
             {
-              foreach(Tenant ten in studentHousing.Tenants)
-              {
-                 if (ten.Name == tenantName)
-                 {
-                    newProduct.TenantesShredWith.Add(ten);
-                 }
-              }
+                foreach (Tenant ten in studentHousing.Tenants)
+                {
+                    if (ten.Name == tenantName)
+                    {
+                        newProduct.TenantesShredWith.Add(ten);
+                    }
+                }
             }
 
             int NumberOfParticpants = newProduct.TenantesIDShredWith.Count;
@@ -98,11 +99,11 @@ namespace StudentHousingCompany
 
             int currentuserID = studentHousing.CurrentUser.Id;
 
-            foreach(Tenant tenant1 in newProduct.TenantesShredWith)
+            foreach (Tenant tenant1 in newProduct.TenantesShredWith)
             {
-                foreach(Tenant tenant in studentHousing.Tenants)
+                foreach (Tenant tenant in studentHousing.Tenants)
                 {
-                    if(tenant.Id == tenant1.Id)
+                    if (tenant.Id == tenant1.Id)
                     {
                         if (tenant.Id == currentuserID)
                         {
@@ -120,20 +121,20 @@ namespace StudentHousingCompany
 
             string sharedwith = "";
 
-            foreach(Tenant t in newProduct.TenantesShredWith)
+            foreach (Tenant t in newProduct.TenantesShredWith)
             {
                 sharedwith += Convert.ToString(t.Id + ", ");
             }
 
-            dgdProductSharingInfo.Rows.Add(newProduct.Name,Convert.ToString(newProduct.DevidedPrice), sharedwith);
+            dgdProductSharingInfo.Rows.Add(newProduct.Name, Convert.ToString(newProduct.DevidedPrice), sharedwith);
 
             dgdBlancesOverView.Rows.Clear();
 
-            foreach(Tenant t in studentHousing.Tenants)
+            foreach (Tenant t in studentHousing.Tenants)
             {
-                dgdBlancesOverView.Rows.Add(Convert.ToString(t.Id), t.Name,Convert.ToString(t.Balance));
+                dgdBlancesOverView.Rows.Add(Convert.ToString(t.Id), t.Name, Convert.ToString(t.Balance));
             }
-            
+
         }
 
         private void btnSendComplaint_Click(object sender, EventArgs e)
@@ -181,9 +182,8 @@ namespace StudentHousingCompany
         {
             clbTenantTask.Items.Clear();
             listView6.Items.Clear();
-            var schedule = studentHousing.Schedules;
 
-            foreach (var task in schedule)
+            foreach (var task in studentHousing.Schedules)
             {
                 listView6.Items.Add(task.GetInfo());
                 if (task.GetStudent() == studentHousing.CurrentUser.Name)
@@ -193,8 +193,8 @@ namespace StudentHousingCompany
             }
 
             if (studentHousing.GetTenantTask() == "No Task")
-            { 
-                btnTaskComplete.Enabled = false; 
+            {
+                btnTaskComplete.Enabled = false;
             }
 
             CheckTaskStatus();
@@ -206,7 +206,18 @@ namespace StudentHousingCompany
             string EventName = tbEventName.Text;
             string EventDesc = tbEventDesc.Text;
             DateTime date = dtEvent.Value;
-            studentHousing.AddEvent(EventName,date,EventDesc,studentHousing.CurrentUser.Name);
+            studentHousing.AddEvent(EventName, date, EventDesc, studentHousing.CurrentUser.Name);
+            FillEventsList();
+        }
+
+        public void FillEventsList()
+        {
+            lvEventDetails.Items.Clear();
+
+            foreach (var events in studentHousing.Events)
+            {
+                lvEventDetails.Items.Add(events.GetInfo());
+            }
         }
     }
 }

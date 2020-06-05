@@ -117,8 +117,6 @@ namespace StudentHousingCompany
         /// <returns></returns>
         public ListViewItem GetInfo()
         {
-
-
             string[] arr = new string[4];
             ListViewItem itm;
             //add items to ListView

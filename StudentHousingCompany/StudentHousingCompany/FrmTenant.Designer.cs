@@ -81,9 +81,10 @@
             this.lblMakeComplaint = new System.Windows.Forms.Label();
             this.tbxComplaintSubject = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listView5 = new System.Windows.Forms.ListView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRespond = new System.Windows.Forms.Button();
+            this.lvEventDetails = new System.Windows.Forms.ListView();
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.tbEventDesc = new System.Windows.Forms.TextBox();
             this.dtEvent = new System.Windows.Forms.DateTimePicker();
@@ -94,8 +95,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -624,11 +628,11 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Controls.Add(this.listView5);
+            this.tabPage4.Controls.Add(this.btnRespond);
+            this.tabPage4.Controls.Add(this.lvEventDetails);
             this.tabPage4.Controls.Add(this.btnAddEvent);
             this.tabPage4.Controls.Add(this.tbEventDesc);
             this.tabPage4.Controls.Add(this.dtEvent);
@@ -641,39 +645,60 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Events";
             // 
-            // button7
+            // label5
             // 
-            this.button7.Location = new System.Drawing.Point(544, 281);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(56, 19);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 211);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 18);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Date of the event";
             // 
-            // button6
+            // label4
             // 
-            this.button6.Location = new System.Drawing.Point(395, 282);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(56, 19);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(14, 88);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 18);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Description of the event";
             // 
-            // listView5
+            // btnRespond
             // 
-            this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(395, 33);
-            this.listView5.Margin = new System.Windows.Forms.Padding(2);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(247, 210);
-            this.listView5.TabIndex = 5;
-            this.listView5.UseCompatibleStateImageBehavior = false;
+            this.btnRespond.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRespond.Location = new System.Drawing.Point(605, 296);
+            this.btnRespond.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRespond.Name = "btnRespond";
+            this.btnRespond.Size = new System.Drawing.Size(84, 47);
+            this.btnRespond.TabIndex = 6;
+            this.btnRespond.Text = "Bad Response";
+            this.btnRespond.UseVisualStyleBackColor = true;
+            // 
+            // lvEventDetails
+            // 
+            this.lvEventDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16});
+            this.lvEventDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvEventDetails.HideSelection = false;
+            this.lvEventDetails.Location = new System.Drawing.Point(240, 50);
+            this.lvEventDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.lvEventDetails.Name = "lvEventDetails";
+            this.lvEventDetails.Size = new System.Drawing.Size(449, 213);
+            this.lvEventDetails.TabIndex = 5;
+            this.lvEventDetails.UseCompatibleStateImageBehavior = false;
+            this.lvEventDetails.View = System.Windows.Forms.View.Details;
             // 
             // btnAddEvent
             // 
-            this.btnAddEvent.Location = new System.Drawing.Point(138, 233);
+            this.btnAddEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEvent.Location = new System.Drawing.Point(123, 312);
             this.btnAddEvent.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(76, 31);
@@ -684,7 +709,8 @@
             // 
             // tbEventDesc
             // 
-            this.tbEventDesc.Location = new System.Drawing.Point(138, 88);
+            this.tbEventDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEventDesc.Location = new System.Drawing.Point(17, 114);
             this.tbEventDesc.Margin = new System.Windows.Forms.Padding(2);
             this.tbEventDesc.Multiline = true;
             this.tbEventDesc.Name = "tbEventDesc";
@@ -693,28 +719,31 @@
             // 
             // dtEvent
             // 
-            this.dtEvent.Location = new System.Drawing.Point(138, 181);
+            this.dtEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEvent.Location = new System.Drawing.Point(17, 243);
             this.dtEvent.Margin = new System.Windows.Forms.Padding(2);
             this.dtEvent.Name = "dtEvent";
-            this.dtEvent.Size = new System.Drawing.Size(182, 20);
+            this.dtEvent.Size = new System.Drawing.Size(182, 24);
             this.dtEvent.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 53);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 22);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.Size = new System.Drawing.Size(104, 18);
             this.label7.TabIndex = 1;
             this.label7.Text = "Name of event";
             // 
             // tbEventName
             // 
-            this.tbEventName.Location = new System.Drawing.Point(138, 50);
+            this.tbEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEventName.Location = new System.Drawing.Point(17, 50);
             this.tbEventName.Margin = new System.Windows.Forms.Padding(2);
             this.tbEventName.Name = "tbEventName";
-            this.tbEventName.Size = new System.Drawing.Size(76, 20);
+            this.tbEventName.Size = new System.Drawing.Size(76, 24);
             this.tbEventName.TabIndex = 0;
             // 
             // label1
@@ -767,25 +796,35 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 91);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Description of the event";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(237, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 18);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "List of events";
             // 
-            // label5
+            // columnHeader13
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 181);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Date of the event";
+            this.columnHeader13.Text = "EventOwner";
+            this.columnHeader13.Width = 100;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "EventName";
+            this.columnHeader14.Width = 100;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Event Desc";
+            this.columnHeader15.Width = 200;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Event Date";
+            this.columnHeader16.Width = 100;
             // 
             // FrmTenant
             // 
@@ -857,9 +896,8 @@
         private System.Windows.Forms.TextBox tbxWriteComplaint;
         private System.Windows.Forms.Label lblMakeComplaint;
         private System.Windows.Forms.TextBox tbxComplaintSubject;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListView listView5;
+        private System.Windows.Forms.Button btnRespond;
+        private System.Windows.Forms.ListView lvEventDetails;
         private System.Windows.Forms.Button btnAddEvent;
         private System.Windows.Forms.TextBox tbEventDesc;
         private System.Windows.Forms.DateTimePicker dtEvent;
@@ -891,6 +929,11 @@
         private System.Windows.Forms.CheckedListBox clbTenantTask;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
     }
 }
 

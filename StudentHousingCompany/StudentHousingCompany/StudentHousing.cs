@@ -174,6 +174,13 @@ namespace StudentHousingCompany
             AddTask("Task4", DayOfWeek.Thursday);
             AddTask("Task5", DayOfWeek.Thursday);
 
+            AddEvent("Event1", DateTime.Today, "Cool Event", "Bill burr");
+            AddEvent("Event2", DateTime.Today, "bad event", "Jerry Seinfeld");
+            AddEvent("Event3", DateTime.Today, "Night Event", "Kevin Hart");
+            AddEvent("Event4", DateTime.Today, "day Event", "Kevin Hart");
+            AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
+            AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
+            AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
         }
 
         /// <summary>
