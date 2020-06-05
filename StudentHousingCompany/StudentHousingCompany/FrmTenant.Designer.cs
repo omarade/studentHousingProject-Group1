@@ -86,6 +86,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnRespond = new System.Windows.Forms.Button();
             this.lvEventDetails = new System.Windows.Forms.ListView();
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.tbEventDesc = new System.Windows.Forms.TextBox();
             this.dtEvent = new System.Windows.Forms.DateTimePicker();
@@ -96,11 +101,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -697,7 +698,8 @@
             this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15,
-            this.columnHeader16});
+            this.columnHeader16,
+            this.columnHeader17});
             this.lvEventDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvEventDetails.HideSelection = false;
             this.lvEventDetails.Location = new System.Drawing.Point(240, 50);
@@ -708,6 +710,31 @@
             this.lvEventDetails.TabIndex = 5;
             this.lvEventDetails.UseCompatibleStateImageBehavior = false;
             this.lvEventDetails.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "EventID";
+            this.columnHeader18.Width = 50;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "EventOwner";
+            this.columnHeader13.Width = 150;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "EventName";
+            this.columnHeader14.Width = 150;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "EventDesc";
+            this.columnHeader15.Width = 200;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "EventDate";
+            this.columnHeader16.Width = 100;
             // 
             // btnAddEvent
             // 
@@ -810,30 +837,9 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
-            // columnHeader18
+            // columnHeader17
             // 
-            this.columnHeader18.Text = "EventID";
-            this.columnHeader18.Width = 50;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "EventOwner";
-            this.columnHeader13.Width = 150;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "EventName";
-            this.columnHeader14.Width = 150;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "EventDesc";
-            this.columnHeader15.Width = 200;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "EventDate";
-            this.columnHeader16.Width = 100;
+            this.columnHeader17.Text = "NegResponses";
             // 
             // FrmTenant
             // 
@@ -944,6 +950,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
     }
 }
 

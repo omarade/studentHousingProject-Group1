@@ -216,7 +216,9 @@ namespace StudentHousingCompany
 
             foreach (var events in studentHousing.Events)
             {
-                lvEventDetails.Items.Add(events.GetInfo());
+                ListViewItem eventInfo = events.GetInfo();
+                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.Tenants.Count().ToString());
+                lvEventDetails.Items.Add(eventInfo);
             }
         }
 
@@ -229,7 +231,7 @@ namespace StudentHousingCompany
             ListViewItem item = lvEventDetails.SelectedItems[0];
 
             studentHousing.RespondToEvent(item.Text);
-
+            FillEventsList();
         }
     }
 }
