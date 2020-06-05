@@ -24,8 +24,6 @@ namespace StudentHousingCompany
 
         public List<User> Users { get; }
 
-        public List<Tenant> Tenants { get; }
-
         public User CurrentUser { get; set; }
 
         // list of all the products 
@@ -39,7 +37,6 @@ namespace StudentHousingCompany
         {
 
             Users = new List<User>();
-            Tenants = new List<Tenant>();
             Products = new List<Product>();
             Schedules = new List<Schedule>();
             Events = new List<Event>();
@@ -57,6 +54,21 @@ namespace StudentHousingCompany
             }
 
             return null;
+        }
+
+        public List<Tenant> GetTenants()
+        {
+            List<Tenant> tenants = new List<Tenant>();
+            foreach (var user in Users)
+            {
+                if (user is Tenant)
+                {
+                    Tenant tenant = (Tenant)user;
+                    tenants.Add(tenant);
+                }
+            }
+
+            return tenants;
         }
 
         public User ValidateCredentials(string email, string password, List<User> users)
@@ -83,9 +95,6 @@ namespace StudentHousingCompany
         {
             User tenant = new Tenant(name, dob, email, password, phoneNr, postcode, address);
             Users.Add(tenant);
-
-            Tenant newTenant = (Tenant) tenant;
-            Tenants.Add(newTenant);
         }
 
         public void UpdateUser(int id, string name, DateTime dob, string email, string phoneNr, string postcode, string address)
@@ -143,9 +152,6 @@ namespace StudentHousingCompany
             DateTime dob = new DateTime(1987, 03, 06);
             AddUser("Admin", dob, "admin", "1234");
 
-            dob = new DateTime(1990, 03, 05);
-            AddUser("Omar Dehn", dob, "omar@live.com", "1234");
-
             dob = new DateTime(1985, 03, 05);
             AddUser("Bill burr", dob, "bill@live.com", "1234");
 
@@ -200,12 +206,13 @@ namespace StudentHousingCompany
         /// </summary>
         public void ResetSchedule()
         {
+            List<Tenant> tenants = GetTenants();
             int counter = 0;
             foreach (Schedule task in Schedules)
             {
-                task.SetStudent(Tenants[counter].Name);
+                task.SetStudent(tenants[counter].Name);
                 counter++;
-                if (counter >= Tenants.Count)
+                if (counter >= tenants.Count)
                 {
                     counter = 0;
                 }
@@ -250,9 +257,10 @@ namespace StudentHousingCompany
         /// </summary>
         public void SetNextTenant()
         {
+            List<Tenant> tenants = GetTenants();
             foreach (var task in Schedules)
             {
-                task.SetNextStudent(Tenants);
+                task.SetNextStudent(tenants);
             }
             SetNextDueDay();
         }
