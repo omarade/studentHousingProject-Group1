@@ -316,5 +316,29 @@ namespace StudentHousingCompany
             Event newEvent = new Event(eventName, dateOfEvent, eventDesc, eventOwner);
             Events.Add(newEvent);
         }
+
+        public void RespondToEvent(string eventId)
+        {
+            bool Responded = false;
+
+            foreach (var events in Events)
+            {
+                if (eventId == events.EventId.ToString())
+                {
+                    foreach (var Responses in events.NegativeResponses)
+                    {
+                        if (CurrentUser.Name == Responses)
+                        {
+                            Responded = true;
+                        }
+                    }
+                    if (Responded == false)
+                    {
+                        events.AddResponse(CurrentUser.Name);
+                    }
+                }
+
+            }
+        }
     }
 }

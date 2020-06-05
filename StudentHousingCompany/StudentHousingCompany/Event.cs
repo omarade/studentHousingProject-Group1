@@ -9,7 +9,7 @@ namespace StudentHousingCompany
 {
     class Event
     {
-        private static int idSeeder = 0;
+        private static int idSeeder = 1;
 
         public int EventId { get; }
         public string EventName { get; set; }
@@ -36,13 +36,14 @@ namespace StudentHousingCompany
 
         public ListViewItem GetInfo()
         {
-            string[] arr = new string[4];
+            string[] arr = new string[5];
             ListViewItem itm;
             //add items to ListView
-            arr[0] = EventOwner;
-            arr[1] = EventName;
-            arr[2] = EventDesc;
-            arr[3] = DateOfEvent.ToString("dd/MM/yyyy");
+            arr[0] = EventId.ToString();
+            arr[1] = EventOwner;
+            arr[2] = EventName;
+            arr[3] = EventDesc;
+            arr[4] = DateOfEvent.ToString("dd/MM/yyyy");
             itm = new ListViewItem(arr);
 
             return itm;

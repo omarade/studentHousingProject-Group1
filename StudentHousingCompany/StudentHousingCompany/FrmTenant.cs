@@ -219,5 +219,17 @@ namespace StudentHousingCompany
                 lvEventDetails.Items.Add(events.GetInfo());
             }
         }
+
+        private void btnRespond_Click(object sender, EventArgs e)
+        {        
+            if (lvEventDetails.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            ListViewItem item = lvEventDetails.SelectedItems[0];
+
+            studentHousing.RespondToEvent(item.Text);
+
+        }
     }
 }

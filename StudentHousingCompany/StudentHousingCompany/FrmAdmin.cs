@@ -336,9 +336,8 @@ namespace StudentHousingCompany
         {//Adds a task with a unique name
             bool NameExsists = false;
             string TaskName = tbTaskName.Text;
-            var schedule = studentHousing.Schedules;
 
-            foreach (var task in schedule)
+            foreach (var task in studentHousing.Schedules)
             {
                 if (TaskName == task.GetTask())
                 {
