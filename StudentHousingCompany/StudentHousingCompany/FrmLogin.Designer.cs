@@ -42,7 +42,7 @@
             this.label1.ForeColor = System.Drawing.Color.Indigo;
             this.label1.Location = new System.Drawing.Point(98, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 25);
+            this.label1.Size = new System.Drawing.Size(78, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
@@ -53,21 +53,23 @@
             this.label2.ForeColor = System.Drawing.Color.Indigo;
             this.label2.Location = new System.Drawing.Point(98, 287);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 25);
+            this.label2.Size = new System.Drawing.Size(124, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.txtEmail.Location = new System.Drawing.Point(103, 192);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(280, 43);
             this.txtEmail.TabIndex = 2;
-            this.txtEmail.Text = "omar@live.com";
+            this.txtEmail.Text = "admin";
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.txtPassword.Location = new System.Drawing.Point(103, 328);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
