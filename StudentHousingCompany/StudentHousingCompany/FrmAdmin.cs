@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace StudentHousingCompany
 {
@@ -14,9 +15,9 @@ namespace StudentHousingCompany
     {
         private StudentHousing studentHousing;
         DayOfWeek day = DayOfWeek.Monday;
+        private Complaint complaint;
         public FrmAdmin()
-        {
-            InitializeComponent();
+        {   InitializeComponent();
             studentHousing = StudentHousing.Instance;
             ShowUsers();
             ShowTasks();
@@ -24,8 +25,13 @@ namespace StudentHousingCompany
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
+            complaint = Complaint.Instance;
+            
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                 lbxComp.Items.Add(comp.Subject + comp.ComplaintTopic);
+            }
         }
-
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
@@ -429,6 +435,69 @@ namespace StudentHousingCompany
             FillRemoveTask();
             cbRemoveTasks.Text = "";
 
+        }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComplaintResolve_Click(object sender, EventArgs e)
+        {
+
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(lbxComp);
+            selectedItems = lbxComp.SelectedItems;
+
+            int index = lbxComp.SelectedIndex;
+            MessageBox.Show(Convert.ToString(index));
+            if (lbxComp.SelectedIndex != -1)
+            {
+                for (int i = selectedItems.Count - 1; i >= 0; i--)
+                lbxComp.Items.Remove(selectedItems[i]);
+            }
+            else
+            {
+                MessageBox.Show("Select a complainet ");
+            } 
+        }
+
+        int selectedIndxInCompList;
+        int idOfSelectedInCompList;
+        private void btnReplyToComp_Click(object sender, EventArgs e)
+        {
+
+            string selectedFromlbx = Convert.ToString(lbxComp.SelectedItem);
+            
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                string compText =   comp.Subject + comp.ComplaintTopic;
+                if (selectedFromlbx == compText)
+                {
+                    
+                    selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+                    idOfSelectedInCompList = comp.ComplaintId;
+                }
+            }
+
+            tbxReply.Visible = true;
+
+        }
+
+        private void btnSendReply_Click(object sender, EventArgs e)
+        {
+            string reply = tbxReply.Text;
+
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                
+                if(comp.ComplaintId == idOfSelectedInCompList)
+                {
+                    comp.ReplyFromAdmin =  reply;
+                }
+            }
+            tbxReply.Visible = false;
+            var frmTenant = new FrmTenant();
+            
         }
     }
 }

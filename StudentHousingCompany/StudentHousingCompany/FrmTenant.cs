@@ -14,7 +14,7 @@ namespace StudentHousingCompany
     public partial class FrmTenant : Form
     {
         private StudentHousing studentHousing;
-        
+        private Complaint complaint;
         public FrmTenant()
         {
             InitializeComponent();
@@ -22,21 +22,13 @@ namespace StudentHousingCompany
             studentHousing = StudentHousing.Instance;
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            
-            foreach(Tenant tenant in studentHousing.Tenants)
+            complaint = Complaint.Instance;
+            foreach (Tenant tenant in studentHousing.Tenants)
             {
                 clbTenantsToshare.Items.Add(tenant.Name);
             }
-
-            //studentHousing.ProductId = 0;
-
-            foreach (Tenant t in studentHousing.Tenants)
-            {
-                dgdBlancesOverView.Rows.Add(t.Id, t.Name, t.Balance);
-            }
-
+           
             ShowTasks();
-
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -72,47 +64,61 @@ namespace StudentHousingCompany
 
             if(tbxFullPrice.Text == null)
             {
-                if(tbxProductname.Text == null)
+                tbxFullPrice.Text = "0";
+                if (tbxProductname.Text == null)
                 {
                     tbxProductname.Text = "";
                 }
-                tbxFullPrice.Text = "0";
+                
             }
 
-            //TODO NOUR
-            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text), 1/*studentHousing.ProductId*/);
+            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text));
 
-            //studentHousing.ProductId += 1;
+            string LogedInUserName = "";
+            int LogedInUserID = studentHousing.CurrentUser.Id;
+            foreach(Tenant ten in studentHousing.Tenants)
+            {
+                if (ten.Id == LogedInUserID)
+                {
+                    newProduct.TenantesShredWith.Add(ten);
+                    LogedInUserName = ten.Name;
+                }
+            }
 
+            // Collect who is checked in the checkedlistBox
             foreach (string tenantName in clbTenantsToshare.CheckedItems)
             {
-              foreach(Tenant ten in studentHousing.Tenants)
-              {
-                 if (ten.Name == tenantName)
-                 {
-                    newProduct.TenantesShredWith.Add(ten);
-                 }
-              }
+                foreach(Tenant ten in studentHousing.Tenants)
+                {
+                    if (ten.Name != LogedInUserName) 
+                    {
+                        if (ten.Name == tenantName)
+                        {
+                            newProduct.TenantesShredWith.Add(ten);
+                        }
+                    }
+                }
             }
 
-            int NumberOfParticpants = newProduct.TenantesIDShredWith.Count;
+
+            int NumberOfParticpants = newProduct.TenantesShredWith.Count;
             newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
 
-            int currentuserID = studentHousing.CurrentUser.Id;
+            
 
-            foreach(Tenant tenant1 in newProduct.TenantesShredWith)
+            foreach(Tenant tenSharedWith in newProduct.TenantesShredWith)
             {
                 foreach(Tenant tenant in studentHousing.Tenants)
                 {
-                    if(tenant.Id == tenant1.Id)
+                    if(tenant.Id == tenSharedWith.Id)
                     {
-                        if (tenant.Id == currentuserID)
+                        if (tenant.Id == LogedInUserID)
                         {
-                            tenant.Balance += newProduct.DevidedPrice;
+                            tenant.Balance = tenant.Balance  + newProduct.DevidedPrice;
                         }
                         else
                         {
-                            tenant.Balance -= newProduct.DevidedPrice;
+                            tenant.Balance = tenant.Balance - newProduct.DevidedPrice;
                         }
                     }
                 }
@@ -122,25 +128,63 @@ namespace StudentHousingCompany
 
             string sharedwith = "";
 
-            foreach(Tenant t in newProduct.TenantesShredWith)
+            foreach(Tenant tenSharedWith in newProduct.TenantesShredWith)
             {
-                sharedwith += Convert.ToString(t.Id + ", ");
+                sharedwith += Convert.ToString(tenSharedWith.Id + ", ");
             }
 
-            dgdProductSharingInfo.Rows.Add(newProduct.Name,Convert.ToString(newProduct.DevidedPrice), sharedwith);
 
-            dgdBlancesOverView.Rows.Clear();
+            ListViewItem item1 = new ListViewItem(new[] { newProduct.Name, Convert.ToString(newProduct.DevidedPrice), sharedwith });
+            lvwProductSharingInfo.Items.Add(item1);
 
-            foreach(Tenant t in studentHousing.Tenants)
-            {
-                dgdBlancesOverView.Rows.Add(Convert.ToString(t.Id), t.Name,Convert.ToString(t.Balance));
-            }
-            
+            FILLBALANCELIST();
+
+
         }
 
+        public void FILLBALANCELIST()
+        {
+            //lvwBlancesOverView.Clear();
+
+            foreach (Tenant tenant in studentHousing.Tenants)
+            {
+                ListViewItem item = new ListViewItem(new[] { Convert.ToString(tenant.Id), tenant.Name, Convert.ToString(tenant.Balance) });
+                lvwBlancesOverView.Items.Add(item);
+            }
+        }
+
+        string comSub;
+        string comTopic;
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
+            Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text, studentHousing.CurrentUser.Id);
+            if (cbxSendAnonymously.Checked)
+            {
+                newcomplaint.Anonymous = false;
+            }
+            else
+            {
+                foreach(Tenant ten in studentHousing.Tenants)
+                {
+                    if(newcomplaint.TenID == ten.Id)
+                    {
+                        newcomplaint.TenName = ten.Name;
+                    }
+                }
+            }
 
+            tbxReplyFromAdm.Visible = true;
+            tbxReplyFromAdm.Text = "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
+                "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
+                "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
+                "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
+                "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
+                "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
+                "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
+                "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
+                "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndl" +
+                "kfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn";
+            this.studentHousing.Complaintss.Add(newcomplaint);
         }
 
         private void btnTaskComplete_Click(object sender, EventArgs e)
@@ -161,6 +205,11 @@ namespace StudentHousingCompany
 
             if (studentHousing.GetTenantTask() == "No Task")
             { btnTaskComplete.Enabled = false; }
+
+        }
+
+        private void FrmTenant_Load(object sender, EventArgs e)
+        {
 
         }
     }
