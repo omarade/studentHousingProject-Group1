@@ -485,5 +485,10 @@ namespace StudentHousingCompany
         {
             ClearSelectedUser();
         }
+
+        private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

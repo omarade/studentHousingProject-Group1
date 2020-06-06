@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +46,13 @@
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
+            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtbDoB = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.cboUserType = new System.Windows.Forms.ComboBox();
@@ -92,13 +102,6 @@
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
@@ -278,8 +281,20 @@
             this.dgdUsers.AllowUserToDeleteRows = false;
             this.dgdUsers.AllowUserToOrderColumns = true;
             this.dgdUsers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hxtId,
@@ -295,12 +310,71 @@
             this.dgdUsers.ReadOnly = true;
             this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgdUsers.RowTemplate.Height = 24;
             this.dgdUsers.RowTemplate.ReadOnly = true;
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgdUsers.Size = new System.Drawing.Size(806, 283);
             this.dgdUsers.TabIndex = 50;
             this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
+            // 
+            // hxtId
+            // 
+            this.hxtId.HeaderText = "ID";
+            this.hxtId.MinimumWidth = 30;
+            this.hxtId.Name = "hxtId";
+            this.hxtId.ReadOnly = true;
+            this.hxtId.Width = 60;
+            // 
+            // hxtName
+            // 
+            this.hxtName.HeaderText = "Name";
+            this.hxtName.MinimumWidth = 6;
+            this.hxtName.Name = "hxtName";
+            this.hxtName.ReadOnly = true;
+            this.hxtName.Width = 84;
+            // 
+            // hxtDob
+            // 
+            this.hxtDob.HeaderText = "DoB";
+            this.hxtDob.MinimumWidth = 6;
+            this.hxtDob.Name = "hxtDob";
+            this.hxtDob.ReadOnly = true;
+            this.hxtDob.Width = 74;
+            // 
+            // hxtEmail
+            // 
+            this.hxtEmail.HeaderText = "Email";
+            this.hxtEmail.MinimumWidth = 6;
+            this.hxtEmail.Name = "hxtEmail";
+            this.hxtEmail.ReadOnly = true;
+            this.hxtEmail.Width = 81;
+            // 
+            // hxtPhoneNr
+            // 
+            this.hxtPhoneNr.HeaderText = "Phone Nr";
+            this.hxtPhoneNr.MinimumWidth = 6;
+            this.hxtPhoneNr.Name = "hxtPhoneNr";
+            this.hxtPhoneNr.ReadOnly = true;
+            this.hxtPhoneNr.Width = 107;
+            // 
+            // hxtPostcode
+            // 
+            this.hxtPostcode.HeaderText = "Postcode";
+            this.hxtPostcode.MinimumWidth = 6;
+            this.hxtPostcode.Name = "hxtPostcode";
+            this.hxtPostcode.ReadOnly = true;
+            this.hxtPostcode.Width = 106;
+            // 
+            // hxtAddress
+            // 
+            this.hxtAddress.HeaderText = "Address";
+            this.hxtAddress.MinimumWidth = 6;
+            this.hxtAddress.Name = "hxtAddress";
+            this.hxtAddress.ReadOnly = true;
+            this.hxtAddress.Width = 99;
             // 
             // dtbDoB
             // 
@@ -770,62 +844,6 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // hxtId
-            // 
-            this.hxtId.HeaderText = "ID";
-            this.hxtId.MinimumWidth = 30;
-            this.hxtId.Name = "hxtId";
-            this.hxtId.ReadOnly = true;
-            this.hxtId.Width = 50;
-            // 
-            // hxtName
-            // 
-            this.hxtName.HeaderText = "Name";
-            this.hxtName.MinimumWidth = 6;
-            this.hxtName.Name = "hxtName";
-            this.hxtName.ReadOnly = true;
-            this.hxtName.Width = 74;
-            // 
-            // hxtDob
-            // 
-            this.hxtDob.HeaderText = "DoB";
-            this.hxtDob.MinimumWidth = 6;
-            this.hxtDob.Name = "hxtDob";
-            this.hxtDob.ReadOnly = true;
-            this.hxtDob.Width = 64;
-            // 
-            // hxtEmail
-            // 
-            this.hxtEmail.HeaderText = "Email";
-            this.hxtEmail.MinimumWidth = 6;
-            this.hxtEmail.Name = "hxtEmail";
-            this.hxtEmail.ReadOnly = true;
-            this.hxtEmail.Width = 71;
-            // 
-            // hxtPhoneNr
-            // 
-            this.hxtPhoneNr.HeaderText = "Phone Nr";
-            this.hxtPhoneNr.MinimumWidth = 6;
-            this.hxtPhoneNr.Name = "hxtPhoneNr";
-            this.hxtPhoneNr.ReadOnly = true;
-            this.hxtPhoneNr.Width = 97;
-            // 
-            // hxtPostcode
-            // 
-            this.hxtPostcode.HeaderText = "Postcode";
-            this.hxtPostcode.MinimumWidth = 6;
-            this.hxtPostcode.Name = "hxtPostcode";
-            this.hxtPostcode.ReadOnly = true;
-            this.hxtPostcode.Width = 96;
-            // 
-            // hxtAddress
-            // 
-            this.hxtAddress.HeaderText = "Address";
-            this.hxtAddress.MinimumWidth = 6;
-            this.hxtAddress.Name = "hxtAddress";
-            this.hxtAddress.ReadOnly = true;
-            this.hxtAddress.Width = 89;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -838,6 +856,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAdmin";
             this.Text = "Student Housing";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
