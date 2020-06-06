@@ -48,7 +48,6 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTaskComplete = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblFullPrice = new System.Windows.Forms.Label();
             this.lblProductname = new System.Windows.Forms.Label();

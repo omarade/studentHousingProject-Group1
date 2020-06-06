@@ -101,7 +101,6 @@
             this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.btnSendReply = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
@@ -949,8 +948,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtPhoneNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtPostcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
-        private System.Windows.Forms.Button BtnNextWeek;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ListBox lbxComp;
         private System.Windows.Forms.Button btnReplyToComp;
         private System.Windows.Forms.TextBox tbxReply;

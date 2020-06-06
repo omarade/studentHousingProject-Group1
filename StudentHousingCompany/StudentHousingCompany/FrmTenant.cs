@@ -77,7 +77,7 @@ namespace StudentHousingCompany
 
             string LogedInUserName = "";
             int LogedInUserID = studentHousing.CurrentUser.Id;
-            foreach(Tenant ten in studentHousing.Tenants)
+            foreach(Tenant ten in studentHousing.GetTenants())
             {
                 if (ten.Id == LogedInUserID)
                 {
@@ -144,7 +144,7 @@ namespace StudentHousingCompany
         {
             //lvwBlancesOverView.Clear();
 
-            foreach (Tenant tenant in studentHousing.Tenants)
+            foreach (Tenant tenant in studentHousing.GetTenants())
             {
                 ListViewItem item = new ListViewItem(new[] { Convert.ToString(tenant.Id), tenant.Name, Convert.ToString(tenant.Balance) });
                 lvwBlancesOverView.Items.Add(item);
@@ -162,7 +162,7 @@ namespace StudentHousingCompany
             }
             else
             {
-                foreach(Tenant ten in studentHousing.Tenants)
+                foreach(Tenant ten in studentHousing.GetTenants())
                 {
                     if(newcomplaint.TenID == ten.Id)
                     {
