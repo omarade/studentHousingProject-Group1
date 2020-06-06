@@ -219,7 +219,7 @@ namespace StudentHousingCompany
             foreach (var events in studentHousing.Events)
             {
                 ListViewItem eventInfo = events.GetInfo();
-                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.Tenants.Count().ToString());
+                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.GetTenants().Count().ToString());
                 lvEventDetails.Items.Add(eventInfo);
             }
         }
