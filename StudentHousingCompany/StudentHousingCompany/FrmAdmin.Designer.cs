@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -273,7 +273,7 @@
             // btnRemoveUser
             // 
             this.btnRemoveUser.Location = new System.Drawing.Point(1219, 522);
-            this.btnRemoveUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemoveUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveUser.Name = "btnRemoveUser";
             this.btnRemoveUser.Size = new System.Drawing.Size(240, 50);
             this.btnRemoveUser.TabIndex = 51;
@@ -287,20 +287,20 @@
             this.dgdUsers.AllowUserToDeleteRows = false;
             this.dgdUsers.AllowUserToOrderColumns = true;
             this.dgdUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hxtId,
@@ -311,15 +311,15 @@
             this.hxtPostcode,
             this.hxtAddress});
             this.dgdUsers.Location = new System.Drawing.Point(573, 149);
-            this.dgdUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgdUsers.Margin = new System.Windows.Forms.Padding(4);
             this.dgdUsers.MultiSelect = false;
             this.dgdUsers.Name = "dgdUsers";
             this.dgdUsers.ReadOnly = true;
             this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgdUsers.RowTemplate.Height = 24;
             this.dgdUsers.RowTemplate.ReadOnly = true;
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -333,7 +333,6 @@
             this.hxtId.MinimumWidth = 30;
             this.hxtId.Name = "hxtId";
             this.hxtId.ReadOnly = true;
-            this.hxtId.Width = 60;
             // 
             // hxtName
             // 
@@ -341,7 +340,6 @@
             this.hxtName.MinimumWidth = 6;
             this.hxtName.Name = "hxtName";
             this.hxtName.ReadOnly = true;
-            this.hxtName.Width = 84;
             // 
             // hxtDob
             // 
@@ -349,7 +347,6 @@
             this.hxtDob.MinimumWidth = 6;
             this.hxtDob.Name = "hxtDob";
             this.hxtDob.ReadOnly = true;
-            this.hxtDob.Width = 74;
             // 
             // hxtEmail
             // 
@@ -357,7 +354,6 @@
             this.hxtEmail.MinimumWidth = 6;
             this.hxtEmail.Name = "hxtEmail";
             this.hxtEmail.ReadOnly = true;
-            this.hxtEmail.Width = 81;
             // 
             // hxtPhoneNr
             // 
@@ -365,7 +361,6 @@
             this.hxtPhoneNr.MinimumWidth = 6;
             this.hxtPhoneNr.Name = "hxtPhoneNr";
             this.hxtPhoneNr.ReadOnly = true;
-            this.hxtPhoneNr.Width = 107;
             // 
             // hxtPostcode
             // 
@@ -373,7 +368,6 @@
             this.hxtPostcode.MinimumWidth = 6;
             this.hxtPostcode.Name = "hxtPostcode";
             this.hxtPostcode.ReadOnly = true;
-            this.hxtPostcode.Width = 106;
             // 
             // hxtAddress
             // 
@@ -381,12 +375,11 @@
             this.hxtAddress.MinimumWidth = 6;
             this.hxtAddress.Name = "hxtAddress";
             this.hxtAddress.ReadOnly = true;
-            this.hxtAddress.Width = 99;
             // 
             // dtbDoB
             // 
             this.dtbDoB.Location = new System.Drawing.Point(211, 212);
-            this.dtbDoB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtbDoB.Margin = new System.Windows.Forms.Padding(4);
             this.dtbDoB.Name = "dtbDoB";
             this.dtbDoB.Size = new System.Drawing.Size(312, 22);
             this.dtbDoB.TabIndex = 49;
@@ -408,7 +401,7 @@
             "Admins",
             "Tenants"});
             this.cboUserType.Location = new System.Drawing.Point(697, 90);
-            this.cboUserType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboUserType.Margin = new System.Windows.Forms.Padding(4);
             this.cboUserType.Name = "cboUserType";
             this.cboUserType.Size = new System.Drawing.Size(283, 24);
             this.cboUserType.TabIndex = 47;
@@ -429,7 +422,7 @@
             // 
             this.rbtnTenant.AutoSize = true;
             this.rbtnTenant.Location = new System.Drawing.Point(309, 117);
-            this.rbtnTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnTenant.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnTenant.Name = "rbtnTenant";
             this.rbtnTenant.Size = new System.Drawing.Size(74, 21);
             this.rbtnTenant.TabIndex = 45;
@@ -441,7 +434,7 @@
             // 
             this.rbtnAdmin.AutoSize = true;
             this.rbtnAdmin.Location = new System.Drawing.Point(211, 117);
-            this.rbtnAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnAdmin.Name = "rbtnAdmin";
             this.rbtnAdmin.Size = new System.Drawing.Size(68, 21);
             this.rbtnAdmin.TabIndex = 44;
@@ -463,7 +456,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(211, 452);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(312, 22);
             this.txtAddress.TabIndex = 42;
@@ -471,7 +464,7 @@
             // btnUpdateUser
             // 
             this.btnUpdateUser.Location = new System.Drawing.Point(297, 522);
-            this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateUser.Name = "btnUpdateUser";
             this.btnUpdateUser.Size = new System.Drawing.Size(227, 50);
             this.btnUpdateUser.TabIndex = 41;
@@ -502,7 +495,7 @@
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(211, 402);
-            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(312, 22);
             this.txtPostcode.TabIndex = 38;
@@ -510,7 +503,7 @@
             // btnAddUser
             // 
             this.btnAddUser.Location = new System.Drawing.Point(91, 522);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(172, 50);
             this.btnAddUser.TabIndex = 37;
@@ -541,7 +534,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(211, 306);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(312, 22);
             this.txtPassword.TabIndex = 34;
@@ -589,7 +582,7 @@
             // txtPhoneNr
             // 
             this.txtPhoneNr.Location = new System.Drawing.Point(211, 353);
-            this.txtPhoneNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNr.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNr.Name = "txtPhoneNr";
             this.txtPhoneNr.Size = new System.Drawing.Size(312, 22);
             this.txtPhoneNr.TabIndex = 29;
@@ -597,7 +590,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(211, 260);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(312, 22);
             this.txtEmail.TabIndex = 28;
@@ -605,7 +598,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(211, 164);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(312, 22);
             this.txtName.TabIndex = 27;
@@ -800,14 +793,14 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1476, 634);
+            this.tabPage3.Size = new System.Drawing.Size(1493, 612);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
             // 
             // btnSendReply
             // 
             this.btnSendReply.Location = new System.Drawing.Point(239, 506);
-            this.btnSendReply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendReply.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendReply.Name = "btnSendReply";
             this.btnSendReply.Size = new System.Drawing.Size(117, 81);
             this.btnSendReply.TabIndex = 6;
@@ -819,7 +812,7 @@
             // tbxReply
             // 
             this.tbxReply.Location = new System.Drawing.Point(51, 84);
-            this.tbxReply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxReply.Margin = new System.Windows.Forms.Padding(4);
             this.tbxReply.Multiline = true;
             this.tbxReply.Name = "tbxReply";
             this.tbxReply.Size = new System.Drawing.Size(504, 358);
@@ -843,7 +836,7 @@
             this.lbxComp.FormattingEnabled = true;
             this.lbxComp.ItemHeight = 16;
             this.lbxComp.Location = new System.Drawing.Point(53, 84);
-            this.lbxComp.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lbxComp.Margin = new System.Windows.Forms.Padding(5);
             this.lbxComp.Name = "lbxComp";
             this.lbxComp.Size = new System.Drawing.Size(501, 356);
             this.lbxComp.TabIndex = 3;
