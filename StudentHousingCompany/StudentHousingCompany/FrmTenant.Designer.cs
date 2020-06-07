@@ -84,13 +84,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnRespond = new System.Windows.Forms.Button();
+            this.btnDisagree = new System.Windows.Forms.Button();
             this.lvEventDetails = new System.Windows.Forms.ListView();
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.tbEventDesc = new System.Windows.Forms.TextBox();
             this.dtEvent = new System.Windows.Forms.DateTimePicker();
@@ -101,7 +102,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAgree = new System.Windows.Forms.Button();
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -630,10 +632,11 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.btnAgree);
             this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Controls.Add(this.btnRespond);
+            this.tabPage4.Controls.Add(this.btnDisagree);
             this.tabPage4.Controls.Add(this.lvEventDetails);
             this.tabPage4.Controls.Add(this.btnAddEvent);
             this.tabPage4.Controls.Add(this.tbEventDesc);
@@ -679,17 +682,17 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Description of the event";
             // 
-            // btnRespond
+            // btnDisagree
             // 
-            this.btnRespond.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRespond.Location = new System.Drawing.Point(605, 296);
-            this.btnRespond.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRespond.Name = "btnRespond";
-            this.btnRespond.Size = new System.Drawing.Size(84, 47);
-            this.btnRespond.TabIndex = 6;
-            this.btnRespond.Text = "Bad Response";
-            this.btnRespond.UseVisualStyleBackColor = true;
-            this.btnRespond.Click += new System.EventHandler(this.btnRespond_Click);
+            this.btnDisagree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisagree.Location = new System.Drawing.Point(605, 296);
+            this.btnDisagree.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDisagree.Name = "btnDisagree";
+            this.btnDisagree.Size = new System.Drawing.Size(84, 47);
+            this.btnDisagree.TabIndex = 6;
+            this.btnDisagree.Text = "Disagree";
+            this.btnDisagree.UseVisualStyleBackColor = true;
+            this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
             // 
             // lvEventDetails
             // 
@@ -699,7 +702,8 @@
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16,
-            this.columnHeader17});
+            this.columnHeader17,
+            this.columnHeader19});
             this.lvEventDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvEventDetails.HideSelection = false;
             this.lvEventDetails.Location = new System.Drawing.Point(240, 50);
@@ -735,6 +739,10 @@
             // 
             this.columnHeader16.Text = "EventDate";
             this.columnHeader16.Width = 100;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Disagree";
             // 
             // btnAddEvent
             // 
@@ -837,9 +845,20 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
-            // columnHeader17
+            // btnAgree
             // 
-            this.columnHeader17.Text = "NegResponses";
+            this.btnAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgree.Location = new System.Drawing.Point(503, 296);
+            this.btnAgree.Name = "btnAgree";
+            this.btnAgree.Size = new System.Drawing.Size(84, 47);
+            this.btnAgree.TabIndex = 11;
+            this.btnAgree.Text = "Agree";
+            this.btnAgree.UseVisualStyleBackColor = true;
+            this.btnAgree.Click += new System.EventHandler(this.btnAgree_Click);
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Agree";
             // 
             // FrmTenant
             // 
@@ -911,7 +930,7 @@
         private System.Windows.Forms.TextBox tbxWriteComplaint;
         private System.Windows.Forms.Label lblMakeComplaint;
         private System.Windows.Forms.TextBox tbxComplaintSubject;
-        private System.Windows.Forms.Button btnRespond;
+        private System.Windows.Forms.Button btnDisagree;
         private System.Windows.Forms.ListView lvEventDetails;
         private System.Windows.Forms.Button btnAddEvent;
         private System.Windows.Forms.TextBox tbEventDesc;
@@ -951,6 +970,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.Button btnAgree;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
     }
 }
 

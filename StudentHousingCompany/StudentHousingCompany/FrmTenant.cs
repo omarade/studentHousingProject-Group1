@@ -220,19 +220,32 @@ namespace StudentHousingCompany
             {
                 ListViewItem eventInfo = events.GetInfo();
                 eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.GetTenants().Count().ToString());
+                eventInfo.SubItems.Add(events.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString());
                 lvEventDetails.Items.Add(eventInfo);
             }
         }
 
-        private void btnRespond_Click(object sender, EventArgs e)
-        {        
+        private void btnAgree_Click(object sender, EventArgs e)
+        {
             if (lvEventDetails.SelectedItems.Count == 0)
             {
                 return;
             }
             ListViewItem item = lvEventDetails.SelectedItems[0];
 
-            studentHousing.RespondToEvent(item.Text);
+            studentHousing.AgreeToEvent(item.Text);
+            FillEventsList();
+        }
+
+        private void btnDisagree_Click(object sender, EventArgs e)
+        {
+            if (lvEventDetails.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            ListViewItem item = lvEventDetails.SelectedItems[0];
+
+            studentHousing.DisagreeToEvent(item.Text);
             FillEventsList();
         }
     }

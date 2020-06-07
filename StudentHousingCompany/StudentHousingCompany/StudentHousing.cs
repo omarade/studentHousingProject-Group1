@@ -325,7 +325,7 @@ namespace StudentHousingCompany
             Events.Add(newEvent);
         }
 
-        public void RespondToEvent(string eventId)
+        public void DisagreeToEvent(string eventId)
         {
             bool Responded = false;
 
@@ -342,12 +342,33 @@ namespace StudentHousingCompany
                     }
                     if (Responded == false)
                     {
-                        events.AddResponse(CurrentUser.Name);
+                        events.Disagree(CurrentUser.Name);
                     }
                 }
-
             }
         }
 
+        public void AgreeToEvent(string eventId)
+        {
+            bool Responded = false;
+
+            foreach (var events in Events)
+            {
+                if (eventId == events.EventId.ToString())
+                {
+                    foreach (var Responses in events.PositiveResponses)
+                    {
+                        if (CurrentUser.Name == Responses)
+                        {
+                            Responded = true;
+                        }
+                    }
+                    if (Responded == false)
+                    {
+                        events.Agree(CurrentUser.Name);
+                    }
+                }
+            }
+        }
     }
 }

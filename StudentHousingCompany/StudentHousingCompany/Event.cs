@@ -17,6 +17,7 @@ namespace StudentHousingCompany
         public DateTime DateOfEvent { get; set; }
         public string EventOwner { get; set; }
         public List<string> NegativeResponses { get; }
+        public List<string> PositiveResponses { get; }
 
         public Event(string eventName, DateTime dateOfEvent, string eventDesc, string eventOwner)
         {
@@ -27,11 +28,19 @@ namespace StudentHousingCompany
             EventOwner = eventOwner;
             idSeeder++;
             NegativeResponses = new List<string>();
+            PositiveResponses = new List<string>();
         }
 
-        public void AddResponse(string tenant)
+        public void Disagree(string tenant)
         {
             NegativeResponses.Add(tenant);
+            PositiveResponses.Remove(tenant);
+        }
+
+        public void Agree(string tenant)
+        {
+            PositiveResponses.Add(tenant);
+            NegativeResponses.Remove(tenant);
         }
 
         public ListViewItem GetInfo()
