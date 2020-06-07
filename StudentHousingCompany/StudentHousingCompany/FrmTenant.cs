@@ -21,6 +21,8 @@ namespace StudentHousingCompany
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
 
+            ShowAgreements();
+
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             complaint = Complaint.Instance;
             foreach (Tenant tenant in studentHousing.GetTenants())
@@ -290,6 +292,33 @@ namespace StudentHousingCompany
                     comp.ReplyFromAdmIsRead = true; 
                 }
             }
+        }
+
+        private void btnNewAgreement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frmNewAgreement = new FrmNewAgreement();
+            frmNewAgreement.Show();
+        }
+
+        private void ShowAgreements()
+        {
+            List<Agreement> agreements = studentHousing.Agreements;
+            string withTenants = "";
+
+            foreach (var agreement in agreements)
+            {
+                foreach (var tenant in agreement.WithTenants)
+                {
+                    withTenants += $"{tenant.Name}, ";
+                }
+                dgdAgreements.Rows.Add(agreement.Title, agreement.Description, agreement.CreatorTenant.Name, withTenants, agreement.Date.ToString("dd/MM/yyyy"));
+            }
+        }
+
+        private void FrmTenant_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

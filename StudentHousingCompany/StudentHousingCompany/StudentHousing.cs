@@ -11,18 +11,15 @@ namespace StudentHousingCompany
     {
         private static StudentHousing instance = new StudentHousing();
 
-        
+        public static StudentHousing Instance { get { return instance; } }
 
-        public static StudentHousing Instance
-        {
-            get { return instance; }
-        }
+        public User CurrentUser { get; set; }
 
         public List<Schedule> Schedules { get; }
 
         public List<User> Users { get; }
 
-        public User CurrentUser { get; set; }
+        public List<Agreement> Agreements { get; }
 
         /// <summary>
         /// 
@@ -40,6 +37,8 @@ namespace StudentHousingCompany
             Products = new List<Product>();
             Schedules = new List<Schedule>();
             Complaintss = new List<Complaint>();
+            Agreements = new List<Agreement>();
+
         }
 
         public User GetUserById(int id)
@@ -331,6 +330,12 @@ namespace StudentHousingCompany
             }
             else { return false; }
 
+        }
+
+        public void CreateNewAgreement(string title, string description, Tenant currentTenant, List<Tenant> withTenants)
+        {
+            Agreement agreement = new Agreement(title, description, currentTenant, withTenants);
+            Agreements.Add(agreement);
         }
 
         

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -279,8 +282,20 @@
             this.dgdUsers.AllowUserToDeleteRows = false;
             this.dgdUsers.AllowUserToOrderColumns = true;
             this.dgdUsers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hxtId,
@@ -296,6 +311,9 @@
             this.dgdUsers.ReadOnly = true;
             this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgdUsers.RowTemplate.Height = 24;
             this.dgdUsers.RowTemplate.ReadOnly = true;
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -309,7 +327,7 @@
             this.hxtId.MinimumWidth = 30;
             this.hxtId.Name = "hxtId";
             this.hxtId.ReadOnly = true;
-            this.hxtId.Width = 50;
+            this.hxtId.Width = 60;
             // 
             // hxtName
             // 
@@ -317,7 +335,7 @@
             this.hxtName.MinimumWidth = 6;
             this.hxtName.Name = "hxtName";
             this.hxtName.ReadOnly = true;
-            this.hxtName.Width = 74;
+            this.hxtName.Width = 84;
             // 
             // hxtDob
             // 
@@ -325,7 +343,7 @@
             this.hxtDob.MinimumWidth = 6;
             this.hxtDob.Name = "hxtDob";
             this.hxtDob.ReadOnly = true;
-            this.hxtDob.Width = 64;
+            this.hxtDob.Width = 74;
             // 
             // hxtEmail
             // 
@@ -333,7 +351,7 @@
             this.hxtEmail.MinimumWidth = 6;
             this.hxtEmail.Name = "hxtEmail";
             this.hxtEmail.ReadOnly = true;
-            this.hxtEmail.Width = 71;
+            this.hxtEmail.Width = 81;
             // 
             // hxtPhoneNr
             // 
@@ -341,7 +359,7 @@
             this.hxtPhoneNr.MinimumWidth = 6;
             this.hxtPhoneNr.Name = "hxtPhoneNr";
             this.hxtPhoneNr.ReadOnly = true;
-            this.hxtPhoneNr.Width = 97;
+            this.hxtPhoneNr.Width = 107;
             // 
             // hxtPostcode
             // 
@@ -349,7 +367,7 @@
             this.hxtPostcode.MinimumWidth = 6;
             this.hxtPostcode.Name = "hxtPostcode";
             this.hxtPostcode.ReadOnly = true;
-            this.hxtPostcode.Width = 96;
+            this.hxtPostcode.Width = 106;
             // 
             // hxtAddress
             // 
@@ -357,7 +375,7 @@
             this.hxtAddress.MinimumWidth = 6;
             this.hxtAddress.Name = "hxtAddress";
             this.hxtAddress.ReadOnly = true;
-            this.hxtAddress.Width = 89;
+            this.hxtAddress.Width = 99;
             // 
             // dtbDoB
             // 
@@ -864,7 +882,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAdmin";
             this.Text = "Student Housing";
-            this.Load += new System.EventHandler(this.FrmAdmin_Load_1);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

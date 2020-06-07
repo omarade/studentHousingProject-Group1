@@ -39,6 +39,12 @@ namespace StudentHousingCompany
             set;
         }
 
+        public DateTime Date
+        {
+            get;
+            set;
+        }
+
         public Agreement(string title, string description, Tenant creatorTenant, List<Tenant> withTenants)
         {
             Id = idSeeder;
@@ -46,6 +52,7 @@ namespace StudentHousingCompany
             Description = description;
             CreatorTenant = creatorTenant;
             WithTenants = withTenants;
+            Date = DateTime.Today;
             idSeeder++;
         }
     }

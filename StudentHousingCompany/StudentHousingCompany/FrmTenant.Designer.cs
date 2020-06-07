@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -84,18 +87,28 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnNewAgreement = new System.Windows.Forms.Button();
+            this.dgdAgreements = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAgreements)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -105,11 +118,12 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(17, 81);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Location = new System.Drawing.Point(13, 66);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1273, 684);
+            this.tabControl1.Size = new System.Drawing.Size(957, 484);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage5
@@ -124,9 +138,9 @@
             this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.richTextBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1265, 655);
+            this.tabPage5.Size = new System.Drawing.Size(949, 455);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "General";
             // 
@@ -224,7 +238,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1265, 655);
+            this.tabPage1.Size = new System.Drawing.Size(949, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
             // 
@@ -232,7 +246,7 @@
             // 
             this.clbTenantTask.FormattingEnabled = true;
             this.clbTenantTask.Location = new System.Drawing.Point(11, 73);
-            this.clbTenantTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clbTenantTask.Margin = new System.Windows.Forms.Padding(4);
             this.clbTenantTask.Name = "clbTenantTask";
             this.clbTenantTask.Size = new System.Drawing.Size(175, 242);
             this.clbTenantTask.TabIndex = 7;
@@ -319,10 +333,10 @@
             this.tabPage2.Controls.Add(this.btnAddToShoppingList);
             this.tabPage2.Controls.Add(this.tbxFullPrice);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1265, 655);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(949, 455);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
@@ -652,6 +666,77 @@
             this.textBox7.Size = new System.Drawing.Size(100, 22);
             this.textBox7.TabIndex = 0;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage6.Controls.Add(this.btnNewAgreement);
+            this.tabPage6.Controls.Add(this.dgdAgreements);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(949, 455);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Agreements";
+            // 
+            // btnNewAgreement
+            // 
+            this.btnNewAgreement.Location = new System.Drawing.Point(26, 17);
+            this.btnNewAgreement.Name = "btnNewAgreement";
+            this.btnNewAgreement.Size = new System.Drawing.Size(195, 37);
+            this.btnNewAgreement.TabIndex = 1;
+            this.btnNewAgreement.Text = "Create New Agreement";
+            this.btnNewAgreement.UseVisualStyleBackColor = true;
+            this.btnNewAgreement.Click += new System.EventHandler(this.btnNewAgreement_Click);
+            // 
+            // dgdAgreements
+            // 
+            this.dgdAgreements.AllowUserToAddRows = false;
+            this.dgdAgreements.AllowUserToDeleteRows = false;
+            this.dgdAgreements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgdAgreements.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgdAgreements.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgdAgreements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdAgreements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgdAgreements.Location = new System.Drawing.Point(26, 71);
+            this.dgdAgreements.Name = "dgdAgreements";
+            this.dgdAgreements.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgdAgreements.RowHeadersVisible = false;
+            this.dgdAgreements.RowHeadersWidth = 51;
+            this.dgdAgreements.RowTemplate.Height = 24;
+            this.dgdAgreements.Size = new System.Drawing.Size(899, 360);
+            this.dgdAgreements.TabIndex = 0;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -699,16 +784,46 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 17);
             this.lblCurrentUserName.TabIndex = 9;
             // 
-            // timer1
+            // Column1
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.Column1.HeaderText = "Title";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Description";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Creator";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "With";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Date";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // FrmTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1337, 811);
+            this.ClientSize = new System.Drawing.Size(984, 562);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.tabControl1);
@@ -718,7 +833,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
-            this.Load += new System.EventHandler(this.FrmTenant_Load_1);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTenant_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -730,6 +845,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAgreements)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,6 +917,14 @@
         private System.Windows.Forms.Button btnMessageDelete;
         private System.Windows.Forms.CheckedListBox clbTenantTask;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnNewAgreement;
+        private System.Windows.Forms.DataGridView dgdAgreements;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 

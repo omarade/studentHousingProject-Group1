@@ -579,9 +579,9 @@ namespace StudentHousingCompany
             ClearSelectedUser();
         }
 
-        private void FrmAdmin_Load_1(object sender, EventArgs e)
+        private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
