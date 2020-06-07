@@ -27,9 +27,13 @@ namespace StudentHousingCompany
             complaint = Complaint.Instance;
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
-                clbTenantsToshare.Items.Add(tenant.Name);
+                if (tenant.Id != studentHousing.CurrentUser.Id)
+                {
+                    clbTenantsToshare.Items.Add(tenant.Name);
+                }
+                
             }
-           
+            timer1.Start();
             ShowTasks();
         }
 
@@ -68,20 +72,19 @@ namespace StudentHousingCompany
             if(tbxFullPrice.Text == null)
             {
                 tbxFullPrice.Text = "0";
-                if (tbxProductname.Text == null)
-                {
-                    tbxProductname.Text = "";
-                }
-                
             }
-
+            if (tbxProductname.Text == null)
+            {
+                tbxProductname.Text = "";
+            }
             Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text));
 
             string LogedInUserName = "";
-            int LogedInUserID = studentHousing.CurrentUser.Id;
+            
+            // adding the current user to the sharing list
             foreach(Tenant ten in studentHousing.GetTenants())
             {
-                if (ten.Id == LogedInUserID)
+                if (ten.Id == studentHousing.CurrentUser.Id)
                 {
                     newProduct.TenantesShredWith.Add(ten);
                     LogedInUserName = ten.Name;
@@ -93,28 +96,29 @@ namespace StudentHousingCompany
             {
               foreach(Tenant ten in tenants)
               {
-                 if (ten.Name == tenantName)
-                 {
-                    newProduct.TenantesShredWith.Add(ten);
-                 }
+                if (ten.Name == tenantName)
+                {
+                  newProduct.TenantesShredWith.Add(ten);
+                }
               }
             }
 
 
             int NumberOfParticpants = newProduct.TenantesShredWith.Count;
             newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
+            double currentUserShare = (NumberOfParticpants - 1) * newProduct.DevidedPrice;
 
-            
 
-            foreach(Tenant tenSharedWith in newProduct.TenantesShredWith)
+
+            foreach (Tenant tenSharedWith in newProduct.TenantesShredWith)
             {
                 foreach(Tenant tenant in tenants)
                 {
                     if(tenant.Id == tenSharedWith.Id)
                     {
-                        if (tenant.Id == LogedInUserID)
+                        if (tenant.Id == studentHousing.CurrentUser.Id)
                         {
-                            tenant.Balance = tenant.Balance  + newProduct.DevidedPrice;
+                            tenant.Balance = tenant.Balance  + currentUserShare;
                         }
                         else
                         {
@@ -144,7 +148,7 @@ namespace StudentHousingCompany
 
         public void FILLBALANCELIST()
         {
-            //lvwBlancesOverView.Clear();
+            lvwBlancesOverView.Items.Clear();
 
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
@@ -173,18 +177,6 @@ namespace StudentHousingCompany
                 }
             }
 
-            //tbxReplyFromAdm.Visible = true;
-
-            //tbxReplyFromAdm.Text = "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
-            //    "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
-            //    "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
-            //    "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
-            //    "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
-            //    "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
-            //    "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
-            //    "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
-            //    "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndl" +
-            //    "kfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn";
 
             this.studentHousing.Complaintss.Add(newcomplaint);
         }
@@ -289,9 +281,15 @@ namespace StudentHousingCompany
             {
                 if (tbxReplyFromAdm.Text == comp.ReplyFromAdmin)
                 {
-                    comp.ReplyFromAdmIsRead = true; 
+                    comp.ReplyFromAdmIsRead = true;
+                    tbxReplyFromAdm.Clear();
+                    tbxReplyFromAdm.Visible = false;
                 }
             }
+
+            btnMessageDelete.Visible = false;
+            lblMessageFromAdm.Visible = false;
+            lblComplaintDiscription.Visible = true;
         }
 
         private void btnNewAgreement_Click(object sender, EventArgs e)
@@ -319,6 +317,34 @@ namespace StudentHousingCompany
         private void FrmTenant_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            foreach(Complaint comp in studentHousing.Complaintss)
+            {
+                if (comp.TenID == studentHousing.CurrentUser.Id)
+                {
+                    if (comp.ReplyFromAdmin != null)
+                    {
+                        if (!comp.ReplyFromAdmIsRead)
+                        {
+                            tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
+                            tbxReplyFromAdm.Visible = true;
+                            btnMessageDelete.Visible = true;
+                            lblMessageFromAdm.Visible = true;
+                            lblComplaintDiscription.Visible = false;
+                        }
+                    }
+                    
+                }
+                
+            }
+        }
+
+        private void FrmTenant_Load_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

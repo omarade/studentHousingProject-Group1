@@ -500,10 +500,11 @@ namespace StudentHousingCompany
         }
 
         int selectedIndxInCompList;
-        int idOfSelectedCompFromCompList;
+        int idOfSelectedComp;
 
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
+            
 
             string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
             
@@ -511,12 +512,17 @@ namespace StudentHousingCompany
             {
                 if (selectedTextFromlbx == comp.GetText())
                 {
-                    selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
-                    idOfSelectedCompFromCompList = comp.ComplaintId;
+                    //selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+
+                    idOfSelectedComp = comp.ComplaintId;
                 }
             }
 
             tbxReply.Visible = true;
+
+            btnReplyToComp.Visible = false;
+
+            btnSendReply.Visible = true;
 
         }
 
@@ -527,12 +533,17 @@ namespace StudentHousingCompany
             foreach (Complaint comp in studentHousing.Complaintss)
             {
                 
-                if(comp.ComplaintId == idOfSelectedCompFromCompList)
+                if(comp.ComplaintId == idOfSelectedComp)
                 {
                     comp.ReplyFromAdmin =  reply;
                 }
             }
+
             tbxReply.Visible = false;
+
+            btnReplyToComp.Visible = true;
+            btnSendReply.Visible = false;
+
         }
 
 
