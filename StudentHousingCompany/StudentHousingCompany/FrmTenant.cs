@@ -206,10 +206,11 @@ namespace StudentHousingCompany
 
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
-            string EventName = tbEventName.Text;
-            string EventDesc = tbEventDesc.Text;
-            DateTime date = dtEvent.Value;
-            studentHousing.AddEvent(EventName, date, EventDesc, studentHousing.CurrentUser.Name);
+            
+            this.Hide();
+            var frmAddEvent = new FrmAddEvent();
+            frmAddEvent.Show();
+
             FillEventsList();
         }
 
