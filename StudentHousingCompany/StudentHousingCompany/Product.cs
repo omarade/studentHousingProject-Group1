@@ -8,6 +8,20 @@ namespace StudentHousingCompany
 {
     class Product
     {
+
+        public static int ProductId = 0;
+        public Product(string name, double fullPrice)
+        {
+            
+            this.FullPrice = fullPrice;
+            this.Name = name;
+            this.PproductId = Product.ProductId;
+            TenantesIDShredWith = new List<int>();
+            TenantesShredWith   = new List<Tenant>();
+            Product.ProductId++;
+        }
+
+
         public string Name
         {
             get;
@@ -26,7 +40,7 @@ namespace StudentHousingCompany
             set;
         }
 
-        public int ProductId
+        public int PproductId
         {
             get;
             set;
@@ -43,13 +57,17 @@ namespace StudentHousingCompany
             get;
             set;
         }
-        public Product(string name, double fullPrice, int ID)
-        {
-            this.FullPrice = fullPrice;
-            this.Name = name;
-            this.ProductId = ID;
-        }
-
-
+        //public ListViewItem GetBlanceInfo()
+        //{
+        //    string[] arr = new string[4];
+        //    ListViewItem itm;
+        //    //add items to ListView
+        //    arr[0] = GetStudent();
+        //    arr[1] = GetTask();
+        //    arr[2] = GetStatus().ToString();
+        //    arr[3] = GetDueDate().ToString();
+        //    itm = new ListViewItem(arr);
+        //    return itm;
+        //}
     }
 }

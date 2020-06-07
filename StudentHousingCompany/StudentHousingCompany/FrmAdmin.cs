@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace StudentHousingCompany
 {
@@ -14,6 +15,7 @@ namespace StudentHousingCompany
     {
         private StudentHousing studentHousing;
         DayOfWeek day = DayOfWeek.Monday;
+        private Complaint complaint;
         public FrmAdmin()
         {
             InitializeComponent();
@@ -24,8 +26,13 @@ namespace StudentHousingCompany
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
+            complaint = Complaint.Instance;
+            
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                 lbxComp.Items.Add(comp.GetText());
+            }
         }
-
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
@@ -237,6 +244,7 @@ namespace StudentHousingCompany
 
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
+            
             if (dgdUsers.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
@@ -253,6 +261,8 @@ namespace StudentHousingCompany
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
+            
+
             if (dgdUsers.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
@@ -260,7 +270,8 @@ namespace StudentHousingCompany
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
 
                 User user = studentHousing.GetUserById(id);
-
+                
+            
                 string name = txtName.Text;
                 DateTime dateOfBirth = dtbDoB.Value;
                 string email = txtEmail.Text;
@@ -276,6 +287,8 @@ namespace StudentHousingCompany
                 {
                     studentHousing.UpdateUser(id, name, dateOfBirth, email, phoneNr, postcode, address);
                 }
+                
+            
 
                 ShowUsers();
             }
@@ -308,6 +321,8 @@ namespace StudentHousingCompany
                 {
                     rbtnAdmin.Checked = true;
                 }
+                
+                
             }
         }
 
@@ -458,6 +473,75 @@ namespace StudentHousingCompany
 
         }
 
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComplaintResolve_Click(object sender, EventArgs e)
+        {
+
+            ListBox.SelectedObjectCollection selectedItem = new ListBox.SelectedObjectCollection(lbxComp);
+            selectedItem = lbxComp.SelectedItems;
+
+            if (lbxComp.SelectedIndex != -1)
+            {
+                string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
+
+                foreach (Complaint comp in studentHousing.Complaintss)
+                {
+                    if (selectedTextFromlbx == comp.GetText())
+                    {
+                        comp.Solved = true;
+                    }
+                }
+                for (int i = selectedItem.Count - 1; i >= 0; i--)
+                {
+                    lbxComp.Items.Remove(selectedItem[i]);
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Select a complainet ");
+            } 
+        }
+
+        int selectedIndxInCompList;
+        int idOfSelectedCompFromCompList;
+
+        private void btnReplyToComp_Click(object sender, EventArgs e)
+        {
+
+            string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
+            
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                if (selectedTextFromlbx == comp.GetText())
+                {
+                    selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+                    idOfSelectedCompFromCompList = comp.ComplaintId;
+                }
+            }
+
+            tbxReply.Visible = true;
+
+        }
+
+        private void btnSendReply_Click(object sender, EventArgs e)
+        {
+            string reply = tbxReply.Text;
+
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                
+                if(comp.ComplaintId == idOfSelectedCompFromCompList)
+                {
+                    comp.ReplyFromAdmin =  reply;
+                }
+            }
+            tbxReply.Visible = false;
+        }
+
 
         
         private void timer1_Tick(object sender, EventArgs e)
@@ -486,7 +570,14 @@ namespace StudentHousingCompany
                 }
             }
 
-            //nour
+            lbxComp.Items.Clear();
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                if (!comp.Solved)
+                {
+                    lbxComp.Items.Add(comp.GetText());
+                }
+            }
 
         }
 

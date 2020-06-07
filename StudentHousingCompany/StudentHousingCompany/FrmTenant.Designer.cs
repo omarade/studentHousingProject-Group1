@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,14 +54,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTaskComplete = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgdBlancesOverView = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgdProductSharingInfo = new System.Windows.Forms.DataGridView();
-            this.Productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PricePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SharedWith = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFullPrice = new System.Windows.Forms.Label();
             this.lblProductname = new System.Windows.Forms.Label();
             this.lvwProductSharingInfo = new System.Windows.Forms.ListView();
@@ -77,25 +70,17 @@
             this.btnAddToShoppingList = new System.Windows.Forms.Button();
             this.tbxFullPrice = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnMessageDelete = new System.Windows.Forms.Button();
+            this.tbxReplyFromAdm = new System.Windows.Forms.TextBox();
             this.lblSubject = new System.Windows.Forms.Label();
             this.cbxSendAnonymously = new System.Windows.Forms.CheckBox();
             this.btnSendComplaint = new System.Windows.Forms.Button();
-            this.tbxWriteComplaint = new System.Windows.Forms.TextBox();
+            this.tbxCoTopic = new System.Windows.Forms.TextBox();
             this.lblMakeComplaint = new System.Windows.Forms.Label();
-            this.tbxComplaintSubject = new System.Windows.Forms.TextBox();
+            this.tbxComSub = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnAgree = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDisagree = new System.Windows.Forms.Button();
-            this.lvEventDetails = new System.Windows.Forms.ListView();
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAddEvent = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnNewAgreement = new System.Windows.Forms.Button();
             this.dgdAgreements = new System.Windows.Forms.DataGridView();
@@ -104,17 +89,33 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnDisagree = new System.Windows.Forms.Button();
+            this.btnAddEvent = new System.Windows.Forms.Button();
+            this.lvEventDetails = new System.Windows.Forms.ListView();
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdBlancesOverView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdProductSharingInfo)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -130,10 +131,10 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(10, 54);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(718, 393);
+            this.tabControl1.Size = new System.Drawing.Size(957, 484);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage5
@@ -148,7 +149,7 @@
             this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.richTextBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(710, 367);
             this.tabPage5.TabIndex = 4;
@@ -201,7 +202,7 @@
             this.columnHeader2});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(426, 47);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(242, 284);
             this.listView1.TabIndex = 4;
@@ -221,7 +222,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(610, 345);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 3;
@@ -233,7 +234,7 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.richTextBox1.Location = new System.Drawing.Point(56, 47);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(226, 246);
@@ -249,9 +250,9 @@
             this.tabPage1.Controls.Add(this.listView6);
             this.tabPage1.Controls.Add(this.btnTaskComplete);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Size = new System.Drawing.Size(710, 367);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
@@ -259,17 +260,17 @@
             // clbTenantTask
             // 
             this.clbTenantTask.FormattingEnabled = true;
-            this.clbTenantTask.Location = new System.Drawing.Point(6, 48);
+            this.clbTenantTask.Location = new System.Drawing.Point(4, 39);
             this.clbTenantTask.Margin = new System.Windows.Forms.Padding(2);
             this.clbTenantTask.Name = "clbTenantTask";
-            this.clbTenantTask.Size = new System.Drawing.Size(142, 229);
+            this.clbTenantTask.Size = new System.Drawing.Size(108, 184);
             this.clbTenantTask.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 20);
+            this.label10.Location = new System.Drawing.Point(2, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 20);
@@ -280,7 +281,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(186, 20);
+            this.label9.Location = new System.Drawing.Point(140, 16);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(158, 20);
@@ -296,10 +297,10 @@
             this.columnHeader4});
             this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(190, 47);
+            this.listView6.Location = new System.Drawing.Point(142, 38);
             this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(487, 230);
+            this.listView6.Size = new System.Drawing.Size(366, 188);
             this.listView6.TabIndex = 4;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -327,10 +328,10 @@
             // btnTaskComplete
             // 
             this.btnTaskComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaskComplete.Location = new System.Drawing.Point(7, 290);
+            this.btnTaskComplete.Location = new System.Drawing.Point(5, 236);
             this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaskComplete.Name = "btnTaskComplete";
-            this.btnTaskComplete.Size = new System.Drawing.Size(141, 46);
+            this.btnTaskComplete.Size = new System.Drawing.Size(106, 37);
             this.btnTaskComplete.TabIndex = 1;
             this.btnTaskComplete.Text = "Completed?";
             this.btnTaskComplete.UseVisualStyleBackColor = true;
@@ -339,8 +340,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.dgdBlancesOverView);
-            this.tabPage2.Controls.Add(this.dgdProductSharingInfo);
             this.tabPage2.Controls.Add(this.lblFullPrice);
             this.tabPage2.Controls.Add(this.lblProductname);
             this.tabPage2.Controls.Add(this.lvwProductSharingInfo);
@@ -351,90 +350,17 @@
             this.tabPage2.Controls.Add(this.btnAddToShoppingList);
             this.tabPage2.Controls.Add(this.tbxFullPrice);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(710, 367);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(949, 458);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
-            // 
-            // dgdBlancesOverView
-            // 
-            this.dgdBlancesOverView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdBlancesOverView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.TenantName,
-            this.Balance});
-            this.dgdBlancesOverView.Location = new System.Drawing.Point(463, 18);
-            this.dgdBlancesOverView.Margin = new System.Windows.Forms.Padding(2);
-            this.dgdBlancesOverView.Name = "dgdBlancesOverView";
-            this.dgdBlancesOverView.RowHeadersWidth = 51;
-            this.dgdBlancesOverView.RowTemplate.Height = 24;
-            this.dgdBlancesOverView.Size = new System.Drawing.Size(235, 349);
-            this.dgdBlancesOverView.TabIndex = 35;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "Tenants ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 125;
-            // 
-            // TenantName
-            // 
-            this.TenantName.HeaderText = "Name of Tenant";
-            this.TenantName.MinimumWidth = 6;
-            this.TenantName.Name = "TenantName";
-            this.TenantName.Width = 125;
-            // 
-            // Balance
-            // 
-            this.Balance.HeaderText = "Balance";
-            this.Balance.MinimumWidth = 6;
-            this.Balance.Name = "Balance";
-            this.Balance.Width = 125;
-            // 
-            // dgdProductSharingInfo
-            // 
-            this.dgdProductSharingInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdProductSharingInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Productname,
-            this.PricePP,
-            this.SharedWith});
-            this.dgdProductSharingInfo.Location = new System.Drawing.Point(224, 22);
-            this.dgdProductSharingInfo.Margin = new System.Windows.Forms.Padding(2);
-            this.dgdProductSharingInfo.Name = "dgdProductSharingInfo";
-            this.dgdProductSharingInfo.RowHeadersWidth = 51;
-            this.dgdProductSharingInfo.RowTemplate.Height = 24;
-            this.dgdProductSharingInfo.Size = new System.Drawing.Size(222, 341);
-            this.dgdProductSharingInfo.TabIndex = 34;
-            // 
-            // Productname
-            // 
-            this.Productname.HeaderText = "Product";
-            this.Productname.MinimumWidth = 6;
-            this.Productname.Name = "Productname";
-            this.Productname.Width = 125;
-            // 
-            // PricePP
-            // 
-            this.PricePP.HeaderText = "pricePP";
-            this.PricePP.MinimumWidth = 6;
-            this.PricePP.Name = "PricePP";
-            this.PricePP.Width = 125;
-            // 
-            // SharedWith
-            // 
-            this.SharedWith.HeaderText = "SharedWith";
-            this.SharedWith.MinimumWidth = 6;
-            this.SharedWith.Name = "SharedWith";
-            this.SharedWith.Width = 125;
             // 
             // lblFullPrice
             // 
             this.lblFullPrice.AutoSize = true;
-            this.lblFullPrice.Location = new System.Drawing.Point(4, 61);
-            this.lblFullPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFullPrice.Location = new System.Drawing.Point(5, 75);
             this.lblFullPrice.Name = "lblFullPrice";
             this.lblFullPrice.Size = new System.Drawing.Size(50, 13);
             this.lblFullPrice.TabIndex = 32;
@@ -443,8 +369,7 @@
             // lblProductname
             // 
             this.lblProductname.AutoSize = true;
-            this.lblProductname.Location = new System.Drawing.Point(2, 32);
-            this.lblProductname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProductname.Location = new System.Drawing.Point(3, 39);
             this.lblProductname.Name = "lblProductname";
             this.lblProductname.Size = new System.Drawing.Size(75, 13);
             this.lblProductname.TabIndex = 31;
@@ -458,10 +383,10 @@
             this.columnHeader9,
             this.columnHeader10});
             this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(224, 32);
-            this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(299, 39);
+            this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(223, 279);
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(324, 342);
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -475,12 +400,12 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "PricePP";
-            this.columnHeader9.Width = 68;
+            this.columnHeader9.Width = 88;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Shared with";
-            this.columnHeader10.Width = 115;
+            this.columnHeader10.Width = 124;
             // 
             // lvwBlancesOverView
             // 
@@ -489,10 +414,10 @@
             this.columnHeader6,
             this.columnHeader7});
             this.lvwBlancesOverView.HideSelection = false;
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(463, 32);
-            this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(2);
+            this.lvwBlancesOverView.Location = new System.Drawing.Point(629, 39);
+            this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(236, 279);
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(313, 342);
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -500,6 +425,7 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Id";
+            this.columnHeader8.Width = 93;
             // 
             // columnHeader6
             // 
@@ -515,27 +441,26 @@
             // 
             this.clbTenantsToshare.CheckOnClick = true;
             this.clbTenantsToshare.FormattingEnabled = true;
-            this.clbTenantsToshare.Location = new System.Drawing.Point(32, 118);
-            this.clbTenantsToshare.Margin = new System.Windows.Forms.Padding(2);
+            this.clbTenantsToshare.Location = new System.Drawing.Point(43, 145);
+            this.clbTenantsToshare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clbTenantsToshare.Name = "clbTenantsToshare";
-            this.clbTenantsToshare.Size = new System.Drawing.Size(173, 184);
+            this.clbTenantsToshare.Size = new System.Drawing.Size(229, 214);
             this.clbTenantsToshare.TabIndex = 28;
             this.clbTenantsToshare.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // tbxProductname
             // 
-            this.tbxProductname.Location = new System.Drawing.Point(79, 32);
-            this.tbxProductname.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxProductname.Location = new System.Drawing.Point(105, 39);
+            this.tbxProductname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxProductname.Name = "tbxProductname";
-            this.tbxProductname.Size = new System.Drawing.Size(141, 20);
+            this.tbxProductname.Size = new System.Drawing.Size(187, 20);
             this.tbxProductname.TabIndex = 23;
             this.tbxProductname.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // lblTenantsToShareWith
             // 
             this.lblTenantsToShareWith.AutoSize = true;
-            this.lblTenantsToShareWith.Location = new System.Drawing.Point(28, 93);
-            this.lblTenantsToShareWith.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTenantsToShareWith.Location = new System.Drawing.Point(37, 114);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
             this.lblTenantsToShareWith.Size = new System.Drawing.Size(49, 13);
             this.lblTenantsToShareWith.TabIndex = 18;
@@ -543,10 +468,10 @@
             // 
             // btnAddToShoppingList
             // 
-            this.btnAddToShoppingList.Location = new System.Drawing.Point(30, 320);
-            this.btnAddToShoppingList.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddToShoppingList.Location = new System.Drawing.Point(40, 394);
+            this.btnAddToShoppingList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddToShoppingList.Name = "btnAddToShoppingList";
-            this.btnAddToShoppingList.Size = new System.Drawing.Size(172, 31);
+            this.btnAddToShoppingList.Size = new System.Drawing.Size(229, 38);
             this.btnAddToShoppingList.TabIndex = 17;
             this.btnAddToShoppingList.Text = "add to shopping list ";
             this.btnAddToShoppingList.UseVisualStyleBackColor = true;
@@ -554,34 +479,57 @@
             // 
             // tbxFullPrice
             // 
-            this.tbxFullPrice.Location = new System.Drawing.Point(79, 61);
-            this.tbxFullPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxFullPrice.Location = new System.Drawing.Point(105, 75);
+            this.tbxFullPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxFullPrice.Name = "tbxFullPrice";
-            this.tbxFullPrice.Size = new System.Drawing.Size(141, 20);
+            this.tbxFullPrice.Size = new System.Drawing.Size(187, 20);
             this.tbxFullPrice.TabIndex = 16;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.btnMessageDelete);
+            this.tabPage3.Controls.Add(this.tbxReplyFromAdm);
             this.tabPage3.Controls.Add(this.lblSubject);
             this.tabPage3.Controls.Add(this.cbxSendAnonymously);
             this.tabPage3.Controls.Add(this.btnSendComplaint);
-            this.tabPage3.Controls.Add(this.tbxWriteComplaint);
+            this.tabPage3.Controls.Add(this.tbxCoTopic);
             this.tabPage3.Controls.Add(this.lblMakeComplaint);
-            this.tabPage3.Controls.Add(this.tbxComplaintSubject);
+            this.tabPage3.Controls.Add(this.tbxComSub);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(710, 367);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compaints";
             // 
+            // btnMessageDelete
+            // 
+            this.btnMessageDelete.Location = new System.Drawing.Point(477, 425);
+            this.btnMessageDelete.Name = "btnMessageDelete";
+            this.btnMessageDelete.Size = new System.Drawing.Size(147, 55);
+            this.btnMessageDelete.TabIndex = 7;
+            this.btnMessageDelete.Text = "Message is read";
+            this.btnMessageDelete.UseVisualStyleBackColor = true;
+            this.btnMessageDelete.Click += new System.EventHandler(this.btnMessageDelete_Click);
+            // 
+            // tbxReplyFromAdm
+            // 
+            this.tbxReplyFromAdm.Location = new System.Drawing.Point(140, 124);
+            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxReplyFromAdm.Multiline = true;
+            this.tbxReplyFromAdm.Name = "tbxReplyFromAdm";
+            this.tbxReplyFromAdm.ReadOnly = true;
+            this.tbxReplyFromAdm.Size = new System.Drawing.Size(485, 237);
+            this.tbxReplyFromAdm.TabIndex = 6;
+            this.tbxReplyFromAdm.Visible = false;
+            this.tbxReplyFromAdm.TextChanged += new System.EventHandler(this.tbxReplyFromAdm_TextChanged);
+            // 
             // lblSubject
             // 
             this.lblSubject.AutoSize = true;
             this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(12, 55);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubject.Location = new System.Drawing.Point(46, 83);
             this.lblSubject.Name = "lblSubject";
             this.lblSubject.Size = new System.Drawing.Size(48, 15);
             this.lblSubject.TabIndex = 5;
@@ -590,8 +538,8 @@
             // cbxSendAnonymously
             // 
             this.cbxSendAnonymously.AutoSize = true;
-            this.cbxSendAnonymously.Location = new System.Drawing.Point(355, 296);
-            this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(140, 382);
+            this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
             this.cbxSendAnonymously.Size = new System.Drawing.Size(116, 17);
             this.cbxSendAnonymously.TabIndex = 4;
@@ -601,51 +549,50 @@
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(79, 296);
-            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSendComplaint.Location = new System.Drawing.Point(139, 425);
+            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(209, 45);
+            this.btnSendComplaint.Size = new System.Drawing.Size(279, 55);
             this.btnSendComplaint.TabIndex = 3;
             this.btnSendComplaint.Text = "Send Complaint";
             this.btnSendComplaint.UseVisualStyleBackColor = true;
             this.btnSendComplaint.Click += new System.EventHandler(this.btnSendComplaint_Click);
             // 
-            // tbxWriteComplaint
+            // tbxCoTopic
             // 
-            this.tbxWriteComplaint.Location = new System.Drawing.Point(79, 81);
-            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxWriteComplaint.Multiline = true;
-            this.tbxWriteComplaint.Name = "tbxWriteComplaint";
-            this.tbxWriteComplaint.Size = new System.Drawing.Size(277, 192);
-            this.tbxWriteComplaint.TabIndex = 2;
+            this.tbxCoTopic.Location = new System.Drawing.Point(140, 127);
+            this.tbxCoTopic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxCoTopic.Multiline = true;
+            this.tbxCoTopic.Name = "tbxCoTopic";
+            this.tbxCoTopic.Size = new System.Drawing.Size(484, 235);
+            this.tbxCoTopic.TabIndex = 2;
             // 
             // lblMakeComplaint
             // 
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMakeComplaint.Location = new System.Drawing.Point(75, 16);
-            this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMakeComplaint.Location = new System.Drawing.Point(135, 30);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
             this.lblMakeComplaint.Size = new System.Drawing.Size(160, 24);
             this.lblMakeComplaint.TabIndex = 1;
             this.lblMakeComplaint.Text = "Make a Complaint";
             // 
-            // tbxComplaintSubject
+            // tbxComSub
             // 
-            this.tbxComplaintSubject.Location = new System.Drawing.Point(79, 53);
-            this.tbxComplaintSubject.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxComplaintSubject.Name = "tbxComplaintSubject";
-            this.tbxComplaintSubject.Size = new System.Drawing.Size(277, 20);
-            this.tbxComplaintSubject.TabIndex = 0;
+            this.tbxComSub.Location = new System.Drawing.Point(139, 83);
+            this.tbxComSub.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxComSub.Name = "tbxComSub";
+            this.tbxComSub.Size = new System.Drawing.Size(486, 20);
+            this.tbxComSub.TabIndex = 0;
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.btnAgree);
-            this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.btnDisagree);
             this.tabPage4.Controls.Add(this.lvEventDetails);
             this.tabPage4.Controls.Add(this.btnAddEvent);
+            this.tabPage4.Controls.Add(this.btnDisagree);
+            this.tabPage4.Controls.Add(this.btnAgree);
+            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
@@ -656,10 +603,10 @@
             // btnAgree
             // 
             this.btnAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgree.Location = new System.Drawing.Point(540, 310);
+            this.btnAgree.Location = new System.Drawing.Point(507, 315);
             this.btnAgree.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgree.Name = "btnAgree";
-            this.btnAgree.Size = new System.Drawing.Size(85, 38);
+            this.btnAgree.Size = new System.Drawing.Size(92, 38);
             this.btnAgree.TabIndex = 11;
             this.btnAgree.Text = "Agree";
             this.btnAgree.UseVisualStyleBackColor = true;
@@ -669,85 +616,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 67);
+            this.label6.Location = new System.Drawing.Point(6, 54);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "List of events";
-            // 
-            // btnDisagree
-            // 
-            this.btnDisagree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisagree.Location = new System.Drawing.Point(629, 310);
-            this.btnDisagree.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDisagree.Name = "btnDisagree";
-            this.btnDisagree.Size = new System.Drawing.Size(79, 38);
-            this.btnDisagree.TabIndex = 6;
-            this.btnDisagree.Text = "Disagree";
-            this.btnDisagree.UseVisualStyleBackColor = true;
-            this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
-            // 
-            // lvEventDetails
-            // 
-            this.lvEventDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader18,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader17,
-            this.columnHeader19});
-            this.lvEventDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvEventDetails.HideSelection = false;
-            this.lvEventDetails.Location = new System.Drawing.Point(11, 87);
-            this.lvEventDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.lvEventDetails.MultiSelect = false;
-            this.lvEventDetails.Name = "lvEventDetails";
-            this.lvEventDetails.Size = new System.Drawing.Size(688, 205);
-            this.lvEventDetails.TabIndex = 5;
-            this.lvEventDetails.UseCompatibleStateImageBehavior = false;
-            this.lvEventDetails.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "EventID";
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "EventOwner";
-            this.columnHeader13.Width = 150;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "EventName";
-            this.columnHeader14.Width = 150;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "EventDesc";
-            this.columnHeader15.Width = 200;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "EventDate";
-            this.columnHeader16.Width = 100;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Disagree";
-            // 
-            // btnAddEvent
-            // 
-            this.btnAddEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEvent.Location = new System.Drawing.Point(11, 14);
-            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddEvent.Name = "btnAddEvent";
-            this.btnAddEvent.Size = new System.Drawing.Size(127, 39);
-            this.btnAddEvent.TabIndex = 4;
-            this.btnAddEvent.Text = "Add Event";
-            this.btnAddEvent.UseVisualStyleBackColor = true;
-            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
             // 
             // tabPage6
             // 
@@ -755,17 +629,17 @@
             this.tabPage6.Controls.Add(this.btnNewAgreement);
             this.tabPage6.Controls.Add(this.dgdAgreements);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage6.Size = new System.Drawing.Size(710, 367);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Size = new System.Drawing.Size(949, 458);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Agreements";
             // 
             // btnNewAgreement
             // 
             this.btnNewAgreement.Location = new System.Drawing.Point(20, 14);
-            this.btnNewAgreement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewAgreement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewAgreement.Name = "btnNewAgreement";
             this.btnNewAgreement.Size = new System.Drawing.Size(146, 30);
             this.btnNewAgreement.TabIndex = 1;
@@ -780,15 +654,15 @@
             this.dgdAgreements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdAgreements.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgdAgreements.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dgdAgreements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdAgreements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -796,27 +670,27 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgdAgreements.Location = new System.Drawing.Point(20, 58);
-            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(2);
+            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgdAgreements.Name = "dgdAgreements";
             this.dgdAgreements.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dgdAgreements.RowHeadersVisible = false;
             this.dgdAgreements.RowHeadersWidth = 51;
             this.dgdAgreements.RowTemplate.Height = 24;
@@ -853,8 +727,38 @@
             // 
             // Column5
             // 
+            this.Column5.HeaderText = "Date";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "EventID";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "EventOwner";
+            this.columnHeader13.Width = 150;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "EventName";
+            this.columnHeader14.Width = 150;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "EventDesc";
+            this.columnHeader15.Width = 200;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "EventDate";
+            this.columnHeader16.Width = 100;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Disagree";
             // 
             // label1
             // 
@@ -869,7 +773,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(554, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(76, 20);
@@ -889,7 +793,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(643, 21);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(83, 28);
             this.button8.TabIndex = 8;
@@ -906,18 +810,84 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
+            // btnDisagree
+            // 
+            this.btnDisagree.Location = new System.Drawing.Point(620, 315);
+            this.btnDisagree.Name = "btnDisagree";
+            this.btnDisagree.Size = new System.Drawing.Size(87, 38);
+            this.btnDisagree.TabIndex = 12;
+            this.btnDisagree.Text = "Disagree";
+            this.btnDisagree.UseVisualStyleBackColor = true;
+            this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
+            // 
+            // btnAddEvent
+            // 
+            this.btnAddEvent.Location = new System.Drawing.Point(9, 15);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(98, 36);
+            this.btnAddEvent.TabIndex = 13;
+            this.btnAddEvent.Text = "Add events";
+            this.btnAddEvent.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
+            // 
+            // lvEventDetails
+            // 
+            this.lvEventDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26});
+            this.lvEventDetails.HideSelection = false;
+            this.lvEventDetails.Location = new System.Drawing.Point(9, 70);
+            this.lvEventDetails.Name = "lvEventDetails";
+            this.lvEventDetails.Size = new System.Drawing.Size(698, 226);
+            this.lvEventDetails.TabIndex = 14;
+            this.lvEventDetails.UseCompatibleStateImageBehavior = false;
+            this.lvEventDetails.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "EventID";
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Owner";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "EventName";
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Event Desc";
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Date";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Disagree";
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Agree";
+            // 
             // FrmTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 457);
+            this.ClientSize = new System.Drawing.Size(986, 570);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTenant_FormClosed);
@@ -928,8 +898,6 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdBlancesOverView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdProductSharingInfo)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -976,12 +944,17 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.CheckBox cbxSendAnonymously;
         private System.Windows.Forms.Button btnSendComplaint;
-        private System.Windows.Forms.TextBox tbxWriteComplaint;
+        private System.Windows.Forms.TextBox tbxCoTopic;
         private System.Windows.Forms.Label lblMakeComplaint;
-        private System.Windows.Forms.TextBox tbxComplaintSubject;
-        private System.Windows.Forms.Button btnDisagree;
-        private System.Windows.Forms.ListView lvEventDetails;
-        private System.Windows.Forms.Button btnAddEvent;
+        private System.Windows.Forms.TextBox tbxComSub;
+        //private System.Windows.Forms.Button button7;
+        //private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ListView listView5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
@@ -995,16 +968,10 @@
         private System.Windows.Forms.Label lblFullPrice;
         private System.Windows.Forms.Label lblProductname;
         private System.Windows.Forms.Label lblCurrentUserName;
-        private System.Windows.Forms.DataGridView dgdProductSharingInfo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Productname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PricePP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SharedWith;
-        private System.Windows.Forms.DataGridView dgdBlancesOverView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenantName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox tbxReplyFromAdm;
+        private System.Windows.Forms.Button btnMessageDelete;
         private System.Windows.Forms.CheckedListBox clbTenantTask;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ColumnHeader columnHeader18;
@@ -1015,6 +982,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.Button btnAgree;
         private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnNewAgreement;
         private System.Windows.Forms.DataGridView dgdAgreements;
@@ -1023,6 +991,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ListView lvEventDetails;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.Button btnAddEvent;
+        private System.Windows.Forms.Button btnDisagree;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
     }
 }
 
