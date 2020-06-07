@@ -43,6 +43,13 @@
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
+            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtbDoB = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.cboUserType = new System.Windows.Forms.ComboBox();
@@ -83,6 +90,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tbTaskName = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnSendReply = new System.Windows.Forms.Button();
             this.tbxReply = new System.Windows.Forms.TextBox();
             this.btnReplyToComp = new System.Windows.Forms.Button();
             this.lbxComp = new System.Windows.Forms.ListBox();
@@ -92,15 +100,7 @@
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.hxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtPhoneNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxtAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
-            this.btnSendReply = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
@@ -302,6 +302,62 @@
             this.dgdUsers.Size = new System.Drawing.Size(806, 283);
             this.dgdUsers.TabIndex = 50;
             this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
+            // 
+            // hxtId
+            // 
+            this.hxtId.HeaderText = "ID";
+            this.hxtId.MinimumWidth = 30;
+            this.hxtId.Name = "hxtId";
+            this.hxtId.ReadOnly = true;
+            this.hxtId.Width = 50;
+            // 
+            // hxtName
+            // 
+            this.hxtName.HeaderText = "Name";
+            this.hxtName.MinimumWidth = 6;
+            this.hxtName.Name = "hxtName";
+            this.hxtName.ReadOnly = true;
+            this.hxtName.Width = 74;
+            // 
+            // hxtDob
+            // 
+            this.hxtDob.HeaderText = "DoB";
+            this.hxtDob.MinimumWidth = 6;
+            this.hxtDob.Name = "hxtDob";
+            this.hxtDob.ReadOnly = true;
+            this.hxtDob.Width = 64;
+            // 
+            // hxtEmail
+            // 
+            this.hxtEmail.HeaderText = "Email";
+            this.hxtEmail.MinimumWidth = 6;
+            this.hxtEmail.Name = "hxtEmail";
+            this.hxtEmail.ReadOnly = true;
+            this.hxtEmail.Width = 71;
+            // 
+            // hxtPhoneNr
+            // 
+            this.hxtPhoneNr.HeaderText = "Phone Nr";
+            this.hxtPhoneNr.MinimumWidth = 6;
+            this.hxtPhoneNr.Name = "hxtPhoneNr";
+            this.hxtPhoneNr.ReadOnly = true;
+            this.hxtPhoneNr.Width = 97;
+            // 
+            // hxtPostcode
+            // 
+            this.hxtPostcode.HeaderText = "Postcode";
+            this.hxtPostcode.MinimumWidth = 6;
+            this.hxtPostcode.Name = "hxtPostcode";
+            this.hxtPostcode.ReadOnly = true;
+            this.hxtPostcode.Width = 96;
+            // 
+            // hxtAddress
+            // 
+            this.hxtAddress.HeaderText = "Address";
+            this.hxtAddress.MinimumWidth = 6;
+            this.hxtAddress.Name = "hxtAddress";
+            this.hxtAddress.ReadOnly = true;
+            this.hxtAddress.Width = 89;
             // 
             // dtbDoB
             // 
@@ -693,23 +749,33 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(1102, 412);
+            this.tabPage3.Size = new System.Drawing.Size(1472, 510);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
             // 
+            // btnSendReply
+            // 
+            this.btnSendReply.Location = new System.Drawing.Point(331, 405);
+            this.btnSendReply.Name = "btnSendReply";
+            this.btnSendReply.Size = new System.Drawing.Size(88, 66);
+            this.btnSendReply.TabIndex = 6;
+            this.btnSendReply.Text = "Send Reply";
+            this.btnSendReply.UseVisualStyleBackColor = true;
+            this.btnSendReply.Click += new System.EventHandler(this.btnSendReply_Click);
+            // 
             // tbxReply
             // 
-            this.tbxReply.Location = new System.Drawing.Point(40, 116);
+            this.tbxReply.Location = new System.Drawing.Point(40, 68);
             this.tbxReply.Multiline = true;
             this.tbxReply.Name = "tbxReply";
-            this.tbxReply.Size = new System.Drawing.Size(379, 244);
+            this.tbxReply.Size = new System.Drawing.Size(379, 292);
             this.tbxReply.TabIndex = 5;
             this.tbxReply.Visible = false;
             // 
             // btnReplyToComp
             // 
             this.btnReplyToComp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReplyToComp.Location = new System.Drawing.Point(335, 411);
+            this.btnReplyToComp.Location = new System.Drawing.Point(189, 405);
             this.btnReplyToComp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReplyToComp.Name = "btnReplyToComp";
             this.btnReplyToComp.Size = new System.Drawing.Size(84, 66);
@@ -734,7 +800,7 @@
             this.btnComplaintResolve.Location = new System.Drawing.Point(40, 411);
             this.btnComplaintResolve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnComplaintResolve.Name = "btnComplaintResolve";
-            this.btnComplaintResolve.Size = new System.Drawing.Size(63, 54);
+            this.btnComplaintResolve.Size = new System.Drawing.Size(90, 54);
             this.btnComplaintResolve.TabIndex = 2;
             this.btnComplaintResolve.Text = "Resolve";
             this.btnComplaintResolve.UseVisualStyleBackColor = true;
@@ -744,10 +810,10 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(26, 18);
+            this.label15.Location = new System.Drawing.Point(35, 22);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(114, 24);
+            this.label15.Size = new System.Drawing.Size(148, 29);
             this.label15.TabIndex = 1;
             this.label15.Text = "Complaintes";
             // 
@@ -757,7 +823,7 @@
             this.label16.Location = new System.Drawing.Point(16, 9);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 13);
+            this.label16.Size = new System.Drawing.Size(88, 17);
             this.label16.TabIndex = 1;
             this.label16.Text = "Admin Name";
             // 
@@ -767,12 +833,12 @@
             this.lblCurrentUserName.Location = new System.Drawing.Point(91, 9);
             this.lblCurrentUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentUserName.Name = "lblCurrentUserName";
-            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
+            this.lblCurrentUserName.Size = new System.Drawing.Size(0, 17);
             this.lblCurrentUserName.TabIndex = 2;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1027, 9);
+            this.button4.Location = new System.Drawing.Point(1031, 11);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 37);
@@ -781,76 +847,10 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btnSendReply
-            // 
-            this.btnSendReply.Location = new System.Drawing.Point(675, 411);
-            this.btnSendReply.Name = "btnSendReply";
-            this.btnSendReply.Size = new System.Drawing.Size(75, 66);
-            this.btnSendReply.TabIndex = 6;
-            this.btnSendReply.Text = "Send Reply";
-            this.btnSendReply.UseVisualStyleBackColor = true;
-            this.btnSendReply.Click += new System.EventHandler(this.btnSendReply_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // hxtId
-            // 
-            this.hxtId.HeaderText = "ID";
-            this.hxtId.MinimumWidth = 30;
-            this.hxtId.Name = "hxtId";
-            this.hxtId.ReadOnly = true;
-            this.hxtId.Width = 50;
-            // 
-            // hxtName
-            // 
-            this.hxtName.HeaderText = "Name";
-            this.hxtName.MinimumWidth = 6;
-            this.hxtName.Name = "hxtName";
-            this.hxtName.ReadOnly = true;
-            this.hxtName.Width = 74;
-            // 
-            // hxtDob
-            // 
-            this.hxtDob.HeaderText = "DoB";
-            this.hxtDob.MinimumWidth = 6;
-            this.hxtDob.Name = "hxtDob";
-            this.hxtDob.ReadOnly = true;
-            this.hxtDob.Width = 64;
-            // 
-            // hxtEmail
-            // 
-            this.hxtEmail.HeaderText = "Email";
-            this.hxtEmail.MinimumWidth = 6;
-            this.hxtEmail.Name = "hxtEmail";
-            this.hxtEmail.ReadOnly = true;
-            this.hxtEmail.Width = 71;
-            // 
-            // hxtPhoneNr
-            // 
-            this.hxtPhoneNr.HeaderText = "Phone Nr";
-            this.hxtPhoneNr.MinimumWidth = 6;
-            this.hxtPhoneNr.Name = "hxtPhoneNr";
-            this.hxtPhoneNr.ReadOnly = true;
-            this.hxtPhoneNr.Width = 97;
-            // 
-            // hxtPostcode
-            // 
-            this.hxtPostcode.HeaderText = "Postcode";
-            this.hxtPostcode.MinimumWidth = 6;
-            this.hxtPostcode.Name = "hxtPostcode";
-            this.hxtPostcode.ReadOnly = true;
-            this.hxtPostcode.Width = 96;
-            // 
-            // hxtAddress
-            // 
-            this.hxtAddress.HeaderText = "Address";
-            this.hxtAddress.MinimumWidth = 6;
-            this.hxtAddress.Name = "hxtAddress";
-            this.hxtAddress.ReadOnly = true;
-            this.hxtAddress.Width = 89;
             // 
             // FrmAdmin
             // 
@@ -864,6 +864,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAdmin";
             this.Text = "Student Housing";
+            this.Load += new System.EventHandler(this.FrmAdmin_Load_1);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

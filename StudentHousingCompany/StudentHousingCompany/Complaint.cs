@@ -24,6 +24,7 @@ namespace StudentHousingCompany
             this.TenID = tenID;
             ComplaintId = ID;
             ID++;
+            ReplyFromAdmin = null;
         }
 
         public int ComplaintId
@@ -71,6 +72,28 @@ namespace StudentHousingCompany
             set;
         }
         public string ReplyFromTen
+        {
+            get;
+            set;
+        }
+        public string GetText()
+        {
+            if (Anonymous)
+            {
+                return ComplaintTopic + "" + Subject;
+            }
+            else
+            {
+                return TenName + $" \n " + ComplaintTopic + "\n" + Subject;
+            }
+        }
+        public bool Solved
+        {
+            get;
+            set;
+        }
+
+        public bool ReplyFromAdmIsRead
         {
             get;
             set;

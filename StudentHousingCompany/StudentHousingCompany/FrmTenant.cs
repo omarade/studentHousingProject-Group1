@@ -171,17 +171,19 @@ namespace StudentHousingCompany
                 }
             }
 
-            tbxReplyFromAdm.Visible = true;
-            tbxReplyFromAdm.Text = "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
-                "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
-                "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
-                "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
-                "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
-                "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
-                "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
-                "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
-                "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndl" +
-                "kfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn";
+            //tbxReplyFromAdm.Visible = true;
+
+            //tbxReplyFromAdm.Text = "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
+            //    "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
+            //    "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
+            //    "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
+            //    "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
+            //    "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkf" +
+            //    "ndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlk" +
+            //    "fndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn" +
+            //    "dlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndl" +
+            //    "kfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfndlkfn";
+
             this.studentHousing.Complaintss.Add(newcomplaint);
         }
 
@@ -248,6 +250,46 @@ namespace StudentHousingCompany
         private void FrmTenant_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbxReplyFromAdm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmTenant_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach(Complaint comp in studentHousing.Complaintss)
+            {
+                if(comp.TenID == studentHousing.CurrentUser.Id)
+                {
+                    if (comp.ReplyFromAdmin != null)
+                    {
+                        if (!comp.ReplyFromAdmIsRead)
+                        {
+                            tbxReplyFromAdm.Visible = true;
+                            tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        private void btnMessageDelete_Click(object sender, EventArgs e)
+        {
+            foreach(Complaint comp in studentHousing.Complaintss)
+            {
+                if (tbxReplyFromAdm.Text == comp.ReplyFromAdmin)
+                {
+                    comp.ReplyFromAdmIsRead = true; 
+                }
+            }
         }
     }
 }

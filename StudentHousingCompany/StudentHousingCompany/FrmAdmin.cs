@@ -30,7 +30,7 @@ namespace StudentHousingCompany
             
             foreach (Complaint comp in studentHousing.Complaintss)
             {
-                 lbxComp.Items.Add(comp.Subject + comp.ComplaintTopic);
+                 lbxComp.Items.Add(comp.GetText());
             }
         }
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -474,15 +474,24 @@ namespace StudentHousingCompany
         private void btnComplaintResolve_Click(object sender, EventArgs e)
         {
 
-            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(lbxComp);
-            selectedItems = lbxComp.SelectedItems;
+            ListBox.SelectedObjectCollection selectedItem = new ListBox.SelectedObjectCollection(lbxComp);
+            selectedItem = lbxComp.SelectedItems;
 
-            int index = lbxComp.SelectedIndex;
-            MessageBox.Show(Convert.ToString(index));
             if (lbxComp.SelectedIndex != -1)
             {
-                for (int i = selectedItems.Count - 1; i >= 0; i--)
-                lbxComp.Items.Remove(selectedItems[i]);
+                string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
+
+                foreach (Complaint comp in studentHousing.Complaintss)
+                {
+                    if (selectedTextFromlbx == comp.GetText())
+                    {
+                        comp.Solved = true;
+                    }
+                }
+                for (int i = selectedItem.Count - 1; i >= 0; i--)
+                {
+                    lbxComp.Items.Remove(selectedItem[i]);
+                } 
             }
             else
             {
@@ -491,20 +500,19 @@ namespace StudentHousingCompany
         }
 
         int selectedIndxInCompList;
-        int idOfSelectedInCompList;
+        int idOfSelectedCompFromCompList;
+
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
 
-            string selectedFromlbx = Convert.ToString(lbxComp.SelectedItem);
+            string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
             
             foreach (Complaint comp in studentHousing.Complaintss)
             {
-                string compText =   comp.Subject + comp.ComplaintTopic;
-                if (selectedFromlbx == compText)
+                if (selectedTextFromlbx == comp.GetText())
                 {
-                    
                     selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
-                    idOfSelectedInCompList = comp.ComplaintId;
+                    idOfSelectedCompFromCompList = comp.ComplaintId;
                 }
             }
 
@@ -519,14 +527,12 @@ namespace StudentHousingCompany
             foreach (Complaint comp in studentHousing.Complaintss)
             {
                 
-                if(comp.ComplaintId == idOfSelectedInCompList)
+                if(comp.ComplaintId == idOfSelectedCompFromCompList)
                 {
                     comp.ReplyFromAdmin =  reply;
                 }
             }
             tbxReply.Visible = false;
-            var frmTenant = new FrmTenant();
-            
         }
 
 
@@ -557,11 +563,25 @@ namespace StudentHousingCompany
                 }
             }
 
+            lbxComp.Items.Clear();
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+                if (!comp.Solved)
+                {
+                    lbxComp.Items.Add(comp.GetText());
+                }
+            }
+
         }
 
         private void tabControl_Click(object sender, EventArgs e)
         {
             ClearSelectedUser();
+        }
+
+        private void FrmAdmin_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
