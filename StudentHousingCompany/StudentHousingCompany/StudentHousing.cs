@@ -11,12 +11,9 @@ namespace StudentHousingCompany
     {
         private static StudentHousing instance = new StudentHousing();
 
-        
+        public static StudentHousing Instance { get { return instance; } }
 
-        public static StudentHousing Instance
-        {
-            get { return instance; }
-        }
+        public User CurrentUser { get; set; }
 
         public List<Schedule> Schedules { get; }
 
@@ -24,14 +21,10 @@ namespace StudentHousingCompany
 
         public List<User> Users { get; }
 
-        public User CurrentUser { get; set; }
+        public List<Agreement> Agreements { get; }
 
         // list of all the products 
-        public List<Product> Products
-        {
-            get;
-            set;
-        }
+        public List<Product> Products { get; set; }
 
         private StudentHousing()
         {
@@ -40,6 +33,7 @@ namespace StudentHousingCompany
             Products = new List<Product>();
             Schedules = new List<Schedule>();
             Events = new List<Event>();
+            Agreements = new List<Agreement>();
 
         }
 
@@ -257,10 +251,10 @@ namespace StudentHousingCompany
         /// </summary>
         public void SetNextTenant()
         {
-            List<Tenant> tenants = GetTenants();
+            //List<Tenant> tenants = GetTenants();
             foreach (var task in Schedules)
             {
-                task.SetNextStudent(tenants);
+                task.SetNextStudent(GetTenants());
             }
             SetNextDueDay();
         }
@@ -369,6 +363,12 @@ namespace StudentHousingCompany
                     }
                 }
             }
+        }
+
+        public void CreateNewAgreement(string title, string description, Tenant currentTenant, List<Tenant> withTenants)
+        {
+            Agreement agreement = new Agreement(title, description, currentTenant, withTenants);
+            Agreements.Add(agreement);
         }
     }
 }

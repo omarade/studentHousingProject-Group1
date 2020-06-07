@@ -54,6 +54,11 @@ namespace StudentHousingCompany
 
             ShowUsers();
             //dgdUsers.Rows.Add(name, dateOfBirth, email, password, phoneNr, postcode, address);
+
+
+            //Resets task with current tenants
+            studentHousing.ResetSchedule();
+            ShowTasks();
         }
 
         private void NewUserType()
@@ -241,6 +246,9 @@ namespace StudentHousingCompany
                 ShowUsers();
             }
 
+            //Resets task with current tenants
+            studentHousing.ResetSchedule();
+            ShowTasks();
         }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
@@ -485,6 +493,16 @@ namespace StudentHousingCompany
         private void tabControl_Click(object sender, EventArgs e)
         {
             ClearSelectedUser();
+        }
+
+        private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
