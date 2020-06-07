@@ -352,9 +352,8 @@ namespace StudentHousingCompany
         {//Adds a task with a unique name
             bool NameExsists = false;
             string TaskName = tbTaskName.Text;
-            var schedule = studentHousing.Schedules;
 
-            foreach (var task in schedule)
+            foreach (var task in studentHousing.Schedules)
             {
                 if (TaskName == task.GetTask())
                 {
@@ -472,11 +471,6 @@ namespace StudentHousingCompany
 
         }
 
-        private void FrmAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnComplaintResolve_Click(object sender, EventArgs e)
         {
 
@@ -506,10 +500,11 @@ namespace StudentHousingCompany
         }
 
         int selectedIndxInCompList;
-        int idOfSelectedCompFromCompList;
+        int idOfSelectedComp;
 
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
+            
 
             string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
             
@@ -517,12 +512,17 @@ namespace StudentHousingCompany
             {
                 if (selectedTextFromlbx == comp.GetText())
                 {
-                    selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
-                    idOfSelectedCompFromCompList = comp.ComplaintId;
+                    //selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+
+                    idOfSelectedComp = comp.ComplaintId;
                 }
             }
 
             tbxReply.Visible = true;
+
+            btnReplyToComp.Visible = false;
+
+            btnSendReply.Visible = true;
 
         }
 
@@ -533,12 +533,17 @@ namespace StudentHousingCompany
             foreach (Complaint comp in studentHousing.Complaintss)
             {
                 
-                if(comp.ComplaintId == idOfSelectedCompFromCompList)
+                if(comp.ComplaintId == idOfSelectedComp)
                 {
                     comp.ReplyFromAdmin =  reply;
                 }
             }
+
             tbxReply.Visible = false;
+
+            btnReplyToComp.Visible = true;
+            btnSendReply.Visible = false;
+
         }
 
 
@@ -588,6 +593,13 @@ namespace StudentHousingCompany
         private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frmLogin = new FrmLogin();
+            frmLogin.Show();
         }
     }
 }
