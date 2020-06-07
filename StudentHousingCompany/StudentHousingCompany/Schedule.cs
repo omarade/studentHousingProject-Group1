@@ -117,14 +117,18 @@ namespace StudentHousingCompany
         /// <returns></returns>
         public ListViewItem GetInfo()
         {
-
-
             string[] arr = new string[4];
             ListViewItem itm;
             //add items to ListView
             arr[0] = GetStudent();
             arr[1] = GetTask();
-            arr[2] = GetStatus().ToString();
+            if (GetStatus() == false)
+            {
+                arr[2] = "Not Completed";
+            } else if (GetStatus() == true)
+            {
+                arr[2] = "Completed";
+            }
             arr[3] = GetDueDate().ToString("dd/MM/yyyy");
             itm = new ListViewItem(arr);
 

@@ -17,6 +17,8 @@ namespace StudentHousingCompany
 
         public List<Schedule> Schedules { get; }
 
+        public List<Event> Events { get; }
+
         public List<User> Users { get; }
 
         public List<Agreement> Agreements { get; }
@@ -37,6 +39,7 @@ namespace StudentHousingCompany
             Products = new List<Product>();
             Schedules = new List<Schedule>();
             Complaintss = new List<Complaint>();
+            Events = new List<Event>();
             Agreements = new List<Agreement>();
 
         }
@@ -168,16 +171,23 @@ namespace StudentHousingCompany
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
 
-            AddTask("Bathroom", DayOfWeek.Friday);
-            AddTask("LivingRoom", DayOfWeek.Friday);
-            AddTask("Kitchen", DayOfWeek.Friday);
-            AddTask("General House Items", DayOfWeek.Friday);
-            AddTask("Task1", DayOfWeek.Friday);
-            AddTask("Task2", DayOfWeek.Friday);
-            AddTask("Task3", DayOfWeek.Friday);
-            AddTask("Task4", DayOfWeek.Friday);
+            AddTask("Bathroom", DayOfWeek.Thursday);
+            AddTask("LivingRoom", DayOfWeek.Thursday);
+            AddTask("Kitchen", DayOfWeek.Thursday);
+            AddTask("General House Items", DayOfWeek.Thursday);
+            AddTask("Task1", DayOfWeek.Thursday);
+            AddTask("Task2", DayOfWeek.Thursday);
+            AddTask("Task3", DayOfWeek.Thursday);
+            AddTask("Task4", DayOfWeek.Thursday);
             AddTask("Task5", DayOfWeek.Thursday);
 
+            AddEvent("Event1", DateTime.Today, "Cool Event", "Bill burr");
+            AddEvent("Event2", DateTime.Today, "bad event", "Jerry Seinfeld");
+            AddEvent("Event3", DateTime.Today, "Night Event", "Kevin Hart");
+            AddEvent("Event4", DateTime.Today, "day Event", "Kevin Hart");
+            AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
+            AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
+            AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
             Complaint newComplaine = new Complaint("Subject 1 ", "topice 1", 1);
             Complaintss.Add(newComplaine);
             newComplaine = new Complaint("Subject 2", "topice1 2 ", 2);
@@ -270,10 +280,10 @@ namespace StudentHousingCompany
         /// </summary>
         public void SetNextTenant()
         {
-            List<Tenant> tenants = GetTenants();
+            //List<Tenant> tenants = GetTenants();
             foreach (var task in Schedules)
             {
-                task.SetNextStudent(tenants);
+                task.SetNextStudent(GetTenants());
             }
             SetNextDueDay();
         }
@@ -330,6 +340,58 @@ namespace StudentHousingCompany
             }
             else { return false; }
 
+        }
+
+        public void AddEvent(string eventName, DateTime dateOfEvent, string eventDesc,string eventOwner)
+        {
+            Event newEvent = new Event(eventName, dateOfEvent, eventDesc, eventOwner);
+            Events.Add(newEvent);
+        }
+
+        public void DisagreeToEvent(string eventId)
+        {
+            bool Responded = false;
+
+            foreach (var events in Events)
+            {
+                if (eventId == events.EventId.ToString())
+                {
+                    foreach (var Responses in events.NegativeResponses)
+                    {
+                        if (CurrentUser.Name == Responses)
+                        {
+                            Responded = true;
+                        }
+                    }
+                    if (Responded == false)
+                    {
+                        events.Disagree(CurrentUser.Name);
+                    }
+                }
+            }
+        }
+
+        public void AgreeToEvent(string eventId)
+        {
+            bool Responded = false;
+
+            foreach (var events in Events)
+            {
+                if (eventId == events.EventId.ToString())
+                {
+                    foreach (var Responses in events.PositiveResponses)
+                    {
+                        if (CurrentUser.Name == Responses)
+                        {
+                            Responded = true;
+                        }
+                    }
+                    if (Responded == false)
+                    {
+                        events.Agree(CurrentUser.Name);
+                    }
+                }
+            }
         }
 
         public void CreateNewAgreement(string title, string description, Tenant currentTenant, List<Tenant> withTenants)

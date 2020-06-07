@@ -103,6 +103,7 @@
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
@@ -121,7 +122,7 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1480, 539);
+            this.tabControl.Size = new System.Drawing.Size(1282, 539);
             this.tabControl.TabIndex = 0;
             this.tabControl.Click += new System.EventHandler(this.tabControl_Click);
             // 
@@ -261,7 +262,7 @@
             this.tpMngUsrs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpMngUsrs.Name = "tpMngUsrs";
             this.tpMngUsrs.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpMngUsrs.Size = new System.Drawing.Size(1472, 510);
+            this.tpMngUsrs.Size = new System.Drawing.Size(1274, 510);
             this.tpMngUsrs.TabIndex = 3;
             this.tpMngUsrs.Text = "Manage Users";
             this.tpMngUsrs.Click += new System.EventHandler(this.tpMngUsrs_Click);
@@ -584,6 +585,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.BtnNextWeek);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.cbWeekDays);
@@ -598,8 +600,8 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1472, 510);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1102, 412);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tasks";
             // 
@@ -711,12 +713,12 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "Task";
-            this.columnHeader11.Width = 150;
+            this.columnHeader11.Width = 200;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Status";
-            this.columnHeader12.Width = 70;
+            this.columnHeader12.Width = 150;
             // 
             // columnHeader1
             // 
@@ -767,7 +769,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(1472, 510);
+            this.tabPage3.Size = new System.Drawing.Size(1291, 510);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
             // 
@@ -871,11 +873,21 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(520, 328);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // FrmAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1504, 590);
+            this.ClientSize = new System.Drawing.Size(1296, 590);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.label16);
@@ -972,5 +984,6 @@
         private System.Windows.Forms.Button btnReplyToComp;
         private System.Windows.Forms.TextBox tbxReply;
         private System.Windows.Forms.Button btnSendReply;
+        private System.Windows.Forms.Button button5;
     }
 }

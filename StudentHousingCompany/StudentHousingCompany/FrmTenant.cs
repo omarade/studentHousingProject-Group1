@@ -35,6 +35,8 @@ namespace StudentHousingCompany
             }
             timer1.Start();
             ShowTasks();
+            FillEventsList();
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -69,7 +71,7 @@ namespace StudentHousingCompany
         {
             List<Tenant> tenants = studentHousing.GetTenants();
 
-            if(tbxFullPrice.Text == null)
+            if (tbxFullPrice.Text == null)
             {
                 tbxFullPrice.Text = "0";
             }
@@ -192,7 +194,6 @@ namespace StudentHousingCompany
                     studentHousing.CompleteTask(taskName);
                 }
             }
-
             ShowTasks();
         }
 
@@ -221,9 +222,8 @@ namespace StudentHousingCompany
         {
             clbTenantTask.Items.Clear();
             listView6.Items.Clear();
-            var schedule = studentHousing.Schedules;
 
-            foreach (var task in schedule)
+            foreach (var task in studentHousing.Schedules)
             {
                 listView6.Items.Add(task.GetInfo());
                 if (task.GetStudent() == studentHousing.CurrentUser.Name)
@@ -233,12 +233,59 @@ namespace StudentHousingCompany
             }
 
             if (studentHousing.GetTenantTask() == "No Task")
-            { 
-                btnTaskComplete.Enabled = false; 
+            {
+                btnTaskComplete.Enabled = false;
             }
 
             CheckTaskStatus();
 
+        }
+
+        private void btnAddEvent_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            var frmAddEvent = new FrmAddEvent();
+            frmAddEvent.Show();
+
+            FillEventsList();
+        }
+
+        public void FillEventsList()
+        {
+            lvEventDetails.Items.Clear();
+
+            foreach (var events in studentHousing.Events)
+            {
+                ListViewItem eventInfo = events.GetInfo();
+                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.GetTenants().Count().ToString());
+                eventInfo.SubItems.Add(events.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString());
+                lvEventDetails.Items.Add(eventInfo);
+            }
+        }
+
+        private void btnAgree_Click(object sender, EventArgs e)
+        {
+            if (lvEventDetails.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            ListViewItem item = lvEventDetails.SelectedItems[0];
+
+            studentHousing.AgreeToEvent(item.Text);
+            FillEventsList();
+        }
+
+        private void btnDisagree_Click(object sender, EventArgs e)
+        {
+            if (lvEventDetails.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            ListViewItem item = lvEventDetails.SelectedItems[0];
+
+            studentHousing.DisagreeToEvent(item.Text);
+            FillEventsList();
         }
 
         private void FrmTenant_Load(object sender, EventArgs e)

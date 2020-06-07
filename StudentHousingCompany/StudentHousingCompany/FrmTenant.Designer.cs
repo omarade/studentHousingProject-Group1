@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,14 +79,8 @@
             this.lblMakeComplaint = new System.Windows.Forms.Label();
             this.tbxComSub = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listView5 = new System.Windows.Forms.ListView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.btnAgree = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnNewAgreement = new System.Windows.Forms.Button();
             this.dgdAgreements = new System.Windows.Forms.DataGridView();
@@ -95,6 +89,13 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -105,6 +106,16 @@
             this.lblMessageFromAdm = new System.Windows.Forms.Label();
             this.lblProductInfo = new System.Windows.Forms.Label();
             this.lblBalanceOverView = new System.Windows.Forms.Label();
+            this.btnDisagree = new System.Windows.Forms.Button();
+            this.btnAddEvent = new System.Windows.Forms.Button();
+            this.lvEventDetails = new System.Windows.Forms.ListView();
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -253,27 +264,28 @@
             // clbTenantTask
             // 
             this.clbTenantTask.FormattingEnabled = true;
-            this.clbTenantTask.Location = new System.Drawing.Point(8, 59);
+            this.clbTenantTask.Location = new System.Drawing.Point(4, 39);
+            this.clbTenantTask.Margin = new System.Windows.Forms.Padding(2);
             this.clbTenantTask.Name = "clbTenantTask";
-            this.clbTenantTask.Size = new System.Drawing.Size(132, 184);
+            this.clbTenantTask.Size = new System.Drawing.Size(108, 184);
             this.clbTenantTask.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 25);
+            this.label10.Location = new System.Drawing.Point(2, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 20);
+            this.label10.Size = new System.Drawing.Size(117, 20);
             this.label10.TabIndex = 6;
-            this.label10.Text = "Personal Task";
+            this.label10.Text = "Personal Tasks";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(168, 25);
+            this.label9.Location = new System.Drawing.Point(140, 16);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(158, 20);
@@ -289,10 +301,10 @@
             this.columnHeader4});
             this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(172, 59);
-            this.listView6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView6.Location = new System.Drawing.Point(142, 38);
+            this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(500, 290);
+            this.listView6.Size = new System.Drawing.Size(366, 188);
             this.listView6.TabIndex = 4;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -320,10 +332,10 @@
             // btnTaskComplete
             // 
             this.btnTaskComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaskComplete.Location = new System.Drawing.Point(8, 302);
-            this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaskComplete.Location = new System.Drawing.Point(5, 236);
+            this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaskComplete.Name = "btnTaskComplete";
-            this.btnTaskComplete.Size = new System.Drawing.Size(109, 47);
+            this.btnTaskComplete.Size = new System.Drawing.Size(106, 37);
             this.btnTaskComplete.TabIndex = 1;
             this.btnTaskComplete.Text = "Completed?";
             this.btnTaskComplete.UseVisualStyleBackColor = true;
@@ -347,7 +359,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(710, 367);
+            this.tabPage2.Size = new System.Drawing.Size(949, 458);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
@@ -585,95 +597,40 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Controls.Add(this.listView5);
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.textBox8);
-            this.tabPage4.Controls.Add(this.dateTimePicker1);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.textBox7);
+            this.tabPage4.Controls.Add(this.lvEventDetails);
+            this.tabPage4.Controls.Add(this.btnAddEvent);
+            this.tabPage4.Controls.Add(this.btnDisagree);
+            this.tabPage4.Controls.Add(this.btnAgree);
+            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(710, 367);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Events";
             // 
-            // button7
+            // btnAgree
             // 
-            this.button7.Location = new System.Drawing.Point(544, 281);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(56, 19);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgree.Location = new System.Drawing.Point(507, 315);
+            this.btnAgree.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgree.Name = "btnAgree";
+            this.btnAgree.Size = new System.Drawing.Size(92, 38);
+            this.btnAgree.TabIndex = 11;
+            this.btnAgree.Text = "Agree";
+            this.btnAgree.UseVisualStyleBackColor = true;
+            this.btnAgree.Click += new System.EventHandler(this.btnAgree_Click);
             // 
-            // button6
+            // label6
             // 
-            this.button6.Location = new System.Drawing.Point(395, 282);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(56, 19);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // listView5
-            // 
-            this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(395, 33);
-            this.listView5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(247, 210);
-            this.listView5.TabIndex = 5;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(89, 244);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(56, 19);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(89, 91);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(182, 76);
-            this.textBox8.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(89, 183);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 20);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 53);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "label7";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(89, 53);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(76, 20);
-            this.textBox7.TabIndex = 0;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 54);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "List of events";
             // 
             // tabPage6
             // 
@@ -684,7 +641,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage6.Size = new System.Drawing.Size(710, 367);
+            this.tabPage6.Size = new System.Drawing.Size(949, 458);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Agreements";
             // 
@@ -706,15 +663,15 @@
             this.dgdAgreements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdAgreements.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgdAgreements.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dgdAgreements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdAgreements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -722,27 +679,27 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgdAgreements.Location = new System.Drawing.Point(20, 58);
             this.dgdAgreements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgdAgreements.Name = "dgdAgreements";
             this.dgdAgreements.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dgdAgreements.RowHeadersVisible = false;
             this.dgdAgreements.RowHeadersWidth = 51;
             this.dgdAgreements.RowTemplate.Height = 24;
@@ -783,6 +740,34 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "EventID";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "EventOwner";
+            this.columnHeader13.Width = 150;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "EventName";
+            this.columnHeader14.Width = 150;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "EventDesc";
+            this.columnHeader15.Width = 200;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "EventDate";
+            this.columnHeader16.Width = 100;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Disagree";
             // 
             // label1
             // 
@@ -834,11 +819,51 @@
             this.lblCurrentUserName.Size = new System.Drawing.Size(0, 13);
             this.lblCurrentUserName.TabIndex = 9;
             // 
-            // timer1
+            // btnDisagree
+            // 
+            this.btnDisagree.Location = new System.Drawing.Point(620, 315);
+            this.btnDisagree.Name = "btnDisagree";
+            this.btnDisagree.Size = new System.Drawing.Size(87, 38);
+            this.btnDisagree.TabIndex = 12;
+            this.btnDisagree.Text = "Disagree";
+            this.btnDisagree.UseVisualStyleBackColor = true;
+            this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
+            // 
+            // btnAddEvent
+            // 
+            this.btnAddEvent.Location = new System.Drawing.Point(9, 15);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(98, 36);
+            this.btnAddEvent.TabIndex = 13;
+            this.btnAddEvent.Text = "Add events";
+            this.btnAddEvent.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
+            // 
+            // lvEventDetails
+            // 
+            this.lvEventDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26});
+            this.lvEventDetails.HideSelection = false;
+            this.lvEventDetails.Location = new System.Drawing.Point(9, 70);
+            this.lvEventDetails.Name = "lvEventDetails";
+            this.lvEventDetails.Size = new System.Drawing.Size(698, 226);
+            this.lvEventDetails.TabIndex = 14;
+            this.lvEventDetails.UseCompatibleStateImageBehavior = false;
+            this.lvEventDetails.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader20
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.columnHeader20.Text = "EventID";
             // 
             // lblComplaintDiscription
+            // columnHeader21
             // 
             this.lblComplaintDiscription.AutoSize = true;
             this.lblComplaintDiscription.Location = new System.Drawing.Point(94, 82);
@@ -846,7 +871,9 @@
             this.lblComplaintDiscription.Size = new System.Drawing.Size(104, 13);
             this.lblComplaintDiscription.TabIndex = 8;
             this.lblComplaintDiscription.Text = "complaint Discription";
+            this.columnHeader21.Text = "Owner";
             // 
+            // columnHeader22
             // lblMessageFromAdm
             // 
             this.lblMessageFromAdm.AutoSize = true;
@@ -856,7 +883,9 @@
             this.lblMessageFromAdm.TabIndex = 9;
             this.lblMessageFromAdm.Text = "Message recived from admin";
             this.lblMessageFromAdm.Visible = false;
+            this.columnHeader22.Text = "EventName";
             // 
+            // columnHeader23
             // lblProductInfo
             // 
             this.lblProductInfo.AutoSize = true;
@@ -865,8 +894,18 @@
             this.lblProductInfo.Size = new System.Drawing.Size(66, 13);
             this.lblProductInfo.TabIndex = 33;
             this.lblProductInfo.Text = "Products log";
+            this.columnHeader23.Text = "Event Desc";
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Date";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Disagree";
             // 
             // lblBalanceOverView
+            // columnHeader26
             // 
             this.lblBalanceOverView.AutoSize = true;
             this.lblBalanceOverView.Location = new System.Drawing.Point(489, 42);
@@ -874,12 +913,13 @@
             this.lblBalanceOverView.Size = new System.Drawing.Size(136, 13);
             this.lblBalanceOverView.TabIndex = 34;
             this.lblBalanceOverView.Text = "tenants Balance over view ";
+            this.columnHeader26.Text = "Agree";
             // 
             // FrmTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 463);
+            this.ClientSize = new System.Drawing.Size(986, 570);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.tabControl1);
@@ -947,8 +987,8 @@
         private System.Windows.Forms.TextBox tbxCoTopic;
         private System.Windows.Forms.Label lblMakeComplaint;
         private System.Windows.Forms.TextBox tbxComSub;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        //private System.Windows.Forms.Button button7;
+        //private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListView listView5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox8;
@@ -973,6 +1013,15 @@
         private System.Windows.Forms.TextBox tbxReplyFromAdm;
         private System.Windows.Forms.Button btnMessageDelete;
         private System.Windows.Forms.CheckedListBox clbTenantTask;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.Button btnAgree;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnNewAgreement;
@@ -982,6 +1031,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ListView lvEventDetails;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.Button btnAddEvent;
+        private System.Windows.Forms.Button btnDisagree;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.Label lblMessageFromAdm;
         private System.Windows.Forms.Label lblComplaintDiscription;
         private System.Windows.Forms.Label lblBalanceOverView;

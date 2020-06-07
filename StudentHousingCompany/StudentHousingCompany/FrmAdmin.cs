@@ -61,6 +61,11 @@ namespace StudentHousingCompany
 
             ShowUsers();
             //dgdUsers.Rows.Add(name, dateOfBirth, email, password, phoneNr, postcode, address);
+
+
+            //Resets task with current tenants
+            studentHousing.ResetSchedule();
+            ShowTasks();
         }
 
         private void NewUserType()
@@ -249,6 +254,9 @@ namespace StudentHousingCompany
                 ShowUsers();
             }
 
+            //Resets task with current tenants
+            studentHousing.ResetSchedule();
+            ShowTasks();
         }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
@@ -346,9 +354,8 @@ namespace StudentHousingCompany
         {//Adds a task with a unique name
             bool NameExsists = false;
             string TaskName = tbTaskName.Text;
-            var schedule = studentHousing.Schedules;
 
-            foreach (var task in schedule)
+            foreach (var task in studentHousing.Schedules)
             {
                 if (TaskName == task.GetTask())
                 {
@@ -593,6 +600,11 @@ namespace StudentHousingCompany
         private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
