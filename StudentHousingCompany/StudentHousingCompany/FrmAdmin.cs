@@ -61,6 +61,8 @@ namespace StudentHousingCompany
 
             ShowUsers();
             //dgdUsers.Rows.Add(name, dateOfBirth, email, password, phoneNr, postcode, address);
+            studentHousing.ResetSchedule();
+            ShowTasks();
         }
 
         private void NewUserType()
@@ -81,6 +83,7 @@ namespace StudentHousingCompany
 
         private void rbtnAdmin_CheckedChanged(object sender, EventArgs e)
         {
+            ClearSelectedUser();
             NewUserType();
         }
 
@@ -247,6 +250,8 @@ namespace StudentHousingCompany
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
                 studentHousing.RemoveUser(id);
                 ShowUsers();
+                studentHousing.ResetSchedule();
+                ShowTasks();
             }
 
         }
@@ -284,11 +289,15 @@ namespace StudentHousingCompany
 
                 ShowUsers();
             }
+            studentHousing.ResetSchedule();
+            ShowTasks();
 
         }
 
         private void dgdUsers_SelectionChanged(object sender, EventArgs e)
         {
+            
+
             if (dgdUsers.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
@@ -296,11 +305,6 @@ namespace StudentHousingCompany
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
 
                 User user = studentHousing.GetUserById(id);
-                
-                txtPassword.Enabled = false;
-                txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
-                dtbDoB.Value = user.DateOfBirth;
-                txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
 
                 if (user is Tenant)
                 {
@@ -309,12 +313,14 @@ namespace StudentHousingCompany
                     txtPostcode.Text = selectedRow.Cells["hxtPostcode"].Value.ToString();
                     txtAddress.Text = selectedRow.Cells["hxtAddress"].Value.ToString();
                 }
-                else if (user is Admin)
+                else
                 {
                     rbtnAdmin.Checked = true;
                 }
-                
-                
+                txtPassword.Enabled = false;
+                txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
+                dtbDoB.Value = user.DateOfBirth;
+                txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
             }
         }
 
