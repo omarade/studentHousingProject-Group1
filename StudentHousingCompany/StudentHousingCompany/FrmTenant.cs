@@ -232,39 +232,40 @@ namespace StudentHousingCompany
 
         public void FillEventsList()
         {
-            lvEventDetails.Items.Clear();
+            dgdEvents.Rows.Clear();
 
-            foreach (var events in studentHousing.Events)
+            foreach (var currentEvent in studentHousing.Events)
             {
-                ListViewItem eventInfo = events.GetInfo();
-                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.GetTenants().Count().ToString());
-                eventInfo.SubItems.Add(events.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString());
-                lvEventDetails.Items.Add(eventInfo);
+                string Disagree = currentEvent.NegativeResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
+                string Agree = currentEvent.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
+                dgdEvents.Rows.Add(currentEvent.EventId, currentEvent.EventOwner, currentEvent.EventName, currentEvent.EventDesc, currentEvent.DateOfEvent.ToString("dd/MM/yyyy"),Disagree,Agree);
             }
         }
 
         private void btnAgree_Click(object sender, EventArgs e)
         {
-            if (lvEventDetails.SelectedItems.Count == 0)
+            if (dgdEvents.SelectedCells.Count > 0)
             {
-                return;
-            }
-            ListViewItem item = lvEventDetails.SelectedItems[0];
+                int selectedrowindex = dgdEvents.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdEvents.Rows[selectedrowindex];
+                string eventID = Convert.ToString(selectedRow.Cells["dgcEventID"].Value);
 
-            studentHousing.AgreeToEvent(item.Text);
-            FillEventsList();
+                studentHousing.AgreeToEvent(eventID);
+                FillEventsList();
+            }
         }
 
         private void btnDisagree_Click(object sender, EventArgs e)
         {
-            if (lvEventDetails.SelectedItems.Count == 0)
+            if (dgdEvents.SelectedCells.Count > 0)
             {
-                return;
-            }
-            ListViewItem item = lvEventDetails.SelectedItems[0];
+                int selectedrowindex = dgdEvents.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdEvents.Rows[selectedrowindex];
+                string eventID = Convert.ToString(selectedRow.Cells["dgcEventID"].Value);
 
-            studentHousing.DisagreeToEvent(item.Text);
-            FillEventsList();
+                studentHousing.DisagreeToEvent(eventID);
+                FillEventsList();
+            }
         }
 
         private void btnMessageDelete_Click(object sender, EventArgs e)
