@@ -61,11 +61,8 @@ namespace StudentHousingCompany
 
             ShowUsers();
             //dgdUsers.Rows.Add(name, dateOfBirth, email, password, phoneNr, postcode, address);
-
-
-            //Resets task with current tenants
-            studentHousing.ResetSchedule();
-            ShowTasks();
+            //studentHousing.ResetSchedule();
+            //ShowTasks();
         }
 
         private void NewUserType()
@@ -86,6 +83,7 @@ namespace StudentHousingCompany
 
         private void rbtnAdmin_CheckedChanged(object sender, EventArgs e)
         {
+            ClearSelectedUser();
             NewUserType();
         }
 
@@ -252,11 +250,10 @@ namespace StudentHousingCompany
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
                 studentHousing.RemoveUser(id);
                 ShowUsers();
+                studentHousing.ResetSchedule();
+                ShowTasks();
             }
 
-            //Resets task with current tenants
-            studentHousing.ResetSchedule();
-            ShowTasks();
         }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
@@ -292,11 +289,15 @@ namespace StudentHousingCompany
 
                 ShowUsers();
             }
+            studentHousing.ResetSchedule();
+            ShowTasks();
 
         }
 
         private void dgdUsers_SelectionChanged(object sender, EventArgs e)
         {
+            
+
             if (dgdUsers.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
@@ -304,11 +305,6 @@ namespace StudentHousingCompany
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
 
                 User user = studentHousing.GetUserById(id);
-                
-                txtPassword.Enabled = false;
-                txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
-                dtbDoB.Value = user.DateOfBirth;
-                txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
 
                 if (user is Tenant)
                 {
@@ -317,18 +313,23 @@ namespace StudentHousingCompany
                     txtPostcode.Text = selectedRow.Cells["hxtPostcode"].Value.ToString();
                     txtAddress.Text = selectedRow.Cells["hxtAddress"].Value.ToString();
                 }
-                else if (user is Admin)
+                else
                 {
                     rbtnAdmin.Checked = true;
                 }
-                
-                
+                txtPassword.Enabled = false;
+                txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
+                dtbDoB.Value = user.DateOfBirth;
+                txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
             }
         }
 
         private void tpMngUsrs_Click(object sender, EventArgs e)
         {
-            ClearSelectedUser();
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                ClearSelectedUser();
+            }
         }
 
         private void ClearSelectedUser()
@@ -473,11 +474,6 @@ namespace StudentHousingCompany
 
         }
 
-        private void FrmAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnComplaintResolve_Click(object sender, EventArgs e)
         {
 
@@ -507,10 +503,11 @@ namespace StudentHousingCompany
         }
 
         int selectedIndxInCompList;
-        int idOfSelectedCompFromCompList;
+        int idOfSelectedComp;
 
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
+            
 
             string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
             
@@ -518,12 +515,17 @@ namespace StudentHousingCompany
             {
                 if (selectedTextFromlbx == comp.GetText())
                 {
-                    selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
-                    idOfSelectedCompFromCompList = comp.ComplaintId;
+                    //selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+
+                    idOfSelectedComp = comp.ComplaintId;
                 }
             }
 
             tbxReply.Visible = true;
+
+            btnReplyToComp.Visible = false;
+
+            btnSendReply.Visible = true;
 
         }
 
@@ -534,12 +536,17 @@ namespace StudentHousingCompany
             foreach (Complaint comp in studentHousing.Complaintss)
             {
                 
-                if(comp.ComplaintId == idOfSelectedCompFromCompList)
+                if(comp.ComplaintId == idOfSelectedComp)
                 {
                     comp.ReplyFromAdmin =  reply;
                 }
             }
+
             tbxReply.Visible = false;
+
+            btnReplyToComp.Visible = true;
+            btnSendReply.Visible = false;
+
         }
 
 
@@ -589,6 +596,13 @@ namespace StudentHousingCompany
         private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frmLogin = new FrmLogin();
+            frmLogin.Show();
         }
     }
 }

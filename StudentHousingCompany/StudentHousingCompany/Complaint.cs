@@ -56,37 +56,31 @@ namespace StudentHousingCompany
             get;
             set;
         }
+
         public string TenName 
         {
             get;
             set;
         }
+
         public bool Anonymous
         {
             get;
             set;
         }
+
         public string ReplyFromAdmin
         {
             get;
             set;
         }
+
         public string ReplyFromTen
         {
             get;
             set;
         }
-        public string GetText()
-        {
-            if (Anonymous)
-            {
-                return ComplaintTopic + "" + Subject;
-            }
-            else
-            {
-                return TenName + $" \n " + ComplaintTopic + "\n" + Subject;
-            }
-        }
+
         public bool Solved
         {
             get;
@@ -99,5 +93,19 @@ namespace StudentHousingCompany
             set;
         }
 
+        public string GetText()
+        {
+            // adding date to the text  !?
+            if (Anonymous)
+            {
+                return ComplaintTopic + "" + Subject;
+            }
+            else
+            {
+                return TenName + $" \n " + ComplaintTopic + "\n\r " + Subject;
+            }
+        }
+
+        
     }
 }
