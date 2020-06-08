@@ -590,10 +590,5 @@ namespace StudentHousingCompany
         {
             Application.Exit();
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
