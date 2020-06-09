@@ -290,7 +290,7 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
@@ -333,7 +333,6 @@
             this.hxtId.MinimumWidth = 30;
             this.hxtId.Name = "hxtId";
             this.hxtId.ReadOnly = true;
-            this.hxtId.Width = 60;
             // 
             // hxtName
             // 
@@ -341,7 +340,6 @@
             this.hxtName.MinimumWidth = 6;
             this.hxtName.Name = "hxtName";
             this.hxtName.ReadOnly = true;
-            this.hxtName.Width = 84;
             // 
             // hxtDob
             // 
@@ -349,7 +347,6 @@
             this.hxtDob.MinimumWidth = 6;
             this.hxtDob.Name = "hxtDob";
             this.hxtDob.ReadOnly = true;
-            this.hxtDob.Width = 74;
             // 
             // hxtEmail
             // 
@@ -357,7 +354,6 @@
             this.hxtEmail.MinimumWidth = 6;
             this.hxtEmail.Name = "hxtEmail";
             this.hxtEmail.ReadOnly = true;
-            this.hxtEmail.Width = 81;
             // 
             // hxtPhoneNr
             // 
@@ -365,7 +361,6 @@
             this.hxtPhoneNr.MinimumWidth = 6;
             this.hxtPhoneNr.Name = "hxtPhoneNr";
             this.hxtPhoneNr.ReadOnly = true;
-            this.hxtPhoneNr.Width = 107;
             // 
             // hxtPostcode
             // 
@@ -373,7 +368,6 @@
             this.hxtPostcode.MinimumWidth = 6;
             this.hxtPostcode.Name = "hxtPostcode";
             this.hxtPostcode.ReadOnly = true;
-            this.hxtPostcode.Width = 106;
             // 
             // hxtAddress
             // 
@@ -381,7 +375,6 @@
             this.hxtAddress.MinimumWidth = 6;
             this.hxtAddress.Name = "hxtAddress";
             this.hxtAddress.ReadOnly = true;
-            this.hxtAddress.Width = 99;
             // 
             // dtbDoB
             // 
@@ -818,7 +811,7 @@
             // 
             // tbxReply
             // 
-            this.tbxReply.Location = new System.Drawing.Point(50, 82);
+            this.tbxReply.Location = new System.Drawing.Point(51, 84);
             this.tbxReply.Margin = new System.Windows.Forms.Padding(4);
             this.tbxReply.Multiline = true;
             this.tbxReply.Name = "tbxReply";

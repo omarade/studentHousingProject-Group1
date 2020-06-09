@@ -61,8 +61,8 @@ namespace StudentHousingCompany
 
             ShowUsers();
             //dgdUsers.Rows.Add(name, dateOfBirth, email, password, phoneNr, postcode, address);
-            studentHousing.ResetSchedule();
-            ShowTasks();
+            //studentHousing.ResetSchedule();
+            //ShowTasks();
         }
 
         private void NewUserType()
@@ -326,7 +326,10 @@ namespace StudentHousingCompany
 
         private void tpMngUsrs_Click(object sender, EventArgs e)
         {
-            ClearSelectedUser();
+            if (dgdUsers.SelectedCells.Count > 0)
+            {
+                ClearSelectedUser();
+            }
         }
 
         private void ClearSelectedUser()
