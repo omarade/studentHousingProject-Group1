@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnLogout = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
@@ -103,6 +102,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -217,17 +217,6 @@
             // 
             this.columnHeader2.Text = "Announcment";
             this.columnHeader2.Width = 229;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(762, 26);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 34);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // richTextBox1
             // 
@@ -548,7 +537,7 @@
             // btnMessageDelete
             // 
             this.btnMessageDelete.Location = new System.Drawing.Point(268, 335);
-            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageDelete.Name = "btnMessageDelete";
             this.btnMessageDelete.Size = new System.Drawing.Size(100, 68);
             this.btnMessageDelete.TabIndex = 7;
@@ -560,7 +549,7 @@
             // tbxReplyFromAdm
             // 
             this.tbxReplyFromAdm.Location = new System.Drawing.Point(129, 135);
-            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5);
             this.tbxReplyFromAdm.Multiline = true;
             this.tbxReplyFromAdm.Name = "tbxReplyFromAdm";
             this.tbxReplyFromAdm.ReadOnly = true;
@@ -657,7 +646,7 @@
             this.columnHeader26});
             this.lvEventDetails.HideSelection = false;
             this.lvEventDetails.Location = new System.Drawing.Point(12, 97);
-            this.lvEventDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvEventDetails.Margin = new System.Windows.Forms.Padding(4);
             this.lvEventDetails.Name = "lvEventDetails";
             this.lvEventDetails.Size = new System.Drawing.Size(929, 277);
             this.lvEventDetails.TabIndex = 14;
@@ -702,7 +691,7 @@
             // btnAddEvent
             // 
             this.btnAddEvent.Location = new System.Drawing.Point(12, 18);
-            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(131, 44);
             this.btnAddEvent.TabIndex = 13;
@@ -713,7 +702,7 @@
             // btnDisagree
             // 
             this.btnDisagree.Location = new System.Drawing.Point(825, 388);
-            this.btnDisagree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDisagree.Margin = new System.Windows.Forms.Padding(4);
             this.btnDisagree.Name = "btnDisagree";
             this.btnDisagree.Size = new System.Drawing.Size(116, 47);
             this.btnDisagree.TabIndex = 12;
@@ -774,15 +763,15 @@
             this.dgdAgreements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdAgreements.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgdAgreements.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgdAgreements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdAgreements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -790,27 +779,27 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgdAgreements.Location = new System.Drawing.Point(27, 58);
-            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(4);
             this.dgdAgreements.Name = "dgdAgreements";
             this.dgdAgreements.ReadOnly = true;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgdAgreements.RowHeadersVisible = false;
             this.dgdAgreements.RowHeadersWidth = 51;
             this.dgdAgreements.RowTemplate.Height = 24;
@@ -851,6 +840,17 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(762, 26);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 34);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // columnHeader18
             // 
@@ -947,6 +947,7 @@
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTenant_FormClosed);
+            this.EnabledChanged += new System.EventHandler(this.FrmTenant_EnabledChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
