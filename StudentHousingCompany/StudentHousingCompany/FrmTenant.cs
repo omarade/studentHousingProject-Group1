@@ -36,6 +36,7 @@ namespace StudentHousingCompany
             timer1.Start();
             ShowTasks();
             FillEventsList();
+            rtbHouseRules.Text = studentHousing.HouseRules;
 
         }
 
@@ -123,8 +124,6 @@ namespace StudentHousingCompany
             lvwProductSharingInfo.Items.Add(item1);
 
             FILLBALANCELIST();
-
-
         }
 
         public void FILLBALANCELIST()
@@ -157,7 +156,6 @@ namespace StudentHousingCompany
                     }
                 }
             }
-
 
             this.studentHousing.Complaintss.Add(newcomplaint);
         }

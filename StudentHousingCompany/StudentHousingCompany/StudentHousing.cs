@@ -32,6 +32,8 @@ namespace StudentHousingCompany
         /// </summary>
         public List<Complaint> Complaintss { get; set; }
 
+        public string HouseRules { get; set; }
+
         private StudentHousing()
         {
 
@@ -210,6 +212,8 @@ namespace StudentHousingCompany
             Complaintss.Add(newComplaine);
             newComplaine = new Complaint("Subject 2,", "topice 4", 2);
             Complaintss.Add(newComplaine);
+
+            HouseRules = "1. Test\n2. The\n3. House\n4. Rules";
         }
 
         /// <summary>

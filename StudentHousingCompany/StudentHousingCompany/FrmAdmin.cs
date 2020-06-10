@@ -32,6 +32,8 @@ namespace StudentHousingCompany
             {
                  lbxComp.Items.Add(comp.GetText());
             }
+
+            rtbHouseRules.Text = studentHousing.HouseRules;
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -508,7 +510,6 @@ namespace StudentHousingCompany
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
             
-
             string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
             
             foreach (Complaint comp in studentHousing.Complaintss)
@@ -603,6 +604,18 @@ namespace StudentHousingCompany
             this.Hide();
             var frmLogin = new FrmLogin();
             frmLogin.Show();
+        }
+
+        private void btnUpdateHouseRules_Click(object sender, EventArgs e)
+        {
+            studentHousing.HouseRules = rtbHouseRules.Text;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rtbHouseRules.Clear();
+            rtbHouseRules.Text = studentHousing.HouseRules;
         }
     }
 }
