@@ -32,6 +32,8 @@ namespace StudentHousingCompany
         /// </summary>
         public List<Complaint> Complaintss { get; set; }
 
+        public List<Announcement> Announcements { get; }
+
         public string HouseRules { get; set; }
 
         private StudentHousing()
@@ -43,6 +45,7 @@ namespace StudentHousingCompany
             Complaintss = new List<Complaint>();
             Events = new List<Event>();
             Agreements = new List<Agreement>();
+            Announcements = new List<Announcement>();
 
         }
 
@@ -404,7 +407,11 @@ namespace StudentHousingCompany
             Agreements.Add(agreement);
         }
 
-        
+        public void CreateAnnouncement(string announceSubject,string announceText)
+        {
+            Announcement newAnnouncement = new Announcement(announceSubject ,announceText);
+            Announcements.Add(newAnnouncement);
+        }
 
     }
 }

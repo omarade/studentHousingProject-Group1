@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rtbHouseRules = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateHouseRules = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAnnoCreate = new System.Windows.Forms.Button();
+            this.tbAnnoText = new System.Windows.Forms.TextBox();
+            this.tbAnnoSubject = new System.Windows.Forms.TextBox();
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
@@ -103,7 +104,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
-            this.rtbHouseRules = new System.Windows.Forms.RichTextBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
@@ -135,9 +135,9 @@
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.btnAnnoCreate);
+            this.tabPage1.Controls.Add(this.tbAnnoText);
+            this.tabPage1.Controls.Add(this.tbAnnoSubject);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -145,6 +145,14 @@
             this.tabPage1.Size = new System.Drawing.Size(1118, 495);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
+            // 
+            // rtbHouseRules
+            // 
+            this.rtbHouseRules.Location = new System.Drawing.Point(28, 37);
+            this.rtbHouseRules.Name = "rtbHouseRules";
+            this.rtbHouseRules.Size = new System.Drawing.Size(190, 381);
+            this.rtbHouseRules.TabIndex = 9;
+            this.rtbHouseRules.Text = "";
             // 
             // label3
             // 
@@ -195,32 +203,33 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Subject";
             // 
-            // button1
+            // btnAnnoCreate
             // 
-            this.button1.Location = new System.Drawing.Point(679, 447);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAnnoCreate.Location = new System.Drawing.Point(630, 447);
+            this.btnAnnoCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnnoCreate.Name = "btnAnnoCreate";
+            this.btnAnnoCreate.Size = new System.Drawing.Size(168, 31);
+            this.btnAnnoCreate.TabIndex = 2;
+            this.btnAnnoCreate.Text = "Send";
+            this.btnAnnoCreate.UseVisualStyleBackColor = true;
+            this.btnAnnoCreate.Click += new System.EventHandler(this.btnAnnoCreate_Click);
             // 
-            // textBox2
+            // tbAnnoText
             // 
-            this.textBox2.Location = new System.Drawing.Point(375, 94);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(423, 331);
-            this.textBox2.TabIndex = 1;
+            this.tbAnnoText.Location = new System.Drawing.Point(375, 94);
+            this.tbAnnoText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbAnnoText.Multiline = true;
+            this.tbAnnoText.Name = "tbAnnoText";
+            this.tbAnnoText.Size = new System.Drawing.Size(423, 331);
+            this.tbAnnoText.TabIndex = 1;
             // 
-            // textBox1
+            // tbAnnoSubject
             // 
-            this.textBox1.Location = new System.Drawing.Point(375, 37);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(423, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbAnnoSubject.Location = new System.Drawing.Point(375, 37);
+            this.tbAnnoSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbAnnoSubject.Name = "tbAnnoSubject";
+            this.tbAnnoSubject.Size = new System.Drawing.Size(423, 20);
+            this.tbAnnoSubject.TabIndex = 0;
             // 
             // tpMngUsrs
             // 
@@ -253,7 +262,7 @@
             this.tpMngUsrs.Location = new System.Drawing.Point(4, 22);
             this.tpMngUsrs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpMngUsrs.Name = "tpMngUsrs";
-            this.tpMngUsrs.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpMngUsrs.Padding = new System.Windows.Forms.Padding(2);
             this.tpMngUsrs.Size = new System.Drawing.Size(1118, 495);
             this.tpMngUsrs.TabIndex = 3;
             this.tpMngUsrs.Text = "Manage Users";
@@ -275,20 +284,20 @@
             this.dgdUsers.AllowUserToDeleteRows = false;
             this.dgdUsers.AllowUserToOrderColumns = true;
             this.dgdUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hxtId,
@@ -304,9 +313,9 @@
             this.dgdUsers.ReadOnly = true;
             this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgdUsers.RowTemplate.Height = 24;
             this.dgdUsers.RowTemplate.ReadOnly = true;
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -584,7 +593,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1118, 495);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tasks";
@@ -752,7 +761,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(1118, 495);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
@@ -793,7 +802,7 @@
             // 
             this.lbxComp.FormattingEnabled = true;
             this.lbxComp.Location = new System.Drawing.Point(40, 68);
-            this.lbxComp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbxComp.Margin = new System.Windows.Forms.Padding(4);
             this.lbxComp.Name = "lbxComp";
             this.lbxComp.Size = new System.Drawing.Size(377, 290);
             this.lbxComp.TabIndex = 3;
@@ -843,7 +852,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(1031, 16);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 3;
@@ -859,21 +868,13 @@
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(944, 16);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(67, 28);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // rtbHouseRules
-            // 
-            this.rtbHouseRules.Location = new System.Drawing.Point(28, 37);
-            this.rtbHouseRules.Name = "rtbHouseRules";
-            this.rtbHouseRules.Size = new System.Drawing.Size(190, 381);
-            this.rtbHouseRules.TabIndex = 9;
-            this.rtbHouseRules.Text = "";
             // 
             // FrmAdmin
             // 
@@ -913,9 +914,9 @@
         private System.Windows.Forms.TabPage tpMngUsrs;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAnnoCreate;
+        private System.Windows.Forms.TextBox tbAnnoText;
+        private System.Windows.Forms.TextBox tbAnnoSubject;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdateHouseRules;

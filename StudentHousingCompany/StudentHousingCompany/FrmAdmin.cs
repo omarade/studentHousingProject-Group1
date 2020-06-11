@@ -617,5 +617,12 @@ namespace StudentHousingCompany
             rtbHouseRules.Clear();
             rtbHouseRules.Text = studentHousing.HouseRules;
         }
+
+        private void btnAnnoCreate_Click(object sender, EventArgs e)
+        {
+            studentHousing.CreateAnnouncement(tbAnnoSubject.Text,tbAnnoText.Text);
+            tbAnnoSubject.Text = "";
+            tbAnnoText.Text = "";
+        }
     }
 }

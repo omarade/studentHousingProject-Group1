@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Agreement.cs" />
+    <Compile Include="Announcement.cs" />
     <Compile Include="Complaint.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="FrmAddEvent.cs">

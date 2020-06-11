@@ -37,6 +37,7 @@ namespace StudentHousingCompany
             ShowTasks();
             FillEventsList();
             rtbHouseRules.Text = studentHousing.HouseRules;
+            FillAnnouncement();
 
         }
 
@@ -337,6 +338,16 @@ namespace StudentHousingCompany
 
                 }
 
+            }
+        }
+
+        public void FillAnnouncement()
+        {
+            dgdAnnouncement.Rows.Clear();
+
+            foreach (var currentAnno in studentHousing.Announcements)
+            {
+                dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
             }
         }
     }
