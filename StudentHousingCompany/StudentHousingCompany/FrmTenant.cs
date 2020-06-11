@@ -349,12 +349,13 @@ namespace StudentHousingCompany
                                         this.lblComplaintDiscription.Visible = false;
                                     }
                                 }
-                            }   
+                            }
                         }
                     }
                 }
 
             }
+        }
 
         public void FillAnnouncement()
         {
