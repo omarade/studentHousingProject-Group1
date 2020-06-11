@@ -286,23 +286,37 @@ namespace StudentHousingCompany
 
         private void btnNewAgreement_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var frmNewAgreement = new FrmNewAgreement();
+            this.Enabled = false;
+            var frmNewAgreement = new FrmNewAgreement(this);
             frmNewAgreement.Show();
         }
 
         private void ShowAgreements()
         {
+            dgdAgreements.Rows.Clear();
+
             List<Agreement> agreements = studentHousing.Agreements;
             string withTenants = "";
+            bool isCreator;
+            bool isAgreementMember = false;
 
             foreach (var agreement in agreements)
             {
+                isCreator = studentHousing.CurrentUser.Id == agreement.CreatorTenant.Id;
+                
                 foreach (var tenant in agreement.WithTenants)
                 {
+                    if (studentHousing.CurrentUser.Id == tenant.Id)
+                    {
+                        isAgreementMember = true;
+                    }
                     withTenants += $"{tenant.Name}, ";
                 }
-                dgdAgreements.Rows.Add(agreement.Title, agreement.Description, agreement.CreatorTenant.Name, withTenants, agreement.Date.ToString("dd/MM/yyyy"));
+
+                if (isCreator || isAgreementMember)
+                {
+                    dgdAgreements.Rows.Add(agreement.Title, agreement.Description, agreement.CreatorTenant.Name, withTenants, agreement.Date.ToString("dd/MM/yyyy"));
+                }
             }
         }
 
@@ -349,6 +363,11 @@ namespace StudentHousingCompany
             {
                 dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
             }
+        }
+
+        private void FrmTenant_EnabledChanged(object sender, EventArgs e)
+        {
+            ShowAgreements();
         }
     }
 }

@@ -34,11 +34,11 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lvwTenants = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCreateAgreement = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -98,6 +98,11 @@
             this.lvwTenants.UseCompatibleStateImageBehavior = false;
             this.lvwTenants.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 37;
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
@@ -108,38 +113,33 @@
             this.columnHeader3.Text = "Address";
             this.columnHeader3.Width = 94;
             // 
-            // btnAddUser
+            // btnCreateAgreement
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(369, 342);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(202, 41);
-            this.btnAddUser.TabIndex = 38;
-            this.btnAddUser.Text = "Create New Agreement";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            this.btnCreateAgreement.Location = new System.Drawing.Point(369, 342);
+            this.btnCreateAgreement.Name = "btnCreateAgreement";
+            this.btnCreateAgreement.Size = new System.Drawing.Size(202, 41);
+            this.btnCreateAgreement.TabIndex = 38;
+            this.btnCreateAgreement.Text = "Create New Agreement";
+            this.btnCreateAgreement.UseVisualStyleBackColor = true;
+            this.btnCreateAgreement.Click += new System.EventHandler(this.btnCreateAgreement_Click);
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(591, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 41);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 37;
+            this.btnCancel.Location = new System.Drawing.Point(591, 342);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(99, 41);
+            this.btnCancel.TabIndex = 39;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmNewAgreement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 424);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAddUser);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnCreateAgreement);
             this.Controls.Add(this.lvwTenants);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtTitle);
@@ -163,8 +163,8 @@
         private System.Windows.Forms.ListView lvwTenants;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCreateAgreement;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

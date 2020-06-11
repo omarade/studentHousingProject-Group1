@@ -377,47 +377,51 @@
             this.tabPage2.Controls.Add(this.lblTenantsToShareWith);
             this.tabPage2.Controls.Add(this.btnAddToShoppingList);
             this.tabPage2.Controls.Add(this.tbxFullPrice);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(710, 369);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(949, 457);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
             // lblBalanceOverView
             // 
             this.lblBalanceOverView.AutoSize = true;
-            this.lblBalanceOverView.Location = new System.Drawing.Point(489, 42);
+            this.lblBalanceOverView.Location = new System.Drawing.Point(652, 52);
+            this.lblBalanceOverView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBalanceOverView.Name = "lblBalanceOverView";
-            this.lblBalanceOverView.Size = new System.Drawing.Size(136, 13);
+            this.lblBalanceOverView.Size = new System.Drawing.Size(177, 17);
             this.lblBalanceOverView.TabIndex = 34;
             this.lblBalanceOverView.Text = "tenants Balance over view ";
             // 
             // lblProductInfo
             // 
             this.lblProductInfo.AutoSize = true;
-            this.lblProductInfo.Location = new System.Drawing.Point(211, 39);
+            this.lblProductInfo.Location = new System.Drawing.Point(281, 48);
+            this.lblProductInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductInfo.Name = "lblProductInfo";
-            this.lblProductInfo.Size = new System.Drawing.Size(66, 13);
+            this.lblProductInfo.Size = new System.Drawing.Size(87, 17);
             this.lblProductInfo.TabIndex = 33;
             this.lblProductInfo.Text = "Products log";
             // 
             // lblFullPrice
             // 
             this.lblFullPrice.AutoSize = true;
-            this.lblFullPrice.Location = new System.Drawing.Point(5, 75);
+            this.lblFullPrice.Location = new System.Drawing.Point(7, 92);
+            this.lblFullPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullPrice.Name = "lblFullPrice";
-            this.lblFullPrice.Size = new System.Drawing.Size(50, 13);
+            this.lblFullPrice.Size = new System.Drawing.Size(66, 17);
             this.lblFullPrice.TabIndex = 32;
             this.lblFullPrice.Text = "Full Price";
             // 
             // lblProductname
             // 
             this.lblProductname.AutoSize = true;
-            this.lblProductname.Location = new System.Drawing.Point(3, 39);
+            this.lblProductname.Location = new System.Drawing.Point(4, 48);
+            this.lblProductname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductname.Name = "lblProductname";
-            this.lblProductname.Size = new System.Drawing.Size(75, 13);
+            this.lblProductname.Size = new System.Drawing.Size(98, 17);
             this.lblProductname.TabIndex = 31;
             this.lblProductname.Text = "Product Name";
             // 
@@ -429,10 +433,10 @@
             this.columnHeader9,
             this.columnHeader10});
             this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(199, 75);
-            this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(265, 92);
+            this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(274, 243);
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(364, 298);
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -459,10 +463,10 @@
             this.columnHeader6,
             this.columnHeader7});
             this.lvwBlancesOverView.HideSelection = false;
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(479, 75);
-            this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwBlancesOverView.Location = new System.Drawing.Point(639, 92);
+            this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(226, 243);
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(300, 298);
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -486,35 +490,36 @@
             // 
             this.clbTenantsToshare.CheckOnClick = true;
             this.clbTenantsToshare.FormattingEnabled = true;
-            this.clbTenantsToshare.Location = new System.Drawing.Point(10, 120);
-            this.clbTenantsToshare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clbTenantsToshare.Location = new System.Drawing.Point(13, 148);
+            this.clbTenantsToshare.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.clbTenantsToshare.Name = "clbTenantsToshare";
-            this.clbTenantsToshare.Size = new System.Drawing.Size(182, 184);
+            this.clbTenantsToshare.Size = new System.Drawing.Size(241, 225);
             this.clbTenantsToshare.TabIndex = 28;
             // 
             // tbxProductname
             // 
-            this.tbxProductname.Location = new System.Drawing.Point(80, 39);
-            this.tbxProductname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxProductname.Location = new System.Drawing.Point(107, 48);
+            this.tbxProductname.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxProductname.Name = "tbxProductname";
-            this.tbxProductname.Size = new System.Drawing.Size(113, 20);
+            this.tbxProductname.Size = new System.Drawing.Size(149, 22);
             this.tbxProductname.TabIndex = 23;
             // 
             // lblTenantsToShareWith
             // 
             this.lblTenantsToShareWith.AutoSize = true;
-            this.lblTenantsToShareWith.Location = new System.Drawing.Point(58, 106);
+            this.lblTenantsToShareWith.Location = new System.Drawing.Point(77, 130);
+            this.lblTenantsToShareWith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
-            this.lblTenantsToShareWith.Size = new System.Drawing.Size(49, 13);
+            this.lblTenantsToShareWith.Size = new System.Drawing.Size(64, 17);
             this.lblTenantsToShareWith.TabIndex = 18;
             this.lblTenantsToShareWith.Text = "Tenants ";
             // 
             // btnAddToShoppingList
             // 
-            this.btnAddToShoppingList.Location = new System.Drawing.Point(38, 320);
-            this.btnAddToShoppingList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddToShoppingList.Location = new System.Drawing.Point(51, 394);
+            this.btnAddToShoppingList.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAddToShoppingList.Name = "btnAddToShoppingList";
-            this.btnAddToShoppingList.Size = new System.Drawing.Size(106, 37);
+            this.btnAddToShoppingList.Size = new System.Drawing.Size(141, 46);
             this.btnAddToShoppingList.TabIndex = 17;
             this.btnAddToShoppingList.Text = "add to shopping list ";
             this.btnAddToShoppingList.UseVisualStyleBackColor = true;
@@ -522,10 +527,10 @@
             // 
             // tbxFullPrice
             // 
-            this.tbxFullPrice.Location = new System.Drawing.Point(80, 75);
-            this.tbxFullPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxFullPrice.Location = new System.Drawing.Point(107, 92);
+            this.tbxFullPrice.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxFullPrice.Name = "tbxFullPrice";
-            this.tbxFullPrice.Size = new System.Drawing.Size(113, 20);
+            this.tbxFullPrice.Size = new System.Drawing.Size(149, 22);
             this.tbxFullPrice.TabIndex = 16;
             // 
             // tabPage3
@@ -541,19 +546,20 @@
             this.tabPage3.Controls.Add(this.tbxCoTopic);
             this.tabPage3.Controls.Add(this.lblMakeComplaint);
             this.tabPage3.Controls.Add(this.tbxComSub);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(710, 369);
+            this.tabPage3.Size = new System.Drawing.Size(949, 457);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compaints";
             // 
             // lblMessageFromAdm
             // 
             this.lblMessageFromAdm.AutoSize = true;
-            this.lblMessageFromAdm.Location = new System.Drawing.Point(94, 82);
+            this.lblMessageFromAdm.Location = new System.Drawing.Point(125, 101);
+            this.lblMessageFromAdm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageFromAdm.Name = "lblMessageFromAdm";
-            this.lblMessageFromAdm.Size = new System.Drawing.Size(142, 13);
+            this.lblMessageFromAdm.Size = new System.Drawing.Size(189, 17);
             this.lblMessageFromAdm.TabIndex = 9;
             this.lblMessageFromAdm.Text = "Message recived from admin";
             this.lblMessageFromAdm.Visible = false;
@@ -561,15 +567,17 @@
             // lblComplaintDiscription
             // 
             this.lblComplaintDiscription.AutoSize = true;
-            this.lblComplaintDiscription.Location = new System.Drawing.Point(94, 82);
+            this.lblComplaintDiscription.Location = new System.Drawing.Point(125, 101);
+            this.lblComplaintDiscription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComplaintDiscription.Name = "lblComplaintDiscription";
-            this.lblComplaintDiscription.Size = new System.Drawing.Size(104, 13);
+            this.lblComplaintDiscription.Size = new System.Drawing.Size(138, 17);
             this.lblComplaintDiscription.TabIndex = 8;
             this.lblComplaintDiscription.Text = "complaint Discription";
             // 
             // btnMessageDelete
             // 
-            this.btnMessageDelete.Location = new System.Drawing.Point(201, 272);
+            this.btnMessageDelete.Location = new System.Drawing.Point(268, 335);
+            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageDelete.Name = "btnMessageDelete";
             this.btnMessageDelete.Size = new System.Drawing.Size(75, 55);
             this.btnMessageDelete.TabIndex = 7;
@@ -580,12 +588,12 @@
             // 
             // tbxReplyFromAdm
             // 
-            this.tbxReplyFromAdm.Location = new System.Drawing.Point(97, 110);
-            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxReplyFromAdm.Location = new System.Drawing.Point(129, 135);
+            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5);
             this.tbxReplyFromAdm.Multiline = true;
             this.tbxReplyFromAdm.Name = "tbxReplyFromAdm";
             this.tbxReplyFromAdm.ReadOnly = true;
-            this.tbxReplyFromAdm.Size = new System.Drawing.Size(199, 126);
+            this.tbxReplyFromAdm.Size = new System.Drawing.Size(264, 154);
             this.tbxReplyFromAdm.TabIndex = 6;
             this.tbxReplyFromAdm.Visible = false;
             // 
@@ -593,19 +601,20 @@
             // 
             this.lblSubject.AutoSize = true;
             this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(41, 51);
+            this.lblSubject.Location = new System.Drawing.Point(55, 63);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(48, 15);
+            this.lblSubject.Size = new System.Drawing.Size(57, 18);
             this.lblSubject.TabIndex = 5;
             this.lblSubject.Text = "Subject";
             // 
             // cbxSendAnonymously
             // 
             this.cbxSendAnonymously.AutoSize = true;
-            this.cbxSendAnonymously.Location = new System.Drawing.Point(97, 242);
-            this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(129, 298);
+            this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
-            this.cbxSendAnonymously.Size = new System.Drawing.Size(116, 17);
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(151, 21);
             this.cbxSendAnonymously.TabIndex = 4;
             this.cbxSendAnonymously.Text = "Send Anonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -613,10 +622,10 @@
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(97, 272);
-            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSendComplaint.Location = new System.Drawing.Point(129, 335);
+            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(75, 55);
+            this.btnSendComplaint.Size = new System.Drawing.Size(100, 68);
             this.btnSendComplaint.TabIndex = 3;
             this.btnSendComplaint.Text = "Send Complaint";
             this.btnSendComplaint.UseVisualStyleBackColor = true;
@@ -624,29 +633,30 @@
             // 
             // tbxCoTopic
             // 
-            this.tbxCoTopic.Location = new System.Drawing.Point(97, 110);
-            this.tbxCoTopic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxCoTopic.Location = new System.Drawing.Point(129, 135);
+            this.tbxCoTopic.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxCoTopic.Multiline = true;
             this.tbxCoTopic.Name = "tbxCoTopic";
-            this.tbxCoTopic.Size = new System.Drawing.Size(199, 126);
+            this.tbxCoTopic.Size = new System.Drawing.Size(264, 154);
             this.tbxCoTopic.TabIndex = 2;
             // 
             // lblMakeComplaint
             // 
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMakeComplaint.Location = new System.Drawing.Point(136, 15);
+            this.lblMakeComplaint.Location = new System.Drawing.Point(181, 18);
+            this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
-            this.lblMakeComplaint.Size = new System.Drawing.Size(160, 24);
+            this.lblMakeComplaint.Size = new System.Drawing.Size(206, 29);
             this.lblMakeComplaint.TabIndex = 1;
             this.lblMakeComplaint.Text = "Make a Complaint";
             // 
             // tbxComSub
             // 
-            this.tbxComSub.Location = new System.Drawing.Point(97, 49);
-            this.tbxComSub.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxComSub.Location = new System.Drawing.Point(129, 60);
+            this.tbxComSub.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxComSub.Name = "tbxComSub";
-            this.tbxComSub.Size = new System.Drawing.Size(124, 20);
+            this.tbxComSub.Size = new System.Drawing.Size(164, 22);
             this.tbxComSub.TabIndex = 0;
             // 
             // tabPage4
@@ -916,10 +926,10 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(572, 21);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(762, 26);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(67, 28);
+            this.btnLogout.Size = new System.Drawing.Size(89, 34);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -1054,6 +1064,7 @@
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTenant_FormClosed);
+            this.EnabledChanged += new System.EventHandler(this.FrmTenant_EnabledChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
