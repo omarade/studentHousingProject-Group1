@@ -43,7 +43,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAnnoCreate = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbHouseRules = new System.Windows.Forms.GroupBox();
             this.rtbHouseRules = new System.Windows.Forms.RichTextBox();
             this.btnUpdateHouseRules = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbTasks = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tbTaskName = new System.Windows.Forms.TextBox();
             this.btnRemoveTask = new System.Windows.Forms.Button();
@@ -113,11 +113,11 @@
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.gbHouseRules.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbTasks.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +139,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.gbHouseRules);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -169,7 +169,7 @@
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             this.dgdAnnouncement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgdAnnouncement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgdAnnouncement.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgdAnnouncement.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -231,17 +231,17 @@
             this.btnAnnoCreate.UseVisualStyleBackColor = true;
             this.btnAnnoCreate.Click += new System.EventHandler(this.btnAnnoCreate_Click);
             // 
-            // groupBox2
+            // gbHouseRules
             // 
-            this.groupBox2.Controls.Add(this.rtbHouseRules);
-            this.groupBox2.Controls.Add(this.btnUpdateHouseRules);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(17, 17);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 461);
-            this.groupBox2.TabIndex = 54;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "House rules";
+            this.gbHouseRules.Controls.Add(this.rtbHouseRules);
+            this.gbHouseRules.Controls.Add(this.btnUpdateHouseRules);
+            this.gbHouseRules.Controls.Add(this.button2);
+            this.gbHouseRules.Location = new System.Drawing.Point(17, 17);
+            this.gbHouseRules.Name = "gbHouseRules";
+            this.gbHouseRules.Size = new System.Drawing.Size(243, 461);
+            this.gbHouseRules.TabIndex = 54;
+            this.gbHouseRules.TabStop = false;
+            this.gbHouseRules.Text = "House rules";
             // 
             // rtbHouseRules
             // 
@@ -621,7 +621,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.gbTasks);
             this.tabPage2.Controls.Add(this.BtnNextWeek);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.listView6);
@@ -633,22 +633,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tasks";
             // 
-            // groupBox1
+            // gbTasks
             // 
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.tbTaskName);
-            this.groupBox1.Controls.Add(this.btnRemoveTask);
-            this.groupBox1.Controls.Add(this.cbWeekDays);
-            this.groupBox1.Controls.Add(this.cbRemoveTasks);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.btnAddTask);
-            this.groupBox1.Location = new System.Drawing.Point(17, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 426);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Create/Remove Tasks";
+            this.gbTasks.Controls.Add(this.label12);
+            this.gbTasks.Controls.Add(this.tbTaskName);
+            this.gbTasks.Controls.Add(this.btnRemoveTask);
+            this.gbTasks.Controls.Add(this.cbWeekDays);
+            this.gbTasks.Controls.Add(this.cbRemoveTasks);
+            this.gbTasks.Controls.Add(this.label14);
+            this.gbTasks.Controls.Add(this.label21);
+            this.gbTasks.Controls.Add(this.btnAddTask);
+            this.gbTasks.Location = new System.Drawing.Point(17, 21);
+            this.gbTasks.Name = "gbTasks";
+            this.gbTasks.Size = new System.Drawing.Size(292, 426);
+            this.gbTasks.TabIndex = 14;
+            this.gbTasks.TabStop = false;
+            this.gbTasks.Text = "Create/Remove Tasks";
             // 
             // label12
             // 
@@ -946,14 +946,14 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            this.gbHouseRules.ResumeLayout(false);
             this.tpMngUsrs.ResumeLayout(false);
             this.tpMngUsrs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbTasks.ResumeLayout(false);
+            this.gbTasks.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
@@ -1030,12 +1030,12 @@
         private System.Windows.Forms.Button btnSendReply;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.RichTextBox rtbHouseRules;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbTasks;
         private System.Windows.Forms.DataGridView dgdAnnouncement;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbHouseRules;
     }
 }
