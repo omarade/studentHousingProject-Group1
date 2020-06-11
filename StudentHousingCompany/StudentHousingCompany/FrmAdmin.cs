@@ -27,6 +27,7 @@ namespace StudentHousingCompany
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
+            prevNmrOfComp = nmrOfComp;
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -472,27 +473,27 @@ namespace StudentHousingCompany
 
         private void btnComplaintResolve_Click(object sender, EventArgs e)
         {
+            int selectdIndex = dgdComp.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
+            //PS.I do not know why i can not delete the ToString method and take only the value yet?
+            CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
 
-            ListBox.SelectedObjectCollection selectedItem = new ListBox.SelectedObjectCollection(lbxComp);
-            selectedItem = lbxComp.SelectedItems;
-
-            if (lbxComp.SelectedIndex != -1)
+            foreach (Complaint comp in studentHousing.Complaintss)
             {
-                string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
-
-                foreach (Complaint comp in studentHousing.Complaintss)
+                if (comp.ComplaintId == CompID)
                 {
-                    if (selectedTextFromlbx == comp.GetText())
-                    {
-                        comp.Solved = true;
-                    }
+                    comp.Solved = true;
                 }
-                for (int i = selectedItem.Count - 1; i >= 0; i--)
-                {
-                    lbxComp.Items.Remove(selectedItem[i]);
-                } 
             }
-            else
+
+            if (dgdComp.SelectedCells.Count > 0)
+            {
+                foreach (DataGridViewRow item in this.dgdComp.SelectedRows)
+                {
+                    dgdComp.Rows.RemoveAt(item.Index);
+
+                }
+            }else
             {
                 MessageBox.Show("Select a complainet ");
             } 
@@ -503,10 +504,11 @@ namespace StudentHousingCompany
         int CompID;
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
-            if (dgdUsers.SelectedCells.Count > 0) 
+            if (dgdComp.SelectedCells.Count > 0) 
             {
                 int selectdIndex = dgdComp.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
+                //PS.I do not know why i can not delete the ToString method and take only the value yet?
                 CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
 
                 foreach(Complaint comp in studentHousing.Complaintss)
@@ -523,7 +525,7 @@ namespace StudentHousingCompany
             }
                 
 
-            MessageBox.Show(Convert.ToString(CompID));
+            
 
 
             dgdComp.Visible = false;
@@ -603,18 +605,23 @@ namespace StudentHousingCompany
         {
 
         }
-
+        int nmrOfComp;
+        int prevNmrOfComp;
         private void timer2_Tick(object sender, EventArgs e)
         {
-            dgdComp.Rows.Clear();
-            foreach (Complaint comp in studentHousing.Complaintss)
+            nmrOfComp = studentHousing.Complaintss.Count();
+            if(nmrOfComp != prevNmrOfComp)
             {
-
-                if (!comp.Solved)
+                dgdComp.Rows.Clear();
+                prevNmrOfComp = nmrOfComp;
+                foreach (Complaint comp in studentHousing.Complaintss)
                 {
-                    dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                    if (!comp.Solved)
+                    {
+                        dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                    }
                 }
-            }
+            } 
         }
     }
 }

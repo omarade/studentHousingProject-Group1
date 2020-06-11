@@ -12,27 +12,6 @@ namespace StudentHousingCompany
     {
         private static int ID = 0;
 
-
-        public Complaint(string Description, string topic)
-        {
-            this.ComplaintTopic = topic;
-            this.Description = Description;
-            ComplaintId = ID;
-            ID++;
-            ReplyFromAdmin = null;
-            foreach (Tenant tenn in StudentHousingCompany.StudentHousing.Instance.GetTenants())
-            {
-                if (tenn.Id == StudentHousingCompany.StudentHousing.Instance.CurrentUser.Id)
-                {
-                    this.TenID = StudentHousingCompany.StudentHousing.Instance.CurrentUser.Id;
-                    this.CreaterName = tenn.Name;
-                }
-            }
-        }
-
-
-
-
         public int ComplaintId
         {
             get;
@@ -97,6 +76,17 @@ namespace StudentHousingCompany
         {
             get;
             set;
+        }
+
+        public Complaint(string Description, string topic)
+        {
+            this.ComplaintTopic = topic;
+            this.Description = Description;
+            ComplaintId = ID;
+            ID++;
+            ReplyFromAdmin = null;
+            this.TenID = StudentHousingCompany.StudentHousing.Instance.CurrentUser.Id;
+            this.CreaterName = StudentHousingCompany.StudentHousing.Instance.CurrentUser.Name;
         }
 
         public string GetText()

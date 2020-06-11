@@ -122,13 +122,6 @@ namespace StudentHousingCompany
             ListViewItem item1 = new ListViewItem(new[] { newProduct.Name, Convert.ToString(newProduct.DevidedPrice), sharedwith });
             lvwProductSharingInfo.Items.Add(item1);
 
-            FILLBALANCELIST();
-
-
-        }
-
-        public void FILLBALANCELIST()
-        {
             lvwBlancesOverView.Items.Clear();
 
             foreach (Tenant tenant in studentHousing.GetTenants())
@@ -136,9 +129,9 @@ namespace StudentHousingCompany
                 ListViewItem item = new ListViewItem(new[] { Convert.ToString(tenant.Id), tenant.Name, Convert.ToString(tenant.Balance) });
                 lvwBlancesOverView.Items.Add(item);
             }
-        }
 
-        
+
+        }        
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
             Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text);
@@ -150,8 +143,16 @@ namespace StudentHousingCompany
             {
                 newcomplaint.Anonymous = false;
             }
+
+            foreach (Tenant ten in studentHousing.GetTenants())
+            {
+                if (ten.Id == studentHousing.CurrentUser.Id)
+                {
+                    ten.Complaints.Add(newcomplaint);
+                }
+            }
+
             this.studentHousing.Complaintss.Add(newcomplaint);
-            MessageBox.Show(Convert.ToString(newcomplaint.ComplaintId) + " the creater is " + newcomplaint.CreaterName + newcomplaint.TenID);
         }
 
         private void btnTaskComplete_Click(object sender, EventArgs e)
@@ -310,28 +311,35 @@ namespace StudentHousingCompany
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            foreach (Complaint comp in studentHousing.Complaintss)
+            if (studentHousing.CurrentUser != null)
             {
-                if (studentHousing.CurrentUser != null)
+                foreach (Tenant ten in studentHousing.GetTenants())
                 {
-                    if (comp.TenID == studentHousing.CurrentUser.Id)
+                    if (ten.Id == studentHousing.CurrentUser.Id)
                     {
-                        if (comp.ReplyFromAdmin != null)
+                        if (ten.Complaints != null)
                         {
-                            if (!comp.ReplyFromAdmIsRead)
+                            foreach (Complaint comp in ten.Complaints)
                             {
-                                tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
-                                tbxReplyFromAdm.Visible = true;
-                                btnMessageDelete.Visible = true;
-                                lblMessageFromAdm.Visible = true;
-                                lblComplaintDiscription.Visible = false;
-                            }
+                                if (comp.ReplyFromAdmin != null)
+                                {
+                                    if (!comp.ReplyFromAdmIsRead)
+                                    {
+                                        this.tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
+                                        this.tbxReplyFromAdm.Visible = true;
+                                        this.btnMessageDelete.Visible = true;
+                                        this.lblMessageFromAdm.Visible = true;
+                                        this.lblComplaintDiscription.Visible = false;
+                                    }
+                                }
+                            }   
                         }
-
                     }
                 }
-                
+
             }
+
+            
         }
     }
 }
