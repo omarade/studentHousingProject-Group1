@@ -13,13 +13,14 @@ namespace StudentHousingCompany
     public partial class FrmNewAgreement : Form
     {
         private StudentHousing studentHousing;
+        private FrmTenant frmTenant;
 
-        public FrmNewAgreement()
+        public FrmNewAgreement(FrmTenant frmTenant)
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
             ShowTenants();
-
+            this.frmTenant = frmTenant;
 
         }
 
@@ -36,7 +37,7 @@ namespace StudentHousingCompany
             }
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e)
+        private void btnCreateAgreement_Click(object sender, EventArgs e)
         {
             string title = txtTitle.Text;
             string description = txtDescription.Text;
@@ -61,16 +62,15 @@ namespace StudentHousingCompany
                 }
             }
             studentHousing.CreateNewAgreement(title,description, currentTenant, withTenants);
+            
+            frmTenant.Enabled = true;
             this.Close();
-            var frmTenant = new FrmTenant();
-            frmTenant.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
+            frmTenant.Enabled = true;
             this.Close();
-            var frmTenant = new FrmTenant();
-            frmTenant.Show();
         }
     }
 }

@@ -32,6 +32,10 @@ namespace StudentHousingCompany
         /// </summary>
         public List<Complaint> Complaintss { get; set; }
 
+        public List<Announcement> Announcements { get; }
+
+        public string HouseRules { get; set; }
+
         private StudentHousing()
         {
 
@@ -41,6 +45,7 @@ namespace StudentHousingCompany
             Complaintss = new List<Complaint>();
             Events = new List<Event>();
             Agreements = new List<Agreement>();
+            Announcements = new List<Announcement>();
 
         }
 
@@ -231,9 +236,9 @@ namespace StudentHousingCompany
 
             foreach (var task in Schedules)
             {
-                if (task.GetStudent() == CurrentUser.Name)
+                if (task.Student == CurrentUser.Name)
                 {
-                    taskname = task.GetTask();
+                    taskname = task.TaskName;
                 }
             }
             return taskname;
@@ -247,7 +252,7 @@ namespace StudentHousingCompany
         {
             foreach (var task in Schedules)
             {
-                if (task.GetTask() == taskName)
+                if (task.TaskName == taskName)
                 {
                     task.SetStatus(true);
                 }
@@ -298,7 +303,7 @@ namespace StudentHousingCompany
         {
             for (int i = 0; i < Schedules.Count; i++)
             {
-                if (Schedules[i].GetTask() == taskName)
+                if (Schedules[i].TaskName == taskName)
                 {
                     Schedules.RemoveAt(i);
                 }
@@ -379,7 +384,11 @@ namespace StudentHousingCompany
             Agreements.Add(agreement);
         }
 
-        
+        public void CreateAnnouncement(string announceSubject,string announceText)
+        {
+            Announcement newAnnouncement = new Announcement(announceSubject ,announceText);
+            Announcements.Add(newAnnouncement);
+        }
 
     }
 }

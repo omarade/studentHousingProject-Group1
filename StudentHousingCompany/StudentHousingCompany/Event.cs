@@ -12,10 +12,10 @@ namespace StudentHousingCompany
         private static int idSeeder = 1;
 
         public int EventId { get; }
-        public string EventName { get; set; }
-        public string EventDesc { get; set; }
-        public DateTime DateOfEvent { get; set; }
-        public string EventOwner { get; set; }
+        public string EventName { get; private set; }
+        public string EventDesc { get; private set; }
+        public DateTime DateOfEvent { get; private set; }
+        public string EventOwner { get; private set; }
         public List<string> NegativeResponses { get; }
         public List<string> PositiveResponses { get; }
 

@@ -36,6 +36,8 @@ namespace StudentHousingCompany
             timer1.Start();
             ShowTasks();
             FillEventsList();
+            rtbHouseRules.Text = studentHousing.HouseRules;
+            FillAnnouncement();
 
         }
 
@@ -176,7 +178,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {
-                if (task.GetStatus() == true)
+                if (task.Status == true)
                 {
                     listView6.Items[counter].BackColor = Color.Green;
                 }
@@ -196,9 +198,9 @@ namespace StudentHousingCompany
             foreach (var task in studentHousing.Schedules)
             {
                 listView6.Items.Add(task.GetInfo());
-                if (task.GetStudent() == studentHousing.CurrentUser.Name)
+                if (task.Student == studentHousing.CurrentUser.Name)
                 {
-                    clbTenantTask.Items.Add(task.GetTask());
+                    clbTenantTask.Items.Add(task.TaskName);
                 }
             }
 
@@ -214,8 +216,8 @@ namespace StudentHousingCompany
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
             
-            this.Hide();
-            var frmAddEvent = new FrmAddEvent();
+            this.Enabled = false;
+            var frmAddEvent = new FrmAddEvent(this);
             frmAddEvent.Show();
 
             FillEventsList();
@@ -223,39 +225,40 @@ namespace StudentHousingCompany
 
         public void FillEventsList()
         {
-            lvEventDetails.Items.Clear();
+            dgdEvents.Rows.Clear();
 
-            foreach (var events in studentHousing.Events)
+            foreach (var currentEvent in studentHousing.Events)
             {
-                ListViewItem eventInfo = events.GetInfo();
-                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.GetTenants().Count().ToString());
-                eventInfo.SubItems.Add(events.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString());
-                lvEventDetails.Items.Add(eventInfo);
+                string Disagree = currentEvent.NegativeResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
+                string Agree = currentEvent.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
+                dgdEvents.Rows.Add(currentEvent.EventId, currentEvent.EventOwner, currentEvent.EventName, currentEvent.EventDesc, currentEvent.DateOfEvent.ToString("dd/MM/yyyy"),Disagree,Agree);
             }
         }
 
         private void btnAgree_Click(object sender, EventArgs e)
         {
-            if (lvEventDetails.SelectedItems.Count == 0)
+            if (dgdEvents.SelectedCells.Count > 0)
             {
-                return;
-            }
-            ListViewItem item = lvEventDetails.SelectedItems[0];
+                int selectedrowindex = dgdEvents.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdEvents.Rows[selectedrowindex];
+                string eventID = Convert.ToString(selectedRow.Cells["dgcEventID"].Value);
 
-            studentHousing.AgreeToEvent(item.Text);
-            FillEventsList();
+                studentHousing.AgreeToEvent(eventID);
+                FillEventsList();
+            }
         }
 
         private void btnDisagree_Click(object sender, EventArgs e)
         {
-            if (lvEventDetails.SelectedItems.Count == 0)
+            if (dgdEvents.SelectedCells.Count > 0)
             {
-                return;
-            }
-            ListViewItem item = lvEventDetails.SelectedItems[0];
+                int selectedrowindex = dgdEvents.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdEvents.Rows[selectedrowindex];
+                string eventID = Convert.ToString(selectedRow.Cells["dgcEventID"].Value);
 
-            studentHousing.DisagreeToEvent(item.Text);
-            FillEventsList();
+                studentHousing.DisagreeToEvent(eventID);
+                FillEventsList();
+            }
         }
 
         private void btnMessageDelete_Click(object sender, EventArgs e)
@@ -277,23 +280,37 @@ namespace StudentHousingCompany
 
         private void btnNewAgreement_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var frmNewAgreement = new FrmNewAgreement();
+            this.Enabled = false;
+            var frmNewAgreement = new FrmNewAgreement(this);
             frmNewAgreement.Show();
         }
 
         private void ShowAgreements()
         {
+            dgdAgreements.Rows.Clear();
+
             List<Agreement> agreements = studentHousing.Agreements;
             string withTenants = "";
+            bool isCreator;
+            bool isAgreementMember = false;
 
             foreach (var agreement in agreements)
             {
+                isCreator = studentHousing.CurrentUser.Id == agreement.CreatorTenant.Id;
+                
                 foreach (var tenant in agreement.WithTenants)
                 {
+                    if (studentHousing.CurrentUser.Id == tenant.Id)
+                    {
+                        isAgreementMember = true;
+                    }
                     withTenants += $"{tenant.Name}, ";
                 }
-                dgdAgreements.Rows.Add(agreement.Title, agreement.Description, agreement.CreatorTenant.Name, withTenants, agreement.Date.ToString("dd/MM/yyyy"));
+
+                if (isCreator || isAgreementMember)
+                {
+                    dgdAgreements.Rows.Add(agreement.Title, agreement.Description, agreement.CreatorTenant.Name, withTenants, agreement.Date.ToString("dd/MM/yyyy"));
+                }
             }
         }
 
@@ -339,7 +356,19 @@ namespace StudentHousingCompany
 
             }
 
-            
+        public void FillAnnouncement()
+        {
+            dgdAnnouncement.Rows.Clear();
+
+            foreach (var currentAnno in studentHousing.Announcements)
+            {
+                dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
+            }
+        }
+
+        private void FrmTenant_EnabledChanged(object sender, EventArgs e)
+        {
+            ShowAgreements();
         }
     }
 }

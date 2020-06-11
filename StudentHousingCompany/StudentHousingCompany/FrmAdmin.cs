@@ -25,6 +25,7 @@ namespace StudentHousingCompany
             timer1.Enabled = true;
             tmrUpdateComplaintes.Start();
             rbtnTenant.Checked = true;
+            rbtnAdmin.Checked = false;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
@@ -79,7 +80,6 @@ namespace StudentHousingCompany
 
         private void rbtnAdmin_CheckedChanged(object sender, EventArgs e)
         {
-            ClearSelectedUser();
             NewUserType();
         }
 
@@ -144,56 +144,6 @@ namespace StudentHousingCompany
             return true;
         }
 
-        private bool ValidateUserInput(string name, DateTime dob, string email)
-        {
-            TimeSpan ageSpan = DateTime.Now.Subtract(dob);
-            int age = ageSpan.Days / 365;
-
-            if (name == "")
-            {
-                MessageBox.Show("Name cannot be empty");
-                return false;
-            }
-
-            if (age < 15)
-            {
-                MessageBox.Show("Invalid date of birth");
-                return false;
-            }
-
-            if (email == "")
-            {
-                MessageBox.Show("Please enter an email");
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool ValidateUserInput(string phoneNr, string postcode, string address)
-        {
-
-
-            if (phoneNr.Length <= 10)
-            {
-                MessageBox.Show("Please enter a valid phone number");
-                return false;
-            }
-
-            if (postcode.Length != 6)
-            {
-                MessageBox.Show("Please enter the postcode in this format \"4356PP\" ");
-                return false;
-            }
-
-            if (address == "")
-            {
-                MessageBox.Show("Please enter the address");
-                return false;
-            }
-            return true;
-        }
-
         private bool ValidateUserInput(string name, DateTime dob, string email, string password, string phoneNr, string postcode, string address)
         {
             bool validInput = ValidateUserInput(name, dob, email, password);
@@ -252,9 +202,8 @@ namespace StudentHousingCompany
 
         }
 
-        private void btnUpdateUser_Click(object sender, EventArgs e)
+        private void btnEditUser_Click(object sender, EventArgs e)
         {
-            
 
             if (dgdUsers.SelectedCells.Count > 0)
             {
@@ -262,29 +211,9 @@ namespace StudentHousingCompany
                 DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
 
-
-                User user = studentHousing.GetUserById(id);
-                
-            
-                string name = txtName.Text;
-                DateTime dateOfBirth = dtbDoB.Value;
-                string email = txtEmail.Text;
-                string phoneNr = txtPhoneNr.Text;
-                string postcode = txtPostcode.Text;
-                string address = txtAddress.Text;
-
-                if (user is Admin && ValidateUserInput(name, dateOfBirth, email))
-                {
-                    studentHousing.UpdateUser(id, name, dateOfBirth, email,phoneNr, postcode, address);
-                }
-                if (user is Tenant && ValidateUserInput(name, dateOfBirth, email) && ValidateUserInput(phoneNr, postcode, address))
-                {
-                    studentHousing.UpdateUser(id, name, dateOfBirth, email, phoneNr, postcode, address);
-                }
-                
-            
-
-                ShowUsers();
+                FrmUdateUserInfo frmUdateUser = new FrmUdateUserInfo(id, this);
+                this.Enabled = false;
+                frmUdateUser.Show();
             }
             studentHousing.ResetSchedule();
             ShowTasks();
@@ -295,10 +224,10 @@ namespace StudentHousingCompany
         {
             
 
-            if (dgdUsers.SelectedCells.Count > 0)
+            /*if (dgdUsers.SelectedCells.Count > 0)
             {
-                int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
+                int selectedRowIndex = dgdUsers.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdUsers.Rows[selectedRowIndex];
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
 
                 User user = studentHousing.GetUserById(id);
@@ -318,7 +247,7 @@ namespace StudentHousingCompany
                 txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
                 dtbDoB.Value = user.DateOfBirth;
                 txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
-            }
+            }*/
         }
 
         private void tpMngUsrs_Click(object sender, EventArgs e)
@@ -355,7 +284,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {
-                if (TaskName == task.GetTask())
+                if (TaskName == task.TaskName)
                 {
                     NameExsists = true;
                 }
@@ -441,7 +370,7 @@ namespace StudentHousingCompany
 
             foreach (var task in schedule)
             {
-                cbRemoveTasks.Items.Add(task.GetTask());
+                cbRemoveTasks.Items.Add(task.TaskName);
             }
         }
 
@@ -454,7 +383,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {          
-                if (task.GetStatus() == true)
+                if (task.Status == true)
                 {
                     listView6.Items[counter].BackColor = Color.Green;
                 }
@@ -573,9 +502,9 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {              
-                if (task.GetDueDate().Date < DateTime.Now.Date)
+                if (task.DueDate.Date < DateTime.Now.Date)
                 {                    
-                    if (task.GetStatus() == false)
+                    if (task.Status == false)
                     {
                         listView6.Items[counter].BackColor = Color.Red;
                     }
@@ -596,9 +525,52 @@ namespace StudentHousingCompany
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            studentHousing.CurrentUser = null;
             this.Hide();
             var frmLogin = new FrmLogin();
             frmLogin.Show();
+        }
+
+        private void btnUpdateHouseRules_Click(object sender, EventArgs e)
+        {
+            studentHousing.HouseRules = rtbHouseRules.Text;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rtbHouseRules.Clear();
+            rtbHouseRules.Text = studentHousing.HouseRules;
+        }
+
+        private void btnAnnoCreate_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            var frmAnnouncement = new FrmAnnoucement(this);
+            frmAnnouncement.Show();
+
+            FillAnnouncement();
+
+        }
+
+        public void FillAnnouncement()
+        {
+            dgdAnnouncement.Rows.Clear();
+
+            foreach (var currentAnno in studentHousing.Announcements)
+            {
+                dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
+            }
+        }
+
+        public void btnTempRefresh_Click(object sender, EventArgs e)
+        {
+            FillAnnouncement();
+        }
+
+        private void FrmAdmin_EnabledChanged(object sender, EventArgs e)
+        {
+            ShowUsers();
         }
 
         private void FrmAdmin_Load(object sender, EventArgs e)
