@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnLogout = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
@@ -103,6 +102,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -217,17 +217,6 @@
             // 
             this.columnHeader2.Text = "Announcment";
             this.columnHeader2.Width = 229;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(762, 26);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 34);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // richTextBox1
             // 
@@ -527,30 +516,32 @@
             // lblMessageFromAdm
             // 
             this.lblMessageFromAdm.AutoSize = true;
-            this.lblMessageFromAdm.Location = new System.Drawing.Point(125, 101);
+            this.lblMessageFromAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageFromAdm.Location = new System.Drawing.Point(9, 136);
             this.lblMessageFromAdm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageFromAdm.Name = "lblMessageFromAdm";
-            this.lblMessageFromAdm.Size = new System.Drawing.Size(189, 17);
+            this.lblMessageFromAdm.Size = new System.Drawing.Size(135, 34);
             this.lblMessageFromAdm.TabIndex = 9;
-            this.lblMessageFromAdm.Text = "Message recived from admin";
+            this.lblMessageFromAdm.Text = "Message recived \r\nfrom admin";
             this.lblMessageFromAdm.Visible = false;
             // 
             // lblComplaintDiscription
             // 
             this.lblComplaintDiscription.AutoSize = true;
-            this.lblComplaintDiscription.Location = new System.Drawing.Point(125, 101);
+            this.lblComplaintDiscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComplaintDiscription.Location = new System.Drawing.Point(11, 136);
             this.lblComplaintDiscription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComplaintDiscription.Name = "lblComplaintDiscription";
-            this.lblComplaintDiscription.Size = new System.Drawing.Size(138, 17);
+            this.lblComplaintDiscription.Size = new System.Drawing.Size(85, 34);
             this.lblComplaintDiscription.TabIndex = 8;
-            this.lblComplaintDiscription.Text = "complaint Discription";
+            this.lblComplaintDiscription.Text = "Complaint\r\nDiscription";
             // 
             // btnMessageDelete
             // 
-            this.btnMessageDelete.Location = new System.Drawing.Point(268, 335);
-            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMessageDelete.Location = new System.Drawing.Point(12, 345);
+            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageDelete.Name = "btnMessageDelete";
-            this.btnMessageDelete.Size = new System.Drawing.Size(100, 68);
+            this.btnMessageDelete.Size = new System.Drawing.Size(164, 46);
             this.btnMessageDelete.TabIndex = 7;
             this.btnMessageDelete.Text = "Message is read";
             this.btnMessageDelete.UseVisualStyleBackColor = true;
@@ -559,44 +550,45 @@
             // 
             // tbxReplyFromAdm
             // 
-            this.tbxReplyFromAdm.Location = new System.Drawing.Point(129, 135);
-            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbxReplyFromAdm.Location = new System.Drawing.Point(196, 108);
+            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5);
             this.tbxReplyFromAdm.Multiline = true;
             this.tbxReplyFromAdm.Name = "tbxReplyFromAdm";
             this.tbxReplyFromAdm.ReadOnly = true;
-            this.tbxReplyFromAdm.Size = new System.Drawing.Size(264, 154);
+            this.tbxReplyFromAdm.Size = new System.Drawing.Size(728, 311);
             this.tbxReplyFromAdm.TabIndex = 6;
             this.tbxReplyFromAdm.Visible = false;
             // 
             // lblSubject
             // 
             this.lblSubject.AutoSize = true;
-            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(55, 63);
+            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubject.Location = new System.Drawing.Point(9, 65);
             this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(57, 18);
+            this.lblSubject.Size = new System.Drawing.Size(62, 17);
             this.lblSubject.TabIndex = 5;
             this.lblSubject.Text = "Subject";
             // 
             // cbxSendAnonymously
             // 
             this.cbxSendAnonymously.AutoSize = true;
-            this.cbxSendAnonymously.Location = new System.Drawing.Point(129, 298);
+            this.cbxSendAnonymously.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(10, 314);
             this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
-            this.cbxSendAnonymously.Size = new System.Drawing.Size(151, 21);
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(127, 38);
             this.cbxSendAnonymously.TabIndex = 4;
-            this.cbxSendAnonymously.Text = "Send Anonymously";
+            this.cbxSendAnonymously.Text = "Send            \r\nAnonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbxSendAnonymously.UseVisualStyleBackColor = true;
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(129, 335);
+            this.btnSendComplaint.Location = new System.Drawing.Point(8, 382);
             this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(100, 68);
+            this.btnSendComplaint.Size = new System.Drawing.Size(170, 46);
             this.btnSendComplaint.TabIndex = 3;
             this.btnSendComplaint.Text = "Send Complaint";
             this.btnSendComplaint.UseVisualStyleBackColor = true;
@@ -604,18 +596,18 @@
             // 
             // tbxCoTopic
             // 
-            this.tbxCoTopic.Location = new System.Drawing.Point(129, 135);
+            this.tbxCoTopic.Location = new System.Drawing.Point(196, 108);
             this.tbxCoTopic.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxCoTopic.Multiline = true;
             this.tbxCoTopic.Name = "tbxCoTopic";
-            this.tbxCoTopic.Size = new System.Drawing.Size(264, 154);
+            this.tbxCoTopic.Size = new System.Drawing.Size(728, 311);
             this.tbxCoTopic.TabIndex = 2;
             // 
             // lblMakeComplaint
             // 
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMakeComplaint.Location = new System.Drawing.Point(181, 18);
+            this.lblMakeComplaint.Location = new System.Drawing.Point(141, 18);
             this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
             this.lblMakeComplaint.Size = new System.Drawing.Size(206, 29);
@@ -624,7 +616,7 @@
             // 
             // tbxComSub
             // 
-            this.tbxComSub.Location = new System.Drawing.Point(129, 60);
+            this.tbxComSub.Location = new System.Drawing.Point(196, 60);
             this.tbxComSub.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxComSub.Name = "tbxComSub";
             this.tbxComSub.Size = new System.Drawing.Size(164, 22);
@@ -657,7 +649,7 @@
             this.columnHeader26});
             this.lvEventDetails.HideSelection = false;
             this.lvEventDetails.Location = new System.Drawing.Point(12, 97);
-            this.lvEventDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvEventDetails.Margin = new System.Windows.Forms.Padding(4);
             this.lvEventDetails.Name = "lvEventDetails";
             this.lvEventDetails.Size = new System.Drawing.Size(929, 277);
             this.lvEventDetails.TabIndex = 14;
@@ -702,7 +694,7 @@
             // btnAddEvent
             // 
             this.btnAddEvent.Location = new System.Drawing.Point(12, 18);
-            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(131, 44);
             this.btnAddEvent.TabIndex = 13;
@@ -713,7 +705,7 @@
             // btnDisagree
             // 
             this.btnDisagree.Location = new System.Drawing.Point(825, 388);
-            this.btnDisagree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDisagree.Margin = new System.Windows.Forms.Padding(4);
             this.btnDisagree.Name = "btnDisagree";
             this.btnDisagree.Size = new System.Drawing.Size(116, 47);
             this.btnDisagree.TabIndex = 12;
@@ -774,15 +766,15 @@
             this.dgdAgreements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdAgreements.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgdAgreements.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgdAgreements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdAgreements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -790,27 +782,27 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgdAgreements.Location = new System.Drawing.Point(27, 58);
-            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(4);
             this.dgdAgreements.Name = "dgdAgreements";
             this.dgdAgreements.ReadOnly = true;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAgreements.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgdAgreements.RowHeadersVisible = false;
             this.dgdAgreements.RowHeadersWidth = 51;
             this.dgdAgreements.RowTemplate.Height = 24;
@@ -851,6 +843,17 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(762, 26);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 34);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // columnHeader18
             // 

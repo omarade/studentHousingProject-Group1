@@ -14,7 +14,7 @@ namespace StudentHousingCompany
     public partial class FrmTenant : Form
     {
         private StudentHousing studentHousing;
-        private Complaint complaint;
+        
         public FrmTenant()
         {
 
@@ -24,7 +24,7 @@ namespace StudentHousingCompany
             ShowAgreements();
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            complaint = Complaint.Instance;
+            
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
                 if (tenant.Id != studentHousing.CurrentUser.Id)
@@ -138,31 +138,21 @@ namespace StudentHousingCompany
             }
         }
 
-        string comSub;
-        string comTopic;
+        
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
-            Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text, studentHousing.CurrentUser.Id);
+            Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text);
             if (cbxSendAnonymously.Checked)
             {
-                newcomplaint.Anonymous = false;
+                newcomplaint.Anonymous = true;
             }
             else
             {
-                foreach(Tenant ten in studentHousing.GetTenants())
-                {
-                    if(newcomplaint.TenID == ten.Id)
-                    {
-                        newcomplaint.TenName = ten.Name;
-                    }
-                }
+                newcomplaint.Anonymous = false;
             }
-
-
             this.studentHousing.Complaintss.Add(newcomplaint);
+            MessageBox.Show(Convert.ToString(newcomplaint.ComplaintId) + " the creater is " + newcomplaint.CreaterName + newcomplaint.TenID);
         }
-
-
 
         private void btnTaskComplete_Click(object sender, EventArgs e)
         {//Mark checked Tasks as completed 
@@ -322,22 +312,25 @@ namespace StudentHousingCompany
         {
             foreach (Complaint comp in studentHousing.Complaintss)
             {
-                if (comp.TenID == studentHousing.CurrentUser.Id)
+                if (studentHousing.CurrentUser != null)
                 {
-                    if (comp.ReplyFromAdmin != null)
+                    if (comp.TenID == studentHousing.CurrentUser.Id)
                     {
-                        if (!comp.ReplyFromAdmIsRead)
+                        if (comp.ReplyFromAdmin != null)
                         {
-                            tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
-                            tbxReplyFromAdm.Visible = true;
-                            btnMessageDelete.Visible = true;
-                            lblMessageFromAdm.Visible = true;
-                            lblComplaintDiscription.Visible = false;
+                            if (!comp.ReplyFromAdmIsRead)
+                            {
+                                tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
+                                tbxReplyFromAdm.Visible = true;
+                                btnMessageDelete.Visible = true;
+                                lblMessageFromAdm.Visible = true;
+                                lblComplaintDiscription.Visible = false;
+                            }
                         }
+
                     }
-
                 }
-
+                
             }
         }
     }

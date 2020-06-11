@@ -15,7 +15,7 @@ namespace StudentHousingCompany
     {
         private StudentHousing studentHousing;
         DayOfWeek day = DayOfWeek.Monday;
-        private Complaint complaint;
+        
         public FrmAdmin()
         {
             InitializeComponent();
@@ -23,15 +23,10 @@ namespace StudentHousingCompany
             ShowUsers();
             ShowTasks();
             timer1.Enabled = true;
+            tmrUpdateComplaintes.Start();
             rbtnTenant.Checked = true;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
-            complaint = Complaint.Instance;
-            
-            foreach (Complaint comp in studentHousing.Complaintss)
-            {
-                 lbxComp.Items.Add(comp.GetText());
-            }
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -265,6 +260,7 @@ namespace StudentHousingCompany
                 int selectedrowindex = dgdUsers.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgdUsers.Rows[selectedrowindex];
                 int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
+
 
                 User user = studentHousing.GetUserById(id);
                 
@@ -502,29 +498,38 @@ namespace StudentHousingCompany
             } 
         }
 
-        int selectedIndxInCompList;
+        
         int idOfSelectedComp;
-
+        int CompID;
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
-            
-
-            string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
-            
-            foreach (Complaint comp in studentHousing.Complaintss)
+            if (dgdUsers.SelectedCells.Count > 0) 
             {
-                if (selectedTextFromlbx == comp.GetText())
-                {
-                    //selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+                int selectdIndex = dgdComp.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
+                CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
 
-                    idOfSelectedComp = comp.ComplaintId;
+                foreach(Complaint comp in studentHousing.Complaintss)
+                {
+                    if(comp.ComplaintId == CompID)
+                    {
+                        comp.ReplyFromAdmin = tbxReply.Text;
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("please select a cpmlaint to reply to");
+            }
+                
 
+            MessageBox.Show(Convert.ToString(CompID));
+
+
+            dgdComp.Visible = false;
             tbxReply.Visible = true;
 
             btnReplyToComp.Visible = false;
-
             btnSendReply.Visible = true;
 
         }
@@ -532,10 +537,8 @@ namespace StudentHousingCompany
         private void btnSendReply_Click(object sender, EventArgs e)
         {
             string reply = tbxReply.Text;
-
             foreach (Complaint comp in studentHousing.Complaintss)
             {
-                
                 if(comp.ComplaintId == idOfSelectedComp)
                 {
                     comp.ReplyFromAdmin =  reply;
@@ -543,6 +546,7 @@ namespace StudentHousingCompany
             }
 
             tbxReply.Visible = false;
+            dgdComp.Visible = true;
 
             btnReplyToComp.Visible = true;
             btnSendReply.Visible = false;
@@ -576,16 +580,6 @@ namespace StudentHousingCompany
                     counter++;
                 }
             }
-
-            lbxComp.Items.Clear();
-            foreach (Complaint comp in studentHousing.Complaintss)
-            {
-                if (!comp.Solved)
-                {
-                    lbxComp.Items.Add(comp.GetText());
-                }
-            }
-
         }
 
         private void tabControl_Click(object sender, EventArgs e)
@@ -603,6 +597,24 @@ namespace StudentHousingCompany
             this.Hide();
             var frmLogin = new FrmLogin();
             frmLogin.Show();
+        }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            dgdComp.Rows.Clear();
+            foreach (Complaint comp in studentHousing.Complaintss)
+            {
+
+                if (!comp.Solved)
+                {
+                    dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                }
+            }
         }
     }
 }

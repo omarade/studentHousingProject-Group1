@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentHousingCompany
 {
@@ -10,30 +11,35 @@ namespace StudentHousingCompany
     class Complaint
     {
         private static int ID = 0;
-        private static Complaint instance = new Complaint();
-        public static Complaint Instance
-        {
-            get { return instance; }
-        }
 
-        public Complaint() { }
-        public Complaint(string subject, string topic, int tenID)
+
+        public Complaint(string Description, string topic)
         {
             this.ComplaintTopic = topic;
-            this.Subject = subject;
-            this.TenID = tenID;
+            this.Description = Description;
             ComplaintId = ID;
             ID++;
             ReplyFromAdmin = null;
+            foreach (Tenant tenn in StudentHousingCompany.StudentHousing.Instance.GetTenants())
+            {
+                if (tenn.Id == StudentHousingCompany.StudentHousing.Instance.CurrentUser.Id)
+                {
+                    this.TenID = StudentHousingCompany.StudentHousing.Instance.CurrentUser.Id;
+                    this.CreaterName = tenn.Name;
+                }
+            }
         }
+
+
+
 
         public int ComplaintId
         {
             get;
-            set;
+            private set;
         }
 
-        public string Subject 
+        public string Description
         {
             get;
             set;
@@ -48,7 +54,7 @@ namespace StudentHousingCompany
         public int TenID
         {
             get;
-            set;
+            private set;
         }
         
         public int AdmID
@@ -57,10 +63,10 @@ namespace StudentHousingCompany
             set;
         }
 
-        public string TenName 
+         public string CreaterName 
         {
-            get;
-            set;
+             get;
+            private set;
         }
 
         public bool Anonymous
@@ -95,17 +101,10 @@ namespace StudentHousingCompany
 
         public string GetText()
         {
-            // adding date to the text  !?
-            if (Anonymous)
-            {
-                return ComplaintTopic + "" + Subject;
-            }
-            else
-            {
-                return TenName + $" \n " + ComplaintTopic + "\n\r " + Subject;
-            }
+            return ComplaintTopic + ":" + "\n" + Description;
         }
 
+        
         
     }
 }
