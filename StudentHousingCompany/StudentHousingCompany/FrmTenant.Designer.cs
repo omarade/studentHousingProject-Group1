@@ -32,18 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgdAnnouncement = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -123,9 +126,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).BeginInit();
@@ -150,7 +150,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(718, 395);
+            this.tabControl1.Size = new System.Drawing.Size(963, 493);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage5
@@ -166,7 +166,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(710, 369);
+            this.tabPage5.Size = new System.Drawing.Size(955, 467);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "General";
             // 
@@ -215,6 +215,37 @@
             this.dgdAnnouncement.RowTemplate.Height = 24;
             this.dgdAnnouncement.Size = new System.Drawing.Size(242, 297);
             this.dgdAnnouncement.TabIndex = 17;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.FillWeight = 60.9137F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn6.FillWeight = 119.5432F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn7.FillWeight = 119.5432F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // label12
             // 
@@ -377,11 +408,11 @@
             this.tabPage2.Controls.Add(this.lblTenantsToShareWith);
             this.tabPage2.Controls.Add(this.btnAddToShoppingList);
             this.tabPage2.Controls.Add(this.tbxFullPrice);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(949, 457);
+            this.tabPage2.Size = new System.Drawing.Size(955, 467);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost Controle";
             // 
@@ -391,7 +422,7 @@
             this.lblBalanceOverView.Location = new System.Drawing.Point(652, 52);
             this.lblBalanceOverView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBalanceOverView.Name = "lblBalanceOverView";
-            this.lblBalanceOverView.Size = new System.Drawing.Size(177, 17);
+            this.lblBalanceOverView.Size = new System.Drawing.Size(136, 13);
             this.lblBalanceOverView.TabIndex = 34;
             this.lblBalanceOverView.Text = "tenants Balance over view ";
             // 
@@ -401,7 +432,7 @@
             this.lblProductInfo.Location = new System.Drawing.Point(281, 48);
             this.lblProductInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductInfo.Name = "lblProductInfo";
-            this.lblProductInfo.Size = new System.Drawing.Size(87, 17);
+            this.lblProductInfo.Size = new System.Drawing.Size(66, 13);
             this.lblProductInfo.TabIndex = 33;
             this.lblProductInfo.Text = "Products log";
             // 
@@ -411,7 +442,7 @@
             this.lblFullPrice.Location = new System.Drawing.Point(7, 92);
             this.lblFullPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullPrice.Name = "lblFullPrice";
-            this.lblFullPrice.Size = new System.Drawing.Size(66, 17);
+            this.lblFullPrice.Size = new System.Drawing.Size(50, 13);
             this.lblFullPrice.TabIndex = 32;
             this.lblFullPrice.Text = "Full Price";
             // 
@@ -421,7 +452,7 @@
             this.lblProductname.Location = new System.Drawing.Point(4, 48);
             this.lblProductname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductname.Name = "lblProductname";
-            this.lblProductname.Size = new System.Drawing.Size(98, 17);
+            this.lblProductname.Size = new System.Drawing.Size(75, 13);
             this.lblProductname.TabIndex = 31;
             this.lblProductname.Text = "Product Name";
             // 
@@ -493,7 +524,7 @@
             this.clbTenantsToshare.Location = new System.Drawing.Point(13, 148);
             this.clbTenantsToshare.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.clbTenantsToshare.Name = "clbTenantsToshare";
-            this.clbTenantsToshare.Size = new System.Drawing.Size(241, 225);
+            this.clbTenantsToshare.Size = new System.Drawing.Size(241, 214);
             this.clbTenantsToshare.TabIndex = 28;
             // 
             // tbxProductname
@@ -501,7 +532,7 @@
             this.tbxProductname.Location = new System.Drawing.Point(107, 48);
             this.tbxProductname.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxProductname.Name = "tbxProductname";
-            this.tbxProductname.Size = new System.Drawing.Size(149, 22);
+            this.tbxProductname.Size = new System.Drawing.Size(149, 20);
             this.tbxProductname.TabIndex = 23;
             // 
             // lblTenantsToShareWith
@@ -510,7 +541,7 @@
             this.lblTenantsToShareWith.Location = new System.Drawing.Point(77, 130);
             this.lblTenantsToShareWith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
-            this.lblTenantsToShareWith.Size = new System.Drawing.Size(64, 17);
+            this.lblTenantsToShareWith.Size = new System.Drawing.Size(49, 13);
             this.lblTenantsToShareWith.TabIndex = 18;
             this.lblTenantsToShareWith.Text = "Tenants ";
             // 
@@ -530,7 +561,7 @@
             this.tbxFullPrice.Location = new System.Drawing.Point(107, 92);
             this.tbxFullPrice.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxFullPrice.Name = "tbxFullPrice";
-            this.tbxFullPrice.Size = new System.Drawing.Size(149, 22);
+            this.tbxFullPrice.Size = new System.Drawing.Size(149, 20);
             this.tbxFullPrice.TabIndex = 16;
             // 
             // tabPage3
@@ -546,10 +577,10 @@
             this.tabPage3.Controls.Add(this.tbxCoTopic);
             this.tabPage3.Controls.Add(this.lblMakeComplaint);
             this.tabPage3.Controls.Add(this.tbxComSub);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(949, 457);
+            this.tabPage3.Size = new System.Drawing.Size(955, 467);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compaints";
             // 
@@ -559,7 +590,7 @@
             this.lblMessageFromAdm.Location = new System.Drawing.Point(125, 101);
             this.lblMessageFromAdm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageFromAdm.Name = "lblMessageFromAdm";
-            this.lblMessageFromAdm.Size = new System.Drawing.Size(189, 17);
+            this.lblMessageFromAdm.Size = new System.Drawing.Size(142, 13);
             this.lblMessageFromAdm.TabIndex = 9;
             this.lblMessageFromAdm.Text = "Message recived from admin";
             this.lblMessageFromAdm.Visible = false;
@@ -570,7 +601,7 @@
             this.lblComplaintDiscription.Location = new System.Drawing.Point(125, 101);
             this.lblComplaintDiscription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComplaintDiscription.Name = "lblComplaintDiscription";
-            this.lblComplaintDiscription.Size = new System.Drawing.Size(138, 17);
+            this.lblComplaintDiscription.Size = new System.Drawing.Size(104, 13);
             this.lblComplaintDiscription.TabIndex = 8;
             this.lblComplaintDiscription.Text = "complaint Discription";
             // 
@@ -604,7 +635,7 @@
             this.lblSubject.Location = new System.Drawing.Point(55, 63);
             this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(57, 18);
+            this.lblSubject.Size = new System.Drawing.Size(48, 15);
             this.lblSubject.TabIndex = 5;
             this.lblSubject.Text = "Subject";
             // 
@@ -614,7 +645,7 @@
             this.cbxSendAnonymously.Location = new System.Drawing.Point(129, 298);
             this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
-            this.cbxSendAnonymously.Size = new System.Drawing.Size(151, 21);
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(116, 17);
             this.cbxSendAnonymously.TabIndex = 4;
             this.cbxSendAnonymously.Text = "Send Anonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -647,7 +678,7 @@
             this.lblMakeComplaint.Location = new System.Drawing.Point(181, 18);
             this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
-            this.lblMakeComplaint.Size = new System.Drawing.Size(206, 29);
+            this.lblMakeComplaint.Size = new System.Drawing.Size(160, 24);
             this.lblMakeComplaint.TabIndex = 1;
             this.lblMakeComplaint.Text = "Make a Complaint";
             // 
@@ -656,7 +687,7 @@
             this.tbxComSub.Location = new System.Drawing.Point(129, 60);
             this.tbxComSub.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxComSub.Name = "tbxComSub";
-            this.tbxComSub.Size = new System.Drawing.Size(164, 22);
+            this.tbxComSub.Size = new System.Drawing.Size(164, 20);
             this.tbxComSub.TabIndex = 0;
             // 
             // tabPage4
@@ -670,7 +701,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(710, 369);
+            this.tabPage4.Size = new System.Drawing.Size(955, 467);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Events";
             // 
@@ -825,7 +856,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage6.Size = new System.Drawing.Size(710, 369);
+            this.tabPage6.Size = new System.Drawing.Size(955, 467);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Agreements";
             // 
@@ -1017,42 +1048,11 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.FillWeight = 60.9137F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn6.FillWeight = 119.5432F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn7.FillWeight = 119.5432F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
             // FrmTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 457);
+            this.ClientSize = new System.Drawing.Size(979, 554);
             this.Controls.Add(this.lblCurrentUserName);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.tabControl1);
