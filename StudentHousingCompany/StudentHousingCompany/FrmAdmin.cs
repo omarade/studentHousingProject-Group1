@@ -638,7 +638,7 @@ namespace StudentHousingCompany
             }
         }
 
-        private void btnTempRefresh_Click(object sender, EventArgs e)
+        public void btnTempRefresh_Click(object sender, EventArgs e)
         {
             FillAnnouncement();
         }

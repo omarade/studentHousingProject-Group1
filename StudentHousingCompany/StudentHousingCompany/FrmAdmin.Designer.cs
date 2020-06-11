@@ -29,18 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgdAnnouncement = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAnnoCreate = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rtbHouseRules = new System.Windows.Forms.RichTextBox();
             this.btnUpdateHouseRules = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnAnnoCreate = new System.Windows.Forms.Button();
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
@@ -75,21 +81,22 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.BtnNextWeek = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cbWeekDays = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbTaskName = new System.Windows.Forms.TextBox();
             this.btnRemoveTask = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.cbWeekDays = new System.Windows.Forms.ComboBox();
             this.cbRemoveTasks = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btnAddTask = new System.Windows.Forms.Button();
+            this.BtnNextWeek = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.listView6 = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAddTask = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tbTaskName = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnSendReply = new System.Windows.Forms.Button();
             this.tbxReply = new System.Windows.Forms.TextBox();
@@ -102,24 +109,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgdAnnouncement = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTempRefresh = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -148,6 +147,101 @@
             this.tabPage1.Size = new System.Drawing.Size(1118, 495);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgdAnnouncement);
+            this.groupBox3.Controls.Add(this.btnAnnoCreate);
+            this.groupBox3.Location = new System.Drawing.Point(373, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(414, 461);
+            this.groupBox3.TabIndex = 55;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Admin Announcements";
+            // 
+            // dgdAnnouncement
+            // 
+            this.dgdAnnouncement.AllowUserToAddRows = false;
+            this.dgdAnnouncement.AllowUserToDeleteRows = false;
+            this.dgdAnnouncement.AllowUserToOrderColumns = true;
+            this.dgdAnnouncement.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdAnnouncement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgdAnnouncement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgdAnnouncement.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAnnouncement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgdAnnouncement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdAnnouncement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgdAnnouncement.Location = new System.Drawing.Point(6, 31);
+            this.dgdAnnouncement.MultiSelect = false;
+            this.dgdAnnouncement.Name = "dgdAnnouncement";
+            this.dgdAnnouncement.ReadOnly = true;
+            this.dgdAnnouncement.RowHeadersVisible = false;
+            this.dgdAnnouncement.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdAnnouncement.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgdAnnouncement.RowTemplate.Height = 24;
+            this.dgdAnnouncement.RowTemplate.ReadOnly = true;
+            this.dgdAnnouncement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgdAnnouncement.Size = new System.Drawing.Size(402, 369);
+            this.dgdAnnouncement.TabIndex = 51;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 30;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // btnAnnoCreate
+            // 
+            this.btnAnnoCreate.Location = new System.Drawing.Point(237, 416);
+            this.btnAnnoCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnnoCreate.Name = "btnAnnoCreate";
+            this.btnAnnoCreate.Size = new System.Drawing.Size(171, 29);
+            this.btnAnnoCreate.TabIndex = 2;
+            this.btnAnnoCreate.Text = "Create New Announcement";
+            this.btnAnnoCreate.UseVisualStyleBackColor = true;
+            this.btnAnnoCreate.Click += new System.EventHandler(this.btnAnnoCreate_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rtbHouseRules);
+            this.groupBox2.Controls.Add(this.btnUpdateHouseRules);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Location = new System.Drawing.Point(17, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(243, 461);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "House rules";
             // 
             // rtbHouseRules
             // 
@@ -178,17 +272,6 @@
             this.button2.Text = "Undo";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnAnnoCreate
-            // 
-            this.btnAnnoCreate.Location = new System.Drawing.Point(237, 416);
-            this.btnAnnoCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAnnoCreate.Name = "btnAnnoCreate";
-            this.btnAnnoCreate.Size = new System.Drawing.Size(171, 29);
-            this.btnAnnoCreate.TabIndex = 2;
-            this.btnAnnoCreate.Text = "Create New Announcement";
-            this.btnAnnoCreate.UseVisualStyleBackColor = true;
-            this.btnAnnoCreate.Click += new System.EventHandler(this.btnAnnoCreate_Click);
             // 
             // tpMngUsrs
             // 
@@ -550,27 +633,53 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tasks";
             // 
-            // BtnNextWeek
+            // groupBox1
             // 
-            this.BtnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNextWeek.Location = new System.Drawing.Point(337, 410);
-            this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnNextWeek.Name = "BtnNextWeek";
-            this.BtnNextWeek.Size = new System.Drawing.Size(164, 37);
-            this.BtnNextWeek.TabIndex = 13;
-            this.BtnNextWeek.Text = "Next Week";
-            this.BtnNextWeek.UseVisualStyleBackColor = true;
-            this.BtnNextWeek.Click += new System.EventHandler(this.BtnNextWeek_Click);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.tbTaskName);
+            this.groupBox1.Controls.Add(this.btnRemoveTask);
+            this.groupBox1.Controls.Add(this.cbWeekDays);
+            this.groupBox1.Controls.Add(this.cbRemoveTasks);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.btnAddTask);
+            this.groupBox1.Location = new System.Drawing.Point(17, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(292, 426);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Create/Remove Tasks";
             // 
-            // label21
+            // label12
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(22, 84);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(101, 13);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "New Task Due Day";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "New Task Title";
+            // 
+            // tbTaskName
+            // 
+            this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTaskName.Location = new System.Drawing.Point(25, 44);
+            this.tbTaskName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbTaskName.Name = "tbTaskName";
+            this.tbTaskName.Size = new System.Drawing.Size(176, 20);
+            this.tbTaskName.TabIndex = 0;
+            // 
+            // btnRemoveTask
+            // 
+            this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveTask.Location = new System.Drawing.Point(25, 369);
+            this.btnRemoveTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveTask.Name = "btnRemoveTask";
+            this.btnRemoveTask.Size = new System.Drawing.Size(132, 37);
+            this.btnRemoveTask.TabIndex = 9;
+            this.btnRemoveTask.Text = "Remove Task";
+            this.btnRemoveTask.UseVisualStyleBackColor = true;
+            this.btnRemoveTask.Click += new System.EventHandler(this.btnRemoveTask_Click);
             // 
             // cbWeekDays
             // 
@@ -591,17 +700,15 @@
             this.cbWeekDays.TabIndex = 10;
             this.cbWeekDays.SelectedIndexChanged += new System.EventHandler(this.cbWeekDays_SelectedIndexChanged);
             // 
-            // btnRemoveTask
+            // cbRemoveTasks
             // 
-            this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveTask.Location = new System.Drawing.Point(25, 369);
-            this.btnRemoveTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRemoveTask.Name = "btnRemoveTask";
-            this.btnRemoveTask.Size = new System.Drawing.Size(132, 37);
-            this.btnRemoveTask.TabIndex = 9;
-            this.btnRemoveTask.Text = "Remove Task";
-            this.btnRemoveTask.UseVisualStyleBackColor = true;
-            this.btnRemoveTask.Click += new System.EventHandler(this.btnRemoveTask_Click);
+            this.cbRemoveTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRemoveTasks.FormattingEnabled = true;
+            this.cbRemoveTasks.Location = new System.Drawing.Point(25, 331);
+            this.cbRemoveTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbRemoveTasks.Name = "cbRemoveTasks";
+            this.cbRemoveTasks.Size = new System.Drawing.Size(171, 21);
+            this.cbRemoveTasks.TabIndex = 7;
             // 
             // label14
             // 
@@ -613,15 +720,39 @@
             this.label14.TabIndex = 8;
             this.label14.Text = "Task List";
             // 
-            // cbRemoveTasks
+            // label21
             // 
-            this.cbRemoveTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRemoveTasks.FormattingEnabled = true;
-            this.cbRemoveTasks.Location = new System.Drawing.Point(25, 331);
-            this.cbRemoveTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbRemoveTasks.Name = "cbRemoveTasks";
-            this.cbRemoveTasks.Size = new System.Drawing.Size(171, 21);
-            this.cbRemoveTasks.TabIndex = 7;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(22, 84);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(101, 13);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "New Task Due Day";
+            // 
+            // btnAddTask
+            // 
+            this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTask.Location = new System.Drawing.Point(23, 146);
+            this.btnAddTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddTask.Name = "btnAddTask";
+            this.btnAddTask.Size = new System.Drawing.Size(91, 48);
+            this.btnAddTask.TabIndex = 3;
+            this.btnAddTask.Text = "Add New Task";
+            this.btnAddTask.UseVisualStyleBackColor = true;
+            this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
+            // 
+            // BtnNextWeek
+            // 
+            this.BtnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNextWeek.Location = new System.Drawing.Point(337, 410);
+            this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnNextWeek.Name = "BtnNextWeek";
+            this.BtnNextWeek.Size = new System.Drawing.Size(164, 37);
+            this.BtnNextWeek.TabIndex = 13;
+            this.BtnNextWeek.Text = "Next Week";
+            this.BtnNextWeek.UseVisualStyleBackColor = true;
+            this.BtnNextWeek.Click += new System.EventHandler(this.BtnNextWeek_Click);
             // 
             // label13
             // 
@@ -669,37 +800,6 @@
             // 
             this.columnHeader1.Text = "Due Day";
             this.columnHeader1.Width = 100;
-            // 
-            // btnAddTask
-            // 
-            this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTask.Location = new System.Drawing.Point(23, 146);
-            this.btnAddTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddTask.Name = "btnAddTask";
-            this.btnAddTask.Size = new System.Drawing.Size(91, 48);
-            this.btnAddTask.TabIndex = 3;
-            this.btnAddTask.Text = "Add New Task";
-            this.btnAddTask.UseVisualStyleBackColor = true;
-            this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(22, 29);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 13);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "New Task Title";
-            // 
-            // tbTaskName
-            // 
-            this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTaskName.Location = new System.Drawing.Point(25, 44);
-            this.tbTaskName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbTaskName.Name = "tbTaskName";
-            this.tbTaskName.Size = new System.Drawing.Size(176, 20);
-            this.tbTaskName.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -828,118 +928,6 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.tbTaskName);
-            this.groupBox1.Controls.Add(this.btnRemoveTask);
-            this.groupBox1.Controls.Add(this.cbWeekDays);
-            this.groupBox1.Controls.Add(this.cbRemoveTasks);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.btnAddTask);
-            this.groupBox1.Location = new System.Drawing.Point(17, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 426);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Create/Remove Tasks";
-            // 
-            // dgdAnnouncement
-            // 
-            this.dgdAnnouncement.AllowUserToAddRows = false;
-            this.dgdAnnouncement.AllowUserToDeleteRows = false;
-            this.dgdAnnouncement.AllowUserToOrderColumns = true;
-            this.dgdAnnouncement.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdAnnouncement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgdAnnouncement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgdAnnouncement.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdAnnouncement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgdAnnouncement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdAnnouncement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dgdAnnouncement.Location = new System.Drawing.Point(6, 31);
-            this.dgdAnnouncement.MultiSelect = false;
-            this.dgdAnnouncement.Name = "dgdAnnouncement";
-            this.dgdAnnouncement.ReadOnly = true;
-            this.dgdAnnouncement.RowHeadersVisible = false;
-            this.dgdAnnouncement.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdAnnouncement.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgdAnnouncement.RowTemplate.Height = 24;
-            this.dgdAnnouncement.RowTemplate.ReadOnly = true;
-            this.dgdAnnouncement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgdAnnouncement.Size = new System.Drawing.Size(402, 369);
-            this.dgdAnnouncement.TabIndex = 51;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 30;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // btnTempRefresh
-            // 
-            this.btnTempRefresh.Location = new System.Drawing.Point(8, 416);
-            this.btnTempRefresh.Name = "btnTempRefresh";
-            this.btnTempRefresh.Size = new System.Drawing.Size(104, 29);
-            this.btnTempRefresh.TabIndex = 53;
-            this.btnTempRefresh.Text = "temp Refresh";
-            this.btnTempRefresh.UseVisualStyleBackColor = true;
-            this.btnTempRefresh.Click += new System.EventHandler(this.btnTempRefresh_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rtbHouseRules);
-            this.groupBox2.Controls.Add(this.btnUpdateHouseRules);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(17, 17);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 461);
-            this.groupBox2.TabIndex = 54;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "House rules";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgdAnnouncement);
-            this.groupBox3.Controls.Add(this.btnTempRefresh);
-            this.groupBox3.Controls.Add(this.btnAnnoCreate);
-            this.groupBox3.Location = new System.Drawing.Point(373, 17);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(414, 461);
-            this.groupBox3.TabIndex = 55;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Admin Announcements";
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -956,18 +944,18 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.tpMngUsrs.ResumeLayout(false);
             this.tpMngUsrs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1047,7 +1035,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Button btnTempRefresh;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
     }

@@ -13,7 +13,7 @@ namespace StudentHousingCompany
     public partial class FrmAddEvent : Form
     {
         private StudentHousing studentHousing;
-        private Form TenantsForm;
+        private FrmTenant TenantsForm;
         public FrmAddEvent(FrmTenant tenantsForm)
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace StudentHousingCompany
             DateTime date = dtEvent.Value;
             studentHousing.AddEvent(EventName, date, EventDesc, studentHousing.CurrentUser.Name);
             TenantsForm.Enabled = true;
+            TenantsForm.FillEventsList();
             this.Close();
         }
 

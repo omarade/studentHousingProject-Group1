@@ -14,7 +14,7 @@ namespace StudentHousingCompany
     public partial class FrmAnnoucement : Form
     {
         private StudentHousing studentHousing;
-        private Form AdminForm;
+        private FrmAdmin AdminForm;
         public FrmAnnoucement(FrmAdmin adminForm)
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace StudentHousingCompany
         {
             studentHousing.CreateAnnouncement(tbSubject.Text, tbText.Text);
             AdminForm.Enabled = true;
+            AdminForm.FillAnnouncement();
             this.Close();
         }
 
