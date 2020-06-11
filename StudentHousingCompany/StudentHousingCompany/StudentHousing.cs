@@ -259,9 +259,9 @@ namespace StudentHousingCompany
 
             foreach (var task in Schedules)
             {
-                if (task.GetStudent() == CurrentUser.Name)
+                if (task.Student == CurrentUser.Name)
                 {
-                    taskname = task.GetTask();
+                    taskname = task.TaskName;
                 }
             }
             return taskname;
@@ -275,7 +275,7 @@ namespace StudentHousingCompany
         {
             foreach (var task in Schedules)
             {
-                if (task.GetTask() == taskName)
+                if (task.TaskName == taskName)
                 {
                     task.SetStatus(true);
                 }
@@ -326,7 +326,7 @@ namespace StudentHousingCompany
         {
             for (int i = 0; i < Schedules.Count; i++)
             {
-                if (Schedules[i].GetTask() == taskName)
+                if (Schedules[i].TaskName == taskName)
                 {
                     Schedules.RemoveAt(i);
                 }

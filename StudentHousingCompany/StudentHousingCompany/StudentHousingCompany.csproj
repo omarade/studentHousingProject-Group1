@@ -63,6 +63,12 @@
     <Compile Include="FrmAddEvent.Designer.cs">
       <DependentUpon>FrmAddEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnnoucement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnnoucement.Designer.cs">
+      <DependentUpon>FrmAnnoucement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnnoucement.resx">
+      <DependentUpon>FrmAnnoucement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

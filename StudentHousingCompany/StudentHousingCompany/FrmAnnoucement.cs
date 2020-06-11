@@ -10,30 +10,28 @@ using System.Windows.Forms;
 
 namespace StudentHousingCompany
 {
-    public partial class FrmAddEvent : Form
+    
+    public partial class FrmAnnoucement : Form
     {
         private StudentHousing studentHousing;
-        private Form TenantsForm;
-        public FrmAddEvent(FrmTenant tenantsForm)
+        private Form AdminForm;
+        public FrmAnnoucement(FrmAdmin adminForm)
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
-            TenantsForm = tenantsForm;
+            AdminForm = adminForm;
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            string EventName = tbEventName.Text;
-            string EventDesc = tbEventDesc.Text;
-            DateTime date = dtEvent.Value;
-            studentHousing.AddEvent(EventName, date, EventDesc, studentHousing.CurrentUser.Name);
-            TenantsForm.Enabled = true;
+            studentHousing.CreateAnnouncement(tbSubject.Text, tbText.Text);
+            AdminForm.Enabled = true;
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            TenantsForm.Enabled = true;
+            AdminForm.Enabled = true;
             this.Close();
         }
     }

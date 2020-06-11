@@ -360,7 +360,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {
-                if (TaskName == task.GetTask())
+                if (TaskName == task.TaskName)
                 {
                     NameExsists = true;
                 }
@@ -446,7 +446,7 @@ namespace StudentHousingCompany
 
             foreach (var task in schedule)
             {
-                cbRemoveTasks.Items.Add(task.GetTask());
+                cbRemoveTasks.Items.Add(task.TaskName);
             }
         }
 
@@ -459,7 +459,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {          
-                if (task.GetStatus() == true)
+                if (task.Status == true)
                 {
                     listView6.Items[counter].BackColor = Color.Green;
                 }
@@ -568,9 +568,9 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {              
-                if (task.GetDueDate().Date < DateTime.Now.Date)
+                if (task.DueDate.Date < DateTime.Now.Date)
                 {                    
-                    if (task.GetStatus() == false)
+                    if (task.Status == false)
                     {
                         listView6.Items[counter].BackColor = Color.Red;
                     }
@@ -620,9 +620,27 @@ namespace StudentHousingCompany
 
         private void btnAnnoCreate_Click(object sender, EventArgs e)
         {
-            studentHousing.CreateAnnouncement(tbAnnoSubject.Text,tbAnnoText.Text);
-            tbAnnoSubject.Text = "";
-            tbAnnoText.Text = "";
+            this.Enabled = false;
+            var frmAnnouncement = new FrmAnnoucement(this);
+            frmAnnouncement.Show();
+
+            FillAnnouncement();
+
+        }
+
+        public void FillAnnouncement()
+        {
+            dgdAnnouncement.Rows.Clear();
+
+            foreach (var currentAnno in studentHousing.Announcements)
+            {
+                dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
+            }
+        }
+
+        private void btnTempRefresh_Click(object sender, EventArgs e)
+        {
+            FillAnnouncement();
         }
     }
 }

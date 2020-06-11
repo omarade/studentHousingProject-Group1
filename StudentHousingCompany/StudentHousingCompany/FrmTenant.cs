@@ -184,7 +184,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {
-                if (task.GetStatus() == true)
+                if (task.Status == true)
                 {
                     listView6.Items[counter].BackColor = Color.Green;
                 }
@@ -204,9 +204,9 @@ namespace StudentHousingCompany
             foreach (var task in studentHousing.Schedules)
             {
                 listView6.Items.Add(task.GetInfo());
-                if (task.GetStudent() == studentHousing.CurrentUser.Name)
+                if (task.Student == studentHousing.CurrentUser.Name)
                 {
-                    clbTenantTask.Items.Add(task.GetTask());
+                    clbTenantTask.Items.Add(task.TaskName);
                 }
             }
 
@@ -222,8 +222,8 @@ namespace StudentHousingCompany
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
             
-            this.Hide();
-            var frmAddEvent = new FrmAddEvent();
+            this.Enabled = false;
+            var frmAddEvent = new FrmAddEvent(this);
             frmAddEvent.Show();
 
             FillEventsList();

@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rtbHouseRules = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateHouseRules = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAnnoCreate = new System.Windows.Forms.Button();
-            this.tbAnnoText = new System.Windows.Forms.TextBox();
-            this.tbAnnoSubject = new System.Windows.Forms.TextBox();
             this.tpMngUsrs = new System.Windows.Forms.TabPage();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.dgdUsers = new System.Windows.Forms.DataGridView();
@@ -104,12 +102,24 @@
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgdAnnouncement = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnTempRefresh = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tpMngUsrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -129,15 +139,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.rtbHouseRules);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.btnUpdateHouseRules);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.btnAnnoCreate);
-            this.tabPage1.Controls.Add(this.tbAnnoText);
-            this.tabPage1.Controls.Add(this.tbAnnoSubject);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -148,27 +151,18 @@
             // 
             // rtbHouseRules
             // 
-            this.rtbHouseRules.Location = new System.Drawing.Point(28, 37);
+            this.rtbHouseRules.Location = new System.Drawing.Point(6, 31);
             this.rtbHouseRules.Name = "rtbHouseRules";
-            this.rtbHouseRules.Size = new System.Drawing.Size(190, 381);
+            this.rtbHouseRules.Size = new System.Drawing.Size(231, 370);
             this.rtbHouseRules.TabIndex = 9;
             this.rtbHouseRules.Text = "";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "House rules";
-            // 
             // btnUpdateHouseRules
             // 
-            this.btnUpdateHouseRules.Location = new System.Drawing.Point(28, 447);
+            this.btnUpdateHouseRules.Location = new System.Drawing.Point(170, 416);
             this.btnUpdateHouseRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateHouseRules.Name = "btnUpdateHouseRules";
-            this.btnUpdateHouseRules.Size = new System.Drawing.Size(67, 31);
+            this.btnUpdateHouseRules.Size = new System.Drawing.Size(67, 29);
             this.btnUpdateHouseRules.TabIndex = 7;
             this.btnUpdateHouseRules.Text = "Confirm";
             this.btnUpdateHouseRules.UseVisualStyleBackColor = true;
@@ -176,60 +170,25 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(101, 447);
+            this.button2.Location = new System.Drawing.Point(6, 416);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 31);
+            this.button2.Size = new System.Drawing.Size(67, 29);
             this.button2.TabIndex = 6;
             this.button2.Text = "Undo";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(375, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Announcment";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(375, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Subject";
-            // 
             // btnAnnoCreate
             // 
-            this.btnAnnoCreate.Location = new System.Drawing.Point(630, 447);
+            this.btnAnnoCreate.Location = new System.Drawing.Point(237, 416);
             this.btnAnnoCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnnoCreate.Name = "btnAnnoCreate";
-            this.btnAnnoCreate.Size = new System.Drawing.Size(168, 31);
+            this.btnAnnoCreate.Size = new System.Drawing.Size(171, 29);
             this.btnAnnoCreate.TabIndex = 2;
-            this.btnAnnoCreate.Text = "Send";
+            this.btnAnnoCreate.Text = "Create New Announcement";
             this.btnAnnoCreate.UseVisualStyleBackColor = true;
             this.btnAnnoCreate.Click += new System.EventHandler(this.btnAnnoCreate_Click);
-            // 
-            // tbAnnoText
-            // 
-            this.tbAnnoText.Location = new System.Drawing.Point(375, 94);
-            this.tbAnnoText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbAnnoText.Multiline = true;
-            this.tbAnnoText.Name = "tbAnnoText";
-            this.tbAnnoText.Size = new System.Drawing.Size(423, 331);
-            this.tbAnnoText.TabIndex = 1;
-            // 
-            // tbAnnoSubject
-            // 
-            this.tbAnnoSubject.Location = new System.Drawing.Point(375, 37);
-            this.tbAnnoSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbAnnoSubject.Name = "tbAnnoSubject";
-            this.tbAnnoSubject.Size = new System.Drawing.Size(423, 20);
-            this.tbAnnoSubject.TabIndex = 0;
             // 
             // tpMngUsrs
             // 
@@ -284,20 +243,20 @@
             this.dgdUsers.AllowUserToDeleteRows = false;
             this.dgdUsers.AllowUserToOrderColumns = true;
             this.dgdUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgdUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdUsers.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hxtId,
@@ -313,9 +272,9 @@
             this.dgdUsers.ReadOnly = true;
             this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgdUsers.RowTemplate.Height = 24;
             this.dgdUsers.RowTemplate.ReadOnly = true;
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -579,17 +538,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.BtnNextWeek);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.cbWeekDays);
-            this.tabPage2.Controls.Add(this.btnRemoveTask);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.cbRemoveTasks);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.listView6);
-            this.tabPage2.Controls.Add(this.btnAddTask);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.tbTaskName);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -600,8 +552,8 @@
             // 
             // BtnNextWeek
             // 
-            this.BtnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNextWeek.Location = new System.Drawing.Point(337, 449);
+            this.BtnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNextWeek.Location = new System.Drawing.Point(337, 410);
             this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnNextWeek.Name = "BtnNextWeek";
             this.BtnNextWeek.Size = new System.Drawing.Size(164, 37);
@@ -613,16 +565,16 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(27, 124);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(22, 84);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(109, 20);
+            this.label21.Size = new System.Drawing.Size(101, 13);
             this.label21.TabIndex = 11;
-            this.label21.Text = "Task Due Day";
+            this.label21.Text = "New Task Due Day";
             // 
             // cbWeekDays
             // 
-            this.cbWeekDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWeekDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbWeekDays.FormattingEnabled = true;
             this.cbWeekDays.Items.AddRange(new object[] {
             "Monday",
@@ -632,52 +584,52 @@
             "Friday",
             "Saterday",
             "Sunday"});
-            this.cbWeekDays.Location = new System.Drawing.Point(32, 151);
+            this.cbWeekDays.Location = new System.Drawing.Point(25, 109);
             this.cbWeekDays.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbWeekDays.Name = "cbWeekDays";
-            this.cbWeekDays.Size = new System.Drawing.Size(164, 28);
+            this.cbWeekDays.Size = new System.Drawing.Size(164, 21);
             this.cbWeekDays.TabIndex = 10;
             this.cbWeekDays.SelectedIndexChanged += new System.EventHandler(this.cbWeekDays_SelectedIndexChanged);
             // 
             // btnRemoveTask
             // 
-            this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveTask.Location = new System.Drawing.Point(32, 448);
+            this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveTask.Location = new System.Drawing.Point(25, 369);
             this.btnRemoveTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveTask.Name = "btnRemoveTask";
             this.btnRemoveTask.Size = new System.Drawing.Size(132, 37);
             this.btnRemoveTask.TabIndex = 9;
-            this.btnRemoveTask.Text = "Remove";
+            this.btnRemoveTask.Text = "Remove Task";
             this.btnRemoveTask.UseVisualStyleBackColor = true;
             this.btnRemoveTask.Click += new System.EventHandler(this.btnRemoveTask_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(27, 382);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(25, 306);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 20);
+            this.label14.Size = new System.Drawing.Size(50, 13);
             this.label14.TabIndex = 8;
-            this.label14.Text = "Tasks";
+            this.label14.Text = "Task List";
             // 
             // cbRemoveTasks
             // 
-            this.cbRemoveTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRemoveTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRemoveTasks.FormattingEnabled = true;
-            this.cbRemoveTasks.Location = new System.Drawing.Point(32, 409);
+            this.cbRemoveTasks.Location = new System.Drawing.Point(25, 331);
             this.cbRemoveTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRemoveTasks.Name = "cbRemoveTasks";
-            this.cbRemoveTasks.Size = new System.Drawing.Size(171, 28);
+            this.cbRemoveTasks.Size = new System.Drawing.Size(171, 21);
             this.cbRemoveTasks.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(331, 50);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(334, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(129, 20);
+            this.label13.Size = new System.Drawing.Size(91, 13);
             this.label13.TabIndex = 6;
             this.label13.Text = "This Week Tasks";
             // 
@@ -688,12 +640,12 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader1});
-            this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(337, 93);
+            this.listView6.Location = new System.Drawing.Point(337, 50);
             this.listView6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(697, 354);
+            this.listView6.Size = new System.Drawing.Size(697, 335);
             this.listView6.TabIndex = 5;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -720,33 +672,33 @@
             // 
             // btnAddTask
             // 
-            this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTask.Location = new System.Drawing.Point(32, 220);
+            this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTask.Location = new System.Drawing.Point(23, 146);
             this.btnAddTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddTask.Name = "btnAddTask";
-            this.btnAddTask.Size = new System.Drawing.Size(88, 44);
+            this.btnAddTask.Size = new System.Drawing.Size(91, 48);
             this.btnAddTask.TabIndex = 3;
-            this.btnAddTask.Text = "Add";
+            this.btnAddTask.Text = "Add New Task";
             this.btnAddTask.UseVisualStyleBackColor = true;
             this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(27, 32);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 29);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 20);
+            this.label12.Size = new System.Drawing.Size(79, 13);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Task Title";
+            this.label12.Text = "New Task Title";
             // 
             // tbTaskName
             // 
-            this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTaskName.Location = new System.Drawing.Point(32, 73);
+            this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTaskName.Location = new System.Drawing.Point(25, 44);
             this.tbTaskName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTaskName.Name = "tbTaskName";
-            this.tbTaskName.Size = new System.Drawing.Size(176, 26);
+            this.tbTaskName.Size = new System.Drawing.Size(176, 20);
             this.tbTaskName.TabIndex = 0;
             // 
             // tabPage3
@@ -876,6 +828,118 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.tbTaskName);
+            this.groupBox1.Controls.Add(this.btnRemoveTask);
+            this.groupBox1.Controls.Add(this.cbWeekDays);
+            this.groupBox1.Controls.Add(this.cbRemoveTasks);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.btnAddTask);
+            this.groupBox1.Location = new System.Drawing.Point(17, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(292, 426);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Create/Remove Tasks";
+            // 
+            // dgdAnnouncement
+            // 
+            this.dgdAnnouncement.AllowUserToAddRows = false;
+            this.dgdAnnouncement.AllowUserToDeleteRows = false;
+            this.dgdAnnouncement.AllowUserToOrderColumns = true;
+            this.dgdAnnouncement.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdAnnouncement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgdAnnouncement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgdAnnouncement.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdAnnouncement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgdAnnouncement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdAnnouncement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgdAnnouncement.Location = new System.Drawing.Point(6, 31);
+            this.dgdAnnouncement.MultiSelect = false;
+            this.dgdAnnouncement.Name = "dgdAnnouncement";
+            this.dgdAnnouncement.ReadOnly = true;
+            this.dgdAnnouncement.RowHeadersVisible = false;
+            this.dgdAnnouncement.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.dgdAnnouncement.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgdAnnouncement.RowTemplate.Height = 24;
+            this.dgdAnnouncement.RowTemplate.ReadOnly = true;
+            this.dgdAnnouncement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgdAnnouncement.Size = new System.Drawing.Size(402, 369);
+            this.dgdAnnouncement.TabIndex = 51;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 30;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // btnTempRefresh
+            // 
+            this.btnTempRefresh.Location = new System.Drawing.Point(8, 416);
+            this.btnTempRefresh.Name = "btnTempRefresh";
+            this.btnTempRefresh.Size = new System.Drawing.Size(104, 29);
+            this.btnTempRefresh.TabIndex = 53;
+            this.btnTempRefresh.Text = "temp Refresh";
+            this.btnTempRefresh.UseVisualStyleBackColor = true;
+            this.btnTempRefresh.Click += new System.EventHandler(this.btnTempRefresh_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rtbHouseRules);
+            this.groupBox2.Controls.Add(this.btnUpdateHouseRules);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Location = new System.Drawing.Point(17, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(243, 461);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "House rules";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgdAnnouncement);
+            this.groupBox3.Controls.Add(this.btnTempRefresh);
+            this.groupBox3.Controls.Add(this.btnAnnoCreate);
+            this.groupBox3.Location = new System.Drawing.Point(373, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(414, 461);
+            this.groupBox3.TabIndex = 55;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Admin Announcements";
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -892,7 +956,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tpMngUsrs.ResumeLayout(false);
             this.tpMngUsrs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdUsers)).EndInit();
@@ -900,6 +963,11 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -912,13 +980,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tpMngUsrs;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAnnoCreate;
-        private System.Windows.Forms.TextBox tbAnnoText;
-        private System.Windows.Forms.TextBox tbAnnoSubject;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdateHouseRules;
         private System.Windows.Forms.Button btnAddTask;
         private System.Windows.Forms.Label label12;
@@ -979,5 +1042,13 @@
         private System.Windows.Forms.Button btnSendReply;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.RichTextBox rtbHouseRules;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgdAnnouncement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btnTempRefresh;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

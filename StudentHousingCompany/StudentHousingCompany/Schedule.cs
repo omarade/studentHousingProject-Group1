@@ -9,10 +9,10 @@ namespace StudentHousingCompany
 {
     class Schedule
     {
-        private string Taskname;
-        private DateTime DueDate;
-        private string Student;
-        private bool Status;
+        public string TaskName { get; private set; }
+        public DateTime DueDate { get; private set; }
+        public string Student { get; private set; }
+        public bool Status { get; private set; }
 
         //Construtor
 
@@ -36,7 +36,7 @@ namespace StudentHousingCompany
         /// <param name="taskName">Name of the task</param>
         public void SetTaskName(string taskName)
         {
-            this.Taskname = taskName;
+            this.TaskName = taskName;
         }
 
         /// <summary>
@@ -120,41 +120,19 @@ namespace StudentHousingCompany
             string[] arr = new string[4];
             ListViewItem itm;
             //add items to ListView
-            arr[0] = GetStudent();
-            arr[1] = GetTask();
-            if (GetStatus() == false)
+            arr[0] = Student;
+            arr[1] = TaskName;
+            if (Status == false)
             {
                 arr[2] = "Not Completed";
-            } else if (GetStatus() == true)
+            } else if (Status == true)
             {
                 arr[2] = "Completed";
             }
-            arr[3] = GetDueDate().ToString("dd/MM/yyyy");
+            arr[3] = DueDate.ToString("dd/MM/yyyy");
             itm = new ListViewItem(arr);
 
             return itm;
         }
-
-
-        public string GetTask()
-        {
-            return this.Taskname;
-        }
-
-        public string GetStudent()
-        {
-            return this.Student;
-        }
-
-        public bool GetStatus()
-        {
-            return this.Status;
-        }
-
-        public DateTime GetDueDate()
-        {
-            return this.DueDate;
-        }
-
     }
 }

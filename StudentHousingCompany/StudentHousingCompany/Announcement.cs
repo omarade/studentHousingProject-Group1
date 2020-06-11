@@ -21,8 +21,5 @@ namespace StudentHousingCompany
             AnnouncementText = announcText;
             idSeeder++;
         }
-
-
-
     }
 }
