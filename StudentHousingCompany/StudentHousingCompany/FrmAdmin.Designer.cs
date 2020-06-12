@@ -97,6 +97,10 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgdComp = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complaints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSendReply = new System.Windows.Forms.Button();
             this.tbxReply = new System.Windows.Forms.TextBox();
             this.btnReplyToComp = new System.Windows.Forms.Button();
@@ -108,6 +112,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
+            this.tmrUpdateComplaintes = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -120,6 +125,7 @@
             this.tabPage2.SuspendLayout();
             this.gbTasks.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdComp)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -827,6 +833,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.dgdComp);
             this.tabPage3.Controls.Add(this.btnSendReply);
             this.tabPage3.Controls.Add(this.tbxReply);
             this.tabPage3.Controls.Add(this.btnReplyToComp);
@@ -841,9 +848,67 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
             // 
+            // dgdComp
+            // 
+            this.dgdComp.AllowUserToAddRows = false;
+            this.dgdComp.AllowUserToDeleteRows = false;
+            this.dgdComp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgdComp.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgdComp.CausesValidation = false;
+            this.dgdComp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdComp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Sender,
+            this.Complaints});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdComp.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgdComp.Location = new System.Drawing.Point(40, 69);
+            this.dgdComp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgdComp.MultiSelect = false;
+            this.dgdComp.Name = "dgdComp";
+            this.dgdComp.ReadOnly = true;
+            this.dgdComp.RowHeadersVisible = false;
+            this.dgdComp.RowHeadersWidth = 51;
+            this.dgdComp.RowTemplate.Height = 24;
+            this.dgdComp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgdComp.Size = new System.Drawing.Size(691, 412);
+            this.dgdComp.TabIndex = 7;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID.HeaderText = "Complaint ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 107;
+            // 
+            // Sender
+            // 
+            this.Sender.HeaderText = "Sender";
+            this.Sender.MinimumWidth = 6;
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            // 
+            // Complaints
+            // 
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Complaints.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Complaints.HeaderText = "Recieved Complaintes";
+            this.Complaints.MinimumWidth = 6;
+            this.Complaints.Name = "Complaints";
+            this.Complaints.ReadOnly = true;
+            // 
             // btnSendReply
             // 
-            this.btnSendReply.Location = new System.Drawing.Point(179, 411);
+            this.btnSendReply.Location = new System.Drawing.Point(353, 506);
+            this.btnSendReply.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendReply.Name = "btnSendReply";
             this.btnSendReply.Size = new System.Drawing.Size(88, 66);
             this.btnSendReply.TabIndex = 6;
@@ -854,12 +919,14 @@
             // 
             // tbxReply
             // 
-            this.tbxReply.Location = new System.Drawing.Point(38, 68);
+            this.tbxReply.Location = new System.Drawing.Point(40, 69);
+            this.tbxReply.Margin = new System.Windows.Forms.Padding(4);
             this.tbxReply.Multiline = true;
             this.tbxReply.Name = "tbxReply";
-            this.tbxReply.Size = new System.Drawing.Size(379, 292);
+            this.tbxReply.Size = new System.Drawing.Size(689, 409);
             this.tbxReply.TabIndex = 5;
             this.tbxReply.Visible = false;
+            this.tbxReply.WordWrap = false;
             // 
             // btnReplyToComp
             // 
@@ -875,11 +942,14 @@
             // 
             // lbxComp
             // 
+            this.lbxComp.AllowDrop = true;
             this.lbxComp.FormattingEnabled = true;
-            this.lbxComp.Location = new System.Drawing.Point(40, 68);
-            this.lbxComp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbxComp.ItemHeight = 16;
+            this.lbxComp.Location = new System.Drawing.Point(941, 69);
+            this.lbxComp.Margin = new System.Windows.Forms.Padding(5);
             this.lbxComp.Name = "lbxComp";
-            this.lbxComp.Size = new System.Drawing.Size(377, 290);
+            this.lbxComp.Size = new System.Drawing.Size(215, 404);
+            this.lbxComp.Sorted = true;
             this.lbxComp.TabIndex = 3;
             // 
             // btnComplaintResolve
@@ -951,6 +1021,11 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // tmrUpdateComplaintes
+            // 
+            this.tmrUpdateComplaintes.Interval = 2000;
+            this.tmrUpdateComplaintes.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -984,6 +1059,7 @@
             this.gbTasks.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdComp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1050,7 +1126,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtPhoneNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtPostcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxtAddress;
-        private System.Windows.Forms.ListBox lbxComp;
         private System.Windows.Forms.Button btnReplyToComp;
         private System.Windows.Forms.TextBox tbxReply;
         private System.Windows.Forms.Button btnSendReply;
@@ -1065,5 +1140,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox gbHouseRules;
+        private System.Windows.Forms.Timer tmrUpdateComplaintes;
+        private System.Windows.Forms.ListBox lbxComp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complaints;
+        private System.Windows.Forms.DataGridView dgdComp;
     }
 }

@@ -587,30 +587,32 @@
             // lblMessageFromAdm
             // 
             this.lblMessageFromAdm.AutoSize = true;
-            this.lblMessageFromAdm.Location = new System.Drawing.Point(125, 101);
+            this.lblMessageFromAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageFromAdm.Location = new System.Drawing.Point(9, 136);
             this.lblMessageFromAdm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageFromAdm.Name = "lblMessageFromAdm";
-            this.lblMessageFromAdm.Size = new System.Drawing.Size(142, 13);
+            this.lblMessageFromAdm.Size = new System.Drawing.Size(135, 34);
             this.lblMessageFromAdm.TabIndex = 9;
-            this.lblMessageFromAdm.Text = "Message recived from admin";
+            this.lblMessageFromAdm.Text = "Message recived \r\nfrom admin";
             this.lblMessageFromAdm.Visible = false;
             // 
             // lblComplaintDiscription
             // 
             this.lblComplaintDiscription.AutoSize = true;
-            this.lblComplaintDiscription.Location = new System.Drawing.Point(125, 101);
+            this.lblComplaintDiscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComplaintDiscription.Location = new System.Drawing.Point(11, 136);
             this.lblComplaintDiscription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComplaintDiscription.Name = "lblComplaintDiscription";
-            this.lblComplaintDiscription.Size = new System.Drawing.Size(104, 13);
+            this.lblComplaintDiscription.Size = new System.Drawing.Size(85, 34);
             this.lblComplaintDiscription.TabIndex = 8;
-            this.lblComplaintDiscription.Text = "complaint Discription";
+            this.lblComplaintDiscription.Text = "Complaint\r\nDiscription";
             // 
             // btnMessageDelete
             // 
-            this.btnMessageDelete.Location = new System.Drawing.Point(268, 335);
+            this.btnMessageDelete.Location = new System.Drawing.Point(12, 345);
             this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageDelete.Name = "btnMessageDelete";
-            this.btnMessageDelete.Size = new System.Drawing.Size(75, 55);
+            this.btnMessageDelete.Size = new System.Drawing.Size(164, 46);
             this.btnMessageDelete.TabIndex = 7;
             this.btnMessageDelete.Text = "Message is read";
             this.btnMessageDelete.UseVisualStyleBackColor = true;
@@ -619,44 +621,45 @@
             // 
             // tbxReplyFromAdm
             // 
-            this.tbxReplyFromAdm.Location = new System.Drawing.Point(129, 135);
+            this.tbxReplyFromAdm.Location = new System.Drawing.Point(196, 108);
             this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5);
             this.tbxReplyFromAdm.Multiline = true;
             this.tbxReplyFromAdm.Name = "tbxReplyFromAdm";
             this.tbxReplyFromAdm.ReadOnly = true;
-            this.tbxReplyFromAdm.Size = new System.Drawing.Size(264, 154);
+            this.tbxReplyFromAdm.Size = new System.Drawing.Size(728, 311);
             this.tbxReplyFromAdm.TabIndex = 6;
             this.tbxReplyFromAdm.Visible = false;
             // 
             // lblSubject
             // 
             this.lblSubject.AutoSize = true;
-            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(55, 63);
+            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubject.Location = new System.Drawing.Point(9, 65);
             this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(48, 15);
+            this.lblSubject.Size = new System.Drawing.Size(62, 17);
             this.lblSubject.TabIndex = 5;
             this.lblSubject.Text = "Subject";
             // 
             // cbxSendAnonymously
             // 
             this.cbxSendAnonymously.AutoSize = true;
-            this.cbxSendAnonymously.Location = new System.Drawing.Point(129, 298);
+            this.cbxSendAnonymously.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(10, 314);
             this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
-            this.cbxSendAnonymously.Size = new System.Drawing.Size(116, 17);
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(127, 38);
             this.cbxSendAnonymously.TabIndex = 4;
-            this.cbxSendAnonymously.Text = "Send Anonymously";
+            this.cbxSendAnonymously.Text = "Send            \r\nAnonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbxSendAnonymously.UseVisualStyleBackColor = true;
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(129, 335);
+            this.btnSendComplaint.Location = new System.Drawing.Point(8, 382);
             this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(100, 68);
+            this.btnSendComplaint.Size = new System.Drawing.Size(170, 46);
             this.btnSendComplaint.TabIndex = 3;
             this.btnSendComplaint.Text = "Send Complaint";
             this.btnSendComplaint.UseVisualStyleBackColor = true;
@@ -664,18 +667,18 @@
             // 
             // tbxCoTopic
             // 
-            this.tbxCoTopic.Location = new System.Drawing.Point(129, 135);
+            this.tbxCoTopic.Location = new System.Drawing.Point(196, 108);
             this.tbxCoTopic.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxCoTopic.Multiline = true;
             this.tbxCoTopic.Name = "tbxCoTopic";
-            this.tbxCoTopic.Size = new System.Drawing.Size(264, 154);
+            this.tbxCoTopic.Size = new System.Drawing.Size(728, 311);
             this.tbxCoTopic.TabIndex = 2;
             // 
             // lblMakeComplaint
             // 
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMakeComplaint.Location = new System.Drawing.Point(181, 18);
+            this.lblMakeComplaint.Location = new System.Drawing.Point(141, 18);
             this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
             this.lblMakeComplaint.Size = new System.Drawing.Size(160, 24);
@@ -684,7 +687,7 @@
             // 
             // tbxComSub
             // 
-            this.tbxComSub.Location = new System.Drawing.Point(129, 60);
+            this.tbxComSub.Location = new System.Drawing.Point(196, 60);
             this.tbxComSub.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tbxComSub.Name = "tbxComSub";
             this.tbxComSub.Size = new System.Drawing.Size(164, 20);

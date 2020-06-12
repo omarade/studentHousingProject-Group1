@@ -194,30 +194,6 @@ namespace StudentHousingCompany
             AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
             AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
             AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
-
-            Complaint newComplaine = new Complaint("Subject 1 ", "topice 1", 1);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2", "topice1 2 ", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2", "topice 12 ", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 1 32", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 17", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 16", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 14", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 13", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 26", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 20", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 4", 2);
-            Complaintss.Add(newComplaine);
-
             HouseRules = "1. Test\n2. The\n3. House\n4. Rules";
         }
 
