@@ -13,10 +13,12 @@ namespace StudentHousingCompany
     public partial class FrmAddEvent : Form
     {
         private StudentHousing studentHousing;
-        public FrmAddEvent()
+        private FrmTenant TenantsForm;
+        public FrmAddEvent(FrmTenant tenantsForm)
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
+            TenantsForm = tenantsForm;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -25,16 +27,15 @@ namespace StudentHousingCompany
             string EventDesc = tbEventDesc.Text;
             DateTime date = dtEvent.Value;
             studentHousing.AddEvent(EventName, date, EventDesc, studentHousing.CurrentUser.Name);
+            TenantsForm.Enabled = true;
+            TenantsForm.FillEventsList();
             this.Close();
-            var frmTenant = new FrmTenant();
-            frmTenant.Show();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            TenantsForm.Enabled = true;
             this.Close();
-            var frmTenant = new FrmTenant();
-            frmTenant.Show();
         }
     }
 }

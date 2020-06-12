@@ -32,6 +32,10 @@ namespace StudentHousingCompany
         /// </summary>
         public List<Complaint> Complaintss { get; set; }
 
+        public List<Announcement> Announcements { get; }
+
+        public string HouseRules { get; set; }
+
         private StudentHousing()
         {
 
@@ -41,6 +45,8 @@ namespace StudentHousingCompany
             Complaintss = new List<Complaint>();
             Events = new List<Event>();
             Agreements = new List<Agreement>();
+            Announcements = new List<Announcement>();
+            AddDummyData();
 
         }
 
@@ -188,28 +194,7 @@ namespace StudentHousingCompany
             AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
             AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
             AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
-            Complaint newComplaine = new Complaint("Subject 1 ", "topice 1", 1);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2", "topice1 2 ", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2", "topice 12 ", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 1 32", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 17", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 16", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 14", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 13", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 26", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 20", 2);
-            Complaintss.Add(newComplaine);
-            newComplaine = new Complaint("Subject 2,", "topice 4", 2);
-            Complaintss.Add(newComplaine);
+            HouseRules = "1. Test\n2. The\n3. House\n4. Rules";
         }
 
         /// <summary>
@@ -252,9 +237,9 @@ namespace StudentHousingCompany
 
             foreach (var task in Schedules)
             {
-                if (task.GetStudent() == CurrentUser.Name)
+                if (task.Student == CurrentUser.Name)
                 {
-                    taskname = task.GetTask();
+                    taskname = task.TaskName;
                 }
             }
             return taskname;
@@ -268,7 +253,7 @@ namespace StudentHousingCompany
         {
             foreach (var task in Schedules)
             {
-                if (task.GetTask() == taskName)
+                if (task.TaskName == taskName)
                 {
                     task.SetStatus(true);
                 }
@@ -319,7 +304,7 @@ namespace StudentHousingCompany
         {
             for (int i = 0; i < Schedules.Count; i++)
             {
-                if (Schedules[i].GetTask() == taskName)
+                if (Schedules[i].TaskName == taskName)
                 {
                     Schedules.RemoveAt(i);
                 }
@@ -400,7 +385,11 @@ namespace StudentHousingCompany
             Agreements.Add(agreement);
         }
 
-        
+        public void CreateAnnouncement(string announceSubject,string announceText)
+        {
+            Announcement newAnnouncement = new Announcement(announceSubject ,announceText);
+            Announcements.Add(newAnnouncement);
+        }
 
     }
 }

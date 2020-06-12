@@ -14,7 +14,7 @@ namespace StudentHousingCompany
     public partial class FrmTenant : Form
     {
         private StudentHousing studentHousing;
-        private Complaint complaint;
+        
         public FrmTenant()
         {
 
@@ -24,7 +24,7 @@ namespace StudentHousingCompany
             ShowAgreements();
 
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            complaint = Complaint.Instance;
+            
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
                 if (tenant.Id != studentHousing.CurrentUser.Id)
@@ -36,6 +36,8 @@ namespace StudentHousingCompany
             timer1.Start();
             ShowTasks();
             FillEventsList();
+            rtbHouseRules.Text = studentHousing.HouseRules;
+            FillAnnouncement();
 
         }
 
@@ -122,13 +124,6 @@ namespace StudentHousingCompany
             ListViewItem item1 = new ListViewItem(new[] { newProduct.Name, Convert.ToString(newProduct.DevidedPrice), sharedwith });
             lvwProductSharingInfo.Items.Add(item1);
 
-            FILLBALANCELIST();
-
-
-        }
-
-        public void FILLBALANCELIST()
-        {
             lvwBlancesOverView.Items.Clear();
 
             foreach (Tenant tenant in studentHousing.GetTenants())
@@ -136,33 +131,31 @@ namespace StudentHousingCompany
                 ListViewItem item = new ListViewItem(new[] { Convert.ToString(tenant.Id), tenant.Name, Convert.ToString(tenant.Balance) });
                 lvwBlancesOverView.Items.Add(item);
             }
-        }
 
-        string comSub;
-        string comTopic;
+
+        }        
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
-            Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text, studentHousing.CurrentUser.Id);
+            Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text);
             if (cbxSendAnonymously.Checked)
             {
-                newcomplaint.Anonymous = false;
+                newcomplaint.Anonymous = true;
             }
             else
             {
-                foreach(Tenant ten in studentHousing.GetTenants())
+                newcomplaint.Anonymous = false;
+            }
+
+            foreach (Tenant ten in studentHousing.GetTenants())
+            {
+                if (ten.Id == studentHousing.CurrentUser.Id)
                 {
-                    if(newcomplaint.TenID == ten.Id)
-                    {
-                        newcomplaint.TenName = ten.Name;
-                    }
+                    ten.Complaints.Add(newcomplaint);
                 }
             }
 
-
             this.studentHousing.Complaintss.Add(newcomplaint);
         }
-
-
 
         private void btnTaskComplete_Click(object sender, EventArgs e)
         {//Mark checked Tasks as completed 
@@ -185,7 +178,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {
-                if (task.GetStatus() == true)
+                if (task.Status == true)
                 {
                     listView6.Items[counter].BackColor = Color.Green;
                 }
@@ -205,9 +198,9 @@ namespace StudentHousingCompany
             foreach (var task in studentHousing.Schedules)
             {
                 listView6.Items.Add(task.GetInfo());
-                if (task.GetStudent() == studentHousing.CurrentUser.Name)
+                if (task.Student == studentHousing.CurrentUser.Name)
                 {
-                    clbTenantTask.Items.Add(task.GetTask());
+                    clbTenantTask.Items.Add(task.TaskName);
                 }
             }
 
@@ -223,8 +216,8 @@ namespace StudentHousingCompany
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
             
-            this.Hide();
-            var frmAddEvent = new FrmAddEvent();
+            this.Enabled = false;
+            var frmAddEvent = new FrmAddEvent(this);
             frmAddEvent.Show();
 
             FillEventsList();
@@ -232,39 +225,40 @@ namespace StudentHousingCompany
 
         public void FillEventsList()
         {
-            lvEventDetails.Items.Clear();
+            dgdEvents.Rows.Clear();
 
-            foreach (var events in studentHousing.Events)
+            foreach (var currentEvent in studentHousing.Events)
             {
-                ListViewItem eventInfo = events.GetInfo();
-                eventInfo.SubItems.Add(events.NegativeResponses.Count().ToString()+"/"+studentHousing.GetTenants().Count().ToString());
-                eventInfo.SubItems.Add(events.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString());
-                lvEventDetails.Items.Add(eventInfo);
+                string Disagree = currentEvent.NegativeResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
+                string Agree = currentEvent.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
+                dgdEvents.Rows.Add(currentEvent.EventId, currentEvent.EventOwner, currentEvent.EventName, currentEvent.EventDesc, currentEvent.DateOfEvent.ToString("dd/MM/yyyy"),Disagree,Agree);
             }
         }
 
         private void btnAgree_Click(object sender, EventArgs e)
         {
-            if (lvEventDetails.SelectedItems.Count == 0)
+            if (dgdEvents.SelectedCells.Count > 0)
             {
-                return;
-            }
-            ListViewItem item = lvEventDetails.SelectedItems[0];
+                int selectedrowindex = dgdEvents.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdEvents.Rows[selectedrowindex];
+                string eventID = Convert.ToString(selectedRow.Cells["dgcEventID"].Value);
 
-            studentHousing.AgreeToEvent(item.Text);
-            FillEventsList();
+                studentHousing.AgreeToEvent(eventID);
+                FillEventsList();
+            }
         }
 
         private void btnDisagree_Click(object sender, EventArgs e)
         {
-            if (lvEventDetails.SelectedItems.Count == 0)
+            if (dgdEvents.SelectedCells.Count > 0)
             {
-                return;
-            }
-            ListViewItem item = lvEventDetails.SelectedItems[0];
+                int selectedrowindex = dgdEvents.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdEvents.Rows[selectedrowindex];
+                string eventID = Convert.ToString(selectedRow.Cells["dgcEventID"].Value);
 
-            studentHousing.DisagreeToEvent(item.Text);
-            FillEventsList();
+                studentHousing.DisagreeToEvent(eventID);
+                FillEventsList();
+            }
         }
 
         private void btnMessageDelete_Click(object sender, EventArgs e)
@@ -334,24 +328,42 @@ namespace StudentHousingCompany
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            foreach (Complaint comp in studentHousing.Complaintss)
+            if (studentHousing.CurrentUser != null)
             {
-                if (comp.TenID == studentHousing.CurrentUser.Id)
+                foreach (Tenant ten in studentHousing.GetTenants())
                 {
-                    if (comp.ReplyFromAdmin != null)
+                    if (ten.Id == studentHousing.CurrentUser.Id)
                     {
-                        if (!comp.ReplyFromAdmIsRead)
+                        if (ten.Complaints != null)
                         {
-                            tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
-                            tbxReplyFromAdm.Visible = true;
-                            btnMessageDelete.Visible = true;
-                            lblMessageFromAdm.Visible = true;
-                            lblComplaintDiscription.Visible = false;
+                            foreach (Complaint comp in ten.Complaints)
+                            {
+                                if (comp.ReplyFromAdmin != null)
+                                {
+                                    if (!comp.ReplyFromAdmIsRead)
+                                    {
+                                        this.tbxReplyFromAdm.Text = comp.ReplyFromAdmin;
+                                        this.tbxReplyFromAdm.Visible = true;
+                                        this.btnMessageDelete.Visible = true;
+                                        this.lblMessageFromAdm.Visible = true;
+                                        this.lblComplaintDiscription.Visible = false;
+                                    }
+                                }
+                            }
                         }
                     }
-
                 }
 
+            }
+        }
+
+        public void FillAnnouncement()
+        {
+            dgdAnnouncement.Rows.Clear();
+
+            foreach (var currentAnno in studentHousing.Announcements)
+            {
+                dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
             }
         }
 

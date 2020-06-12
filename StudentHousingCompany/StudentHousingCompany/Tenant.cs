@@ -33,6 +33,12 @@ namespace StudentHousingCompany
             set;
         }
 
+        public List<Complaint>  Complaints 
+        {
+            get;
+            set;
+        }
+
         public Tenant(string name, DateTime dateOfBirth, string email, string password, string phoneNr, string postcode, string address)
             : base(name, dateOfBirth, email, password)
         {
@@ -40,6 +46,7 @@ namespace StudentHousingCompany
             Postcode = postcode;
             Address = address;
             Balance = 0;
+            Complaints = new List<Complaint>();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace StudentHousingCompany
     {
         private StudentHousing studentHousing;
         DayOfWeek day = DayOfWeek.Monday;
-        private Complaint complaint;
+        
         public FrmAdmin()
         {
             InitializeComponent();
@@ -23,16 +23,12 @@ namespace StudentHousingCompany
             ShowUsers();
             ShowTasks();
             timer1.Enabled = true;
+            tmrUpdateComplaintes.Start();
             rbtnTenant.Checked = true;
             rbtnAdmin.Checked = false;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
-            complaint = Complaint.Instance;
-            
-            foreach (Complaint comp in studentHousing.Complaintss)
-            {
-                 lbxComp.Items.Add(comp.GetText());
-            }
+            prevNmrOfComp = nmrOfComp;
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -288,7 +284,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {
-                if (TaskName == task.GetTask())
+                if (TaskName == task.TaskName)
                 {
                     NameExsists = true;
                 }
@@ -374,7 +370,7 @@ namespace StudentHousingCompany
 
             foreach (var task in schedule)
             {
-                cbRemoveTasks.Items.Add(task.GetTask());
+                cbRemoveTasks.Items.Add(task.TaskName);
             }
         }
 
@@ -387,7 +383,7 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {          
-                if (task.GetStatus() == true)
+                if (task.Status == true)
                 {
                     listView6.Items[counter].BackColor = Color.Green;
                 }
@@ -406,55 +402,65 @@ namespace StudentHousingCompany
 
         private void btnComplaintResolve_Click(object sender, EventArgs e)
         {
+            int selectdIndex = dgdComp.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
+            //PS.I do not know why i can not delete the ToString method and take only the value yet?
+            CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
 
-            ListBox.SelectedObjectCollection selectedItem = new ListBox.SelectedObjectCollection(lbxComp);
-            selectedItem = lbxComp.SelectedItems;
-
-            if (lbxComp.SelectedIndex != -1)
+            foreach (Complaint comp in studentHousing.Complaintss)
             {
-                string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
-
-                foreach (Complaint comp in studentHousing.Complaintss)
+                if (comp.ComplaintId == CompID)
                 {
-                    if (selectedTextFromlbx == comp.GetText())
-                    {
-                        comp.Solved = true;
-                    }
+                    comp.Solved = true;
                 }
-                for (int i = selectedItem.Count - 1; i >= 0; i--)
-                {
-                    lbxComp.Items.Remove(selectedItem[i]);
-                } 
             }
-            else
+
+            if (dgdComp.SelectedCells.Count > 0)
+            {
+                foreach (DataGridViewRow item in this.dgdComp.SelectedRows)
+                {
+                    dgdComp.Rows.RemoveAt(item.Index);
+
+                }
+            }else
             {
                 MessageBox.Show("Select a complainet ");
             } 
         }
 
-        int selectedIndxInCompList;
+        
         int idOfSelectedComp;
-
+        int CompID;
         private void btnReplyToComp_Click(object sender, EventArgs e)
         {
-            
-
-            string selectedTextFromlbx = Convert.ToString(lbxComp.SelectedItem);
-            
-            foreach (Complaint comp in studentHousing.Complaintss)
+            if (dgdComp.SelectedCells.Count > 0) 
             {
-                if (selectedTextFromlbx == comp.GetText())
-                {
-                    //selectedIndxInCompList = studentHousing.Complaintss.IndexOf(comp);
+                int selectdIndex = dgdComp.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
+                //PS.I do not know why i can not delete the ToString method and take only the value yet?
+                CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
 
-                    idOfSelectedComp = comp.ComplaintId;
+                foreach(Complaint comp in studentHousing.Complaintss)
+                {
+                    if(comp.ComplaintId == CompID)
+                    {
+                        comp.ReplyFromAdmin = tbxReply.Text;
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("please select a cpmlaint to reply to");
+            }
+                
 
+            
+
+
+            dgdComp.Visible = false;
             tbxReply.Visible = true;
 
             btnReplyToComp.Visible = false;
-
             btnSendReply.Visible = true;
 
         }
@@ -462,10 +468,8 @@ namespace StudentHousingCompany
         private void btnSendReply_Click(object sender, EventArgs e)
         {
             string reply = tbxReply.Text;
-
             foreach (Complaint comp in studentHousing.Complaintss)
             {
-                
                 if(comp.ComplaintId == idOfSelectedComp)
                 {
                     comp.ReplyFromAdmin =  reply;
@@ -473,6 +477,7 @@ namespace StudentHousingCompany
             }
 
             tbxReply.Visible = false;
+            dgdComp.Visible = true;
 
             btnReplyToComp.Visible = true;
             btnSendReply.Visible = false;
@@ -497,25 +502,15 @@ namespace StudentHousingCompany
 
             foreach (var task in studentHousing.Schedules)
             {              
-                if (task.GetDueDate().Date < DateTime.Now.Date)
+                if (task.DueDate.Date < DateTime.Now.Date)
                 {                    
-                    if (task.GetStatus() == false)
+                    if (task.Status == false)
                     {
                         listView6.Items[counter].BackColor = Color.Red;
                     }
                     counter++;
                 }
             }
-
-            lbxComp.Items.Clear();
-            foreach (Complaint comp in studentHousing.Complaintss)
-            {
-                if (!comp.Solved)
-                {
-                    lbxComp.Items.Add(comp.GetText());
-                }
-            }
-
         }
 
         private void tabControl_Click(object sender, EventArgs e)
@@ -536,9 +531,69 @@ namespace StudentHousingCompany
             frmLogin.Show();
         }
 
+        private void btnUpdateHouseRules_Click(object sender, EventArgs e)
+        {
+            studentHousing.HouseRules = rtbHouseRules.Text;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rtbHouseRules.Clear();
+            rtbHouseRules.Text = studentHousing.HouseRules;
+        }
+
+        private void btnAnnoCreate_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            var frmAnnouncement = new FrmAnnoucement(this);
+            frmAnnouncement.Show();
+
+            FillAnnouncement();
+
+        }
+
+        public void FillAnnouncement()
+        {
+            dgdAnnouncement.Rows.Clear();
+
+            foreach (var currentAnno in studentHousing.Announcements)
+            {
+                dgdAnnouncement.Rows.Add(currentAnno.AnnouncementId, currentAnno.AnnouncementSubject, currentAnno.AnnouncementText);
+            }
+        }
+
+        public void btnTempRefresh_Click(object sender, EventArgs e)
+        {
+            FillAnnouncement();
+        }
+
         private void FrmAdmin_EnabledChanged(object sender, EventArgs e)
         {
             ShowUsers();
+        }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+        int nmrOfComp;
+        int prevNmrOfComp;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            nmrOfComp = studentHousing.Complaintss.Count();
+            if(nmrOfComp != prevNmrOfComp)
+            {
+                dgdComp.Rows.Clear();
+                prevNmrOfComp = nmrOfComp;
+                foreach (Complaint comp in studentHousing.Complaintss)
+                {
+                    if (!comp.Solved)
+                    {
+                        dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                    }
+                }
+            } 
         }
     }
 }
