@@ -46,6 +46,7 @@ namespace StudentHousingCompany
             Events = new List<Event>();
             Agreements = new List<Agreement>();
             Announcements = new List<Announcement>();
+            AddDummyData();
 
         }
 
@@ -193,6 +194,7 @@ namespace StudentHousingCompany
             AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
             AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
             AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
+
             Complaint newComplaine = new Complaint("Subject 1 ", "topice 1", 1);
             Complaintss.Add(newComplaine);
             newComplaine = new Complaint("Subject 2", "topice1 2 ", 2);

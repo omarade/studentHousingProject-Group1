@@ -17,7 +17,6 @@ namespace StudentHousingCompany
         {
             InitializeComponent();
             studentHousing = StudentHousing.Instance;
-            studentHousing.AddDummyData();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
