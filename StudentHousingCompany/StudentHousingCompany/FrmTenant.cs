@@ -23,7 +23,6 @@ namespace StudentHousingCompany
 
             ShowAgreements();
 
-            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
@@ -38,7 +37,8 @@ namespace StudentHousingCompany
             FillEventsList();
             rtbHouseRules.Text = studentHousing.HouseRules;
             FillAnnouncement();
-
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
+            tbxGeneralCurrentTennatID.Text = (Convert.ToString(studentHousing.CurrentUser.Id));
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -166,6 +166,7 @@ namespace StudentHousingCompany
             }
 
             this.studentHousing.Complaintss.Add(newcomplaint);
+            tbxComSub.Clear();
         }
 
         private void btnTaskComplete_Click(object sender, EventArgs e)
@@ -332,6 +333,7 @@ namespace StudentHousingCompany
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            //studentHousing.CurrentUser = null;
             this.Hide();
             var frmLogin = new FrmLogin();
             frmLogin.Show();

@@ -121,7 +121,7 @@
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxGeneralCurrentTennatID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
@@ -960,10 +960,10 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(762, 26);
+            this.btnLogout.Location = new System.Drawing.Point(524, 10);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 34);
+            this.btnLogout.Size = new System.Drawing.Size(89, 41);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -1000,22 +1000,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 24);
+            this.label1.Location = new System.Drawing.Point(155, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tenant ID";
             // 
-            // textBox1
+            // tbxGeneralCurrentTennatID
             // 
-            this.textBox1.Location = new System.Drawing.Point(473, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "1";
+            this.tbxGeneralCurrentTennatID.Location = new System.Drawing.Point(236, 21);
+            this.tbxGeneralCurrentTennatID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxGeneralCurrentTennatID.Name = "tbxGeneralCurrentTennatID";
+            this.tbxGeneralCurrentTennatID.ReadOnly = true;
+            this.tbxGeneralCurrentTennatID.Size = new System.Drawing.Size(76, 20);
+            this.tbxGeneralCurrentTennatID.TabIndex = 2;
+            this.tbxGeneralCurrentTennatID.Text = "1";
             // 
             // label3
             // 
@@ -1029,10 +1029,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(643, 21);
+            this.button8.Location = new System.Drawing.Point(618, 11);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(83, 28);
+            this.button8.Size = new System.Drawing.Size(83, 41);
             this.button8.TabIndex = 8;
             this.button8.Text = "Go to Admin";
             this.button8.UseVisualStyleBackColor = true;
@@ -1049,7 +1049,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 100000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmTenant
@@ -1063,7 +1063,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxGeneralCurrentTennatID);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
@@ -1095,7 +1095,7 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxGeneralCurrentTennatID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbHouseRules;
         private System.Windows.Forms.TabPage tabPage1;

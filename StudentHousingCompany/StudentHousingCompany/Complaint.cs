@@ -84,7 +84,7 @@ namespace StudentHousingCompany
             this.Description = Description;
             ComplaintId = ID;
             ID++;
-            ReplyFromAdmin = null;
+            
             this.TenID = StudentHousingCompany.StudentHousing.Instance.CurrentUser.Id;
             this.CreaterName = StudentHousingCompany.StudentHousing.Instance.CurrentUser.Name;
         }

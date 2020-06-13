@@ -439,14 +439,6 @@ namespace StudentHousingCompany
                 DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
                 //PS.I do not know why i can not delete the ToString method and take only the value yet?
                 CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-
-                foreach(Complaint comp in studentHousing.Complaintss)
-                {
-                    if(comp.ComplaintId == CompID)
-                    {
-                        comp.ReplyFromAdmin = tbxReply.Text;
-                    }
-                }
             }
             else
             {
@@ -462,7 +454,14 @@ namespace StudentHousingCompany
 
         private void btnSendReply_Click(object sender, EventArgs e)
         {
-            foreach(Tenant ten in studentHousing.GetTenants())
+            //foreach (Complaint comp in studentHousing.Complaintss)
+            //{
+            //    if (comp.ComplaintId == CompID)
+            //    {
+            //        comp.ReplyFromAdmin = tbxReply.Text;
+            //    }
+            //}
+            foreach (Tenant ten in studentHousing.GetTenants())
             {
                 foreach(Complaint comp in ten.Complaints)
                 {
