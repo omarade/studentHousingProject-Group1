@@ -99,10 +99,12 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnReplyToComp = new System.Windows.Forms.Button();
-            this.lbxComp = new System.Windows.Forms.ListBox();
             this.btnComplaintResolve = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dgdComp = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complaints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbxReply = new System.Windows.Forms.TextBox();
             this.btnSendReply = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -111,9 +113,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
             this.tmrUpdateComplaintes = new System.Windows.Forms.Timer(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Complaints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -841,7 +840,6 @@
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage3.Controls.Add(this.btnReplyToComp);
-            this.tabPage3.Controls.Add(this.lbxComp);
             this.tabPage3.Controls.Add(this.btnComplaintResolve);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.dgdComp);
@@ -866,17 +864,6 @@
             this.btnReplyToComp.Text = "Reply";
             this.btnReplyToComp.UseVisualStyleBackColor = true;
             this.btnReplyToComp.Click += new System.EventHandler(this.btnReplyToComp_Click);
-            // 
-            // lbxComp
-            // 
-            this.lbxComp.AllowDrop = true;
-            this.lbxComp.FormattingEnabled = true;
-            this.lbxComp.Location = new System.Drawing.Point(949, 48);
-            this.lbxComp.Margin = new System.Windows.Forms.Padding(5);
-            this.lbxComp.Name = "lbxComp";
-            this.lbxComp.Size = new System.Drawing.Size(92, 69);
-            this.lbxComp.Sorted = true;
-            this.lbxComp.TabIndex = 3;
             // 
             // btnComplaintResolve
             // 
@@ -925,6 +912,45 @@
             this.dgdComp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgdComp.Size = new System.Drawing.Size(1038, 325);
             this.dgdComp.TabIndex = 7;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID.HeaderText = "Complaint ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 95;
+            // 
+            // Sender
+            // 
+            this.Sender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Sender.FillWeight = 188.5714F;
+            this.Sender.HeaderText = "Sender";
+            this.Sender.MinimumWidth = 6;
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            this.Sender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Sender.Width = 102;
+            // 
+            // Complaints
+            // 
+            this.Complaints.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Complaints.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Complaints.FillWeight = 11.42857F;
+            this.Complaints.HeaderText = "Recieved Complaintes";
+            this.Complaints.MinimumWidth = 6;
+            this.Complaints.Name = "Complaints";
+            this.Complaints.ReadOnly = true;
+            this.Complaints.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // tbxReply
             // 
@@ -1000,45 +1026,6 @@
             this.tmrUpdateComplaintes.Interval = 2000;
             this.tmrUpdateComplaintes.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ID.HeaderText = "Complaint ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 95;
-            // 
-            // Sender
-            // 
-            this.Sender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Sender.FillWeight = 188.5714F;
-            this.Sender.HeaderText = "Sender";
-            this.Sender.MinimumWidth = 6;
-            this.Sender.Name = "Sender";
-            this.Sender.ReadOnly = true;
-            this.Sender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Sender.Width = 102;
-            // 
-            // Complaints
-            // 
-            this.Complaints.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Complaints.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Complaints.FillWeight = 11.42857F;
-            this.Complaints.HeaderText = "Recieved Complaintes";
-            this.Complaints.MinimumWidth = 6;
-            this.Complaints.Name = "Complaints";
-            this.Complaints.ReadOnly = true;
-            this.Complaints.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1054,6 +1041,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Housing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAdmin_Load_1);
             this.EnabledChanged += new System.EventHandler(this.FrmAdmin_EnabledChanged);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1154,7 +1142,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox gbHouseRules;
         private System.Windows.Forms.Timer tmrUpdateComplaintes;
-        private System.Windows.Forms.ListBox lbxComp;
         private System.Windows.Forms.DataGridView dgdComp;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
