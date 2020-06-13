@@ -366,6 +366,7 @@ namespace StudentHousingCompany
                 }
 
             }
+        }
 
         }
 

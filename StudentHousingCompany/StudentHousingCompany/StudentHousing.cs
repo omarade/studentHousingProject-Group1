@@ -45,6 +45,8 @@ namespace StudentHousingCompany
             Events = new List<Event>();
             Agreements = new List<Agreement>();
             Announcements = new List<Announcement>();
+            AddDummyData();
+
         }
 
         public User GetUserById(int id)
@@ -191,7 +193,7 @@ namespace StudentHousingCompany
             AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
             AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
             AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
-            
+            HouseRules = "1. Test\n2. The\n3. House\n4. Rules";
         }
 
         /// <summary>
