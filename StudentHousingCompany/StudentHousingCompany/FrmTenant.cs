@@ -368,7 +368,7 @@ namespace StudentHousingCompany
             }
         }
 
-        }
+        
 
         public void FillAnnouncement()
         {
