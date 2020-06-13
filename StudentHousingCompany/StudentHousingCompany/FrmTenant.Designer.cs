@@ -310,7 +310,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(710, 369);
+            this.tabPage1.Size = new System.Drawing.Size(955, 467);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
             // 
@@ -419,7 +419,7 @@
             // lblBalanceOverView
             // 
             this.lblBalanceOverView.AutoSize = true;
-            this.lblBalanceOverView.Location = new System.Drawing.Point(652, 52);
+            this.lblBalanceOverView.Location = new System.Drawing.Point(636, 55);
             this.lblBalanceOverView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBalanceOverView.Name = "lblBalanceOverView";
             this.lblBalanceOverView.Size = new System.Drawing.Size(136, 13);
@@ -467,7 +467,7 @@
             this.lvwProductSharingInfo.Location = new System.Drawing.Point(265, 92);
             this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
-            this.lvwProductSharingInfo.Size = new System.Drawing.Size(364, 298);
+            this.lvwProductSharingInfo.Size = new System.Drawing.Size(364, 270);
             this.lvwProductSharingInfo.TabIndex = 30;
             this.lvwProductSharingInfo.UseCompatibleStateImageBehavior = false;
             this.lvwProductSharingInfo.View = System.Windows.Forms.View.Details;
@@ -494,10 +494,10 @@
             this.columnHeader6,
             this.columnHeader7});
             this.lvwBlancesOverView.HideSelection = false;
-            this.lvwBlancesOverView.Location = new System.Drawing.Point(639, 92);
+            this.lvwBlancesOverView.Location = new System.Drawing.Point(652, 92);
             this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(300, 298);
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(300, 270);
             this.lvwBlancesOverView.TabIndex = 29;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
@@ -547,10 +547,10 @@
             // 
             // btnAddToShoppingList
             // 
-            this.btnAddToShoppingList.Location = new System.Drawing.Point(51, 394);
+            this.btnAddToShoppingList.Location = new System.Drawing.Point(13, 392);
             this.btnAddToShoppingList.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAddToShoppingList.Name = "btnAddToShoppingList";
-            this.btnAddToShoppingList.Size = new System.Drawing.Size(141, 46);
+            this.btnAddToShoppingList.Size = new System.Drawing.Size(267, 41);
             this.btnAddToShoppingList.TabIndex = 17;
             this.btnAddToShoppingList.Text = "add to shopping list ";
             this.btnAddToShoppingList.UseVisualStyleBackColor = true;
@@ -591,7 +591,7 @@
             this.lblMessageFromAdm.Location = new System.Drawing.Point(9, 136);
             this.lblMessageFromAdm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageFromAdm.Name = "lblMessageFromAdm";
-            this.lblMessageFromAdm.Size = new System.Drawing.Size(135, 34);
+            this.lblMessageFromAdm.Size = new System.Drawing.Size(107, 26);
             this.lblMessageFromAdm.TabIndex = 9;
             this.lblMessageFromAdm.Text = "Message recived \r\nfrom admin";
             this.lblMessageFromAdm.Visible = false;
@@ -603,7 +603,7 @@
             this.lblComplaintDiscription.Location = new System.Drawing.Point(11, 136);
             this.lblComplaintDiscription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComplaintDiscription.Name = "lblComplaintDiscription";
-            this.lblComplaintDiscription.Size = new System.Drawing.Size(85, 34);
+            this.lblComplaintDiscription.Size = new System.Drawing.Size(67, 26);
             this.lblComplaintDiscription.TabIndex = 8;
             this.lblComplaintDiscription.Text = "Complaint\r\nDiscription";
             // 
@@ -637,7 +637,7 @@
             this.lblSubject.Location = new System.Drawing.Point(9, 65);
             this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(62, 17);
+            this.lblSubject.Size = new System.Drawing.Size(50, 13);
             this.lblSubject.TabIndex = 5;
             this.lblSubject.Text = "Subject";
             // 
@@ -648,7 +648,7 @@
             this.cbxSendAnonymously.Location = new System.Drawing.Point(10, 314);
             this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
-            this.cbxSendAnonymously.Size = new System.Drawing.Size(127, 38);
+            this.cbxSendAnonymously.Size = new System.Drawing.Size(103, 30);
             this.cbxSendAnonymously.TabIndex = 4;
             this.cbxSendAnonymously.Text = "Send            \r\nAnonymously";
             this.cbxSendAnonymously.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

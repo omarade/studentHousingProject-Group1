@@ -452,14 +452,9 @@ namespace StudentHousingCompany
             {
                 MessageBox.Show("please select a cpmlaint to reply to");
             }
-                
-
-            
-
 
             dgdComp.Visible = false;
             tbxReply.Visible = true;
-
             btnReplyToComp.Visible = false;
             btnSendReply.Visible = true;
 
@@ -467,15 +462,19 @@ namespace StudentHousingCompany
 
         private void btnSendReply_Click(object sender, EventArgs e)
         {
-            string reply = tbxReply.Text;
-            foreach (Complaint comp in studentHousing.Complaintss)
+            foreach(Tenant ten in studentHousing.GetTenants())
             {
-                if(comp.ComplaintId == idOfSelectedComp)
+                foreach(Complaint comp in ten.Complaints)
                 {
-                    comp.ReplyFromAdmin =  reply;
+                    if(comp.ComplaintId == CompID)
+                    {
+                        string reply = tbxReply.Text;
+                        comp.ReplyFromAdmin = reply;
+                    }
                 }
             }
 
+            tbxReply.Clear();
             tbxReply.Visible = false;
             dgdComp.Visible = true;
 

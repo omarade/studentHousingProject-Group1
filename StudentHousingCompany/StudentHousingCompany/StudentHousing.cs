@@ -38,7 +38,6 @@ namespace StudentHousingCompany
 
         private StudentHousing()
         {
-
             Users = new List<User>();
             Products = new List<Product>();
             Schedules = new List<Schedule>();
@@ -46,7 +45,6 @@ namespace StudentHousingCompany
             Events = new List<Event>();
             Agreements = new List<Agreement>();
             Announcements = new List<Announcement>();
-
         }
 
         public User GetUserById(int id)
