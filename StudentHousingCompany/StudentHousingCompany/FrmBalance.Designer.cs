@@ -29,46 +29,57 @@
         private void InitializeComponent()
         {
             this.lvwBlancesOverView = new System.Windows.Forms.ListView();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IDInfrm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NameInFrm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.balancInFrm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnExitBalnce = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvwBlancesOverView
             // 
             this.lvwBlancesOverView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader8,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.IDInfrm,
+            this.NameInFrm,
+            this.balancInFrm});
             this.lvwBlancesOverView.HideSelection = false;
             this.lvwBlancesOverView.Location = new System.Drawing.Point(26, 31);
             this.lvwBlancesOverView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lvwBlancesOverView.Name = "lvwBlancesOverView";
-            this.lvwBlancesOverView.Size = new System.Drawing.Size(330, 367);
+            this.lvwBlancesOverView.Size = new System.Drawing.Size(349, 391);
             this.lvwBlancesOverView.TabIndex = 30;
             this.lvwBlancesOverView.UseCompatibleStateImageBehavior = false;
             this.lvwBlancesOverView.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader8
+            // IDInfrm
             // 
-            this.columnHeader8.Text = "Id";
-            this.columnHeader8.Width = 57;
+            this.IDInfrm.Text = "Id";
+            this.IDInfrm.Width = 57;
             // 
-            // columnHeader6
+            // NameInFrm
             // 
-            this.columnHeader6.Text = "Name";
-            this.columnHeader6.Width = 75;
+            this.NameInFrm.Text = "Name";
+            this.NameInFrm.Width = 75;
             // 
-            // columnHeader7
+            // balancInFrm
             // 
-            this.columnHeader7.Text = "Balance";
-            this.columnHeader7.Width = 158;
+            this.balancInFrm.Text = "Balance";
+            this.balancInFrm.Width = 213;
+            // 
+            // btnExitBalnce
+            // 
+            this.btnExitBalnce.Location = new System.Drawing.Point(60, 471);
+            this.btnExitBalnce.Name = "btnExitBalnce";
+            this.btnExitBalnce.Size = new System.Drawing.Size(267, 41);
+            this.btnExitBalnce.TabIndex = 31;
+            this.btnExitBalnce.Text = "Back out from Balance";
+            this.btnExitBalnce.UseVisualStyleBackColor = true;
             // 
             // FrmBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 506);
+            this.ClientSize = new System.Drawing.Size(402, 616);
+            this.Controls.Add(this.btnExitBalnce);
             this.Controls.Add(this.lvwBlancesOverView);
             this.Name = "FrmBalance";
             this.Text = "FrmBalance";
@@ -79,8 +90,9 @@
         #endregion
 
         private System.Windows.Forms.ListView lvwBlancesOverView;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader IDInfrm;
+        private System.Windows.Forms.ColumnHeader NameInFrm;
+        private System.Windows.Forms.ColumnHeader balancInFrm;
+        private System.Windows.Forms.Button btnExitBalnce;
     }
 }
