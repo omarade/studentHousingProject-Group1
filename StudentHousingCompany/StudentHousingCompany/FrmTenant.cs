@@ -166,7 +166,7 @@ namespace StudentHousingCompany
             }
 
             this.studentHousing.Complaintss.Add(newcomplaint);
-            tbxComSub.Clear();
+            tbxCoTopic.Clear();
         }
 
         private void btnTaskComplete_Click(object sender, EventArgs e)

@@ -588,7 +588,15 @@ namespace StudentHousingCompany
                 {
                     if (!comp.Solved)
                     {
-                        dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                        if (comp.Anonymous)
+                        {
+                            dgdComp.Rows.Add(comp.ComplaintId, "Anonymous", comp.GetText());
+                        }
+                        else
+                        {
+                            dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                        }
+                        
                     }
                 }
             } 

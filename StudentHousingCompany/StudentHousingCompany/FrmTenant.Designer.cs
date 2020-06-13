@@ -569,14 +569,14 @@
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage3.Controls.Add(this.lblMessageFromAdm);
             this.tabPage3.Controls.Add(this.lblComplaintDiscription);
-            this.tabPage3.Controls.Add(this.btnMessageDelete);
-            this.tabPage3.Controls.Add(this.tbxReplyFromAdm);
             this.tabPage3.Controls.Add(this.lblSubject);
             this.tabPage3.Controls.Add(this.cbxSendAnonymously);
             this.tabPage3.Controls.Add(this.btnSendComplaint);
             this.tabPage3.Controls.Add(this.tbxCoTopic);
             this.tabPage3.Controls.Add(this.lblMakeComplaint);
             this.tabPage3.Controls.Add(this.tbxComSub);
+            this.tabPage3.Controls.Add(this.tbxReplyFromAdm);
+            this.tabPage3.Controls.Add(this.btnMessageDelete);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage3.Name = "tabPage3";
@@ -609,10 +609,10 @@
             // 
             // btnMessageDelete
             // 
-            this.btnMessageDelete.Location = new System.Drawing.Point(12, 345);
+            this.btnMessageDelete.Location = new System.Drawing.Point(12, 382);
             this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageDelete.Name = "btnMessageDelete";
-            this.btnMessageDelete.Size = new System.Drawing.Size(164, 46);
+            this.btnMessageDelete.Size = new System.Drawing.Size(164, 41);
             this.btnMessageDelete.TabIndex = 7;
             this.btnMessageDelete.Text = "Message is read";
             this.btnMessageDelete.UseVisualStyleBackColor = true;
@@ -645,7 +645,7 @@
             // 
             this.cbxSendAnonymously.AutoSize = true;
             this.cbxSendAnonymously.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSendAnonymously.Location = new System.Drawing.Point(10, 314);
+            this.cbxSendAnonymously.Location = new System.Drawing.Point(14, 333);
             this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
             this.cbxSendAnonymously.Size = new System.Drawing.Size(103, 30);
@@ -656,10 +656,10 @@
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(8, 382);
+            this.btnSendComplaint.Location = new System.Drawing.Point(13, 382);
             this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(170, 46);
+            this.btnSendComplaint.Size = new System.Drawing.Size(164, 41);
             this.btnSendComplaint.TabIndex = 3;
             this.btnSendComplaint.Text = "Send Complaint";
             this.btnSendComplaint.UseVisualStyleBackColor = true;
