@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -135,7 +137,7 @@
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Location = new System.Drawing.Point(7, 30);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1121, 521);
@@ -148,9 +150,9 @@
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.gbHouseRules);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1113, 495);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
@@ -160,9 +162,9 @@
             this.groupBox3.Controls.Add(this.dgdAnnouncement);
             this.groupBox3.Controls.Add(this.btnAnnoCreate);
             this.groupBox3.Location = new System.Drawing.Point(280, 14);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(310, 375);
             this.groupBox3.TabIndex = 55;
             this.groupBox3.TabStop = false;
@@ -195,7 +197,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgdAnnouncement.Location = new System.Drawing.Point(4, 25);
-            this.dgdAnnouncement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgdAnnouncement.Margin = new System.Windows.Forms.Padding(2);
             this.dgdAnnouncement.MultiSelect = false;
             this.dgdAnnouncement.Name = "dgdAnnouncement";
             this.dgdAnnouncement.ReadOnly = true;
@@ -240,7 +242,7 @@
             // btnAnnoCreate
             // 
             this.btnAnnoCreate.Location = new System.Drawing.Point(178, 338);
-            this.btnAnnoCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnoCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnoCreate.Name = "btnAnnoCreate";
             this.btnAnnoCreate.Size = new System.Drawing.Size(128, 24);
             this.btnAnnoCreate.TabIndex = 2;
@@ -254,9 +256,9 @@
             this.gbHouseRules.Controls.Add(this.btnUpdateHouseRules);
             this.gbHouseRules.Controls.Add(this.button2);
             this.gbHouseRules.Location = new System.Drawing.Point(13, 14);
-            this.gbHouseRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.gbHouseRules.Name = "gbHouseRules";
-            this.gbHouseRules.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbHouseRules.Padding = new System.Windows.Forms.Padding(2);
             this.gbHouseRules.Size = new System.Drawing.Size(182, 375);
             this.gbHouseRules.TabIndex = 54;
             this.gbHouseRules.TabStop = false;
@@ -265,7 +267,7 @@
             // rtbHouseRules
             // 
             this.rtbHouseRules.Location = new System.Drawing.Point(4, 25);
-            this.rtbHouseRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.rtbHouseRules.Name = "rtbHouseRules";
             this.rtbHouseRules.Size = new System.Drawing.Size(174, 301);
             this.rtbHouseRules.TabIndex = 9;
@@ -274,7 +276,7 @@
             // btnUpdateHouseRules
             // 
             this.btnUpdateHouseRules.Location = new System.Drawing.Point(128, 338);
-            this.btnUpdateHouseRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateHouseRules.Name = "btnUpdateHouseRules";
             this.btnUpdateHouseRules.Size = new System.Drawing.Size(50, 24);
             this.btnUpdateHouseRules.TabIndex = 7;
@@ -285,7 +287,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(4, 338);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 24);
             this.button2.TabIndex = 6;
@@ -314,10 +316,10 @@
             this.groupBox2.Controls.Add(this.dgdUsers);
             this.groupBox2.Controls.Add(this.btnRemoveUser);
             this.groupBox2.Controls.Add(this.btnEditUser);
-            this.groupBox2.Location = new System.Drawing.Point(352, 39);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(343, 39);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(755, 444);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
@@ -372,22 +374,35 @@
             this.hxtPhoneNr,
             this.hxtPostcode,
             this.hxtAddress});
-            this.dgdUsers.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgdUsers.Location = new System.Drawing.Point(22, 82);
             this.dgdUsers.MultiSelect = false;
             this.dgdUsers.Name = "dgdUsers";
             this.dgdUsers.ReadOnly = true;
             this.dgdUsers.RowHeadersVisible = false;
             this.dgdUsers.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgdUsers.RowTemplate.Height = 24;
             this.dgdUsers.RowTemplate.ReadOnly = true;
             this.dgdUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgdUsers.Size = new System.Drawing.Size(714, 283);
             this.dgdUsers.TabIndex = 50;
-            this.dgdUsers.SelectionChanged += new System.EventHandler(this.dgdUsers_SelectionChanged);
             // 
             // hxtId
             // 
@@ -478,10 +493,10 @@
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.txtPostcode);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(20, 39);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(14, 39);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(315, 444);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
@@ -649,7 +664,7 @@
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.listView6);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1113, 495);
@@ -667,9 +682,9 @@
             this.gbTasks.Controls.Add(this.label21);
             this.gbTasks.Controls.Add(this.btnAddTask);
             this.gbTasks.Location = new System.Drawing.Point(13, 17);
-            this.gbTasks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTasks.Margin = new System.Windows.Forms.Padding(2);
             this.gbTasks.Name = "gbTasks";
-            this.gbTasks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTasks.Padding = new System.Windows.Forms.Padding(2);
             this.gbTasks.Size = new System.Drawing.Size(219, 346);
             this.gbTasks.TabIndex = 14;
             this.gbTasks.TabStop = false;
@@ -690,7 +705,7 @@
             // 
             this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTaskName.Location = new System.Drawing.Point(19, 36);
-            this.tbTaskName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTaskName.Margin = new System.Windows.Forms.Padding(2);
             this.tbTaskName.Name = "tbTaskName";
             this.tbTaskName.Size = new System.Drawing.Size(133, 20);
             this.tbTaskName.TabIndex = 0;
@@ -699,7 +714,7 @@
             // 
             this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveTask.Location = new System.Drawing.Point(19, 300);
-            this.btnRemoveTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveTask.Name = "btnRemoveTask";
             this.btnRemoveTask.Size = new System.Drawing.Size(99, 30);
             this.btnRemoveTask.TabIndex = 9;
@@ -720,7 +735,7 @@
             "Saterday",
             "Sunday"});
             this.cbWeekDays.Location = new System.Drawing.Point(19, 89);
-            this.cbWeekDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbWeekDays.Margin = new System.Windows.Forms.Padding(2);
             this.cbWeekDays.Name = "cbWeekDays";
             this.cbWeekDays.Size = new System.Drawing.Size(124, 21);
             this.cbWeekDays.TabIndex = 10;
@@ -731,7 +746,7 @@
             this.cbRemoveTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRemoveTasks.FormattingEnabled = true;
             this.cbRemoveTasks.Location = new System.Drawing.Point(19, 269);
-            this.cbRemoveTasks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRemoveTasks.Margin = new System.Windows.Forms.Padding(2);
             this.cbRemoveTasks.Name = "cbRemoveTasks";
             this.cbRemoveTasks.Size = new System.Drawing.Size(129, 21);
             this.cbRemoveTasks.TabIndex = 7;
@@ -762,7 +777,7 @@
             // 
             this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTask.Location = new System.Drawing.Point(17, 119);
-            this.btnAddTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(68, 39);
             this.btnAddTask.TabIndex = 3;
@@ -774,7 +789,7 @@
             // 
             this.BtnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNextWeek.Location = new System.Drawing.Point(253, 333);
-            this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(2);
             this.BtnNextWeek.Name = "BtnNextWeek";
             this.BtnNextWeek.Size = new System.Drawing.Size(123, 30);
             this.BtnNextWeek.TabIndex = 13;
@@ -803,7 +818,7 @@
             this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
             this.listView6.Location = new System.Drawing.Point(253, 41);
-            this.listView6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
             this.listView6.Size = new System.Drawing.Size(524, 273);
             this.listView6.TabIndex = 5;
@@ -843,7 +858,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(1113, 495);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Complaints";
@@ -860,14 +875,15 @@
             this.ID,
             this.Sender,
             this.Complaints});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdComp.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdComp.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgdComp.Location = new System.Drawing.Point(40, 69);
             this.dgdComp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgdComp.MultiSelect = false;
@@ -887,7 +903,7 @@
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 107;
+            this.ID.Width = 95;
             // 
             // Sender
             // 
@@ -898,7 +914,6 @@
             // 
             // Complaints
             // 
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Complaints.DefaultCellStyle = dataGridViewCellStyle4;
             this.Complaints.HeaderText = "Recieved Complaintes";
             this.Complaints.MinimumWidth = 6;
@@ -944,11 +959,10 @@
             // 
             this.lbxComp.AllowDrop = true;
             this.lbxComp.FormattingEnabled = true;
-            this.lbxComp.ItemHeight = 16;
             this.lbxComp.Location = new System.Drawing.Point(941, 69);
             this.lbxComp.Margin = new System.Windows.Forms.Padding(5);
             this.lbxComp.Name = "lbxComp";
-            this.lbxComp.Size = new System.Drawing.Size(215, 404);
+            this.lbxComp.Size = new System.Drawing.Size(215, 394);
             this.lbxComp.Sorted = true;
             this.lbxComp.TabIndex = 3;
             // 
@@ -997,7 +1011,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(1031, 16);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 3;
@@ -1013,7 +1027,7 @@
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(944, 16);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(67, 28);
             this.btnLogout.TabIndex = 4;

@@ -220,36 +220,6 @@ namespace StudentHousingCompany
 
         }
 
-        private void dgdUsers_SelectionChanged(object sender, EventArgs e)
-        {
-            
-
-            /*if (dgdUsers.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = dgdUsers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgdUsers.Rows[selectedRowIndex];
-                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
-
-                User user = studentHousing.GetUserById(id);
-
-                if (user is Tenant)
-                {
-                    rbtnTenant.Checked = true;
-                    txtPhoneNr.Text = selectedRow.Cells["hxtPhoneNr"].Value.ToString();
-                    txtPostcode.Text = selectedRow.Cells["hxtPostcode"].Value.ToString();
-                    txtAddress.Text = selectedRow.Cells["hxtAddress"].Value.ToString();
-                }
-                else
-                {
-                    rbtnAdmin.Checked = true;
-                }
-                txtPassword.Enabled = false;
-                txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
-                dtbDoB.Value = user.DateOfBirth;
-                txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
-            }*/
-        }
-
         private void tpMngUsrs_Click(object sender, EventArgs e)
         {
             if (dgdUsers.SelectedCells.Count > 0)
