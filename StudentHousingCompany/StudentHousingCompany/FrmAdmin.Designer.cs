@@ -893,6 +893,7 @@
             this.dgdComp.AllowUserToAddRows = false;
             this.dgdComp.AllowUserToDeleteRows = false;
             this.dgdComp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgdComp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgdComp.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgdComp.CausesValidation = false;
             this.dgdComp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
