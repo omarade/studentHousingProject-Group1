@@ -166,6 +166,7 @@ namespace StudentHousingCompany
             }
 
             this.studentHousing.Complaintss.Add(newcomplaint);
+            tbxComSub.Clear();
             tbxCoTopic.Clear();
         }
 
