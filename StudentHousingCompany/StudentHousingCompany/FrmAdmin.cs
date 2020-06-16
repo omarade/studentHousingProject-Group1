@@ -596,7 +596,6 @@ namespace StudentHousingCompany
                         {
                             dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
                         }
-                        
                     }
                 }
             } 

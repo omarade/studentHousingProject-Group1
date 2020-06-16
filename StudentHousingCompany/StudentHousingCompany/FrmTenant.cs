@@ -23,7 +23,6 @@ namespace StudentHousingCompany
 
             ShowAgreements();
 
-            
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
                 if (tenant.Id != studentHousing.CurrentUser.Id)
@@ -61,8 +60,6 @@ namespace StudentHousingCompany
                 tbxProductname.Text = "";
             }
 
-
-            
             if (double.TryParse(tbxFullPrice.Text, out double fullprice)) 
             {
                 Product newProduct = new Product(tbxProductname.Text, fullprice);
@@ -92,8 +89,12 @@ namespace StudentHousingCompany
 
                 int NumberOfParticpants = newProduct.TenantesShredWith.Count;
                 newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
-                double currentUserShare = (NumberOfParticpants - 1) * newProduct.DevidedPrice;
 
+                double RoundedDevidedPrice = Math.Round(newProduct.DevidedPrice, 1);
+
+
+                double currentUserShare = (NumberOfParticpants - 1) * newProduct.DevidedPrice;
+                // updating balances according the shared prices of each product
                 foreach (Tenant tenSharedWith in newProduct.TenantesShredWith)
                 {
                     foreach (Tenant tenant in tenants)
@@ -118,33 +119,24 @@ namespace StudentHousingCompany
 
                 foreach (Tenant tenSharedWith in newProduct.TenantesShredWith)
                 {
-                    sharedwith += Convert.ToString(tenSharedWith.Id + ", ");
+                    sharedwith += Convert.ToString(tenSharedWith.Name + ", ");
                 }
 
-
-                ListViewItem item1 = new ListViewItem(new[] { newProduct.Name, Convert.ToString(newProduct.DevidedPrice), sharedwith });
+                ListViewItem item1 = new ListViewItem(new[] { newProduct.Name,
+                    Convert.ToString(RoundedDevidedPrice), sharedwith });
+                
                 lvwProductSharingInfo.Items.Add(item1);
 
-                lvwBlancesOverView.Items.Clear();
-
-                foreach (Tenant tenant in studentHousing.GetTenants())
-                {
-                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(tenant.Id), tenant.Name, Convert.ToString(tenant.Balance) });
-                    lvwBlancesOverView.Items.Add(item);
-                }
+                //updateBalanceView();
+                //FrmBalance balanceForm = new FrmBalance();
+                //balanceForm.updateBalanceView();
             }
             else
             {
                 MessageBox.Show("please enter a suitable input for the full price");
             }
+        }
 
-
-            
-
-            
-
-
-        }        
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
             Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text);
@@ -387,6 +379,12 @@ namespace StudentHousingCompany
         private void FrmTenant_EnabledChanged(object sender, EventArgs e)
         {
             ShowAgreements();
+        }
+
+        private void btnBalances_Click(object sender, EventArgs e)
+        {
+            var frmBalance = new FrmBalance();
+            frmBalance.Show();
         }
     }
 }
