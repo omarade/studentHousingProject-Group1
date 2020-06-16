@@ -13,6 +13,8 @@ namespace StudentHousingCompany
 {
     public partial class FrmAdmin : Form
     {
+        private double temperature = 18;
+
         private StudentHousing studentHousing;
         DayOfWeek day = DayOfWeek.Monday;
         
@@ -29,6 +31,7 @@ namespace StudentHousingCompany
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
+            serialPort1.Open();
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -564,6 +567,42 @@ namespace StudentHousingCompany
                     }
                 }
             } 
+        }
+
+        private void NewTemperatureLog(DateTime dateTime, string message)
+        {
+            string date = dateTime.ToString("dd/MM/yyyy");
+            string time = dateTime.ToString("hh:mm tt");
+            dgdTemperature.Invoke((Action) (() => dgdTemperature.Rows.Add(date, time, message)));
+        }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            if (serialPort1.BytesToRead > 0)
+            {
+                string message = serialPort1.ReadLine();
+ 
+
+                //Receive temperature
+                if (message.Contains("Temp"))
+                {
+                    string temp = message.Split('0')[1];
+                    temperature = Convert.ToDouble(temp);
+                    temp = $"{temperature}°C";
+                    lblTemperature.Invoke((Action)(() => lblTemperature.Text = temp));
+
+                    if (temperature < 16)
+                    {
+                        string msg = $"{temperature}°C, Temperature Too low!";
+                        NewTemperatureLog(DateTime.Now, msg);
+                    }
+                    else if (temperature > 27)
+                    {
+                        string msg = $"{temperature}°C, Temperature too high!";
+                        NewTemperatureLog(DateTime.Now, msg);
+                    }
+                }
+            }
         }
     }
 }

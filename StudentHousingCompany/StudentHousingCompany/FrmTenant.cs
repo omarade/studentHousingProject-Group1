@@ -371,5 +371,57 @@ namespace StudentHousingCompany
         {
             ShowAgreements();
         }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            if (serialPort1.BytesToRead > 0)
+            {
+                /*message = serialPort1.ReadLine();
+
+                //Check if time display mode is enabled/disabled
+                if (message.Contains("mode0"))
+                {
+                    timeMode = true;
+                }
+                else if (message.Contains("mode1") || message.Contains("mode2"))
+                {
+                    timeMode = false;
+                }
+
+                //Receive temperature from bed system
+                if (message.Contains("Temp"))
+                {
+                    string msg = message.Split('0')[1];
+                    temperature = Convert.ToDouble(msg);
+                    msg = $"{temperature}°C";
+                    lblRoomTemp.Invoke((Action)(() => lblRoomTemp.Text = msg));
+                }
+
+                //Check if alarm was turned on
+                if (message.Contains("alarmOn"))
+                {
+                    string msg = "Alarm On";
+                    TurnAlarmOn();
+                    AddNewLogMsg(msg);
+                }
+
+                //Check if temperature was too high/low and turn alarm on in that case
+                if (message.Contains("tempAlarm"))
+                {
+                    if (temperature < 16)
+                    {
+                        string msg = "Temperature below 16°C";
+                        TurnAlarmOn();
+                        AddNewLogMsg(msg);
+                    }
+                    else if (temperature > 27)
+                    {
+                        string msg = "Temperature above 27°C";
+                        TurnAlarmOn();
+                        AddNewLogMsg(msg);
+                    }
+                }*/
+            }
+        }
     }
 }
