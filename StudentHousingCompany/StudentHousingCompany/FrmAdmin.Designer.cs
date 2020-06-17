@@ -103,6 +103,9 @@
             this.btnComplaintResolve = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dgdComp = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complaints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbxReply = new System.Windows.Forms.TextBox();
             this.btnSendReply = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -111,9 +114,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
             this.tmrUpdateComplaintes = new System.Windows.Forms.Timer(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Complaints = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCurrentWeek = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -651,6 +652,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.btnCurrentWeek);
             this.tabPage2.Controls.Add(this.gbTasks);
             this.tabPage2.Controls.Add(this.BtnNextWeek);
             this.tabPage2.Controls.Add(this.label13);
@@ -783,9 +785,9 @@
             this.BtnNextWeek.Location = new System.Drawing.Point(253, 333);
             this.BtnNextWeek.Margin = new System.Windows.Forms.Padding(2);
             this.BtnNextWeek.Name = "BtnNextWeek";
-            this.BtnNextWeek.Size = new System.Drawing.Size(123, 30);
+            this.BtnNextWeek.Size = new System.Drawing.Size(123, 41);
             this.BtnNextWeek.TabIndex = 13;
-            this.BtnNextWeek.Text = "Next Week";
+            this.BtnNextWeek.Text = "Preview Next Week";
             this.BtnNextWeek.UseVisualStyleBackColor = true;
             this.BtnNextWeek.Click += new System.EventHandler(this.BtnNextWeek_Click);
             // 
@@ -926,6 +928,45 @@
             this.dgdComp.Size = new System.Drawing.Size(1038, 325);
             this.dgdComp.TabIndex = 7;
             // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID.HeaderText = "Complaint ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 95;
+            // 
+            // Sender
+            // 
+            this.Sender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Sender.FillWeight = 188.5714F;
+            this.Sender.HeaderText = "Sender";
+            this.Sender.MinimumWidth = 6;
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            this.Sender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Sender.Width = 102;
+            // 
+            // Complaints
+            // 
+            this.Complaints.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Complaints.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Complaints.FillWeight = 11.42857F;
+            this.Complaints.HeaderText = "Recieved Complaintes";
+            this.Complaints.MinimumWidth = 6;
+            this.Complaints.Name = "Complaints";
+            this.Complaints.ReadOnly = true;
+            this.Complaints.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // tbxReply
             // 
             this.tbxReply.Location = new System.Drawing.Point(39, 50);
@@ -1000,44 +1041,16 @@
             this.tmrUpdateComplaintes.Interval = 2000;
             this.tmrUpdateComplaintes.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // ID
+            // btnCurrentWeek
             // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ID.HeaderText = "Complaint ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 95;
-            // 
-            // Sender
-            // 
-            this.Sender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Sender.FillWeight = 188.5714F;
-            this.Sender.HeaderText = "Sender";
-            this.Sender.MinimumWidth = 6;
-            this.Sender.Name = "Sender";
-            this.Sender.ReadOnly = true;
-            this.Sender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Sender.Width = 102;
-            // 
-            // Complaints
-            // 
-            this.Complaints.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Complaints.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Complaints.FillWeight = 11.42857F;
-            this.Complaints.HeaderText = "Recieved Complaintes";
-            this.Complaints.MinimumWidth = 6;
-            this.Complaints.Name = "Complaints";
-            this.Complaints.ReadOnly = true;
-            this.Complaints.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnCurrentWeek.Location = new System.Drawing.Point(253, 333);
+            this.btnCurrentWeek.Name = "btnCurrentWeek";
+            this.btnCurrentWeek.Size = new System.Drawing.Size(123, 41);
+            this.btnCurrentWeek.TabIndex = 15;
+            this.btnCurrentWeek.Text = "Back To current Week";
+            this.btnCurrentWeek.UseVisualStyleBackColor = true;
+            this.btnCurrentWeek.Visible = false;
+            this.btnCurrentWeek.Click += new System.EventHandler(this.btnCurrentWeek_Click);
             // 
             // FrmAdmin
             // 
@@ -1159,5 +1172,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Complaints;
+        private System.Windows.Forms.Button btnCurrentWeek;
     }
 }

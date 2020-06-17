@@ -272,9 +272,20 @@ namespace StudentHousingCompany
 
         private void BtnNextWeek_Click(object sender, EventArgs e)
         {
-            studentHousing.SetNextTenant();
-            studentHousing.SetNextDueDay();
-            ShowTasks();
+            //studentHousing.SetNextTenant();
+            //studentHousing.SetNextDueDay();
+            //ShowTasks();
+
+            listView6.Items.Clear();
+            var schedule = studentHousing.ShowNextWeek();
+
+            foreach (var task in schedule)
+            {
+                listView6.Items.Add(task);
+            }
+
+            BtnNextWeek.Visible = false;
+            btnCurrentWeek.Visible = true;
         }
 
         private void btnAddTask_Click(object sender, EventArgs e)
@@ -593,6 +604,13 @@ namespace StudentHousingCompany
                     }
                 }
             } 
+        }
+
+        private void btnCurrentWeek_Click(object sender, EventArgs e)
+        {
+            ShowTasks();
+            BtnNextWeek.Visible = true;
+            btnCurrentWeek.Visible = false;
         }
     }
 }

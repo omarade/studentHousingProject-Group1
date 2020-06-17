@@ -390,5 +390,24 @@ namespace StudentHousingCompany
             Announcements.Add(newAnnouncement);
         }
 
+        public List<ListViewItem> ShowNextWeek()
+        {
+            List<ListViewItem> nextWeekList = new List<ListViewItem>();
+
+            foreach (var task in Schedules)
+            {
+                string[] arr = new string[4];
+                ListViewItem itm;
+                //add items to ListView
+                arr[0] = task.ShowNextStudent(GetTenants());
+                arr[1] = task.TaskName;
+                arr[2] = "Not Completed";
+                arr[3] = task.ShowNextDate().ToString("dd/MM/yyyy");
+                itm = new ListViewItem(arr);
+                nextWeekList.Add(itm);
+            }
+            
+            return nextWeekList;
+        }
     }
 }

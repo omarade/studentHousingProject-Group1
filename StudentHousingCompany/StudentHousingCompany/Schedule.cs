@@ -66,6 +66,11 @@ namespace StudentHousingCompany
             //Resets of sunday 23:59
         }
 
+        public DateTime ShowNextDate()
+        {
+            return this.DueDate.AddDays(7);
+        }
+
         /// <summary>
         /// finds and Sets next Student for the next week
         /// </summary>
@@ -98,6 +103,32 @@ namespace StudentHousingCompany
             SetStatus(false);
         }
 
+        public String ShowNextStudent(List<Tenant> students)
+        {
+            int index = 0;
+            bool FoundTenant = false;
+            do
+            {
+                if (this.Student == students[index].Name)
+                {
+                    FoundTenant = true;
+                }
+
+                if (this.Student != students[index].Name)
+                {
+                    index += 1;
+                }
+            } while (FoundTenant == false);
+
+            index += 1;
+            if (students.Count <= index)
+            {
+                index = 0;
+            }
+
+            return students[index].Name;
+        }
+
 
         /// <summary>
         /// Sets status of task
@@ -125,7 +156,8 @@ namespace StudentHousingCompany
             if (Status == false)
             {
                 arr[2] = "Not Completed";
-            } else if (Status == true)
+            }
+            else if (Status == true)
             {
                 arr[2] = "Completed";
             }
@@ -134,5 +166,7 @@ namespace StudentHousingCompany
 
             return itm;
         }
+
+
     }
 }
