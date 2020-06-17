@@ -31,7 +31,7 @@ namespace StudentHousingCompany
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
-            serialPort1.Open();
+            //serialPort1.Open();
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
