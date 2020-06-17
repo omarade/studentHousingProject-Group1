@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 758);
+            this.ClientSize = new System.Drawing.Size(536, 668);
             this.Controls.Add(this.btnExitBalnce);
             this.Controls.Add(this.lvwBlancesOverView);
             this.Margin = new System.Windows.Forms.Padding(4);
