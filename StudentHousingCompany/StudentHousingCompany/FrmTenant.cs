@@ -23,8 +23,6 @@ namespace StudentHousingCompany
 
             ShowAgreements();
 
-            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
-            
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
                 if (tenant.Id != studentHousing.CurrentUser.Id)
@@ -38,7 +36,8 @@ namespace StudentHousingCompany
             FillEventsList();
             rtbHouseRules.Text = studentHousing.HouseRules;
             FillAnnouncement();
-
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
+            tbxGeneralCurrentTennatID.Text = (Convert.ToString(studentHousing.CurrentUser.Id));
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -60,80 +59,84 @@ namespace StudentHousingCompany
             {
                 tbxProductname.Text = "";
             }
-            Product newProduct = new Product(tbxProductname.Text, Convert.ToDouble(tbxFullPrice.Text));
 
-            string LogedInUserName = "";
-            
-            // adding the current user to the sharing list
-            foreach(Tenant ten in studentHousing.GetTenants())
+            if (double.TryParse(tbxFullPrice.Text, out double fullprice)) 
             {
-                if (ten.Id == studentHousing.CurrentUser.Id)
+                Product newProduct = new Product(tbxProductname.Text, fullprice);
+                string LogedInUserName = null;
+
+                // adding the current user to the sharing list
+                foreach (Tenant ten in studentHousing.GetTenants())
                 {
-                    newProduct.TenantesShredWith.Add(ten);
-                    LogedInUserName = ten.Name;
-                }
-            }
-
-            // Collect who is checked in the checkedlistBox
-            foreach (string tenantName in clbTenantsToshare.CheckedItems)
-            {
-              foreach(Tenant ten in tenants)
-              {
-                if (ten.Name == tenantName)
-                {
-                  newProduct.TenantesShredWith.Add(ten);
-                }
-              }
-            }
-
-
-            int NumberOfParticpants = newProduct.TenantesShredWith.Count;
-            newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
-            double currentUserShare = (NumberOfParticpants - 1) * newProduct.DevidedPrice;
-
-
-
-            foreach (Tenant tenSharedWith in newProduct.TenantesShredWith)
-            {
-                foreach(Tenant tenant in tenants)
-                {
-                    if(tenant.Id == tenSharedWith.Id)
+                    if (ten.Id == studentHousing.CurrentUser.Id)
                     {
-                        if (tenant.Id == studentHousing.CurrentUser.Id)
+                        newProduct.TenantesShredWith.Add(ten);
+                        LogedInUserName = ten.Name;
+                    }
+                }
+
+                // Collect who is checked in the checkedlistBox
+                foreach (string tenantName in clbTenantsToshare.CheckedItems)
+                {
+                    foreach (Tenant ten in tenants)
+                    {
+                        if (ten.Name == tenantName)
                         {
-                            tenant.Balance = tenant.Balance  + currentUserShare;
-                        }
-                        else
-                        {
-                            tenant.Balance = tenant.Balance - newProduct.DevidedPrice;
+                            newProduct.TenantesShredWith.Add(ten);
                         }
                     }
                 }
+
+                int NumberOfParticpants = newProduct.TenantesShredWith.Count;
+                newProduct.DevidedPrice = newProduct.FullPrice / NumberOfParticpants;
+
+                double RoundedDevidedPrice = Math.Round(newProduct.DevidedPrice, 1);
+
+
+                double currentUserShare = (NumberOfParticpants - 1) * newProduct.DevidedPrice;
+                // updating balances according the shared prices of each product
+                foreach (Tenant tenSharedWith in newProduct.TenantesShredWith)
+                {
+                    foreach (Tenant tenant in tenants)
+                    {
+                        if (tenant.Id == tenSharedWith.Id)
+                        {
+                            if (tenant.Id == studentHousing.CurrentUser.Id)
+                            {
+                                tenant.Balance = tenant.Balance + currentUserShare;
+                            }
+                            else
+                            {
+                                tenant.Balance = tenant.Balance - newProduct.DevidedPrice;
+                            }
+                        }
+                    }
+                }
+
+                this.studentHousing.Products.Add(newProduct);
+
+                string sharedwith = "";
+
+                foreach (Tenant tenSharedWith in newProduct.TenantesShredWith)
+                {
+                    sharedwith += Convert.ToString(tenSharedWith.Name + ", ");
+                }
+
+                ListViewItem item1 = new ListViewItem(new[] { newProduct.Name,
+                    Convert.ToString(RoundedDevidedPrice), sharedwith });
+                
+                lvwProductSharingInfo.Items.Add(item1);
+
+                //updateBalanceView();
+                //FrmBalance balanceForm = new FrmBalance();
+                //balanceForm.updateBalanceView();
             }
-
-            this.studentHousing.Products.Add(newProduct);
-
-            string sharedwith = "";
-
-            foreach(Tenant tenSharedWith in newProduct.TenantesShredWith)
+            else
             {
-                sharedwith += Convert.ToString(tenSharedWith.Id + ", ");
+                MessageBox.Show("please enter a suitable input for the full price");
             }
+        }
 
-
-            ListViewItem item1 = new ListViewItem(new[] { newProduct.Name, Convert.ToString(newProduct.DevidedPrice), sharedwith });
-            lvwProductSharingInfo.Items.Add(item1);
-
-            lvwBlancesOverView.Items.Clear();
-
-            foreach (Tenant tenant in studentHousing.GetTenants())
-            {
-                ListViewItem item = new ListViewItem(new[] { Convert.ToString(tenant.Id), tenant.Name, Convert.ToString(tenant.Balance) });
-                lvwBlancesOverView.Items.Add(item);
-            }
-
-
-        }        
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
             Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text);
@@ -155,6 +158,9 @@ namespace StudentHousingCompany
             }
 
             this.studentHousing.Complaintss.Add(newcomplaint);
+
+            tbxComSub.Clear();
+            tbxCoTopic.Clear();
         }
 
         private void btnTaskComplete_Click(object sender, EventArgs e)
@@ -321,6 +327,7 @@ namespace StudentHousingCompany
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            //studentHousing.CurrentUser = null;
             this.Hide();
             var frmLogin = new FrmLogin();
             frmLogin.Show();
@@ -356,6 +363,8 @@ namespace StudentHousingCompany
 
             }
         }
+
+        
 
         public void FillAnnouncement()
         {

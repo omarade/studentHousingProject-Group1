@@ -23,13 +23,8 @@ namespace StudentHousingCompany
 
         public List<Agreement> Agreements { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public List<Product> Products { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+
         public List<Complaint> Complaintss { get; set; }
 
         public List<Announcement> Announcements { get; }
@@ -38,7 +33,6 @@ namespace StudentHousingCompany
 
         private StudentHousing()
         {
-
             Users = new List<User>();
             Products = new List<Product>();
             Schedules = new List<Schedule>();

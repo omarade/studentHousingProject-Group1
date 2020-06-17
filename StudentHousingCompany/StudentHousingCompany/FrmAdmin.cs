@@ -412,27 +412,14 @@ namespace StudentHousingCompany
                 DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
                 //PS.I do not know why i can not delete the ToString method and take only the value yet?
                 CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-
-                foreach(Complaint comp in studentHousing.Complaintss)
-                {
-                    if(comp.ComplaintId == CompID)
-                    {
-                        comp.ReplyFromAdmin = tbxReply.Text;
-                    }
-                }
             }
             else
             {
                 MessageBox.Show("please select a cpmlaint to reply to");
             }
-                
-
-            
-
 
             dgdComp.Visible = false;
             tbxReply.Visible = true;
-
             btnReplyToComp.Visible = false;
             btnSendReply.Visible = true;
 
@@ -440,15 +427,26 @@ namespace StudentHousingCompany
 
         private void btnSendReply_Click(object sender, EventArgs e)
         {
-            string reply = tbxReply.Text;
-            foreach (Complaint comp in studentHousing.Complaintss)
+            //foreach (Complaint comp in studentHousing.Complaintss)
+            //{
+            //    if (comp.ComplaintId == CompID)
+            //    {
+            //        comp.ReplyFromAdmin = tbxReply.Text;
+            //    }
+            //}
+            foreach (Tenant ten in studentHousing.GetTenants())
             {
-                if(comp.ComplaintId == idOfSelectedComp)
+                foreach(Complaint comp in ten.Complaints)
                 {
-                    comp.ReplyFromAdmin =  reply;
+                    if(comp.ComplaintId == CompID)
+                    {
+                        string reply = tbxReply.Text;
+                        comp.ReplyFromAdmin = reply;
+                    }
                 }
             }
 
+            tbxReply.Clear();
             tbxReply.Visible = false;
             dgdComp.Visible = true;
 
@@ -563,10 +561,22 @@ namespace StudentHousingCompany
                 {
                     if (!comp.Solved)
                     {
-                        dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                        if (comp.Anonymous)
+                        {
+                            dgdComp.Rows.Add(comp.ComplaintId, "Anonymous", comp.GetText());
+                        }
+                        else
+                        {
+                            dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                        }
                     }
                 }
             } 
+        }
+
+        private void FrmAdmin_Load_1(object sender, EventArgs e)
+        {
+
         }
 
         private void NewTemperatureLog(DateTime dateTime, string message)
