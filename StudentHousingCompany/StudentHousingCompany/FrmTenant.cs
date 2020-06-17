@@ -432,5 +432,10 @@ namespace StudentHousingCompany
                 }*/
             }
         }
+
+        private void btnBalances_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

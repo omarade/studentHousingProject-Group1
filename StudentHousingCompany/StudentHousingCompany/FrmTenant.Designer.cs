@@ -53,12 +53,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rtbHouseRules = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
+            this.gbWeeksTasks = new System.Windows.Forms.GroupBox();
             this.listView6 = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gbPTasks = new System.Windows.Forms.GroupBox();
+            this.clbTenantTask = new System.Windows.Forms.CheckedListBox();
             this.btnTaskComplete = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -122,13 +124,13 @@
             this.button8 = new System.Windows.Forms.Button();
             this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gbPTasks = new System.Windows.Forms.GroupBox();
-            this.gbWeeksTasks = new System.Windows.Forms.GroupBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.gbWeeksTasks.SuspendLayout();
+            this.gbPTasks.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GbxProduct.SuspendLayout();
@@ -138,8 +140,6 @@
             this.tabPage6.SuspendLayout();
             this.gbAgreements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdAgreements)).BeginInit();
-            this.gbPTasks.SuspendLayout();
-            this.gbWeeksTasks.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -151,7 +151,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(10, 52);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(963, 493);
@@ -168,7 +168,7 @@
             this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Controls.Add(this.rtbHouseRules);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(955, 467);
             this.tabPage5.TabIndex = 4;
@@ -295,7 +295,7 @@
             // 
             this.rtbHouseRules.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rtbHouseRules.Location = new System.Drawing.Point(56, 47);
-            this.rtbHouseRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.rtbHouseRules.Name = "rtbHouseRules";
             this.rtbHouseRules.ReadOnly = true;
             this.rtbHouseRules.Size = new System.Drawing.Size(226, 246);
@@ -308,21 +308,22 @@
             this.tabPage1.Controls.Add(this.gbWeeksTasks);
             this.tabPage1.Controls.Add(this.gbPTasks);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(955, 467);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tasks";
             // 
-            // clbTenantTask
+            // gbWeeksTasks
             // 
-            this.clbTenantTask.FormattingEnabled = true;
-            this.clbTenantTask.Location = new System.Drawing.Point(19, 33);
-            this.clbTenantTask.Margin = new System.Windows.Forms.Padding(2);
-            this.clbTenantTask.Name = "clbTenantTask";
-            this.clbTenantTask.Size = new System.Drawing.Size(139, 244);
-            this.clbTenantTask.TabIndex = 7;
+            this.gbWeeksTasks.Controls.Add(this.listView6);
+            this.gbWeeksTasks.Location = new System.Drawing.Point(242, 36);
+            this.gbWeeksTasks.Name = "gbWeeksTasks";
+            this.gbWeeksTasks.Size = new System.Drawing.Size(595, 360);
+            this.gbWeeksTasks.TabIndex = 9;
+            this.gbWeeksTasks.TabStop = false;
+            this.gbWeeksTasks.Text = "This Week Tasks List";
             // 
             // listView6
             // 
@@ -361,6 +362,26 @@
             this.columnHeader4.Text = "Due Day";
             this.columnHeader4.Width = 100;
             // 
+            // gbPTasks
+            // 
+            this.gbPTasks.Controls.Add(this.clbTenantTask);
+            this.gbPTasks.Controls.Add(this.btnTaskComplete);
+            this.gbPTasks.Location = new System.Drawing.Point(21, 36);
+            this.gbPTasks.Name = "gbPTasks";
+            this.gbPTasks.Size = new System.Drawing.Size(180, 360);
+            this.gbPTasks.TabIndex = 8;
+            this.gbPTasks.TabStop = false;
+            this.gbPTasks.Text = "Personal Tasks";
+            // 
+            // clbTenantTask
+            // 
+            this.clbTenantTask.FormattingEnabled = true;
+            this.clbTenantTask.Location = new System.Drawing.Point(19, 33);
+            this.clbTenantTask.Margin = new System.Windows.Forms.Padding(2);
+            this.clbTenantTask.Name = "clbTenantTask";
+            this.clbTenantTask.Size = new System.Drawing.Size(139, 244);
+            this.clbTenantTask.TabIndex = 7;
+            // 
             // btnTaskComplete
             // 
             this.btnTaskComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,9 +412,9 @@
             this.groupBox1.Controls.Add(this.lvwProductSharingInfo);
             this.groupBox1.Controls.Add(this.btnBalances);
             this.groupBox1.Location = new System.Drawing.Point(445, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(507, 441);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
@@ -438,6 +459,7 @@
             this.btnBalances.TabIndex = 35;
             this.btnBalances.Text = "Show balnces";
             this.btnBalances.UseVisualStyleBackColor = true;
+            this.btnBalances.Click += new System.EventHandler(this.btnBalances_Click);
             // 
             // GbxProduct
             // 
@@ -449,9 +471,9 @@
             this.GbxProduct.Controls.Add(this.lblProductname);
             this.GbxProduct.Controls.Add(this.tbxFullPrice);
             this.GbxProduct.Location = new System.Drawing.Point(14, 10);
-            this.GbxProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbxProduct.Margin = new System.Windows.Forms.Padding(2);
             this.GbxProduct.Name = "GbxProduct";
-            this.GbxProduct.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbxProduct.Padding = new System.Windows.Forms.Padding(2);
             this.GbxProduct.Size = new System.Drawing.Size(410, 441);
             this.GbxProduct.TabIndex = 36;
             this.GbxProduct.TabStop = false;
@@ -613,7 +635,7 @@
             // tbxReplyFromAdm
             // 
             this.tbxReplyFromAdm.Location = new System.Drawing.Point(196, 108);
-            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbxReplyFromAdm.Margin = new System.Windows.Forms.Padding(5);
             this.tbxReplyFromAdm.Multiline = true;
             this.tbxReplyFromAdm.Name = "tbxReplyFromAdm";
             this.tbxReplyFromAdm.ReadOnly = true;
@@ -624,7 +646,7 @@
             // btnMessageDelete
             // 
             this.btnMessageDelete.Location = new System.Drawing.Point(12, 382);
-            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMessageDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageDelete.Name = "btnMessageDelete";
             this.btnMessageDelete.Size = new System.Drawing.Size(164, 41);
             this.btnMessageDelete.TabIndex = 7;
@@ -662,7 +684,7 @@
             this.tabPage4.Controls.Add(this.btnAgree);
             this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(955, 467);
             this.tabPage4.TabIndex = 3;
@@ -793,7 +815,7 @@
             // 
             this.btnAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgree.Location = new System.Drawing.Point(492, 314);
-            this.btnAgree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgree.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgree.Name = "btnAgree";
             this.btnAgree.Size = new System.Drawing.Size(92, 38);
             this.btnAgree.TabIndex = 11;
@@ -819,7 +841,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage6.Size = new System.Drawing.Size(955, 467);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Agreements";
@@ -829,9 +851,9 @@
             this.gbAgreements.Controls.Add(this.btnNewAgreement);
             this.gbAgreements.Controls.Add(this.dgdAgreements);
             this.gbAgreements.Location = new System.Drawing.Point(11, 8);
-            this.gbAgreements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbAgreements.Margin = new System.Windows.Forms.Padding(2);
             this.gbAgreements.Name = "gbAgreements";
-            this.gbAgreements.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbAgreements.Padding = new System.Windows.Forms.Padding(2);
             this.gbAgreements.Size = new System.Drawing.Size(693, 362);
             this.gbAgreements.TabIndex = 2;
             this.gbAgreements.TabStop = false;
@@ -881,7 +903,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgdAgreements.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgdAgreements.Location = new System.Drawing.Point(11, 54);
-            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgdAgreements.Margin = new System.Windows.Forms.Padding(2);
             this.dgdAgreements.Name = "dgdAgreements";
             this.dgdAgreements.ReadOnly = true;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -936,7 +958,7 @@
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(648, 12);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(89, 41);
             this.btnLogout.TabIndex = 3;
@@ -985,7 +1007,7 @@
             // tbxGeneralCurrentTennatID
             // 
             this.tbxGeneralCurrentTennatID.Location = new System.Drawing.Point(236, 21);
-            this.tbxGeneralCurrentTennatID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxGeneralCurrentTennatID.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGeneralCurrentTennatID.Name = "tbxGeneralCurrentTennatID";
             this.tbxGeneralCurrentTennatID.ReadOnly = true;
             this.tbxGeneralCurrentTennatID.Size = new System.Drawing.Size(76, 20);
@@ -1005,7 +1027,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(599, 11);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(83, 41);
             this.button8.TabIndex = 8;
@@ -1027,27 +1049,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // gbPTasks
-            // 
-            this.gbPTasks.Controls.Add(this.clbTenantTask);
-            this.gbPTasks.Controls.Add(this.btnTaskComplete);
-            this.gbPTasks.Location = new System.Drawing.Point(21, 36);
-            this.gbPTasks.Name = "gbPTasks";
-            this.gbPTasks.Size = new System.Drawing.Size(180, 360);
-            this.gbPTasks.TabIndex = 8;
-            this.gbPTasks.TabStop = false;
-            this.gbPTasks.Text = "Personal Tasks";
-            // 
-            // gbWeeksTasks
-            // 
-            this.gbWeeksTasks.Controls.Add(this.listView6);
-            this.gbWeeksTasks.Location = new System.Drawing.Point(242, 36);
-            this.gbWeeksTasks.Name = "gbWeeksTasks";
-            this.gbWeeksTasks.Size = new System.Drawing.Size(595, 360);
-            this.gbWeeksTasks.TabIndex = 9;
-            this.gbWeeksTasks.TabStop = false;
-            this.gbWeeksTasks.Text = "This Week Tasks List";
-            // 
             // FrmTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1060,7 +1061,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.tbxGeneralCurrentTennatID);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmTenant";
             this.Text = "Student Housing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTenant_FormClosed);
@@ -1070,6 +1071,8 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdAnnouncement)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.gbWeeksTasks.ResumeLayout(false);
+            this.gbPTasks.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.GbxProduct.ResumeLayout(false);
@@ -1082,8 +1085,6 @@
             this.tabPage6.ResumeLayout(false);
             this.gbAgreements.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgdAgreements)).EndInit();
-            this.gbPTasks.ResumeLayout(false);
-            this.gbWeeksTasks.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
