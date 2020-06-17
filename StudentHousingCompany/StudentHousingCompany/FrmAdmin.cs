@@ -13,6 +13,8 @@ namespace StudentHousingCompany
 {
     public partial class FrmAdmin : Form
     {
+        private double temperature = 18;
+
         private StudentHousing studentHousing;
         DayOfWeek day = DayOfWeek.Monday;
         
@@ -29,6 +31,7 @@ namespace StudentHousingCompany
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
+            //serialPort1.Open();
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -218,36 +221,6 @@ namespace StudentHousingCompany
             studentHousing.ResetSchedule();
             ShowTasks();
 
-        }
-
-        private void dgdUsers_SelectionChanged(object sender, EventArgs e)
-        {
-            
-
-            /*if (dgdUsers.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = dgdUsers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgdUsers.Rows[selectedRowIndex];
-                int.TryParse(selectedRow.Cells["hxtId"].Value.ToString(), out int id);
-
-                User user = studentHousing.GetUserById(id);
-
-                if (user is Tenant)
-                {
-                    rbtnTenant.Checked = true;
-                    txtPhoneNr.Text = selectedRow.Cells["hxtPhoneNr"].Value.ToString();
-                    txtPostcode.Text = selectedRow.Cells["hxtPostcode"].Value.ToString();
-                    txtAddress.Text = selectedRow.Cells["hxtAddress"].Value.ToString();
-                }
-                else
-                {
-                    rbtnAdmin.Checked = true;
-                }
-                txtPassword.Enabled = false;
-                txtName.Text = selectedRow.Cells["hxtName"].Value.ToString();
-                dtbDoB.Value = user.DateOfBirth;
-                txtEmail.Text = selectedRow.Cells["hxtEmail"].Value.ToString();
-            }*/
         }
 
         private void tpMngUsrs_Click(object sender, EventArgs e)
@@ -450,14 +423,6 @@ namespace StudentHousingCompany
                 DataGridViewRow selectedRow = dgdComp.Rows[selectdIndex];
                 //PS.I do not know why i can not delete the ToString method and take only the value yet?
                 CompID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-
-                foreach(Complaint comp in studentHousing.Complaintss)
-                {
-                    if(comp.ComplaintId == CompID)
-                    {
-                        comp.ReplyFromAdmin = tbxReply.Text;
-                    }
-                }
             }
             else
             {
@@ -473,7 +438,14 @@ namespace StudentHousingCompany
 
         private void btnSendReply_Click(object sender, EventArgs e)
         {
-            foreach(Tenant ten in studentHousing.GetTenants())
+            //foreach (Complaint comp in studentHousing.Complaintss)
+            //{
+            //    if (comp.ComplaintId == CompID)
+            //    {
+            //        comp.ReplyFromAdmin = tbxReply.Text;
+            //    }
+            //}
+            foreach (Tenant ten in studentHousing.GetTenants())
             {
                 foreach(Complaint comp in ten.Complaints)
                 {
@@ -600,10 +572,58 @@ namespace StudentHousingCompany
                 {
                     if (!comp.Solved)
                     {
-                        dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                        if (comp.Anonymous)
+                        {
+                            dgdComp.Rows.Add(comp.ComplaintId, "Anonymous", comp.GetText());
+                        }
+                        else
+                        {
+                            dgdComp.Rows.Add(comp.ComplaintId, comp.CreaterName, comp.GetText());
+                        }
                     }
                 }
             } 
+        }
+
+        private void FrmAdmin_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewTemperatureLog(DateTime dateTime, string message)
+        {
+            string date = dateTime.ToString("dd/MM/yyyy");
+            string time = dateTime.ToString("hh:mm tt");
+            dgdTemperature.Invoke((Action) (() => dgdTemperature.Rows.Add(date, time, message)));
+        }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            if (serialPort1.BytesToRead > 0)
+            {
+                string message = serialPort1.ReadLine();
+ 
+
+                //Receive temperature
+                if (message.Contains("Temp"))
+                {
+                    string temp = message.Split('0')[1];
+                    temperature = Convert.ToDouble(temp);
+                    temp = $"{temperature}°C";
+                    lblTemperature.Invoke((Action)(() => lblTemperature.Text = temp));
+
+                    if (temperature < 16)
+                    {
+                        string msg = $"{temperature}°C, Temperature Too low!";
+                        NewTemperatureLog(DateTime.Now, msg);
+                    }
+                    else if (temperature > 27)
+                    {
+                        string msg = $"{temperature}°C, Temperature too high!";
+                        NewTemperatureLog(DateTime.Now, msg);
+                    }
+                }
+            }
         }
 
         private void btnCurrentWeek_Click(object sender, EventArgs e)

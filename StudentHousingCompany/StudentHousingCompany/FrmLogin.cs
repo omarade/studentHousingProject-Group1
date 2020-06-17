@@ -32,8 +32,6 @@ namespace StudentHousingCompany
         {
             if (user == null)
             {
-                txtEmail.Clear();
-                txtPassword.Clear();
                 MessageBox.Show("Credentials are wrong");
             } 
             else if (user is Admin)

@@ -23,13 +23,8 @@ namespace StudentHousingCompany
 
         public List<Agreement> Agreements { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public List<Product> Products { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+
         public List<Complaint> Complaintss { get; set; }
 
         public List<Announcement> Announcements { get; }
