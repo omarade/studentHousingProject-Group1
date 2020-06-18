@@ -147,6 +147,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmNewAgreement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewAgreement";
             this.ResumeLayout(false);
             this.PerformLayout();
