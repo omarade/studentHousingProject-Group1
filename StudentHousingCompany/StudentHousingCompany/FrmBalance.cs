@@ -50,6 +50,7 @@ namespace StudentHousingCompany
         private void btnExitBalnce_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

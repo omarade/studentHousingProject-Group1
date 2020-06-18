@@ -29,9 +29,6 @@ namespace StudentHousingCompany
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
-
-            dgdComp.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgdComp.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
