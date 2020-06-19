@@ -32,6 +32,8 @@ namespace StudentHousingCompany
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
             //serialPort1.Open();
+            //dgdComp.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            //dgdComp.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {

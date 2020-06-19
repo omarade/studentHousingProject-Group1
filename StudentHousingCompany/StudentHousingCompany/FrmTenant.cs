@@ -38,6 +38,8 @@ namespace StudentHousingCompany
             FillAnnouncement();
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             tbxGeneralCurrentTennatID.Text = (Convert.ToString(studentHousing.CurrentUser.Id));
+            FillSharingProductInfo();
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -122,10 +124,13 @@ namespace StudentHousingCompany
                     sharedwith += Convert.ToString(tenSharedWith.Name + ", ");
                 }
 
+
                 ListViewItem item1 = new ListViewItem(new[] { newProduct.Name,
                     Convert.ToString(RoundedDevidedPrice), sharedwith });
                 
                 lvwProductSharingInfo.Items.Add(item1);
+
+                
 
                 //updateBalanceView();
                 //FrmBalance balanceForm = new FrmBalance();
@@ -136,7 +141,23 @@ namespace StudentHousingCompany
                 MessageBox.Show("please enter a suitable input for the full price");
             }
         }
+        public void FillSharingProductInfo()
+        {
+            string sharedwith = "";
+            foreach (Product product in studentHousing.Products)
+            {
 
+                foreach(Tenant ten in product.TenantesShredWith)
+                {
+                    sharedwith += Convert.ToString(ten.Name + ", ");
+                }
+
+                double RoundedDevidedPrice = Math.Round(product.DevidedPrice, 1);
+                ListViewItem item1 = new ListViewItem(new[] { product.Name,
+                    Convert.ToString(RoundedDevidedPrice), sharedwith });
+                lvwProductSharingInfo.Items.Add(item1);
+            }
+        }
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
             Complaint newcomplaint = new Complaint(tbxComSub.Text, tbxCoTopic.Text);
@@ -431,6 +452,17 @@ namespace StudentHousingCompany
                     }
                 }*/
             }
+        }
+
+        private void btnBalances_Click(object sender, EventArgs e)
+        {
+            var frmBalance = new FrmBalance();
+            frmBalance.Show();
+        }
+
+        private void FrmTenant_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
