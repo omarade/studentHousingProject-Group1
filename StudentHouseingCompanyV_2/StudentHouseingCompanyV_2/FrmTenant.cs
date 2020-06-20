@@ -21,7 +21,7 @@ namespace StudentHouseingCompanyV_2
         public FrmTenant()
         {
             InitializeComponent();
-            pnlHighlight.Left = btnGereral.Left;
+            /*pnlHighlight.Left = btnGereral.Left;
             pnlHighlight.Width = btnGereral.Width;
             pnlComplaints.Visible = false;
             pnlCostControle.Visible = false;
@@ -33,7 +33,7 @@ namespace StudentHouseingCompanyV_2
             pnlGereral.Width = 1155;
             pnlGereral.Height = 422;
             pnlGereral.Top = 162;
-            pnlGereral.Left = 0;
+            pnlGereral.Left = 0;*/
 
             studentHousing = StudentHousing.Instance;
 
@@ -62,7 +62,7 @@ namespace StudentHouseingCompanyV_2
             Application.Exit();
         }
 
-        private void btnGereral_Click(object sender, EventArgs e)
+/*        private void btnGereral_Click(object sender, EventArgs e)
         {
             pnlHighlight.Left = btnGereral.Left;
             pnlHighlight.Width = btnGereral.Width;
@@ -162,7 +162,7 @@ namespace StudentHouseingCompanyV_2
             pnlAgreements.Height = 422;
             pnlAgreements.Top = 162;
             pnlAgreements.Left = 0;
-        }
+        }*/
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)
         {

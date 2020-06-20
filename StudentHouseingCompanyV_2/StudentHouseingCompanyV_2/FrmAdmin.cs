@@ -24,7 +24,7 @@ namespace StudentHouseingCompanyV_2
         public FrmAdmin()
         {
             InitializeComponent();
-            pnlHighlight.Left = btnGereral.Left;
+            /*pnlHighlight.Left = btnGereral.Left;
             pnlHighlight.Width = btnGereral.Width;
             pnlComplaints.Visible = false;
             pnlTasks.Visible = false;
@@ -33,7 +33,7 @@ namespace StudentHouseingCompanyV_2
             pnlGereral.Width = 1155;
             pnlGereral.Height = 439;
             pnlGereral.Top = 162;
-            pnlGereral.Left = 0;
+            pnlGereral.Left = 0;*/
 
             studentHousing = StudentHousing.Instance;
             ShowUsers();
@@ -48,7 +48,7 @@ namespace StudentHouseingCompanyV_2
             //serialPort1.Open();
         }
 
-        private void btnGereral_Click(object sender, EventArgs e)
+       /* private void btnGereral_Click(object sender, EventArgs e)
         {
             pnlHighlight.Left = btnGereral.Left;
             pnlHighlight.Width = btnGereral.Width;
@@ -104,7 +104,7 @@ namespace StudentHouseingCompanyV_2
             pnlComplaints.Height = 439;
             pnlComplaints.Top = 162;
             pnlComplaints.Left = 0;
-        }
+        }*/
 
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
