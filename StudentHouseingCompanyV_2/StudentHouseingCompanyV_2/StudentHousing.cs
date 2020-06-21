@@ -31,6 +31,8 @@ namespace StudentHouseingCompanyV_2
 
         public string HouseRules { get; set; }
 
+        private bool TaskListUpdated = false;
+
         private StudentHousing()
         {
             Users = new List<User>();
@@ -311,14 +313,31 @@ namespace StudentHouseingCompanyV_2
         /// <returns></returns>
         public bool IsEndOfWeek()
         {
-            DayOfWeek day = DayOfWeek.Sunday;
-            DayOfWeek today = DateTime.Now.DayOfWeek;
-            if (day == today)
-            {
-                return true;
+            if(!TaskListUpdated){
+                DayOfWeek day = DayOfWeek.Sunday;
+                DayOfWeek today = DateTime.Now.DayOfWeek;
+                if (day == today)
+                {
+                    TaskListUpdated = true;
+                    return true;
+                }
             }
-            else { return false; }
 
+            return false;
+        }
+
+        public void IsNewWeek()
+        {
+            if (TaskListUpdated)
+            {
+                DayOfWeek day = DayOfWeek.Monday;
+                DayOfWeek today = DateTime.Now.DayOfWeek;
+                if (day == today)
+                {
+                    TaskListUpdated = false;
+                    
+                }
+            }
         }
 
         public void AddEvent(string eventName, DateTime dateOfEvent, string eventDesc,string eventOwner)
@@ -403,6 +422,17 @@ namespace StudentHouseingCompanyV_2
             }
             
             return nextWeekList;
+        }
+
+        public void DeleteAnnoucement(int id)
+        {
+            foreach (var announcement in Announcements.ToList())
+            {
+                if (announcement.AnnouncementId == id)
+                {
+                    Announcements.Remove(announcement);
+                }
+            }
         }
     }
 }

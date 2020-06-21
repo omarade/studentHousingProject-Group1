@@ -33,9 +33,11 @@ namespace StudentHouseingCompanyV_2
             rbtnTenant.Checked = true;
             rbtnAdmin.Checked = false;
             lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
+            rtbHouseRules.Text = studentHousing.HouseRules;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
             //serialPort1.Open();
+
         }
 
         private void btnCloseForm_Click(object sender, EventArgs e)
@@ -529,6 +531,7 @@ namespace StudentHouseingCompanyV_2
 
         private void btnAnnoCreate_Click(object sender, EventArgs e)
         {
+            
             this.Enabled = false;
             var frmAnnouncement = new FrmAnnouncement(this);
             frmAnnouncement.Show();
@@ -640,6 +643,19 @@ namespace StudentHouseingCompanyV_2
             ShowTasks();
             BtnNextWeek.Visible = true;
             btnCurrentWeek.Visible = false;
+        }
+
+        private void btnDeleteAnno_Click(object sender, EventArgs e)
+        {
+            if (dgdAnnouncement.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgdAnnouncement.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgdAnnouncement.Rows[selectedrowindex];
+                int.TryParse(selectedRow.Cells[0].Value.ToString(), out int id);
+                studentHousing.DeleteAnnoucement(id);
+
+                FillAnnouncement();
+            }
         }
     }
 }
