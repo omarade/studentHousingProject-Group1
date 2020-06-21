@@ -21,24 +21,19 @@ namespace StudentHouseingCompanyV_2
         public FrmTenant()
         {
             InitializeComponent();
-            /*pnlHighlight.Left = btnGereral.Left;
-            pnlHighlight.Width = btnGereral.Width;
-            pnlComplaints.Visible = false;
-            pnlCostControle.Visible = false;
-            pnlTasks.Visible = false;
-            pnlGereral.Visible = true;
-            pnlEvents.Visible = false;
-            pnlAgreements.Visible = false;
-
-            pnlGereral.Width = 1155;
-            pnlGereral.Height = 422;
-            pnlGereral.Top = 162;
-            pnlGereral.Left = 0;*/
-
             studentHousing = StudentHousing.Instance;
-
             ShowAgreements();
+            UpadetTenantsToShare();
+            timer1.Start();
+            ShowTasks();
+            FillEventsList();
+            rtbHouseRules.Text = studentHousing.HouseRules;
+            FillAnnouncement();
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
+        }
 
+        private void UpadetTenantsToShare()
+        {
             foreach (Tenant tenant in studentHousing.GetTenants())
             {
                 if (tenant.Id != studentHousing.CurrentUser.Id)
@@ -47,122 +42,14 @@ namespace StudentHouseingCompanyV_2
                 }
 
             }
-            timer1.Start();
-            ShowTasks();
-            FillEventsList();
-            rtbHouseRules.Text = studentHousing.HouseRules;
-            FillAnnouncement();
-            lblCurrentUserName.Text = "Tenant Name: " + studentHousing.CurrentUser.Name;
-            lblGeneralCurrentTennatID.Text = "Tenant ID:" +(Convert.ToString(studentHousing.CurrentUser.Id));
         }
-
 
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-/*        private void btnGereral_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnGereral.Left;
-            pnlHighlight.Width = btnGereral.Width;
-            pnlComplaints.Visible = false;
-            pnlCostControle.Visible = false;
-            pnlTasks.Visible = false;
-            pnlGereral.Visible = true;
-            pnlEvents.Visible = false;
-            pnlAgreements.Visible = false;
-
-            pnlGereral.Width = 1155;
-            pnlGereral.Height = 422;
-            pnlGereral.Top = 162;
-            pnlGereral.Left = 0;
-        }
-
-        private void btnComplaints_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnComplaints.Left;
-            pnlHighlight.Width = btnComplaints.Width;
-            pnlComplaints.Visible = true;
-            pnlCostControle.Visible = false;
-            pnlTasks.Visible = false;
-            pnlGereral.Visible = false;
-            pnlEvents.Visible = false;
-            pnlAgreements.Visible = false;
-
-            pnlComplaints.Width = 1155;
-            pnlComplaints.Height = 422;
-            pnlComplaints.Top = 162;
-            pnlComplaints.Left = 0;
-        }
-
-        private void btnTasks_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnTasks.Left;
-            pnlHighlight.Width = btnTasks.Width;
-            pnlComplaints.Visible = false;
-            pnlCostControle.Visible = false;
-            pnlTasks.Visible = true;
-            pnlGereral.Visible = false;
-            pnlEvents.Visible = false;
-            pnlAgreements.Visible = false;
-
-            pnlTasks.Width = 1155;
-            pnlTasks.Height = 422;
-            pnlTasks.Top = 162;
-            pnlTasks.Left = 0;
-        }
-
-        private void btnCostControle_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnCostControle.Left;
-            pnlHighlight.Width = btnCostControle.Width;
-            pnlComplaints.Visible = false;
-            pnlCostControle.Visible = true;
-            pnlTasks.Visible = false;
-            pnlGereral.Visible = false;
-            pnlEvents.Visible = false;
-            pnlAgreements.Visible = false;
-
-            pnlCostControle.Width = 1155;
-            pnlCostControle.Height = 422;
-            pnlCostControle.Top = 162;
-            pnlCostControle.Left = 0;
-        }
-
-        private void btnEvents_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnEvents.Left;
-            pnlHighlight.Width = btnEvents.Width;
-            pnlComplaints.Visible = false;
-            pnlCostControle.Visible = false;
-            pnlTasks.Visible = false;
-            pnlGereral.Visible = false;
-            pnlEvents.Visible = true;
-            pnlAgreements.Visible = false;
-
-            pnlEvents.Width = 1155;
-            pnlEvents.Height = 422;
-            pnlEvents.Top = 162;
-            pnlEvents.Left = 0;
-        }
-
-        private void btnAgreements_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnAgreements.Left;
-            pnlHighlight.Width = btnAgreements.Width;
-            pnlComplaints.Visible = false;
-            pnlCostControle.Visible = false;
-            pnlTasks.Visible = false;
-            pnlGereral.Visible = false;
-            pnlEvents.Visible = false;
-            pnlAgreements.Visible = true;
-
-            pnlAgreements.Width = 1155;
-            pnlAgreements.Height = 422;
-            pnlAgreements.Top = 162;
-            pnlAgreements.Left = 0;
-        }*/
+        
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)
         {
@@ -187,7 +74,7 @@ namespace StudentHouseingCompanyV_2
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            //studentHousing.CurrentUser = null;
+            studentHousing.CurrentUser = null;
             this.Hide();
             var frmLogin = new FrmLogin();
             frmLogin.Show();
@@ -198,7 +85,6 @@ namespace StudentHouseingCompanyV_2
             this.Enabled = false;
             var frmAddEvent = new FrmAddEvent(this);
             frmAddEvent.Show();
-
             FillEventsList();
         }
 
@@ -212,13 +98,6 @@ namespace StudentHouseingCompanyV_2
                 string Agree = currentEvent.PositiveResponses.Count().ToString() + "/" + studentHousing.GetTenants().Count().ToString();
                 dgdEvents.Rows.Add(currentEvent.EventId, currentEvent.EventOwner, currentEvent.EventName, currentEvent.EventDesc, currentEvent.DateOfEvent.ToString("dd/MM/yyyy"), Disagree, Agree);
             }
-        }
-
-        private void btnGoToAdmin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var frmAdmin = new FrmAdmin();
-            frmAdmin.Show();
         }
 
         private void btnAddToShoppingList_Click(object sender, EventArgs e)
@@ -575,5 +454,6 @@ namespace StudentHouseingCompanyV_2
         {
 
         }
+
     }
 }

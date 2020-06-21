@@ -68,15 +68,15 @@ namespace StudentHouseingCompanyV_2
             if (userToUpdate is Admin && ValidateUserInput(name, dateOfBirth, email))
             {
                 studentHousing.UpdateUser(userToUpdate.Id, name, dateOfBirth, email, phoneNr, postcode, address);
-                frmAdmin.Enabled = true;
-                this.Close();
             }
             if (userToUpdate is Tenant && ValidateUserInput(name, dateOfBirth, email) && ValidateUserInput(phoneNr, postcode, address))
             {
                 studentHousing.UpdateUser(userToUpdate.Id, name, dateOfBirth, email, phoneNr, postcode, address);
-                this.Hide();
-                frmAdmin.Enabled = true;
             }
+
+            frmAdmin.Enabled = true;
+            studentHousing.ResetSchedule();
+            this.Close();
         }
 
         private bool ValidateUserInput(string name, DateTime dob, string email)

@@ -43,11 +43,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.btnGoToAdmin = new System.Windows.Forms.Button();
-            this.lblGeneralCurrentTennatID = new System.Windows.Forms.Label();
-            this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCloseForm = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.lblCurrentUserName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -119,11 +118,11 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.pnlTop.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -140,20 +139,19 @@
             this.gbHouseRules.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroTabPage5.SuspendLayout();
+            this.metroTabPage6.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
-            this.metroTabPage5.SuspendLayout();
-            this.metroTabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.btnGoToAdmin);
-            this.pnlTop.Controls.Add(this.lblGeneralCurrentTennatID);
-            this.pnlTop.Controls.Add(this.lblCurrentUserName);
             this.pnlTop.Controls.Add(this.btnLogout);
             this.pnlTop.Controls.Add(this.btnCloseForm);
+            this.pnlTop.Controls.Add(this.lblInfo);
+            this.pnlTop.Controls.Add(this.lblCurrentUserName);
             this.pnlTop.Controls.Add(this.panel4);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -164,61 +162,18 @@
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseMove);
             this.pnlTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseUp);
             // 
-            // btnGoToAdmin
-            // 
-            this.btnGoToAdmin.BackColor = System.Drawing.Color.Blue;
-            this.btnGoToAdmin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnGoToAdmin.FlatAppearance.BorderSize = 0;
-            this.btnGoToAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoToAdmin.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoToAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnGoToAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnGoToAdmin.Image")));
-            this.btnGoToAdmin.Location = new System.Drawing.Point(903, 0);
-            this.btnGoToAdmin.Name = "btnGoToAdmin";
-            this.btnGoToAdmin.Size = new System.Drawing.Size(84, 84);
-            this.btnGoToAdmin.TabIndex = 55;
-            this.btnGoToAdmin.Text = "Go To Admin";
-            this.btnGoToAdmin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGoToAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGoToAdmin.UseVisualStyleBackColor = false;
-            this.btnGoToAdmin.Click += new System.EventHandler(this.btnGoToAdmin_Click);
-            // 
-            // lblGeneralCurrentTennatID
-            // 
-            this.lblGeneralCurrentTennatID.AutoSize = true;
-            this.lblGeneralCurrentTennatID.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.lblGeneralCurrentTennatID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblGeneralCurrentTennatID.Location = new System.Drawing.Point(473, 31);
-            this.lblGeneralCurrentTennatID.Name = "lblGeneralCurrentTennatID";
-            this.lblGeneralCurrentTennatID.Size = new System.Drawing.Size(146, 23);
-            this.lblGeneralCurrentTennatID.TabIndex = 54;
-            this.lblGeneralCurrentTennatID.Text = "Tenant ID: 001";
-            // 
-            // lblCurrentUserName
-            // 
-            this.lblCurrentUserName.AutoSize = true;
-            this.lblCurrentUserName.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.lblCurrentUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblCurrentUserName.Location = new System.Drawing.Point(177, 30);
-            this.lblCurrentUserName.Name = "lblCurrentUserName";
-            this.lblCurrentUserName.Size = new System.Drawing.Size(208, 23);
-            this.lblCurrentUserName.TabIndex = 53;
-            this.lblCurrentUserName.Text = "Tenant Name: ******";
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(987, 0);
+            this.btnLogout.Location = new System.Drawing.Point(1084, 0);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(84, 84);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "Logout";
+            this.btnLogout.Size = new System.Drawing.Size(35, 35);
+            this.btnLogout.TabIndex = 56;
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -227,21 +182,41 @@
             // btnCloseForm
             // 
             this.btnCloseForm.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCloseForm.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCloseForm.FlatAppearance.BorderSize = 0;
             this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseForm.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseForm.ForeColor = System.Drawing.Color.White;
             this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
-            this.btnCloseForm.Location = new System.Drawing.Point(1071, 0);
+            this.btnCloseForm.Location = new System.Drawing.Point(1120, 0);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(84, 84);
-            this.btnCloseForm.TabIndex = 6;
-            this.btnCloseForm.Text = "Close";
+            this.btnCloseForm.Size = new System.Drawing.Size(35, 35);
+            this.btnCloseForm.TabIndex = 55;
             this.btnCloseForm.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCloseForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.lblInfo.Location = new System.Drawing.Point(177, 16);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(193, 23);
+            this.lblInfo.TabIndex = 54;
+            this.lblInfo.Text = "Loged in as Tenant";
+            // 
+            // lblCurrentUserName
+            // 
+            this.lblCurrentUserName.AutoSize = true;
+            this.lblCurrentUserName.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.lblCurrentUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.lblCurrentUserName.Location = new System.Drawing.Point(177, 46);
+            this.lblCurrentUserName.Name = "lblCurrentUserName";
+            this.lblCurrentUserName.Size = new System.Drawing.Size(208, 23);
+            this.lblCurrentUserName.TabIndex = 53;
+            this.lblCurrentUserName.Text = "Tenant Name: ******";
             // 
             // panel4
             // 
@@ -268,11 +243,11 @@
             this.groupBox1.Controls.Add(this.lvwProductSharingInfo);
             this.groupBox1.Controls.Add(this.btnBalances);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(499, 24);
+            this.groupBox1.Location = new System.Drawing.Point(557, 16);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(507, 395);
+            this.groupBox1.Size = new System.Drawing.Size(531, 418);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -285,7 +260,7 @@
             this.columnHeader9,
             this.columnHeader10});
             this.lvwProductSharingInfo.HideSelection = false;
-            this.lvwProductSharingInfo.Location = new System.Drawing.Point(14, 31);
+            this.lvwProductSharingInfo.Location = new System.Drawing.Point(38, 34);
             this.lvwProductSharingInfo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lvwProductSharingInfo.Name = "lvwProductSharingInfo";
             this.lvwProductSharingInfo.Size = new System.Drawing.Size(458, 309);
@@ -312,7 +287,7 @@
             // 
             this.btnBalances.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnBalances.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.btnBalances.Location = new System.Drawing.Point(205, 349);
+            this.btnBalances.Location = new System.Drawing.Point(229, 360);
             this.btnBalances.Name = "btnBalances";
             this.btnBalances.Size = new System.Drawing.Size(267, 41);
             this.btnBalances.TabIndex = 35;
@@ -330,11 +305,11 @@
             this.GbxProduct.Controls.Add(this.lblProductname);
             this.GbxProduct.Controls.Add(this.tbxFullPrice);
             this.GbxProduct.ForeColor = System.Drawing.Color.White;
-            this.GbxProduct.Location = new System.Drawing.Point(37, 24);
+            this.GbxProduct.Location = new System.Drawing.Point(37, 16);
             this.GbxProduct.Margin = new System.Windows.Forms.Padding(2);
             this.GbxProduct.Name = "GbxProduct";
             this.GbxProduct.Padding = new System.Windows.Forms.Padding(2);
-            this.GbxProduct.Size = new System.Drawing.Size(410, 395);
+            this.GbxProduct.Size = new System.Drawing.Size(410, 418);
             this.GbxProduct.TabIndex = 37;
             this.GbxProduct.TabStop = false;
             this.GbxProduct.Text = "Add a product to share";
@@ -367,8 +342,8 @@
             // 
             this.lblTenantsToShareWith.AutoSize = true;
             this.lblTenantsToShareWith.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblTenantsToShareWith.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblTenantsToShareWith.Location = new System.Drawing.Point(6, 108);
+            this.lblTenantsToShareWith.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.lblTenantsToShareWith.Location = new System.Drawing.Point(9, 108);
             this.lblTenantsToShareWith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenantsToShareWith.Name = "lblTenantsToShareWith";
             this.lblTenantsToShareWith.Size = new System.Drawing.Size(65, 19);
@@ -379,8 +354,8 @@
             // 
             this.lblFullPrice.AutoSize = true;
             this.lblFullPrice.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblFullPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblFullPrice.Location = new System.Drawing.Point(8, 72);
+            this.lblFullPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.lblFullPrice.Location = new System.Drawing.Point(9, 67);
             this.lblFullPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullPrice.Name = "lblFullPrice";
             this.lblFullPrice.Size = new System.Drawing.Size(68, 19);
@@ -400,7 +375,7 @@
             // 
             this.lblProductname.AutoSize = true;
             this.lblProductname.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblProductname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.lblProductname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.lblProductname.Location = new System.Drawing.Point(6, 24);
             this.lblProductname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductname.Name = "lblProductname";
@@ -432,13 +407,14 @@
             this.pnlComplaints.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.pnlComplaints.Location = new System.Drawing.Point(23, 8);
             this.pnlComplaints.Name = "pnlComplaints";
-            this.pnlComplaints.Size = new System.Drawing.Size(1048, 434);
+            this.pnlComplaints.Size = new System.Drawing.Size(1048, 459);
             this.pnlComplaints.TabIndex = 58;
             // 
             // lblMessageFromAdm
             // 
             this.lblMessageFromAdm.AutoSize = true;
             this.lblMessageFromAdm.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblMessageFromAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.lblMessageFromAdm.Location = new System.Drawing.Point(53, 106);
             this.lblMessageFromAdm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageFromAdm.Name = "lblMessageFromAdm";
@@ -462,6 +438,7 @@
             // 
             this.lblSubject.AutoSize = true;
             this.lblSubject.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.lblSubject.Location = new System.Drawing.Point(53, 67);
             this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
@@ -473,6 +450,7 @@
             // 
             this.cbxSendAnonymously.AutoSize = true;
             this.cbxSendAnonymously.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.cbxSendAnonymously.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.cbxSendAnonymously.Location = new System.Drawing.Point(56, 327);
             this.cbxSendAnonymously.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbxSendAnonymously.Name = "cbxSendAnonymously";
@@ -486,6 +464,7 @@
             // 
             this.lblMakeComplaint.AutoSize = true;
             this.lblMakeComplaint.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.lblMakeComplaint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.lblMakeComplaint.Location = new System.Drawing.Point(52, 14);
             this.lblMakeComplaint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMakeComplaint.Name = "lblMakeComplaint";
@@ -593,7 +572,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgdEvents.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgdEvents.Location = new System.Drawing.Point(45, 88);
+            this.dgdEvents.Location = new System.Drawing.Point(28, 73);
             this.dgdEvents.Name = "dgdEvents";
             this.dgdEvents.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -608,7 +587,7 @@
             this.dgdEvents.RowHeadersWidth = 51;
             this.dgdEvents.RowTemplate.Height = 24;
             this.dgdEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgdEvents.Size = new System.Drawing.Size(861, 239);
+            this.dgdEvents.Size = new System.Drawing.Size(1004, 270);
             this.dgdEvents.TabIndex = 21;
             // 
             // dgcEventID
@@ -663,7 +642,7 @@
             // btnAddEvent
             // 
             this.btnAddEvent.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnAddEvent.Location = new System.Drawing.Point(44, 27);
+            this.btnAddEvent.Location = new System.Drawing.Point(166, 22);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(134, 36);
             this.btnAddEvent.TabIndex = 20;
@@ -674,9 +653,9 @@
             // btnDisagree
             // 
             this.btnDisagree.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnDisagree.Location = new System.Drawing.Point(694, 354);
+            this.btnDisagree.Location = new System.Drawing.Point(720, 362);
             this.btnDisagree.Name = "btnDisagree";
-            this.btnDisagree.Size = new System.Drawing.Size(99, 38);
+            this.btnDisagree.Size = new System.Drawing.Size(148, 38);
             this.btnDisagree.TabIndex = 19;
             this.btnDisagree.Text = "Disagree";
             this.btnDisagree.UseVisualStyleBackColor = true;
@@ -685,10 +664,10 @@
             // btnAgree
             // 
             this.btnAgree.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnAgree.Location = new System.Drawing.Point(807, 354);
+            this.btnAgree.Location = new System.Drawing.Point(882, 362);
             this.btnAgree.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgree.Name = "btnAgree";
-            this.btnAgree.Size = new System.Drawing.Size(99, 38);
+            this.btnAgree.Size = new System.Drawing.Size(150, 38);
             this.btnAgree.TabIndex = 18;
             this.btnAgree.Text = "Agree";
             this.btnAgree.UseVisualStyleBackColor = true;
@@ -698,7 +677,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label6.Location = new System.Drawing.Point(41, 66);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.label6.Location = new System.Drawing.Point(26, 32);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 19);
@@ -714,7 +694,7 @@
             this.gbAgreements.Margin = new System.Windows.Forms.Padding(2);
             this.gbAgreements.Name = "gbAgreements";
             this.gbAgreements.Padding = new System.Windows.Forms.Padding(2);
-            this.gbAgreements.Size = new System.Drawing.Size(1057, 424);
+            this.gbAgreements.Size = new System.Drawing.Size(1057, 449);
             this.gbAgreements.TabIndex = 3;
             this.gbAgreements.TabStop = false;
             this.gbAgreements.Text = "My Agreements";
@@ -779,7 +759,7 @@
             this.dgdAgreements.RowHeadersVisible = false;
             this.dgdAgreements.RowHeadersWidth = 51;
             this.dgdAgreements.RowTemplate.Height = 24;
-            this.dgdAgreements.Size = new System.Drawing.Size(1012, 320);
+            this.dgdAgreements.Size = new System.Drawing.Size(1012, 350);
             this.dgdAgreements.TabIndex = 0;
             // 
             // Column1
@@ -821,9 +801,9 @@
             // 
             this.gbWeeksTasks.Controls.Add(this.listView6);
             this.gbWeeksTasks.ForeColor = System.Drawing.Color.White;
-            this.gbWeeksTasks.Location = new System.Drawing.Point(297, 40);
+            this.gbWeeksTasks.Location = new System.Drawing.Point(297, 23);
             this.gbWeeksTasks.Name = "gbWeeksTasks";
-            this.gbWeeksTasks.Size = new System.Drawing.Size(595, 360);
+            this.gbWeeksTasks.Size = new System.Drawing.Size(780, 408);
             this.gbWeeksTasks.TabIndex = 10;
             this.gbWeeksTasks.TabStop = false;
             this.gbWeeksTasks.Text = "This Week Tasks List";
@@ -837,10 +817,10 @@
             this.columnHeader4});
             this.listView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(26, 27);
+            this.listView6.Location = new System.Drawing.Point(24, 37);
             this.listView6.Margin = new System.Windows.Forms.Padding(2);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(545, 312);
+            this.listView6.Size = new System.Drawing.Size(734, 350);
             this.listView6.TabIndex = 4;
             this.listView6.UseCompatibleStateImageBehavior = false;
             this.listView6.View = System.Windows.Forms.View.Details;
@@ -870,9 +850,9 @@
             this.gbPTasks.Controls.Add(this.clbTenantTask);
             this.gbPTasks.Controls.Add(this.btnTaskComplete);
             this.gbPTasks.ForeColor = System.Drawing.Color.White;
-            this.gbPTasks.Location = new System.Drawing.Point(52, 40);
+            this.gbPTasks.Location = new System.Drawing.Point(27, 23);
             this.gbPTasks.Name = "gbPTasks";
-            this.gbPTasks.Size = new System.Drawing.Size(180, 360);
+            this.gbPTasks.Size = new System.Drawing.Size(244, 408);
             this.gbPTasks.TabIndex = 9;
             this.gbPTasks.TabStop = false;
             this.gbPTasks.Text = "Personal Tasks";
@@ -881,20 +861,20 @@
             // 
             this.clbTenantTask.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.clbTenantTask.FormattingEnabled = true;
-            this.clbTenantTask.Location = new System.Drawing.Point(19, 33);
+            this.clbTenantTask.Location = new System.Drawing.Point(19, 36);
             this.clbTenantTask.Margin = new System.Windows.Forms.Padding(2);
             this.clbTenantTask.Name = "clbTenantTask";
-            this.clbTenantTask.Size = new System.Drawing.Size(139, 232);
+            this.clbTenantTask.Size = new System.Drawing.Size(200, 289);
             this.clbTenantTask.TabIndex = 7;
             // 
             // btnTaskComplete
             // 
             this.btnTaskComplete.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnTaskComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.btnTaskComplete.Location = new System.Drawing.Point(52, 302);
+            this.btnTaskComplete.Location = new System.Drawing.Point(19, 350);
             this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaskComplete.Name = "btnTaskComplete";
-            this.btnTaskComplete.Size = new System.Drawing.Size(106, 37);
+            this.btnTaskComplete.Size = new System.Drawing.Size(200, 37);
             this.btnTaskComplete.TabIndex = 1;
             this.btnTaskComplete.Text = "Completed?";
             this.btnTaskComplete.UseVisualStyleBackColor = true;
@@ -916,11 +896,11 @@
             // 
             this.gbAdminAnnouncements.Controls.Add(this.dgdAnnouncement);
             this.gbAdminAnnouncements.ForeColor = System.Drawing.Color.White;
-            this.gbAdminAnnouncements.Location = new System.Drawing.Point(319, 21);
+            this.gbAdminAnnouncements.Location = new System.Drawing.Point(625, 21);
             this.gbAdminAnnouncements.Margin = new System.Windows.Forms.Padding(2);
             this.gbAdminAnnouncements.Name = "gbAdminAnnouncements";
             this.gbAdminAnnouncements.Padding = new System.Windows.Forms.Padding(2);
-            this.gbAdminAnnouncements.Size = new System.Drawing.Size(457, 354);
+            this.gbAdminAnnouncements.Size = new System.Drawing.Size(457, 405);
             this.gbAdminAnnouncements.TabIndex = 60;
             this.gbAdminAnnouncements.TabStop = false;
             this.gbAdminAnnouncements.Text = "Admin Announcements";
@@ -972,7 +952,7 @@
             this.dgdAnnouncement.RowTemplate.Height = 24;
             this.dgdAnnouncement.RowTemplate.ReadOnly = true;
             this.dgdAnnouncement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgdAnnouncement.Size = new System.Drawing.Size(415, 300);
+            this.dgdAnnouncement.Size = new System.Drawing.Size(415, 353);
             this.dgdAnnouncement.TabIndex = 51;
             // 
             // dataGridViewTextBoxColumn1
@@ -1010,7 +990,7 @@
             this.gbHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.gbHouseRules.Name = "gbHouseRules";
             this.gbHouseRules.Padding = new System.Windows.Forms.Padding(2);
-            this.gbHouseRules.Size = new System.Drawing.Size(268, 352);
+            this.gbHouseRules.Size = new System.Drawing.Size(452, 405);
             this.gbHouseRules.TabIndex = 59;
             this.gbHouseRules.TabStop = false;
             this.gbHouseRules.Text = "House rules";
@@ -1021,7 +1001,7 @@
             this.rtbHouseRules.Location = new System.Drawing.Point(24, 29);
             this.rtbHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.rtbHouseRules.Name = "rtbHouseRules";
-            this.rtbHouseRules.Size = new System.Drawing.Size(219, 301);
+            this.rtbHouseRules.Size = new System.Drawing.Size(403, 353);
             this.rtbHouseRules.TabIndex = 9;
             this.rtbHouseRules.Text = "";
             // 
@@ -1037,19 +1017,19 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
+            this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.CustomBackground = true;
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.metroTabControl1.ItemSize = new System.Drawing.Size(185, 60);
             this.metroTabControl1.Location = new System.Drawing.Point(18, 108);
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 5;
-            this.metroTabControl1.Size = new System.Drawing.Size(1115, 517);
+            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.Size = new System.Drawing.Size(1115, 538);
             this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTabControl1.TabIndex = 60;
@@ -1071,6 +1051,32 @@
             this.metroTabPage1.Text = "General";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarSize = 11;
+            // 
+            // metroTabPage5
+            // 
+            this.metroTabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.metroTabPage5.Controls.Add(this.pnlEvents);
+            this.metroTabPage5.CustomBackground = true;
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 64);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(1107, 449);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "Events";
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            // 
+            // metroTabPage6
+            // 
+            this.metroTabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.metroTabPage6.Controls.Add(this.gbAgreements);
+            this.metroTabPage6.CustomBackground = true;
+            this.metroTabPage6.HorizontalScrollbarBarColor = true;
+            this.metroTabPage6.Location = new System.Drawing.Point(4, 64);
+            this.metroTabPage6.Name = "metroTabPage6";
+            this.metroTabPage6.Size = new System.Drawing.Size(1107, 470);
+            this.metroTabPage6.TabIndex = 5;
+            this.metroTabPage6.Text = "Agreements";
+            this.metroTabPage6.VerticalScrollbarBarColor = true;
             // 
             // metroTabPage2
             // 
@@ -1110,43 +1116,17 @@
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 64);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1107, 449);
+            this.metroTabPage4.Size = new System.Drawing.Size(1107, 470);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Complaints";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarSize = 11;
             // 
-            // metroTabPage5
-            // 
-            this.metroTabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.metroTabPage5.Controls.Add(this.pnlEvents);
-            this.metroTabPage5.CustomBackground = true;
-            this.metroTabPage5.HorizontalScrollbarBarColor = true;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 64);
-            this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(1107, 449);
-            this.metroTabPage5.TabIndex = 4;
-            this.metroTabPage5.Text = "Events";
-            this.metroTabPage5.VerticalScrollbarBarColor = true;
-            // 
-            // metroTabPage6
-            // 
-            this.metroTabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.metroTabPage6.Controls.Add(this.gbAgreements);
-            this.metroTabPage6.CustomBackground = true;
-            this.metroTabPage6.HorizontalScrollbarBarColor = true;
-            this.metroTabPage6.Location = new System.Drawing.Point(4, 64);
-            this.metroTabPage6.Name = "metroTabPage6";
-            this.metroTabPage6.Size = new System.Drawing.Size(1107, 449);
-            this.metroTabPage6.TabIndex = 5;
-            this.metroTabPage6.Text = "Agreements";
-            this.metroTabPage6.VerticalScrollbarBarColor = true;
-            // 
             // FrmTenant
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1155, 645);
+            this.ClientSize = new System.Drawing.Size(1155, 670);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -1176,11 +1156,11 @@
             this.gbHouseRules.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage5.ResumeLayout(false);
+            this.metroTabPage6.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
-            this.metroTabPage5.ResumeLayout(false);
-            this.metroTabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1189,8 +1169,6 @@
 
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblCurrentUserName;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnCloseForm;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlComplaints;
@@ -1248,7 +1226,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Label lblGeneralCurrentTennatID;
+        private System.Windows.Forms.Label lblInfo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
@@ -1259,7 +1237,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.GroupBox gbHouseRules;
         private System.Windows.Forms.RichTextBox rtbHouseRules;
-        private System.Windows.Forms.Button btnGoToAdmin;
         private System.Windows.Forms.Timer timer1;
         private System.IO.Ports.SerialPort serialPort1;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
@@ -1269,5 +1246,7 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
         private MetroFramework.Controls.MetroTabPage metroTabPage5;
         private MetroFramework.Controls.MetroTabPage metroTabPage6;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnCloseForm;
     }
 }

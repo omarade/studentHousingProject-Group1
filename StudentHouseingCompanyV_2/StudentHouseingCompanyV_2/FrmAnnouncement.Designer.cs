@@ -47,9 +47,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbText);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(20, 30);
+            this.groupBox1.Location = new System.Drawing.Point(20, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 390);
+            this.groupBox1.Size = new System.Drawing.Size(294, 402);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create New Announcemet";
@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.label1.Location = new System.Drawing.Point(9, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 21);
@@ -67,9 +67,9 @@
             // btnCreate
             // 
             this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.btnCreate.Location = new System.Drawing.Point(6, 340);
+            this.btnCreate.Location = new System.Drawing.Point(16, 340);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(100, 41);
+            this.btnCreate.Size = new System.Drawing.Size(127, 41);
             this.btnCreate.TabIndex = 4;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@
             // btnCancel
             // 
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.btnCancel.Location = new System.Drawing.Point(188, 340);
+            this.btnCancel.Location = new System.Drawing.Point(149, 340);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 41);
+            this.btnCancel.Size = new System.Drawing.Size(130, 41);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -88,15 +88,15 @@
             // 
             // tbSubject
             // 
-            this.tbSubject.Location = new System.Drawing.Point(6, 66);
+            this.tbSubject.Location = new System.Drawing.Point(16, 66);
             this.tbSubject.Name = "tbSubject";
-            this.tbSubject.Size = new System.Drawing.Size(282, 27);
+            this.tbSubject.Size = new System.Drawing.Size(263, 27);
             this.tbSubject.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
             this.label2.Location = new System.Drawing.Point(9, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 21);
@@ -105,10 +105,10 @@
             // 
             // tbText
             // 
-            this.tbText.Location = new System.Drawing.Point(6, 135);
+            this.tbText.Location = new System.Drawing.Point(16, 135);
             this.tbText.Multiline = true;
             this.tbText.Name = "tbText";
-            this.tbText.Size = new System.Drawing.Size(282, 190);
+            this.tbText.Size = new System.Drawing.Size(263, 190);
             this.tbText.TabIndex = 1;
             // 
             // FrmAnnouncement
@@ -121,6 +121,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAnnouncement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAnnouncement";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmAnnouncement_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmAnnouncement_MouseMove);

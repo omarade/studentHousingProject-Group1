@@ -118,41 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnGoToAdmin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
-        oQAABKEBfH/ViAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE6SURBVFhH3dc9
-        SsRAGMbxWNiIhbWwFoJXEGELO7GyFmz0Fra2Fh7CRjyAZ9DCKwgWC66NlV+Nxv+zTmQYXidmTHjFB37L
-        kkwyD2Q3yVR1Xc+QTVxgCm3o6gGrzfl+6vOjqg7xjviEJbbTCdooG3hDerISY2uSHOU8HCxPOMZugS1r
-        gjbKLZoCJ9agISmvYXLZtwYNSfkfBcgiRta+HOVXBcgcDnCHG2tMjlJcgIxxHY6VqTUuR+lcgKzgLBwT
-        G7YAWcARntEcE7vHUgfzaC9AdJ33MEEztg9XyBcg67gM+/umue0CZBmn6OMh9R27ANnBY9g2pBf8wQLu
-        lyBGfH6ESQm/v2GM+NyIUsTnVpwiPg+jGPF7HMeIXkjWrH05Si8FSinuBdxfy90XJr5Ls9mH5+L064vL
-        8ryuPgCO7X+a6HQMnwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
-        oQAABKEBfH/ViAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE6SURBVFhH3dc9
-        SsRAGMbxWNiIhbWwFoJXEGELO7GyFmz0Fra2Fh7CRjyAZ9DCKwgWC66NlV+Nxv+zTmQYXidmTHjFB37L
-        kkwyD2Q3yVR1Xc+QTVxgCm3o6gGrzfl+6vOjqg7xjviEJbbTCdooG3hDerISY2uSHOU8HCxPOMZugS1r
-        gjbKLZoCJ9agISmvYXLZtwYNSfkfBcgiRta+HOVXBcgcDnCHG2tMjlJcgIxxHY6VqTUuR+lcgKzgLBwT
-        G7YAWcARntEcE7vHUgfzaC9AdJ33MEEztg9XyBcg67gM+/umue0CZBmn6OMh9R27ANnBY9g2pBf8wQLu
-        lyBGfH6ESQm/v2GM+NyIUsTnVpwiPg+jGPF7HMeIXkjWrH05Si8FSinuBdxfy90XJr5Ls9mH5+L064vL
-        8ryuPgCO7X+a6HQMnwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAXBJREFUSEvt
+        lj1Ow0AQhS0BDVBSIwq4BELI4gQ0lvxf+hBUVOQAqbkDcAEKOAASHICCHwlokaAhvLXebCZZIu+aQIH4
+        pCd5ZufNKFmv7UjTNM1SURQD6BYa9ZTxDkwvtnUxBcrwXR2xrQsW701RWZYxU8FUVbXHQXdMubBgxLA3
+        nX3+BxnyPG+wp5sMW9Dj6icGvcHzjGHbTJljsozcCUOXPoPEA71DJdNRHMeLvHQRE0MvxEN94Jcdcmk2
+        YmBoQe5c1nyEv3OYJMkC7S5SyNCimwToFId3hS0mkSKGFmUO1XVd1+tsM0YKGFqUMVQ3aZpusM0YKWBo
+        UUZv4aY4wz6tssUkUsTQAtOFbuKh467XRFvI0AvV3Mjc3gdcmo0YGHqhhrxiyD7T8z+wfAS9ZFm2w1SE
+        6zXkLhm69BmEeszKtxi2IDf/h+pXdPb5k4MeTYHe2FCwX7sc9MCUCxZ/53NLPiBxHp6mTN6id+oDMoo+
+        ASn/Ef4xi3xIAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnCloseForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5gAAAOYBIly6UQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF3SURBVFhHxZdR
-        joMwDAU5zF6sp9zL7N8ehGaiZ+QYk4ZARaWRWuM3z+ofy7quS/m8Cn+F38IPs2+AWx10vTSr5Xwz/gu3
-        H4FTbt9Fd73GD+HWI3DJGXvorn9JfAC3HIFDrugHursLl44gK0f0QnUPL0b5J8goG32wOU8HRmBXmeiB
-        xjUdPIId7cY87BxNuA4uHMEz7cQcpNnmxzacEU1kai4bAgEFvchohHzXLO7BYTmkQ4OgBF5oVLGYKod0
-        6EEgkRcbzKfLIR1GEEnoC3oMlUM6zEAosS/KGC6HdHgEYhX4Qs+pckiHRyBXiS/1fO8AxCrwhRmnjkiH
-        EYQS+6Iew0ekQw8iCX2Bwbz37OMR6dBAIJEXG7VATB+RDoGgBF5oNGK+axb3oHtEPpwQMtOzuA+HR+wH
-        kyLgmXZiDtJs++NCucGOdmMedo7pYA92lYkeaFynA6OQUTb6YHPyub3cICtH9EJ1F55/MXn81ezZl1M9
-        fOj1fF3euVm7WjZc03UAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXVJREFUWEft
+        VjtOw0AUdENaKPgI6DgHAok7WPJfrnwTIJwHBGcIVPykQEUBCHGJMBONLWJ7ibEtuciO9JR4ZvLexLte
+        2bGwKMN13VEYhueoN9Ssp2KvsyzL1jTGjCiKxqUf91ZBEJxqjBkwftDs+/6xqM6I4/hEId5FmSHjTJe9
+        oXFfG8BkxAY6AH+NvbEjqgJq8NzQK6qAqW8FJiO4K2lP2FTbogto+LM8l6ILiG8fAOfDOviJ9FfP8/Yk
+        OUmS7JOTNqFXUgFp7QMQv0PgNr8wBAvXfw4npHcLQGDAFvQH+fj5yO84wO6xDJuyVSB/9wBEKcQ8CDnJ
+        tci9ujSjiZG3nUuQe/PlkFyLJn3nWGYcdAm04aby3KZpusHCHbgTN0WQXdkXIL19ADbmAGocyMGSnCYh
+        pLUPAG7Ygwj/cNijuCtsgP8E+KIR63koqjOwJ44U4FOUGTBdyNx7Icjyl1KcdCM8x2PUd12TNqVezV7L
+        LVYMjvMDiwUEyjCW3rcAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

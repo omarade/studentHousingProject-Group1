@@ -61,6 +61,7 @@
     <Compile Include="Announcement.cs" />
     <Compile Include="Complaint.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="FormAnimator.cs" />
     <Compile Include="FrmAddEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +110,13 @@
     <Compile Include="FrmUdateUserInfo.Designer.cs">
       <DependentUpon>FrmUdateUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +148,9 @@
     <EmbeddedResource Include="FrmUdateUserInfo.resx">
       <DependentUpon>FrmUdateUserInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -165,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\hot1.png" />
+    <None Include="Resources\hot.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

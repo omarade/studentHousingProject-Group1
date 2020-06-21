@@ -39,12 +39,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnCancel.Location = new System.Drawing.Point(451, 299);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.btnCancel.Location = new System.Drawing.Point(442, 295);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 46);
@@ -56,7 +59,8 @@
             // btnCreateAgreement
             // 
             this.btnCreateAgreement.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnCreateAgreement.Location = new System.Drawing.Point(277, 299);
+            this.btnCreateAgreement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.btnCreateAgreement.Location = new System.Drawing.Point(268, 295);
             this.btnCreateAgreement.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateAgreement.Name = "btnCreateAgreement";
             this.btnCreateAgreement.Size = new System.Drawing.Size(162, 46);
@@ -74,7 +78,7 @@
             this.columnHeader3});
             this.lvwTenants.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lvwTenants.HideSelection = false;
-            this.lvwTenants.Location = new System.Drawing.Point(27, 71);
+            this.lvwTenants.Location = new System.Drawing.Point(18, 67);
             this.lvwTenants.Margin = new System.Windows.Forms.Padding(2);
             this.lvwTenants.Name = "lvwTenants";
             this.lvwTenants.Size = new System.Drawing.Size(221, 274);
@@ -100,7 +104,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtDescription.Location = new System.Drawing.Point(277, 132);
+            this.txtDescription.Location = new System.Drawing.Point(268, 128);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -110,7 +114,7 @@
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtTitle.Location = new System.Drawing.Point(277, 71);
+            this.txtTitle.Location = new System.Drawing.Point(268, 67);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(250, 24);
@@ -120,7 +124,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label3.Location = new System.Drawing.Point(23, 35);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.label3.Location = new System.Drawing.Point(14, 31);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 19);
@@ -131,7 +136,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label2.Location = new System.Drawing.Point(274, 107);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.label2.Location = new System.Drawing.Point(265, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 19);
@@ -142,37 +148,51 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label1.Location = new System.Drawing.Point(274, 35);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.label1.Location = new System.Drawing.Point(265, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 19);
             this.label1.TabIndex = 40;
             this.label1.Text = "Title";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnCreateAgreement);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lvwTenants);
+            this.groupBox1.Controls.Add(this.txtTitle);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(536, 366);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "New Agreement";
+            // 
             // FrmNewAgreement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(560, 383);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnCreateAgreement);
-            this.Controls.Add(this.lvwTenants);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(560, 401);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmNewAgreement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewAgreement";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmNewAgreement_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmNewAgreement_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmNewAgreement_MouseUp);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -189,5 +209,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

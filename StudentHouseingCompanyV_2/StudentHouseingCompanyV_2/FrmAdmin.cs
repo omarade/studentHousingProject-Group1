@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,17 +25,6 @@ namespace StudentHouseingCompanyV_2
         public FrmAdmin()
         {
             InitializeComponent();
-            /*pnlHighlight.Left = btnGereral.Left;
-            pnlHighlight.Width = btnGereral.Width;
-            pnlComplaints.Visible = false;
-            pnlTasks.Visible = false;
-            pnlUsers.Visible = false;
-            pnlGereral.Visible = true;
-            pnlGereral.Width = 1155;
-            pnlGereral.Height = 439;
-            pnlGereral.Top = 162;
-            pnlGereral.Left = 0;*/
-
             studentHousing = StudentHousing.Instance;
             ShowUsers();
             ShowTasks();
@@ -42,69 +32,11 @@ namespace StudentHouseingCompanyV_2
             tmrUpdateComplaintes.Start();
             rbtnTenant.Checked = true;
             rbtnAdmin.Checked = false;
-            lblCurrentUserName.Text = "Admin Name: " +studentHousing.CurrentUser.Name;
+            lblCurrentUserName.Text = studentHousing.CurrentUser.Name;
             cbWeekDays.SelectedIndex = 0;
             prevNmrOfComp = nmrOfComp;
             //serialPort1.Open();
         }
-
-       /* private void btnGereral_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnGereral.Left;
-            pnlHighlight.Width = btnGereral.Width;
-            pnlComplaints.Visible = false;
-            pnlTasks.Visible = false;
-            pnlUsers.Visible = false;
-            pnlGereral.Visible = true;
-            pnlGereral.Width = 1155;
-            pnlGereral.Height = 439;
-            pnlGereral.Top = 162;
-            pnlGereral.Left = 0;
-        }
-
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnUsers.Left;
-            pnlHighlight.Width = btnUsers.Width;
-            pnlComplaints.Visible = false;
-            pnlTasks.Visible = false;
-            pnlUsers.Visible = true;
-            pnlGereral.Visible = false;
-            pnlUsers.Width = 1155;
-            pnlUsers.Height = 439;
-            pnlUsers.Top = 162;
-            pnlUsers.Left = 0;
-
-            ClearSelectedUser();
-        }
-
-        private void btnTasks_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnTasks.Left;
-            pnlHighlight.Width = btnTasks.Width;
-            pnlComplaints.Visible = false;
-            pnlTasks.Visible = true;
-            pnlUsers.Visible = false;
-            pnlGereral.Visible = false;
-            pnlTasks.Width = 1155;
-            pnlTasks.Height = 439;
-            pnlTasks.Top = 162;
-            pnlTasks.Left = 0;
-        }
-
-        private void btnComplaints_Click(object sender, EventArgs e)
-        {
-            pnlHighlight.Left = btnComplaints.Left;
-            pnlHighlight.Width = btnComplaints.Width;
-            pnlComplaints.Visible = true;
-            pnlTasks.Visible = false;
-            pnlUsers.Visible = false;
-            pnlGereral.Visible = false;
-            pnlComplaints.Width = 1155;
-            pnlComplaints.Height = 439;
-            pnlComplaints.Top = 162;
-            pnlComplaints.Left = 0;
-        }*/
 
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
@@ -173,7 +105,6 @@ namespace StudentHouseingCompanyV_2
             }
 
             ShowUsers();
-            //dgdUsers.Rows.Add(name, dateOfBirth, email, password, phoneNr, postcode, address);
             //studentHousing.ResetSchedule();
             //ShowTasks();
         }
@@ -292,13 +223,6 @@ namespace StudentHouseingCompanyV_2
         private void cboUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
             ShowUsers();
-        }
-
-        private void btnGoToAdmin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var frmTenant = new FrmTenant();
-            frmTenant.Show();
         }
 
         private void btnRemoveUser_Click(object sender, EventArgs e)
@@ -679,13 +603,35 @@ namespace StudentHouseingCompanyV_2
                     {
                         string msg = $"{temperature}°C, Temperature Too low!";
                         NewTemperatureLog(DateTime.Now, msg);
+                        ShowNotification(msg, "cold");
                     }
-                    else if (temperature > 27)
+                    else if (temperature > 28)
                     {
                         string msg = $"{temperature}°C, Temperature too high!";
                         NewTemperatureLog(DateTime.Now, msg);
+                        ShowNotification(msg, "hot");
                     }
                 }
+            }
+        }
+
+        private void ShowNotification(string text, string iconPath)
+        {
+            var notification = new Notification(text, iconPath);
+
+            PlayNotificationSound("normal");
+
+            notification.Show();
+        }
+
+        private static void PlayNotificationSound(string sound)
+        {
+            var soundsFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Sounds");
+            var soundFile = Path.Combine(soundsFolder, sound + ".wav");
+
+            using (var player = new System.Media.SoundPlayer(soundFile))
+            {
+                player.Play();
             }
         }
 
