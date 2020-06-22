@@ -118,11 +118,12 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbxPurchacesOverView.SuspendLayout();
@@ -139,15 +140,16 @@
             this.gbHouseRules.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroTabPage6.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
-            this.metroTabPage6.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.label9);
             this.pnlTop.Controls.Add(this.btnLogout);
             this.pnlTop.Controls.Add(this.btnCloseForm);
             this.pnlTop.Controls.Add(this.lblInfo);
@@ -1002,6 +1004,7 @@
             this.rtbHouseRules.Location = new System.Drawing.Point(24, 29);
             this.rtbHouseRules.Margin = new System.Windows.Forms.Padding(2);
             this.rtbHouseRules.Name = "rtbHouseRules";
+            this.rtbHouseRules.ReadOnly = true;
             this.rtbHouseRules.Size = new System.Drawing.Size(403, 353);
             this.rtbHouseRules.TabIndex = 9;
             this.rtbHouseRules.Text = "";
@@ -1018,9 +1021,9 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.CustomBackground = true;
@@ -1029,7 +1032,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(18, 108);
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1115, 538);
             this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1052,6 +1055,19 @@
             this.metroTabPage1.Text = "General";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarSize = 11;
+            // 
+            // metroTabPage6
+            // 
+            this.metroTabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.metroTabPage6.Controls.Add(this.gbAgreements);
+            this.metroTabPage6.CustomBackground = true;
+            this.metroTabPage6.HorizontalScrollbarBarColor = true;
+            this.metroTabPage6.Location = new System.Drawing.Point(4, 64);
+            this.metroTabPage6.Name = "metroTabPage6";
+            this.metroTabPage6.Size = new System.Drawing.Size(1107, 470);
+            this.metroTabPage6.TabIndex = 5;
+            this.metroTabPage6.Text = "Agreements";
+            this.metroTabPage6.VerticalScrollbarBarColor = true;
             // 
             // metroTabPage5
             // 
@@ -1079,19 +1095,6 @@
             this.metroTabPage4.Text = "Complaints";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarSize = 11;
-            // 
-            // metroTabPage6
-            // 
-            this.metroTabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.metroTabPage6.Controls.Add(this.gbAgreements);
-            this.metroTabPage6.CustomBackground = true;
-            this.metroTabPage6.HorizontalScrollbarBarColor = true;
-            this.metroTabPage6.Location = new System.Drawing.Point(4, 64);
-            this.metroTabPage6.Name = "metroTabPage6";
-            this.metroTabPage6.Size = new System.Drawing.Size(1107, 470);
-            this.metroTabPage6.TabIndex = 5;
-            this.metroTabPage6.Text = "Agreements";
-            this.metroTabPage6.VerticalScrollbarBarColor = true;
             // 
             // metroTabPage2
             // 
@@ -1122,6 +1125,17 @@
             this.metroTabPage3.Text = "Cost Controle";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarSize = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(179)))), ((int)(((byte)(160)))));
+            this.label9.Location = new System.Drawing.Point(1022, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 19);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Logout";
             // 
             // FrmTenant
             // 
@@ -1157,9 +1171,9 @@
             this.gbHouseRules.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage6.ResumeLayout(false);
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
-            this.metroTabPage6.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1249,5 +1263,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage6;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnCloseForm;
+        private System.Windows.Forms.Label label9;
     }
 }

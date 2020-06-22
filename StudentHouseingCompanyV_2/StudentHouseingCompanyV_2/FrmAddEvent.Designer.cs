@@ -157,6 +157,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAddEvent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddEvent";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmAddEvent_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmAddEvent_MouseMove);

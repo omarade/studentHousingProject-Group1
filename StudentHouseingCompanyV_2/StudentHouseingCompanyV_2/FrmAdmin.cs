@@ -115,8 +115,8 @@ namespace StudentHouseingCompanyV_2
             }
 
             ShowUsers();
-            //studentHousing.ResetSchedule();
-            //ShowTasks();
+            studentHousing.ResetSchedule();
+            ShowTasks();
         }
 
         private void NewUserType()
@@ -210,11 +210,13 @@ namespace StudentHouseingCompanyV_2
                 return false;
             }
 
-            if (phoneNr.Length <= 10)
+            /*
+            if (phoneNr.Length <= 9)
             {
                 MessageBox.Show("Please enter a valid phone number");
                 return false;
             }
+            */
 
             if (postcode.Length != 6)
             {

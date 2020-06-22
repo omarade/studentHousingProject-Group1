@@ -89,6 +89,8 @@ namespace StudentHouseingCompanyV_2
             this.CreaterName = StudentHouseingCompanyV_2.StudentHousing.Instance.CurrentUser.Name;
         }
 
+
+
         public string GetText()
         {
             return ComplaintTopic + ":" + "\n" + Description;

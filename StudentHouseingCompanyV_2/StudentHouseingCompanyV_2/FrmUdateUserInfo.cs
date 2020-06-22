@@ -108,12 +108,13 @@ namespace StudentHouseingCompanyV_2
         private bool ValidateUserInput(string phoneNr, string postcode, string address)
         {
 
-
+            /*
             if (phoneNr.Length <= 10)
             {
                 MessageBox.Show("Please enter a valid phone number");
                 return false;
             }
+            */
 
             if (postcode.Length != 6)
             {

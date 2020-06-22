@@ -173,24 +173,20 @@ namespace StudentHouseingCompanyV_2
             dob = new DateTime(2001, 03, 15);
             AddUser("Chris Rock", dob, "Chris@live.com", "1234", "0031682994347", "3456LA", "Aakstraat 144");
 
-            AddTask("Bathroom", DayOfWeek.Thursday);
+            AddTask("Bathroom", DayOfWeek.Friday);
             AddTask("LivingRoom", DayOfWeek.Thursday);
             AddTask("Kitchen", DayOfWeek.Thursday);
-            AddTask("General House Items", DayOfWeek.Thursday);
-            AddTask("Task1", DayOfWeek.Thursday);
-            AddTask("Task2", DayOfWeek.Thursday);
-            AddTask("Task3", DayOfWeek.Thursday);
-            AddTask("Task4", DayOfWeek.Thursday);
-            AddTask("Task5", DayOfWeek.Thursday);
+            AddTask("Buy General House Items", DayOfWeek.Monday);
+            AddTask("Garbage disposal", DayOfWeek.Tuesday);
 
-            AddEvent("Event1", DateTime.Today, "Cool Event", "Bill burr");
-            AddEvent("Event2", DateTime.Today, "bad event", "Jerry Seinfeld");
-            AddEvent("Event3", DateTime.Today, "Night Event", "Kevin Hart");
-            AddEvent("Event4", DateTime.Today, "day Event", "Kevin Hart");
-            AddEvent("Event5", DateTime.Today, "swimming in house pool", "Chris Rock");
-            AddEvent("Event6", DateTime.Today, "friday night drinks in the general room", "Bill burr");
-            AddEvent("Event7", DateTime.Today, "The event of 2020", "Chris Rock");
-            HouseRules = "1. Test\n2. The\n3. House\n4. Rules";
+            AddEvent("Friday Night drinks", DateTime.Today, "Hey Guys im having a few drinks with some of my class mates on friday night! If anyone has a problem with if just contact me. If you want feel free to join!", "Bill burr");
+            AddEvent("Saterday BBQ", DateTime.Today, "Hi guys like you know its the last weekend of the month to if means BBQ time!", "Jerry Seinfeld");
+            AddEvent("Kenvins Birthday party", DateTime.Today, "Hey guys It's my birthday this weekend was wondering if anyone wants to come and join me?", "Kevin Hart");
+            AddEvent("Thursday night drinks", DateTime.Today, "Hi guys does anyone mind if i invite a few friends over thurday night?", "Kevin Hart");
+
+            HouseRules = "1. Do you weekly tasks\n2. No loud muisc after 2am \n3.Be friendly to other tenants \n4. Always clean your dishes after you make dinner";
+
+
         }
 
         /// <summary>
